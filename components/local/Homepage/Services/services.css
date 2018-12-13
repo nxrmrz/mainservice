@@ -1,0 +1,33 @@
+#homepage_services_body {
+  height: 140vmin;
+  width: 100%;
+}
+
+#homepage_service_tabs_body {
+  height: 7vmin;
+  width: 100%;
+  display: flex;
+  background-color: rgb(220, 220, 220);
+}
+
+#homepage_service_contents_body {
+  height: 133vmin;
+  width: 100%;
+  padding: 7vmin 0 0 0;
+  background-color: rgb(245, 245, 245);
+}
+
+@media only screen and (min-width: 600px) {
+  #homepage_services_body {
+    height: 70vmin;
+  }
+
+  #homepage_service_tabs_body {
+    height: 3.5vmin;
+  }
+
+  #homepage_service_contents_body {
+    height: 66.5vmin;
+    padding: 3.5vmin 0 0 0;
+  }
+}

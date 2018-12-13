@@ -1,0 +1,104 @@
+#admin_awaiting_quote_modal_footer_contents {
+  flex-direction: column;
+}
+
+.admin_order_details_awaiting_quote_part_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2vmin;
+}
+
+.admin_order_details_awaiting_quote_part_file_name_body {
+  height: 8vmin;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin_order_details_awaiting_quote_part_file_name_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 3.6vmin;
+  font-weight: bold;
+}
+
+.admin_order_details_awaiting_quote_part_quantity_body {
+  height: 8vmin;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin_order_details_awaiting_quote_part_quantity_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 3.6vmin;
+}
+
+.admin_order_details_awaiting_quote_part_price_per_unit_body {
+  height: 8vmin;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin_order_details_awaiting_quote_part_price_per_unit_input {
+  width: 50%;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.6vmin;
+  margin: 0 2vmin 0 2vmin;
+}
+
+.admin_order_details_awaiting_quote_part_total_price_body {
+  height: 8vmin;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin_order_details_awaiting_quote_part_total_price_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 3.6vmin;
+}
+
+@media only screen and (min-width: 600px) {
+  .admin_order_details_awaiting_quote_part_body {
+    padding: 1vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_file_name_body {
+    height: 4vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_file_name_text {
+    font-size: 1.8vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_quantity_body {
+    height: 4vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_quantity_text {
+    font-size: 1.8vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_price_per_unit_body {
+    height: 4vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_price_per_unit_input {
+    font-size: 1.8vmin;
+    margin: 0 1vmin 0 1vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_total_price_body {
+    height: 4vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_total_price_text {
+    font-size: 1.8vmin;
+  }
+}

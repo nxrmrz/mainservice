@@ -1,0 +1,134 @@
+.admin_profile_orders_prints_order_list_body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4vmin;
+}
+
+.admin_profile_orders_prints_order_list_header_body {
+  width: 100%;
+  padding: 4vmin;
+}
+
+.admin_profile_orders_prints_order_list_header_text {
+  font-family: "Russo One", sans-serif;
+  font-size: 3.6vmin;
+}
+
+.admin_profile_orders_prints_order_list_contents_body {
+  min-height: 20vmin;
+  max-height: 60vh;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0vmin 0vmin 2vmin 0vmin rgb(200, 200, 200);
+  overflow-y: overlay;
+}
+
+.admin_profile_orders_prints_orders_list_table {
+  border-collapse: collapse;
+  border-spacing: none;
+  width: 100%;
+}
+
+#admin_profile_orders_prints_orders_list_table_header_main_body {
+  width: 100%;
+}
+
+#admin_profile_orders_prints_orders_list_table_header_body {
+  width: 100%;
+}
+
+.admin_profile_orders_prints_orders_list_table_row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-width: 0.5vmin;
+  border-color: rgb(180, 180, 180);
+  border-spacing: none;
+}
+
+.admin_profile_orders_prints_orders_list_table_content {
+  height: 10vmin;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: solid;
+  border-width: 0.3vmin;
+  border-color: rgb(220, 220, 220);
+  border-spacing: none;
+}
+
+.admin_profile_orders_prints_orders_list_table_header {
+  font-family: "Chivo", sans-serif;
+  font-size: 3.2vmin;
+  font-weight: bold;
+}
+
+.admin_profile_orders_prints_orders_list_print_setting_content {
+  width: 50%;
+}
+
+#admin_profile_orders_prints_orders_list_table_content_main_body {
+  min-height: 20vmin;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: overlay;
+}
+
+.admin_profile_orders_prints_orders_list_table_content_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 3vmin;
+}
+
+@media only screen and (min-width: 600px) {
+  .admin_profile_orders_prints_order_list_body {
+    padding: 2vmin;
+  }
+
+  .admin_profile_orders_prints_order_list_header_body {
+    padding: 2vmin;
+  }
+
+  .admin_profile_orders_prints_order_list_header_text {
+    font-size: 1.8vmin;
+  }
+
+  .admin_profile_orders_prints_order_list_contents_body {
+    min-height: 10vmin;
+    box-shadow: 0vmin 0vmin 1vmin 0vmin rgb(200, 200, 200);
+  }
+
+  .admin_profile_orders_prints_orders_list_table_row {
+    border-width: 0.25vmin;
+  }
+
+  .admin_profile_orders_prints_orders_list_table_content {
+    height: 5vmin;
+    border-width: 0.15vmin;
+  }
+
+  .admin_profile_orders_prints_orders_list_table_header {
+    font-size: 1.6vmin;
+  }
+
+  #admin_profile_orders_prints_orders_list_table_content_main_body {
+    min-height: 10vmin;
+  }
+
+  .admin_profile_orders_prints_orders_list_table_content_text {
+    font-family: "Chivo", sans-serif;
+    font-size: 1.5vmin;
+  }
+}

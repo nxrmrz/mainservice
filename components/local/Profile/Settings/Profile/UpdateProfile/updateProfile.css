@@ -1,0 +1,91 @@
+#profile_settings_profile_save_changes_button_body {
+  width: 30vmin;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#profile_settings_profile_save_changes_button {
+  height: 8vmin;
+  width: 18vmin;
+  margin: 0 1vmin 0 6vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4vmin;
+  background-color: rgb(255, 75, 90);
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  font-weight: 500;
+  color: rgb(245, 245, 245);
+}
+
+#profile_settings_profile_save_changes_handler {
+  height: 5vmin;
+  width: 5vmin;
+}
+
+#profile_settings_profile_save_changes_loader {
+  border: 1vmin solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 1vmin solid rgb(170, 10, 10);
+  width: 100%;
+  height: 100%;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+#profile_settings_profile_save_changes_failed_message {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3vmin;
+  color: rgb(170, 10, 10);
+}
+
+#profile_settings_profile_save_changes_success_message {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3vmin;
+  color: rgb(15, 170, 10);
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  #profile_settings_profile_save_changes_button_body {
+    width: 16vmin;
+  }
+
+  #profile_settings_profile_save_changes_loader_body {
+    height: 2.5vmin;
+    width: 2.5vmin;
+  }
+
+  #profile_settings_profile_save_changes_button {
+    height: 4vmin;
+    width: 10vmin;
+    margin: 0 0.5vmin 0 3vmin;
+    border-radius: 2vmin;
+    font-size: 2vmin;
+  }
+
+  #profile_settings_profile_save_changes_loader {
+    border: 0.5vmin solid #f3f3f3;
+    border-top: 0.5vmin solid rgb(170, 10, 10);
+  }
+}

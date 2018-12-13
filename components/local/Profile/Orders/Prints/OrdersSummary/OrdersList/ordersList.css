@@ -1,0 +1,107 @@
+#profile_orders_prints_orders_list_body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-height: 60vh;
+  width: 90vw;
+  border: solid;
+  border-width: 0.3vmin;
+  border-color: rgba(150, 150, 150, 0.8);
+  border-radius: 1vmin;
+  box-shadow: 0vmin 0vmin 2vmin 0vmin rgb(200, 200, 200);
+}
+
+.profile_orders_prints_orders_list_table {
+  border-collapse: collapse;
+  border-spacing: none;
+  width: 100%;
+}
+
+#profile_orders_prints_orders_list_table_header_main_body {
+  width: 100%;
+}
+
+#profile_orders_prints_orders_list_table_header_body {
+  width: 100%;
+}
+
+.profile_orders_prints_orders_list_table_row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-width: 0.5vmin;
+  border-color: rgb(180, 180, 180);
+  border-spacing: none;
+}
+
+.profile_orders_prints_orders_list_table_content {
+  height: 10vmin;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: solid;
+  border-width: 0.3vmin;
+  border-color: rgb(220, 220, 220);
+  border-spacing: none;
+}
+
+.profile_orders_prints_orders_list_table_header {
+  font-family: "Chivo", sans-serif;
+  font-size: 3.2vmin;
+  font-weight: bold;
+}
+
+.profile_orders_prints_orders_list_print_setting_content {
+  width: 50%;
+}
+
+#profile_orders_prints_orders_list_table_content_main_body {
+  min-height: 20vmin;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: overlay;
+}
+
+.profile_orders_prints_orders_list_table_content_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 3vmin;
+}
+
+@media only screen and (min-width: 600px) {
+  #profile_orders_prints_orders_list_body {
+    max-height: 60vh;
+    width: 90vw;
+    border-width: 0.15vmin;
+    border-radius: 0.7vmin;
+    box-shadow: 0vmin 0vmin 1.5vmin 0vmin rgb(200, 200, 200);
+  }
+
+  .profile_orders_prints_orders_list_table_row {
+    border-width: 0.25vmin;
+  }
+
+  .profile_orders_prints_orders_list_table_content {
+    height: 6vmin;
+    border-width: 0.15vmin;
+  }
+
+  .profile_orders_prints_orders_list_table_header {
+    font-size: 1.8vmin;
+  }
+
+  #profile_orders_prints_orders_list_table_content_main_body {
+    min-height: 12vmin;
+  }
+
+  .profile_orders_prints_orders_list_table_content_text {
+    font-size: 1.8vmin;
+  }
+}

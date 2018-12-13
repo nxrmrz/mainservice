@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Zealand Based 3D Printing Service | Delta 3D Printing</title>
+    <meta
+      name="description"
+      content="Delta 3D Printing provides cheap and high-quality 3D printing services and products for people across New Zealand. Benefits and discounts for students and returning customers. Partner With Us! Personalised services and discounts for businesses and organisations partnered with us."
+    />
+    <!--
+      ============================================== EXTERNAL ==============================================
+    -->
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Chivo|Open+Sans|Raleway|Russo+One"
+      rel="stylesheet"
+    />
+    <!-- Jquery -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.js"></script>
+    <!-- Maps API -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRepNytrdQFVYOgxLQP6DrHO6Ovkk8Ocg&libraries=places"
+      async
+      defer
+    ></script>
+    <!-- Moment -->
+    <script src="https://gitcdn.link/repo/moment/moment/develop/moment.js"></script>
+    <!-- ============================= GLOBAL ============================== -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/global.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/global.css"
+    />
+    <!-- ------------------------------ TOOLS ------------------------------ -->
+    <!-- PRICE: Printing Service -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Tools/Price/printingService.js"></script>
+    <!-- DATABASE REQUEST: File -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Tools/DatabaseRequest/file.js"></script>
+    <!-- DATABASE REQUEST: Printing Service -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Tools/DatabaseRequest/printingService.js"></script>
+    <!-- DATE -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Tools/date.js"></script>
+    <!-- DISPLAY MESSAGE -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Tools/displayMessage.js"></script>
+    <!-- NAMING -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Tools/naming.js"></script>
+    <!--
+      --------------------------------------------- NAVIGATION ---------------------------------------------
+    -->
+    <!-- Navigation: Toolbar -->
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/Toolbar/toolbar.css"
+    />
+    <!-- Navigation: Navigation Drawer -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/NavigationDrawer/navigationDrawer.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/NavigationDrawer/navigationDrawer.css"
+    />
+    <!-- Navigation: Profile Drawer -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/profileDrawer.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/profileDrawer.css"
+    />
+    <!-- Navigation: Profile Drawer: Visitor -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/Visitor/visitor.js"></script>
+    <!-- Navigation: Profile Drawer: User -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/User/user.js"></script>
+    <!-- Navigation: Footer -->
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/Footer/footer.css"
+    />
+    <!--
+      ------------------------------------------- USER INTERFACE -------------------------------------------
+    -->
+    <!-- User Interface: Modal -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Modal/modal.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Modal/modal.css"
+    />
+    <!-- User Interface: Backdrop -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Backdrop/backdrop.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Backdrop/backdrop.css"
+    />
+    <!-- User Interface: Loader -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Loader/loader.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Loader/loader.css"
+    />
+    <!--
+      ---------------------------------------------- ACCOUNT -----------------------------------------------
+    -->
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/account.css"
+    />
+    <!-- Account: Login -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Login/login.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Login/login.css"
+    />
+    <!-- Account: Profile -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Signup/signup.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Signup/signup.css"
+    />
+    <!--
+      ---------------------------------------- ADDRESS AUTOCOMPLETE ----------------------------------------
+    -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/AddressAutocomplete/addressAutocomplete.js"></script>
+    <!--
+      --------------------------------------------- VALIDATION ---------------------------------------------
+    -->
+    <!-- Validation: Login Status -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Validation/LoginStatus/loginStatus.js"></script>
+    <!--
+      --------------------------------------------- NEW ORDER ----------------------------------------------
+    -->
+    <!-- New Order: Order New Print -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/orderNewPrint.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/orderNewPrint.css"
+    />
+    <!-- New Order: Order New Print: Parts -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/parts.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/parts.css"
+    />
+    <!-- New Order: Order New Print: Parts: Part -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/part.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/part.css"
+    />
+    <!-- New Order: Order New Print: Parts: Part: Upload Model -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/UploadModel/uploadModel.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/UploadModel/uploadModel.css"
+    />
+    <!-- New Order: Order New Print: Parts: Part: Select Material -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/selectMaterial.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/selectMaterial.css"
+    />
+    <!--
+      New Order: Order New Print: Parts: Part: Select Material: Material Group
+    -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/MaterialGroup/materialGroup.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/MaterialGroup/materialGroup.css"
+    />
+    <!-- New Order: Order New Print: Parts: Part: Select Material: Process -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Process/process.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Process/process.css"
+    />
+    <!-- New Order: Order New Print: Parts: Part: Select Material: Material -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Material/material.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Material/material.css"
+    />
+    <!-- New Order: Order New Print: Parts: Part: Select Material: Plastic -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Plastic/plastic.js"></script>
+    <!--
+      New Order: Order New Print: Parts: Part: Select Material: Plastic: FDM
+    -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Plastic/FDM/fdm.js"></script>
+    <!--
+      New Order: Order New Print: Parts: Part: Select Material: Plastic: FDM: PLA
+    -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Plastic/FDM/PLA/pla.js"></script>
+    <!--
+      New Order: Order New Print: Parts: Part: Select Material: Plastic: FDM: ABS
+    -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Plastic/FDM/ABS/abs.js"></script>
+    <!--
+      New Order: Order New Print: Parts: Part: Select Material: Plastic: FDM: PETG
+    -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Plastic/FDM/PETG/petg.js"></script>
+    <!--
+      New Order: Order New Print: Parts: Part: Select Material: Plastic: FDM: FLEX
+    -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Plastic/FDM/FLEX/flex.js"></script>
+    <!--
+      New Order: Order New Print: Parts: Part: Select Material: Plastic: SLA
+    -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Plastic/SLA/sla.js"></script>
+    <!-- New Order: Order New Print: Parts: Part: Select Material: Metal -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Metal/metal.js"></script>
+    <!-- New Order: Order New Print: Parts: Part: Choose Options -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/ChooseOptions/chooseOptions.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/ChooseOptions/chooseOptions.css"
+    />
+    <!--
+      New Order: Order New Print: Parts: Part: Choose Options: Material Options
+    -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/Parts/Part/ChooseOptions/MaterialOptions/materialOptions.js"></script>
+    <!-- New Order: Order New Print: Global Options -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/GlobalOptions/globalOptions.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/GlobalOptions/globalOptions.css"
+    />
+    <!-- New Order: Order New Print: Submit New Print Order -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/SubmitNewPrintOrder/submitNewPrintOrder.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/NewOrder/OrderNewPrint/SubmitNewPrintOrder/submitNewPrintOrder.css"
+    />
+    <!--
+      ------------------------------------------- ORDER DETAILS --------------------------------------------
+    -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/orderDetails.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/orderDetails.css"
+    />
+    <!-- Parts and Pricing -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/PartsAndPricing/partAndPricing.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/PartsAndPricing/partAndPricing.css"
+    />
+    <!-- Comments -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/Comments/comments.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/Comments/comments.css"
+    />
+    <!-- Request Refund -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/RequestRefund/requestRefund.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/RequestRefund/requestRefund.css"
+    />
+    <!-- Order Details: Awaiting Quote -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/AwaitingQuote/awaitingQuote.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/AwaitingQuote/awaitingQuote.css"
+    />
+    <!-- Order Details: Awaiting Payment -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/AwaitingPayment/awaitingPayment.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/AwaitingPayment/awaitingPayment.css"
+    />
+    <!-- Order Details: Awaiting Payment Confirmation -->
+
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/AwaitingPaymentConfirmation/awaitingPaymentConfirmation.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/AwaitingPaymentConfirmation/awaitingPaymentConfirmation.css"
+    />
+    <!-- Order Details: Printing Order -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/PrintingOrder/printingOrder.js"></script>
+    <!-- Order Details: Ready for Pickup -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/ReadyForPickup/readyForPickup.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/ReadyForPickup/readyForPickup.css"
+    />
+    <!-- Order Details: Order Picked Up -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/OrderPickedUp/orderPickedUp.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/OrderPickedUp/orderPickedUp.css"
+    />
+    <!-- Order Details: Ready for Shipping -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/ReadyForShipping/readyForShipping.js"></script>
+    <!-- Order Details: Order Shipped -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/OrderShipped/orderShipped.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/OrderShipped/orderShipped.css"
+    />
+    <!-- Order Details: Requesting Refund -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/RequestingRefund/requestingRefund.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/RequestingRefund/requestingRefund.css"
+    />
+    <!-- Order Details: Refund Declined -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/RefundDeclined/refundDeclined.js"></script>
+    <!-- Order Details: Refund Approved -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/RefundApproved/refundApproved.js"></script>
+    <!-- Order Details: Refund Processed -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/OrderDetails/RefundProcessed/refundProcessed.js"></script>
+    <!--
+      =========================================== LOCAL: PROFILE ===========================================
+    -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/profile.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/profile.css"
+    />
+    <!-- ------------------------ PROFIE: DASHBOARD ------------------------ -->
+
+    <!-- ------------------------- PROFILE: ORDERS ------------------------- -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Orders/orders.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Orders/orders.css"
+    />
+    <!-- Profile: Orders: Prints -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Orders/Prints/prints.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Orders/Prints/prints.css"
+    />
+    <!-- Profile: Orders: Prints: Buttons -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Orders/Prints/Buttons/buttons.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Orders/Prints/Buttons/buttons.css"
+    />
+    <!-- Profile: Orders: Print: Order Summary -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Orders/Prints/OrdersSummary/ordersSummary.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Orders/Prints/OrdersSummary/ordersSummary.css"
+    />
+    <!-- Profile: Orders: Print: Order Summary: Order List -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Orders/Prints/OrdersSummary/OrdersList/ordersList.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Orders/Prints/OrdersSummary/OrdersList/ordersList.css"
+    />
+    <!-- Profile: Orders: Print: Order Summary: Order Filter -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Orders/Prints/OrdersSummary/OrdersFilter/ordersFilter.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Orders/Prints/OrdersSummary/OrdersFilter/ordersFilter.css"
+    />
+    <!-- Profile: Orders: Marketplace -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Orders/Marketplace/marketplace.js"></script>
+    <!-- Profile: Settings -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Settings/settings.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Settings/settings.css"
+    />
+    <!-- Profile: Settings: Profile -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Settings/Profile/profile.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Settings/Profile/profile.css"
+    />
+    <!-- Profile: Settings: Profile: Basic Information -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Settings/Profile/BasicInformation/basicInformation.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Settings/Profile/BasicInformation/basicInformation.css"
+    />
+    <!-- Profile: Settings: Profile: Address -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Settings/Profile/Address/address.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Settings/Profile/Address/address.css"
+    />
+    <!-- Profile: Settings: Profile: Update Profile -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Settings/Profile/UpdateProfile/updateProfile.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Profile/Settings/Profile/UpdateProfile/updateProfile.css"
+    />
+  </head>
+
+  <body>
+    <!-- ============================ TOOLBAR ============================= -->
+
+    <div id="toolbar">
+      <div id="navigation_drawer_toggle">
+        <div
+          id="navigation_drawer_toggle_bar_1"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+        <div
+          id="navigation_drawer_toggle_bar_2"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+        <div
+          id="navigation_drawer_toggle_bar_3"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+      </div>
+      <div id="homepage_logo_container"></div>
+      <div id="profile_drawer_toggle">
+        <img
+          src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/assets/profile_icon.png"
+          alt="profile_icon"
+          id="profile_drawer_icon"
+        />
+      </div>
+    </div>
+
+    <!-- ======================= NAVIGATION DRAWER ======================== -->
+
+    <div id="navigation_drawer" class="navigation_drawer_close">
+      <a href="/" class="navigation_link">Home</a>
+      <a href="/services" class="navigation_link">Services</a>
+      <a href="/pricing" class="navigation_link">Pricing</a>
+      <a href="/partnership" class="navigation_link">Partnership</a>
+    </div>
+
+    <!-- ========================= PROFILE DRAWER ========================= -->
+
+    <div id="profile_drawer" class="profile_drawer_close"></div>
+
+    <!-- =========================== MAIN BODY ============================ -->
+
+    <div id="profile_body">
+      <div id="profile_navigation_tabs">
+        <div id="profile_dashboard_tab" class="profile_navigation_tab">
+          <div
+            id="profile_dashboard_tab_text"
+            class="profile_navigation_tab_text"
+          >
+            Dashboard
+          </div>
+        </div>
+        <div id="profile_orders_tab" class="profile_navigation_tab">
+          <div id="profile_orders_tab_text" class="profile_navigation_tab_text">
+            Orders
+          </div>
+        </div>
+        <div id="profile_settings_tab" class="profile_navigation_tab">
+          <div
+            id="profile_settings_tab_text"
+            class="profile_navigation_tab_text"
+          >
+            Settings
+          </div>
+        </div>
+      </div>
+      <div id="profile_contents_body"></div>
+    </div>
+
+    <!-- ============================= FOOTER ============================= -->
+
+    <div id="footer">
+      <div class="footer_divider">
+        <p class="footer_divider_header">Services</p>
+        <div
+          id="footer_3d_printing_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/3d-printing"
+            id="footer_3d_printing"
+            class="footer_content"
+            >3D Printing</a
+          >
+        </div>
+        <div
+          id="footer_3d_modelling_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/3d-modelling"
+            id="footer_3d_modelling"
+            class="footer_content"
+            >3D Modelling</a
+          >
+        </div>
+        <div
+          id="footer_marketplace_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/marketplace"
+            id="footer_marketplace"
+            class="footer_content"
+            >Marketplace</a
+          >
+        </div>
+      </div>
+      <div class="footer_divider">
+        <p class="footer_divider_header">Resources</p>
+      </div>
+      <div class="footer_divider">
+        <p class="footer_divider_header">Delta 3D Printing</p>
+        <div
+          id="footer_about_us_body"
+          class="footer_content_body footer_about_us_content_body"
+        >
+          <a href="/about" id="footer_about_us" class="footer_content">About</a>
+        </div>
+        <div
+          id="footer_contact_us_body"
+          class="footer_content_body footer_about_us_content_body"
+        >
+          <a href="/contact-us" id="footer_contact_us" class="footer_content"
+            >Contact Us</a
+          >
+        </div>
+        <div
+          id="footer_partnership_body"
+          class="footer_content_body footer_about_content_body"
+        >
+          <a href="/partnership" id="footer_partnership" class="footer_content"
+            >Partnership Program</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  /* ======================================= INITIALISATION ======================================= */
+
+  const profileDashboardInit = () => {
+    profileDashboardStructure();
+  };
+
+  /* ========================================= STRUCTURE ========================================== */
+
+  const profileDashboardStructure = () => {
+    /* ------------------------------------- CREATE THE HTML -------------------------------------- */
+    const html =
+      "<div id='profile_dashboard_contents_body' class='profile_content_body'></div>";
+    /* ------------------------------------- INSERT THE HTML -------------------------------------- */
+    document.querySelector("#profile_contents_body").innerHTML = html;
+  };
+
+  /* ========================================== HEADING =========================================== */
+
+  const profileDashboardHeading = () => {};
+
+  /* ============================================================================================== */
+</script>
+
+<script>
+  /* ============================= GET LOGGED IN USER PROFILE DETAILS ============================= */
+
+  const getMyProfileDetails = promise => {
+    if (promise != false) {
+      /* ------------------------------- RUN FUNCTION AS A PROMISE -------------------------------- */
+      return new Promise((resolve, reject) => {
+        $.ajax({
+          type: "POST",
+          url: "/profile/profile-details",
+          success: data => {
+            if (data.status === "failed") {
+              reject(data.error);
+            } else if (data.status === "success") {
+              resolve(data.profileDetails);
+            }
+          }
+        });
+      });
+    } else {
+      /* ------------------------------- RUN FUNCTION SYNCHRONOUSLY ------------------------------- */
+      let retrievedData;
+      $.ajax({
+        type: "POST",
+        async: false,
+        url: "/profile/profile-details",
+        success: data => {
+          retrievedData = data;
+        }
+      });
+      return retrievedData;
+    }
+  };
+  /* ============================================================================================== */
+</script>

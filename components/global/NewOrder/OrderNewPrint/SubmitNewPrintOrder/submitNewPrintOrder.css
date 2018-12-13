@@ -1,0 +1,41 @@
+#order_new_print_success_modal_body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.order_new_print_success_message {
+  width: 100%;
+  padding: 4vmin;
+}
+
+.order_new_print_success_message_text {
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 4vmin;
+  text-align: center;
+  color: rgb(60, 60, 60);
+}
+
+#order_new_print_success_message_1_text {
+  font-family: "Russo One", sans-serif;
+  font-size: 5vmin;
+  color: rgb(170, 10, 10);
+}
+
+@media only screen and (min-width: 600px) {
+  .order_new_print_success_message {
+    padding: 2vmin;
+  }
+
+  .order_new_print_success_message_text {
+    font-size: 2vmin;
+  }
+
+  #order_new_print_success_message_1_text {
+    font-size: 2.5vmin;
+  }
+}

@@ -1,0 +1,437 @@
+.order_details_order_options_header {
+  height: 10vmin;
+  width: 100%;
+  padding: 1vmin 0 0 0;
+  font-family: "Russo One", sans-serif;
+  color: rgb(170, 10, 10);
+  font-size: 5vmin;
+}
+
+.order_details_part_details_body {
+  width: 100%;
+  display: flex;
+  background-color: rgb(255, 250, 250);
+}
+
+.order_details_part_details_file_name_body {
+  height: 14vmin;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.2vmin solid rgb(235, 235, 235);
+  padding: 2vmin 1vmin 2vmin 1vmin;
+}
+
+.order_details_part_details_file_name_content {
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  font-weight: 700;
+  color: rgb(170, 10, 10);
+}
+
+.order_details_part_details_quantity_body {
+  height: 14vmin;
+  width: 22.5%;
+  display: flex;
+  flex-direction: column;
+  border: 0.2vmin solid rgb(235, 235, 235);
+  padding: 2vmin 1vmin 2vmin 1vmin;
+}
+
+.order_details_part_details_price_body {
+  height: 14vmin;
+  width: 22.5%;
+  display: flex;
+  flex-direction: column;
+  border: 0.2vmin solid rgb(235, 235, 235);
+  padding: 2vmin 1vmin 2vmin 1vmin;
+}
+
+.order_details_part_details_quantity_header {
+  height: 6vmin;
+  display: flex;
+  align-items: flex-start;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  color: rgb(100, 100, 100);
+}
+
+.order_details_part_details_quantity_content {
+  height: 5vmin;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  color: rgb(50, 50, 50);
+}
+
+.order_details_part_details_price_header {
+  height: 5vmin;
+  display: flex;
+  align-items: flex-start;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  color: rgb(100, 100, 100);
+}
+
+.order_details_part_details_price_content {
+  height: 5vmin;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  color: rgb(50, 50, 50);
+}
+
+/* ------------------------------- SUB-TOTAL/TOTAL -------------------------------- */
+
+.order_details_order_total_body {
+  width: 77.5%;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-width: 0.2vmin;
+  border-color: rgb(235, 235, 235);
+  padding: 0 4vmin;
+  background-color: rgb(255, 255, 255);
+}
+
+.order_details_order_total_price_body {
+  width: 22.5%;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-width: 0.2vmin;
+  border-color: rgb(235, 235, 235);
+  padding: 0 1vmin;
+  background-color: rgb(255, 255, 255);
+}
+
+.order_details_order_total_header {
+  height: 7vmin;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 0 0.4vmin 0;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  font-weight: bold;
+  color: rgb(170, 10, 10);
+}
+
+.order_details_order_total_price_header {
+  height: 7vmin;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 0 0.4vmin 0;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  font-weight: bold;
+  color: rgb(170, 10, 10);
+}
+
+.order_details_order_total_content {
+  height: 7vmin;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0.4vmin 0 0 0;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  color: rgb(50, 50, 50);
+}
+
+.order_details_order_total_price_content {
+  height: 7vmin;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0.4vmin 0 0 0;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  color: rgb(50, 50, 50);
+}
+
+/* ----------------------------- PARTS PRICING HEADER ----------------------------- */
+
+.order_details_pricing_type_body {
+  width: 77.5%;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-width: 0.2vmin;
+  border-color: rgb(235, 235, 235);
+  padding: 0 4vmin;
+}
+
+.order_details_pricing_header {
+  height: 7vmin;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 0 0.4vmin 0;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  color: rgb(100, 100, 100);
+}
+
+.order_details_pricing_content {
+  height: 7vmin;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0.4vmin 0 0 0;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  color: rgb(50, 50, 50);
+}
+
+.order_details_pricing_price_body {
+  width: 22.5%;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-width: 0.2vmin;
+  border-color: rgb(235, 235, 235);
+  padding: 0 1vmin;
+}
+
+.order_details_pricing_header_body {
+  height: 10vmin;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-style: solid;
+  border-width: 0.2vmin;
+  border-color: rgb(235, 235, 235);
+  padding: 0 6vmin;
+}
+
+.order_details_pricing_header_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  font-weight: bold;
+  color: rgb(170, 10, 10);
+  letter-spacing: 0.2vmin;
+}
+
+/* ----------------------------------- DISCOUNT ----------------------------------- */
+
+.order_details_pricing_discount_name_body {
+  width: 55%;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-width: 0.2vmin;
+  border-color: rgb(235, 235, 235);
+  padding: 0 4vmin;
+}
+
+.order_details_pricing_discount_percent_body {
+  width: 22.5%;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-width: 0.2vmin;
+  border-color: rgb(235, 235, 235);
+  padding: 0 1vmin;
+}
+
+.order_details_pricing_discount_value_body {
+  width: 22.5%;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-width: 0.2vmin;
+  border-color: rgb(235, 235, 235);
+  padding: 0 1vmin;
+}
+
+.order_details_pricing_discount_header {
+  height: 7vmin;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 0 0.4vmin 0;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  color: rgb(100, 100, 100);
+}
+
+.order_details_pricing_discount_content {
+  height: 7vmin;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0.4vmin 0 0 0;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  color: rgb(50, 50, 50);
+}
+
+@media only screen and (min-width: 600px) {
+  .order_details_order_options_header {
+    height: 5vmin;
+    padding: 0.5vmin 0 0 0;
+    font-size: 2.5vmin;
+  }
+
+  .order_details_part_details_file_name_body {
+    height: 7vmin;
+    width: 55%;
+    border: 0.1vmin solid rgb(235, 235, 235);
+    padding: 1vmin 0.5vmin 1vmin 0.5vmin;
+  }
+
+  .order_details_part_details_file_name_content {
+    font-size: 1.75vmin;
+  }
+
+  .order_details_part_details_quantity_body {
+    height: 7vmin;
+    width: 22.5%;
+    border: 0.1vmin solid rgb(235, 235, 235);
+    padding: 1vmin 0.5vmin 1vmin 0.5vmin;
+  }
+
+  .order_details_part_details_price_body {
+    height: 7vmin;
+    width: 22.5%;
+    border: 0.1vmin solid rgb(235, 235, 235);
+    padding: 1vmin 0.5vmin 1vmin 0.5vmin;
+  }
+
+  .order_details_part_details_quantity_header {
+    height: 3vmin;
+    font-size: 1.75vmin;
+  }
+
+  .order_details_part_details_quantity_content {
+    height: 2.5vmin;
+    font-size: 1.75vmin;
+  }
+
+  .order_details_part_details_price_header {
+    height: 2.5vmin;
+    font-size: 1.75vmin;
+  }
+
+  .order_details_part_details_price_content {
+    height: 2.5vmin;
+    font-size: 1.75vmin;
+  }
+
+  /* ------------------------------- SUB-TOTAL/TOTAL -------------------------------- */
+
+  .order_details_order_total_body {
+    border-width: 0.1vmin;
+    padding: 0 2vmin;
+  }
+
+  .order_details_order_total_price_body {
+    border-width: 0.1vmin;
+    padding: 0 0.5vmin;
+  }
+
+  .order_details_order_total_header {
+    height: 3.5vmin;
+    padding: 0 0 0.2vmin 0;
+    font-size: 1.75vmin;
+  }
+
+  .order_details_order_total_price_header {
+    height: 3.5vmin;
+    padding: 0 0 0.2vmin 0;
+    font-size: 1.75vmin;
+  }
+
+  .order_details_order_total_content {
+    height: 3.5vmin;
+    padding: 0.2vmin 0 0 0;
+    font-size: 1.75vmin;
+  }
+
+  .order_details_order_total_price_content {
+    height: 3.5vmin;
+    padding: 0.2vmin 0 0 0;
+    font-size: 1.75vmin;
+  }
+
+  /* ----------------------------- PARTS PRICING HEADER ----------------------------- */
+
+  .order_details_pricing_type_body {
+    border-width: 0.1vmin;
+    padding: 0 2vmin;
+  }
+
+  .order_details_pricing_header {
+    height: 3.5vmin;
+    padding: 0 0 0.2vmin 0;
+    font-size: 1.75vmin;
+  }
+
+  .order_details_pricing_content {
+    height: 3.5vmin;
+    padding: 0.2vmin 0 0 0;
+    font-size: 1.75vmin;
+  }
+
+  .order_details_pricing_price_body {
+    border-width: 0.1vmin;
+    padding: 0 0.5vmin;
+  }
+
+  .order_details_pricing_header_body {
+    height: 5vmin;
+    border-width: 0.1vmin;
+    padding: 0 3vmin;
+  }
+
+  .order_details_pricing_header_text {
+    font-size: 2vmin;
+    letter-spacing: 0.1vmin;
+  }
+
+  /* ----------------------------------- DISCOUNT ----------------------------------- */
+
+  .order_details_pricing_discount_name_body {
+    border-width: 0.1vmin;
+    padding: 0 2vmin;
+  }
+
+  .order_details_pricing_discount_percent_body {
+    border-width: 0.1vmin;
+    padding: 0 0.5vmin;
+  }
+
+  .order_details_pricing_discount_value_body {
+    border-width: 0.1vmin;
+    padding: 0 0.5vmin;
+  }
+
+  .order_details_pricing_discount_header {
+    height: 3.5vmin;
+    padding: 0 0 0.2vmin 0;
+    font-size: 1.75vmin;
+  }
+
+  .order_details_pricing_discount_content {
+    height: 3.5vmin;
+    padding: 0.2vmin 0 0 0;
+    font-size: 1.75vmin;
+  }
+}

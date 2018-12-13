@@ -1,0 +1,245 @@
+.order_details_main_body {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: rgb(245, 245, 245);
+}
+
+.order_details_body {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: rgb(255, 230, 230);
+  border-radius: 1vmin;
+  padding: 2vmin;
+  margin: 2vmin 0 0 0;
+}
+
+.order_details_footer_buttons_body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.order_details_footer_buttons_body_close {
+  height: 0;
+  opacity: 0;
+  z-index: 0;
+}
+
+.order_details_footer_buttons_body_open {
+  height: 14vmin;
+  opacity: 1;
+  z-index: 1;
+}
+
+.order_details_footer_button_body {
+  height: 14vmin;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order_details_footer_button {
+  height: 10vmin;
+  width: 20vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 75, 90);
+  border-radius: 2vmin;
+  box-shadow: 0 1vmin 1.5vmin 0 rgb(180, 180, 180);
+}
+
+.order_details_footer_button:hover {
+  background-color: rgb(255, 100, 115);
+}
+
+.order_details_footer_button:active {
+  background-color: rgb(230, 50, 65);
+  box-shadow: 0 0 0 rgb(180, 180, 180);
+}
+
+.order_details_footer_button_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  font-weight: 800;
+  text-align: center;
+  color: rgb(245, 245, 245);
+}
+
+.order_status_description_body {
+  margin: 2vmin 0 0 0;
+}
+
+.order_details_comments_body {
+  margin: 2vmin 0 2vmin 0;
+}
+
+#order_status_tabs_body {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 1vmin;
+  background-color: rgb(255, 250, 250);
+}
+
+.order_status_tab_body {
+  height: 14vmin;
+  width: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2.8vmin 0 2.8vmin;
+  border-radius: 1vmin;
+}
+
+.order_status_tab_text {
+  font-family: "Chivo", sans-serif;
+  text-align: center;
+  font-size: 3.4vmin;
+  color: rgb(50, 50, 50);
+}
+
+.order_status_tab_body_selected {
+  background-color: rgb(200, 40, 40);
+}
+
+.order_status_tab_text_selected {
+  color: rgb(245, 245, 245);
+  font-weight: 700;
+}
+
+#order_status_description_heading_body {
+  display: flex;
+  align-items: center;
+  padding: 5vmin 0 5vmin 0;
+}
+
+#order_status_description_heading_text {
+  font-family: "Russo One", sans-serif;
+  font-size: 5vmin;
+  text-align: center;
+  color: rgb(170, 10, 10);
+}
+
+.order_status_description_details_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 2vmin 0 2vmin;
+  margin: 1vmin 0 1vmin 0;
+}
+
+.order_status_description_details_text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.5vmin;
+  text-align: justify;
+  color: rgb(80, 80, 80);
+}
+
+.order_status_description_sub_details_body {
+  padding: 0 6vmin;
+}
+
+/* ATTACHMENT */
+
+.order_details_attachments_header {
+  height: 10vmin;
+  width: 100%;
+  padding: 1vmin 0 0 0;
+  font-family: "Russo One", sans-serif;
+  color: rgb(170, 10, 10);
+  font-size: 5vmin;
+}
+
+@media only screen and (min-width: 600px) {
+  .order_details_body {
+    border-radius: 0.5vmin;
+    padding: 1vmin;
+    margin: 1vmin 0 0 0;
+  }
+
+  .order_details_footer_buttons_body_open {
+    height: 7vmin;
+  }
+
+  .order_details_footer_button_body {
+    height: 7vmin;
+  }
+
+  .request_refund_footer_buttons_body_open {
+    height: 22vmin;
+  }
+
+  .order_details_footer_button {
+    height: 5vmin;
+    width: 10vmin;
+    border-radius: 1vmin;
+    box-shadow: 0 0.5vmin 0.75vmin 0 rgb(180, 180, 180);
+  }
+
+  .order_details_footer_button_text {
+    font-size: 2vmin;
+  }
+
+  .order_status_description_body {
+    margin: 1vmin 0 0 0;
+  }
+
+  .order_details_comments_body {
+    margin: 1vmin 0 1vmin 0;
+  }
+
+  #order_status_tabs_body {
+    border-radius: 0.5vmin;
+  }
+
+  .order_status_tab_body {
+    height: 7vmin;
+    width: calc(100% / 4);
+    padding: 0 1.4vmin 0 1.4vmin;
+    border-radius: 0.5vmin;
+  }
+
+  .order_status_tab_text {
+    font-size: 1.7vmin;
+  }
+
+  #order_status_description_heading_body {
+    padding: 2.5vmin 0 2.5vmin 0;
+  }
+
+  #order_status_description_heading_text {
+    font-size: 2.5vmin;
+  }
+
+  .order_status_description_details_body {
+    padding: 0 1vmin 0 1vmin;
+    margin: 0.5vmin 0 0.5vmin 0;
+  }
+
+  .order_status_description_details_text {
+    font-size: 1.75vmin;
+  }
+
+  .order_status_description_sub_details_body {
+    padding: 0 3vmin;
+  }
+
+  /* ATTACHMENT */
+
+  .order_details_attachments_header {
+    height: 5vmin;
+    padding: 0.5vmin 0 0 0;
+    font-size: 2.5vmin;
+  }
+}

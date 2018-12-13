@@ -1,0 +1,337 @@
+/* ========================================= MOBILE CSS ========================================= */
+
+/* ------------------------------------------ DISCOUNT ------------------------------------------ */
+
+#admin_profile_orders_prints_discount_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --------------------------------- ADD DISCOUNT: INPUT FIELD ---------------------------------- */
+
+#admin_profile_orders_prints_discount_add_discount_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 4vmin;
+}
+
+.admin_profile_orders_prints_discount_add_discount_input_field_body {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.admin_profile_orders_prints_discount_add_discount_date_input_field_body {
+  width: 100%;
+  padding: 0 10vmin;
+}
+
+.admin_profile_orders_prints_discount_add_discount_input_field_header_body {
+  width: 100%;
+  padding: 1vmin 5vmin;
+}
+
+.admin_profile_orders_prints_discount_add_discount_input_field_header_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 2.6vmin;
+  font-weight: bold;
+  color: rgb(60, 60, 60);
+}
+
+.admin_profile_orders_prints_discount_add_discount_input_body {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1vmin 2vmin;
+}
+
+.admin_profile_orders_prints_discount_add_discount_input_text {
+  height: 6vmin;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 2vmin;
+  border-style: solid;
+  border-radius: 1vmin;
+  border-width: 0.2vmin;
+  border-color: rgb(60, 60, 60);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3vmin;
+  color: rgb(60, 60, 60);
+}
+
+.admin_profile_orders_prints_discount_add_discount_input_select {
+  height: 6vmin;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 2vmin;
+  border-style: solid;
+  border-radius: 1vmin;
+  border-width: 0.2vmin;
+  border-color: rgb(60, 60, 60);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3vmin;
+  color: rgb(60, 60, 60);
+}
+
+.admin_profile_orders_prints_discount_discount_date_input_select {
+  width: 20%;
+}
+
+.admin_profile_orders_prints_discount_discount_month_input_select {
+  width: 50%;
+}
+
+.admin_profile_orders_prints_discount_discount_year_input_select {
+  width: 25%;
+}
+
+/* ------------------------------------ ADD DISCOUNT: BUTTON ------------------------------------ */
+
+#admin_profile_orders_prints_discount_add_discount_button_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2vmin 0;
+}
+
+#admin_profile_orders_prints_discount_add_discount_button {
+  height: 8vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 75, 90);
+  padding: 0 4vmin;
+  border-radius: 4vmin;
+  box-shadow: 0 0.5vmin 1vmin 0 rgb(180, 180, 180);
+  z-index: 1;
+}
+
+#admin_profile_orders_prints_discount_add_discount_button:hover {
+  background-color: rgb(255, 100, 115);
+}
+
+#admin_profile_orders_prints_discount_add_discount_button:active {
+  background-color: rgb(230, 50, 65);
+  box-shadow: 0 0 0 rgb(180, 180, 180);
+}
+
+#admin_profile_orders_prints_discount_add_discount_button_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 3.4vmin;
+  color: rgb(245, 245, 245);
+}
+
+/* --------------------------------------- DISCOUNT LIST ---------------------------------------- */
+
+#admin_profile_orders_prints_discount_discount_list_body {
+  width: 90%;
+  max-height: 100vmin;
+  box-shadow: 0vmin 0vmin 2vmin 0vmin rgb(200, 200, 200);
+  overflow-y: overlay;
+}
+
+.admin_profile_orders_prints_discount_discount_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border: solid;
+  border-width: 0.5vmin;
+  border-color: rgb(170, 10, 10);
+}
+
+.admin_profile_orders_prints_discount_discount_field_body {
+  width: 100%;
+  display: flex;
+}
+
+.admin_profile_orders_prints_discount_discount_field_header_body {
+  height: 10vmin;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  padding: 0 3vmin;
+  border: solid;
+  border-width: 0.3vmin;
+  border-color: rgb(220, 220, 220);
+}
+
+.admin_profile_orders_prints_discount_discount_input_body {
+  height: 10vmin;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  padding: 0 3vmin;
+  border: solid;
+  border-width: 0.3vmin;
+  border-color: rgb(220, 220, 220);
+}
+
+/* ----------------------------------- DELETE DISCOUNT BUTTON ----------------------------------- */
+
+.admin_profile_orders_prints_discount_delete_discount_button_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2vmin 0;
+  border: solid;
+  border-width: 0.3vmin;
+  border-color: rgb(220, 220, 220);
+}
+
+.admin_profile_orders_prints_discount_delete_discount_button {
+  height: 8vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 75, 90);
+  padding: 0 4vmin;
+  border-radius: 4vmin;
+  box-shadow: 0 0.5vmin 1vmin 0 rgb(180, 180, 180);
+  z-index: 1;
+}
+
+.admin_profile_orders_prints_discount_delete_discount_button:hover {
+  background-color: rgb(255, 100, 115);
+}
+
+.admin_profile_orders_prints_discount_delete_discount_button:active {
+  background-color: rgb(230, 50, 65);
+  box-shadow: 0 0 0 rgb(180, 180, 180);
+}
+
+.admin_profile_orders_prints_discount_delete_discount_button_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 3.4vmin;
+  color: rgb(245, 245, 245);
+}
+
+/* ======================================== DESKTOP CSS ========================================= */
+
+@media only screen and (min-width: 600px) {
+  /* ------------------------------------------ DISCOUNT ------------------------------------------ */
+
+  #admin_profile_orders_prints_discount_body {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* --------------------------------- ADD DISCOUNT: INPUT FIELD ---------------------------------- */
+
+  #admin_profile_orders_prints_discount_add_discount_body {
+    padding: 2vmin;
+  }
+
+  .admin_profile_orders_prints_discount_add_discount_input_field_body {
+    width: 25%;
+  }
+
+  .admin_profile_orders_prints_discount_add_discount_date_input_field_body {
+    width: 50%;
+    padding: 0 5vmin;
+  }
+
+  .admin_profile_orders_prints_discount_add_discount_input_field_header_body {
+    width: 100%;
+    padding: 0.5vmin 2.5vmin;
+  }
+
+  .admin_profile_orders_prints_discount_add_discount_input_field_header_text {
+    font-size: 1.3vmin;
+  }
+
+  .admin_profile_orders_prints_discount_add_discount_input_body {
+    padding: 0.5vmin 1vmin;
+  }
+
+  .admin_profile_orders_prints_discount_add_discount_input_text {
+    height: 3vmin;
+    padding: 0 1vmin;
+    border-radius: 0.5vmin;
+    border-width: 0.1vmin;
+    font-size: 1.5vmin;
+  }
+
+  .admin_profile_orders_prints_discount_add_discount_input_select {
+    height: 3vmin;
+    padding: 0 1vmin;
+    border-radius: 0.5vmin;
+    border-width: 0.1vmin;
+    font-size: 1.5vmin;
+  }
+
+  /* ------------------------------------ ADD DISCOUNT: BUTTON ------------------------------------ */
+
+  #admin_profile_orders_prints_discount_add_discount_button_body {
+    padding: 1vmin 0;
+  }
+
+  #admin_profile_orders_prints_discount_add_discount_button {
+    height: 4vmin;
+    padding: 0 2vmin;
+    border-radius: 2vmin;
+    box-shadow: 0 0.25vmin 0.5vmin 0 rgb(180, 180, 180);
+  }
+
+  #admin_profile_orders_prints_discount_add_discount_button_text {
+    font-size: 1.7vmin;
+  }
+
+  /* --------------------------------------- DISCOUNT LIST ---------------------------------------- */
+
+  #admin_profile_orders_prints_discount_discount_list_body {
+    max-height: 50vmin;
+    box-shadow: 0vmin 0vmin 1vmin 0vmin rgb(200, 200, 200);
+  }
+
+  .admin_profile_orders_prints_discount_discount_body {
+    border-width: 0.25vmin;
+  }
+
+  .admin_profile_orders_prints_discount_discount_field_body {
+    width: 50%;
+  }
+
+  .admin_profile_orders_prints_discount_discount_field_header_body {
+    height: 5vmin;
+    padding: 0 1.5vmin;
+    border-width: 0.15vmin;
+  }
+
+  .admin_profile_orders_prints_discount_discount_input_body {
+    height: 5vmin;
+    padding: 0 1.5vmin;
+    border-width: 0.15vmin;
+  }
+
+  /* ----------------------------------- DELETE DISCOUNT BUTTON ----------------------------------- */
+
+  .admin_profile_orders_prints_discount_delete_discount_button_body {
+    padding: 1vmin 0;
+    border-width: 0.15vmin;
+  }
+
+  .admin_profile_orders_prints_discount_delete_discount_button {
+    height: 4vmin;
+    padding: 0 2vmin;
+    border-radius: 2vmin;
+    box-shadow: 0 0.25vmin 0.5vmin 0 rgb(180, 180, 180);
+  }
+
+  .admin_profile_orders_prints_discount_delete_discount_button_text {
+    font-size: 1.7vmin;
+  }
+}
+
+/* ============================================================================================== */

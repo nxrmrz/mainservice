@@ -1,0 +1,23 @@
+#profile_settings_edit_profile_search_address_input_field {
+  width: 100%;
+}
+
+#profile_settings_edit_profile_search_address_input_body {
+  width: 100%;
+}
+
+#profile_settings_edit_profile_street_number_input {
+  width: 25%;
+}
+
+#profile_settings_edit_profile_route_input {
+  width: 70%;
+}
+
+#profile_settings_edit_profile_locality_input {
+  width: 65%;
+}
+
+#profile_settings_edit_profile_postal_code_input {
+  width: 30%;
+}

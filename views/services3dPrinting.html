@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Zealand Based 3D Printing Service | Delta 3D Printing</title>
+    <meta
+      name="description"
+      content="Delta 3D Printing provides cheap and high-quality 3D printing services and products for people across New Zealand. Benefits and discounts for students and returning customers. Partner With Us! Personalised services and discounts for businesses and organisations partnered with us."
+    />
+    <!-- ============================ EXTERNAL ============================ -->
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Chivo|Open+Sans|Raleway|Russo+One"
+      rel="stylesheet"
+    />
+
+    <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Maps API -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRepNytrdQFVYOgxLQP6DrHO6Ovkk8Ocg&libraries=places"
+      async
+      defer
+    ></script>
+
+    <!-- ============================= GLOBAL ============================= -->
+
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/global.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/global.css"
+    />
+
+    <!-- --------------------------- NAVIGATION --------------------------- -->
+
+    <!-- Toolbar -->
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/Toolbar/toolbar.css"
+    />
+
+    <!-- Navigation Drawer -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/NavigationDrawer/navigationDrawer.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/NavigationDrawer/navigationDrawer.css"
+    />
+
+    <!-- Profile Drawer -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/profileDrawer.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/profileDrawer.css"
+    />
+
+    <!-- Profile Drawer: Visitor -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/Visitor/visitor.js"></script>
+
+    <!-- Profile Drawer: User -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/User/user.js"></script>
+
+    <!-- Footer -->
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/Footer/footer.css"
+    />
+
+    <!-- ------------------------- USER INTERFACE ------------------------- -->
+
+    <!-- Modal -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Modal/modal.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Modal/modal.css"
+    />
+
+    <!-- Backdrop -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Backdrop/backdrop.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Backdrop/backdrop.css"
+    />
+
+    <!-- ---------------------------- ACCOUNT ----------------------------- -->
+
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/account.css"
+    />
+
+    <!-- Login -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Login/login.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Login/login.css"
+    />
+
+    <!-- Signup -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Signup/signup.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Signup/signup.css"
+    />
+
+    <!-- ---------------------- ADDRESS AUTOCOMPLETE ---------------------- -->
+
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/AddressAutocomplete/addressAutocomplete.js"></script>
+
+    <!-- --------------------------- VALIDATION --------------------------- -->
+
+    <!-- Login Status -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Validation/LoginStatus/loginStatus.js"></script>
+
+    <!-- ======================== LOCAL: SERVICES ========================= -->
+
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Services/services.css"
+    />
+  </head>
+
+  <body>
+    <!-- ============================ TOOLBAR ============================= -->
+
+    <div id="toolbar">
+      <div id="navigation_drawer_toggle">
+        <div
+          id="navigation_drawer_toggle_bar_1"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+        <div
+          id="navigation_drawer_toggle_bar_2"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+        <div
+          id="navigation_drawer_toggle_bar_3"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+      </div>
+      <div id="homepage_logo_container"></div>
+      <div id="profile_drawer_toggle">
+        <img
+          src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/assets/profile_icon.png"
+          alt="profile_icon"
+          id="profile_drawer_icon"
+        />
+      </div>
+    </div>
+
+    <!-- ======================= NAVIGATION DRAWER ======================== -->
+
+    <div id="navigation_drawer" class="navigation_drawer_close">
+      <a href="/" class="navigation_link">Home</a>
+      <a href="/services" class="navigation_link">Services</a>
+      <a href="/pricing" class="navigation_link">Pricing</a>
+      <a href="/partnership" class="navigation_link">Partnership</a>
+    </div>
+
+    <!-- ========================= PROFILE DRAWER ========================= -->
+
+    <div id="profile_drawer" class="profile_drawer_close"></div>
+
+    <!--
+      ===================================== MAIN BODY =====================================
+    -->
+
+    <div id="services_body">
+      <div id="services_navigation_tabs">
+        <div id="services_overview_tab" class="services_navigation_tab">
+          <a
+            href="/services"
+            id="services_overview_tab_text"
+            class="services_navigation_tab_text"
+          >
+            Overview
+          </a>
+        </div>
+        <div id="services_3d_printing_tab" class="services_navigation_tab">
+          <p
+            class="services_navigation_tab_text services_navigation_tab_text_selected"
+          >
+            3D Printing
+          </p>
+        </div>
+        <div id="services_3d_modelling_tab" class="services_navigation_tab">
+          <a href="/services/3d-modelling" class="services_navigation_tab_text"
+            >3D Modelling</a
+          >
+        </div>
+        <div id="services_marketplace_tab" class="services_navigation_tab">
+          <a href="/services/marketplace" class="services_navigation_tab_text"
+            >Marketplace</a
+          >
+        </div>
+      </div>
+      <div class="services_contents_body">
+        <div class="services_header_body">
+          <h1 class="services_header_text">3D Printing Service</h1>
+        </div>
+        <div class="services_opening_description_body">
+          <h3 class="services_opening_description_text">
+            Convert your 3D Models into Real-Life Objects and Products
+          </h3>
+        </div>
+        <div class="services_content_body_one">
+          <div class="service_header_body_one">
+            <h2 class="service_header_text_one">Place an Order</h2>
+          </div>
+          <div class="service_sub_content_body_one">
+            <div class="service_sub_header_body_one">
+              <h3 class="service_sub_header_text_one">Upload a 3D Model</h3>
+            </div>
+            <div class="service_sub_description_body_one">
+              <p class="service_sub_description_text_one">
+                Upload your STL, OBJ or 3MF file
+              </p>
+            </div>
+          </div>
+          <div class="service_sub_content_body_one">
+            <div class="service_sub_header_body_one">
+              <h3 class="service_sub_header_text_one">Select Material</h3>
+            </div>
+            <div class="service_sub_description_body_one">
+              <p class="service_sub_description_text_one">
+                Select from the available materials. Currently, Delta 3D
+                Printing offers plastic options printed using FDM technology. We
+                are aiming to rapidly expand to metals and other 3D printing
+                technologies such as SLA, SLS and more.
+              </p>
+            </div>
+            <div class="service_sub_description_body_one">
+              <p class="service_sub_description_text_one">
+                Currently, we offer PLA, ABS, PETG, FLEX and more, all of which
+                are plastic.
+              </p>
+            </div>
+            <div class="services_sub_button_body_one">
+              <div class="services_sub_button">
+                <a href="/pricing" class="services_sub_button_text"
+                  >See material options</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="service_sub_content_body_one">
+            <div class="service_sub_header_body_one">
+              <h3 class="service_sub_header_text_one">Specify Quantity</h3>
+            </div>
+            <div class="service_sub_description_body_one">
+              <p class="service_sub_description_text_one">
+                Specify the number of units you'd want us to manufacture.
+              </p>
+            </div>
+          </div>
+          <div class="service_sub_content_body_one">
+            <div class="service_sub_header_body_one">
+              <h3 class="service_sub_header_text_one">
+                Select Quality, Strength and Color
+              </h3>
+            </div>
+            <div class="service_sub_description_body_one">
+              <p class="service_sub_description_text_one">
+                Select from the pre-defined quality, strength and color options.
+              </p>
+            </div>
+            <div class="service_sub_description_body_one">
+              <p class="service_sub_description_text_one">
+                Quality selection is dependant heavily to the dimesnion of your
+                3D models or/and the dimension of the features. Smaller 3D
+                models and features requires higher quality.
+              </p>
+            </div>
+          </div>
+          <div class="service_sub_content_body_one">
+            <div class="service_sub_header_body_one">
+              <h3 class="service_sub_header_text_one">
+                Select Pricing and Delivery
+              </h3>
+            </div>
+            <div class="service_sub_description_body_one">
+              <p class="service_sub_description_text_one">
+                Select from our available pricing options to determine how fast
+                you'd like your order to be completed.
+              </p>
+            </div>
+            <div class="service_sub_description_body_one">
+              <p class="service_sub_description_text_one">
+                You can personally pickup your order from our facility. We can
+                also arrange for it to be delivered to you.
+              </p>
+            </div>
+            <div class="service_sub_description_body_one">
+              <p class="service_sub_description_text_one">
+                See '3D Printing of Order' and 'Order Delivery' options below
+                for more details about pricing and delivery.
+              </p>
+            </div>
+          </div>
+          <div class="service_sub_content_body_one">
+            <div class="service_sub_header_body_one">
+              <h3 class="service_sub_header_text_one">Add Notes (Optional)</h3>
+            </div>
+            <div class="service_sub_description_body_one">
+              <p class="service_sub_description_text_one">
+                Leave us some key notes about your order that you want us to
+                know and keep in mind.
+              </p>
+            </div>
+          </div>
+          <div class="services_button_body_one">
+            <div class="services_button">
+              <div class="services_button_text">Place an order</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="services_content_body_two">
+          <div class="service_header_body_two">
+            <h2 class="service_header_text_two">Make the Payment</h2>
+          </div>
+          <div class="service_content_body_two">
+            <p class="service_content_text_two">
+              After receiving your our, we will quickly analyse it and get it
+              quoted. After quotation, you will be given intructions regarding
+              how to pay the quoted amount.
+            </p>
+          </div>
+        </div>
+        <div class="services_content_body_one">
+          <div class="service_header_body_one">
+            <h2 class="service_header_text_one">3D Printing of Order</h2>
+          </div>
+          <div class="service_content_body_one">
+            <p class="service_content_text_one">
+              After we receive and confirm your payment, the countdown for the
+              3D printing of your order begins. There are three pricing options
+              available: Basic, Priority and Urgent. Pricing determines the
+              duration of the printing time of your order.
+            </p>
+          </div>
+          <div class="service_content_body_one">
+            <p class="service_content_text_one">
+              Basic is free-of-charge and has a 3D printing time of up to 5
+              days. Priority raises the order price by 25% and has a 3D printing
+              time of up to 3 days. Urgent raises the order price by 50% and has
+              a 3D printing time of 1 day. Depending on the availability of 3D
+              printers, the 3D printing of orders can be completed ahead of it's
+              specified due date.
+            </p>
+          </div>
+        </div>
+        <div class="services_content_body_two">
+          <div class="service_header_body_two">
+            <h2 class="service_header_text_two">Order Delivery</h2>
+          </div>
+          <div class="service_content_body_two">
+            <p class="service_content_text_two">
+              After we 3D print your order, you can either pickup your order
+              from our facility or get it delivered to you. The delivery option
+              must be specified during placing of an order. The available
+              delivery options are 'Pickup', 'Tracking' and 'Courier'.
+            </p>
+          </div>
+          <div class="service_content_body_two">
+            <p class="service_content_text_two">
+              Pickup is free-of-charge and can be arrange at any day and time of
+              the week. Tracking costs $7.00 and will take 1-3 working days.
+              Courier costs $8.50 and will take 1 working day. Both Tracking and
+              Courier allow customers to track their shipment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================= FOOTER ============================= -->
+
+    <div id="footer">
+      <div class="footer_divider">
+        <p class="footer_divider_header">Services</p>
+        <div
+          id="footer_3d_printing_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/3d-printing"
+            id="footer_3d_printing"
+            class="footer_content"
+            >3D Printing</a
+          >
+        </div>
+        <div
+          id="footer_3d_modelling_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/3d-modelling"
+            id="footer_3d_modelling"
+            class="footer_content"
+            >3D Modelling</a
+          >
+        </div>
+        <div
+          id="footer_marketplace_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/marketplace"
+            id="footer_marketplace"
+            class="footer_content"
+            >Marketplace</a
+          >
+        </div>
+      </div>
+      <div class="footer_divider">
+        <p class="footer_divider_header">Resources</p>
+      </div>
+      <div class="footer_divider">
+        <p class="footer_divider_header">Delta 3D Printing</p>
+        <div
+          id="footer_about_us_body"
+          class="footer_content_body footer_about_us_content_body"
+        >
+          <a href="/about" id="footer_about_us" class="footer_content">About</a>
+        </div>
+        <div
+          id="footer_contact_us_body"
+          class="footer_content_body footer_about_us_content_body"
+        >
+          <a href="/contact-us" id="footer_contact_us" class="footer_content"
+            >Contact Us</a
+          >
+        </div>
+        <div
+          id="footer_partnership_body"
+          class="footer_content_body footer_about_content_body"
+        >
+          <a href="/partnership" id="footer_partnership" class="footer_content"
+            >Partnership Program</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    window.onload = () => {
+      globalInit();
+    };
+  </script>
+</html>

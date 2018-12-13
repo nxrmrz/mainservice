@@ -1,0 +1,27 @@
+.order_new_print_parts_part_select_material_input_field {
+  display: flex;
+  flex-direction: column;
+}
+
+.order_new_print_parts_part_select_material_input_field_header_text {
+  color: rgba(170, 10, 10, 1);
+  font-family: "Chivo", sans-serif;
+  font-weight: bold;
+  font-size: 4vmin;
+  margin: 2vmin 0 2vmin 2vmin;
+}
+
+.order_new_print_parts_part_select_material_input_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 600px) {
+  .order_new_print_parts_part_select_material_input_field_header_text {
+    font-size: 2.2vmin;
+    margin: 1.2vmin 0 1.2vmin 1.2vmin;
+  }
+}

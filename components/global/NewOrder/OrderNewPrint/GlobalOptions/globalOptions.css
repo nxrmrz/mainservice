@@ -1,0 +1,66 @@
+#order_new_print_discount_option_input_field {
+  align-items: flex-start;
+}
+
+.order_new_print_option_input_body {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.order_new_print_option_input_text {
+  height: 7vmin;
+  width: 100%;
+  padding: 0.5vmin;
+  background-color: rgb(255, 250, 250);
+  border: solid;
+  border-color: rgb(180, 180, 180);
+  border-radius: 0.7vmin;
+  border-width: 0.35vmin;
+  box-shadow: 0 0 1vmin 0.05vmin rgb(200, 200, 200);
+  color: rgb(120, 120, 120);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.5vmin;
+  font-weight: 700;
+}
+
+#order_new_print_discounts_body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.order_new_print_discount_body {
+  width: 100%;
+  display: flex;
+  padding: 2vmin;
+}
+
+.order_new_print_discount_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 3vmin;
+  color: rgb(10, 140, 10);
+}
+
+#order_new_print_additional_note_option_input_field {
+  align-items: flex-start;
+}
+
+@media only screen and (min-width: 600px) {
+  .order_new_print_option_input_text {
+    height: 3.5vmin;
+    padding: 0.25vmin;
+    border-radius: 0.35vmin;
+    border-width: 0.175vmin;
+    box-shadow: 0 0 0.5vmin 0.025vmin rgb(200, 200, 200);
+    font-size: 1.75vmin;
+  }
+
+  .order_new_print_discount_body {
+    padding: 1vmin;
+  }
+
+  .order_new_print_discount_text {
+    font-size: 1.5vmin;
+  }
+}

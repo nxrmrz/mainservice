@@ -1,0 +1,87 @@
+/* ============================================ FOOTER ============================================ */
+#awaiting_payment_modal_footer_contents {
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+#awaiting_payment_footer_buttons_body {
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.awaiting_payment_footer_buttons_body_close {
+  height: 0;
+  opacity: 0;
+  z-index: 0;
+}
+
+.awaiting_payment_footer_buttons_body_open {
+  height: 14vmin;
+  opacity: 1;
+  z-index: 1;
+}
+
+#awaiting_payment_pre_submit_contents_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.awaiting_payment_pre_submit_contents_body_close {
+  height: 0;
+  opacity: 0;
+  z-index: 0;
+}
+
+.awaiting_payment_pre_submit_contents_body_open {
+  height: 14vmin;
+  opacity: 1;
+  z-index: 1;
+}
+
+.order_details_awaiting_payment_instruction_body {
+  width: 90%;
+  display: flex;
+  margin: 1vmin 0 1vmin 0;
+}
+
+.order_details_awaiting_payment_instruction_number {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.2vmin;
+  color: rgb(60, 60, 60);
+}
+
+.order_details_awaiting_payment_instruction_text {
+  width: 90%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.2vmin;
+  color: rgb(60, 60, 60);
+}
+
+@media only screen and (min-width: 600px) {
+  .awaiting_payment_footer_buttons_body_open {
+    height: 7vmin;
+  }
+
+  .awaiting_payment_pre_submit_contents_body_open {
+    height: 7vmin;
+  }
+
+  .order_details_awaiting_payment_instruction_body {
+    margin: 0.5vmin 0 0.5vmin 0;
+  }
+
+  .order_details_awaiting_payment_instruction_number {
+    font-size: 1.6vmin;
+  }
+
+  .order_details_awaiting_payment_instruction_text {
+    font-size: 1.6vmin;
+  }
+}

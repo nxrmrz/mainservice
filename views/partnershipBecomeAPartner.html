@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partnership | Delta 3D Printing</title>
+    <meta
+      name="description"
+      content="Delta 3D Printing provides cheap and high-quality 3D printing services and products for people across New Zealand. Benefits and discounts for students and returning customers. Partner With Us! Personalised services and discounts for businesses and organisations partnered with us."
+    />
+    <!-- ============================ EXTERNAL ============================ -->
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Chivo|Open+Sans|Raleway|Russo+One"
+      rel="stylesheet"
+    />
+
+    <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Maps API -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRepNytrdQFVYOgxLQP6DrHO6Ovkk8Ocg&libraries=places"
+      async
+      defer
+    ></script>
+
+    <!-- ============================= GLOBAL ============================= -->
+
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/global.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/global.css"
+    />
+
+    <!-- --------------------------- NAVIGATION --------------------------- -->
+
+    <!-- Toolbar -->
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/Toolbar/toolbar.css"
+    />
+
+    <!-- Navigation Drawer -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/NavigationDrawer/navigationDrawer.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/NavigationDrawer/navigationDrawer.css"
+    />
+
+    <!-- Profile Drawer -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/profileDrawer.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/profileDrawer.css"
+    />
+
+    <!-- Profile Drawer: Visitor -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/Visitor/visitor.js"></script>
+
+    <!-- Profile Drawer: User -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/User/user.js"></script>
+
+    <!-- Footer -->
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/Footer/footer.css"
+    />
+
+    <!-- ------------------------- USER INTERFACE ------------------------- -->
+
+    <!-- Modal -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Modal/modal.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Modal/modal.css"
+    />
+
+    <!-- Backdrop -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Backdrop/backdrop.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Backdrop/backdrop.css"
+    />
+
+    <!-- ---------------------------- ACCOUNT ----------------------------- -->
+
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/account.css"
+    />
+
+    <!-- Login -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Login/login.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Login/login.css"
+    />
+
+    <!-- Signup -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Signup/signup.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Signup/signup.css"
+    />
+
+    <!-- ---------------------- ADDRESS AUTOCOMPLETE ---------------------- -->
+
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/AddressAutocomplete/addressAutocomplete.js"></script>
+
+    <!-- --------------------------- VALIDATION --------------------------- -->
+
+    <!-- Login Status -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Validation/LoginStatus/loginStatus.js"></script>
+
+    <!-- ======================= LOCAL: PARTNERSHIP ======================= -->
+
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Partnership/partnership.css"
+    />
+
+    <!-- ------------------------ BECOME A PARTNER ------------------------ -->
+  </head>
+
+  <body>
+    <!-- ============================ TOOLBAR ============================= -->
+
+    <div id="toolbar">
+      <div id="navigation_drawer_toggle">
+        <div
+          id="navigation_drawer_toggle_bar_1"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+        <div
+          id="navigation_drawer_toggle_bar_2"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+        <div
+          id="navigation_drawer_toggle_bar_3"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+      </div>
+      <div id="homepage_logo_container"></div>
+      <div id="profile_drawer_toggle">
+        <img
+          src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/assets/profile_icon.png"
+          alt="profile_icon"
+          id="profile_drawer_icon"
+        />
+      </div>
+    </div>
+
+    <!-- ======================= NAVIGATION DRAWER ======================== -->
+
+    <div id="navigation_drawer" class="navigation_drawer_close">
+      <a href="/" class="navigation_link">Home</a>
+      <a href="/services" class="navigation_link">Services</a>
+      <a href="/pricing" class="navigation_link">Pricing</a>
+      <a href="/partnership" class="navigation_link">Partnership</a>
+    </div>
+
+    <!-- ========================= PROFILE DRAWER ========================= -->
+
+    <div id="profile_drawer" class="profile_drawer_close"></div>
+
+    <!-- =========================== MAIN BODY ============================ -->
+
+    <div id="partnership_body">
+      <div id="partnership_navigation_tabs">
+        <div class="partnership_navigation_tab">
+          <a href="/partnership" class="partnership_navigation_tab_text">
+            Overview
+          </a>
+        </div>
+        <div class="partnership_navigation_tab">
+          <a
+            href="/partnership/discounts"
+            class="partnership_navigation_tab_text"
+          >
+            Discounts
+          </a>
+        </div>
+        <div class="partnership_navigation_tab">
+          <p
+            class="partnership_navigation_tab_text partnership_navigation_tab_text_selected"
+          >
+            Become a Partner
+          </p>
+        </div>
+      </div>
+      <div id="partnership_contents_body">
+        <div id="partnership_main_header_body">
+          <h1 id="partnership_main_header_text">Become a Partner</h1>
+        </div>
+        <div id="partnership_opening_description_body">
+          <h3 id="partnership_opening_description_text">
+            Let's build a strong relationship!
+          </h3>
+        </div>
+        <div class="partnership_body_one">
+          <div class="partnership_header_body_one">
+            <h2 class="partnership_header_text_one">New Partners</h2>
+          </div>
+          <div class="partnership_description_body_one">
+            <p class="partnership_description_text_one">
+              There are two methods to become a new partner.
+            </p>
+          </div>
+          <div class="partnership_sub_header_body_one">
+            <h2 class="partnership_sub_header_text_one">Method One</h2>
+          </div>
+          <div class="partnership_description_body_one">
+            <p class="partnership_description_text_one">
+              If your previous or current month's cumulative order value is
+              $1000 or more you are eligible to become a partner. You can check
+              this via your Profile Dashboard.
+            </p>
+          </div>
+          <div class="partnership_description_body_one">
+            <p class="partnership_description_text_one">
+              If you are eligible and wants to become a partner, simply click
+              the 'Request partnership' button. It will instantaneously verify
+              your eligibility, and if successful, it will upgrade your account
+              status to 'Partner'.
+            </p>
+          </div>
+          <div class="partnership_details_button_body_one">
+            <div
+              id="new_partners_request_partnership_partnership_button"
+              class="partnership_button"
+            >
+              <div class="partnership_button_text">Request partnership</div>
+            </div>
+          </div>
+          <div class="partnership_sub_header_body_one">
+            <h2 class="partnership_sub_header_text_one">Method Two</h2>
+          </div>
+          <div class="partnership_description_body_one">
+            <p class="partnership_description_text_one">
+              For new and existing customers looking to manufacture frequently
+              with us but are currently ineligible due to lack of historical
+              orders. You can still apply for partnership by contacting us
+              through "Apply for partnership", detailing what you plan to
+              manufacture frequently with us.
+            </p>
+          </div>
+          <div class="partnership_details_button_body_one">
+            <div
+              id="apply_for_partnership_partnership_button"
+              class="partnership_button"
+            >
+              <div class="partnership_button_text">Apply for partnership</div>
+            </div>
+          </div>
+          <div class="partnership_description_body_one">
+            <p class="partnership_description_text_one">
+              This only applies if you have never been a partner before. For
+              returning partners, please follow the instructions under
+              "Returning Partners".
+            </p>
+          </div>
+        </div>
+        <div class="partnership_body_two">
+          <div class="partnership_header_body_two">
+            <h2 class="partnership_header_text_two">Returning Partners</h2>
+          </div>
+          <div class="partnership_description_body_two">
+            <p class="partnership_description_text_two">
+              If a customer loses their partner status and wants to regain it,
+              they simply require a cumulative order value of $1000 or more from
+              the previous or current month.
+            </p>
+          </div>
+          <div class="partnership_description_body_two">
+            <p class="partnership_description_text_two">
+              If you are eligible and wants to become a partner, simply click
+              the 'Request partnership' button. It will instantaneously verify
+              your eligibility, and if successful, it will upgrade your account
+              status to 'Partner'.
+            </p>
+          </div>
+          <div class="partnership_details_button_body_two">
+            <div
+              id="returning_partners_request_partnership_partnership_button"
+              class="partnership_button"
+            >
+              <div class="partnership_button_text">Request partnership</div>
+            </div>
+          </div>
+        </div>
+        <div class="partnership_body_one">
+          <div class="partnership_header_body_one">
+            <h2 class="partnership_header_text_one">Requirements</h2>
+          </div>
+          <div class="partnership_description_body_one">
+            <p class="partnership_description_text_one">
+              To retain the partner status, partners must maintain an average
+              monthly cumulative order value of $1000 or more. This is
+              calculated by adding all order values from when the partner status
+              was obtain until the current date. The total order value is then
+              divided by the number months, counted from the month at which the
+              partner status was obtained. The resulting value must equal or
+              exceed $1000.
+            </p>
+          </div>
+          <div class="partnership_description_body_one">
+            <p class="partnership_description_text_one">
+              Calculation occur every 1st day of the month. And if the value
+              calculated is lower than $1000, the partner status will be
+              revoked. Partner status can be regained by follow the instructions
+              under "Returning Partners".
+            </p>
+          </div>
+          <div class="partnership_details_button_body_one">
+            <div
+              id="see_calculation_partnership_button"
+              class="partnership_button"
+            >
+              <div class="partnership_button_text">See Example Calculation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================= FOOTER ============================= -->
+
+    <div id="footer">
+      <div class="footer_divider">
+        <p class="footer_divider_header">Services</p>
+        <div
+          id="footer_3d_printing_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/3d-printing"
+            id="footer_3d_printing"
+            class="footer_content"
+            >3D Printing</a
+          >
+        </div>
+        <div
+          id="footer_3d_modelling_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/3d-modelling"
+            id="footer_3d_modelling"
+            class="footer_content"
+            >3D Modelling</a
+          >
+        </div>
+        <div
+          id="footer_marketplace_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/marketplace"
+            id="footer_marketplace"
+            class="footer_content"
+            >Marketplace</a
+          >
+        </div>
+      </div>
+      <div class="footer_divider">
+        <p class="footer_divider_header">Resources</p>
+      </div>
+      <div class="footer_divider">
+        <p class="footer_divider_header">Delta 3D Printing</p>
+        <div
+          id="footer_about_us_body"
+          class="footer_content_body footer_about_us_content_body"
+        >
+          <a href="/about" id="footer_about_us" class="footer_content">About</a>
+        </div>
+        <div
+          id="footer_contact_us_body"
+          class="footer_content_body footer_about_us_content_body"
+        >
+          <a href="/contact-us" id="footer_contact_us" class="footer_content"
+            >Contact Us</a
+          >
+        </div>
+        <div
+          id="footer_partnership_body"
+          class="footer_content_body footer_about_content_body"
+        >
+          <a href="/partnership" id="footer_partnership" class="footer_content"
+            >Partnership Program</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <style>
+    #temporary_partnership_button_handler_modal_body {
+      overflow: hidden;
+    }
+
+    #temporary_partnership_button_handler_modal_contents_body {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+    }
+
+    .temporary_partnership_button_handler_modal_content_body {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4vmin;
+    }
+
+    .temporary_partnership_button_handler_modal_content_text {
+      font-family: "Open Sans", sans-serif;
+      font-size: 4vmin;
+      color: rgb(60, 60, 60);
+    }
+
+    @media only screen and (min-width: 600px) {
+      .temporary_partnership_button_handler_modal_content_body {
+        padding: 2vmin;
+      }
+
+      .temporary_partnership_button_handler_modal_content_text {
+        font-size: 2vmin;
+      }
+    }
+  </style>
+
+  <script>
+    /* ======================================= INITIALISATION ======================================= */
+
+    window.onload = () => {
+      globalInit();
+
+      document
+        .querySelector("#new_partners_request_partnership_partnership_button")
+        .addEventListener("click", () => {
+          temporaryPartnershipButtonHandler();
+        });
+
+      document
+        .querySelector("#apply_for_partnership_partnership_button")
+        .addEventListener("click", () => {
+          temporaryPartnershipButtonHandler();
+        });
+
+      document
+        .querySelector(
+          "#returning_partners_request_partnership_partnership_button"
+        )
+        .addEventListener("click", () => {
+          temporaryPartnershipButtonHandler();
+        });
+
+      document
+        .querySelector("#see_calculation_partnership_button")
+        .addEventListener("click", () => {
+          temporaryPartnershipButtonHandler();
+        });
+    };
+
+    /* ============================ TEMPORARY PARTNERSHIP BUTTON HANDLER ============================ */
+
+    const temporaryPartnershipButtonHandler = () => {
+      contructTemporaryPartnershipButtonHandlerModal();
+    };
+
+    /* =========================================== MODAL ============================================ */
+
+    /* -------------------------------------- MODAL PROPERTIES -------------------------------------- */
+
+    // ELEMENTS
+    const temporaryPartnershipButtonHandlerModalId =
+      "temporary_partnership_button_handler";
+    const temporaryPartnershipButtonHandlerModalHeader = "***Temporary***";
+    const temporaryPartnershipButtonHandlerModalFooter = "";
+    let temporaryPartnershipButtonHandlerModalElementObject;
+    // CSS
+    const temporaryPartnershipButtonHandlerModalMobileHeight = 70;
+    const temporaryPartnershipButtonHandlerModalMobileWidth = 70;
+    const temporaryPartnershipButtonHandlerModalDesktopHeight = 50;
+    const temporaryPartnershipButtonHandlerModalDesktopWidth = 50;
+    const temporaryPartnershipButtonHandlerModalFooterHeight = 0;
+    let temporaryPartnershipButtonHandlerModalCSSObject;
+
+    const contructTemporaryPartnershipButtonHandlerModalProperties = () => {
+      temporaryPartnershipButtonHandlerModalElementObject = new modalElementObject(
+        temporaryPartnershipButtonHandlerModalId,
+        temporaryPartnershipButtonHandlerModalHeader,
+        temporaryPartnershipButtonHandlerModalFooter
+      );
+
+      temporaryPartnershipButtonHandlerModalCSSObject = new modalCSSObject(
+        temporaryPartnershipButtonHandlerModalMobileHeight,
+        temporaryPartnershipButtonHandlerModalMobileWidth,
+        temporaryPartnershipButtonHandlerModalDesktopHeight,
+        temporaryPartnershipButtonHandlerModalDesktopWidth,
+        temporaryPartnershipButtonHandlerModalFooterHeight
+      );
+    };
+
+    const contructTemporaryPartnershipButtonHandlerModal = () => {
+      contructTemporaryPartnershipButtonHandlerModalProperties();
+      addModal(
+        temporaryPartnershipButtonHandlerModalElementObject,
+        temporaryPartnershipButtonHandlerModalCSSObject
+      );
+      addTemporaryPartnershipButtonHandlerModalContents();
+    };
+
+    /* ======================================= MODAL CONTENTS ======================================= */
+
+    const addTemporaryPartnershipButtonHandlerModalContents = () => {
+      const temporaryPartnershipButtonHandlerModalContentsHTML =
+        "<div id='temporary_partnership_button_handler_modal_contents_body'>" +
+        "<div class='temporary_partnership_button_handler_modal_content_body'>" +
+        "<div class='temporary_partnership_button_handler_modal_content_text'>" +
+        "We are currently developing this section of the website, we apologise for any inconvenience." +
+        "</div>" +
+        "</div>" +
+        "<div class='temporary_partnership_button_handler_modal_content_body'>" +
+        "<div class='temporary_partnership_button_handler_modal_content_text'>" +
+        "Temporarily, if you are interested with the Partnership Program (or if you have questions), send us an email at founder.delta3dprinting@gmail.com." +
+        "</div>" +
+        "</div>" +
+        "<div class='temporary_partnership_button_handler_modal_content_body'>" +
+        "<div class='temporary_partnership_button_handler_modal_content_text'>" +
+        "In the email, feel free to include key details and information. We'll quickly get back to you as soon as we process your email." +
+        "</div>" +
+        "</div>" +
+        "</div>";
+
+      document.querySelector(
+        "#temporary_partnership_button_handler_modal_body"
+      ).innerHTML = temporaryPartnershipButtonHandlerModalContentsHTML;
+    };
+
+    /* ============================================================================================== */
+  </script>
+</html>

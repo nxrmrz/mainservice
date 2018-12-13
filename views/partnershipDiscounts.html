@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partnership | Delta 3D Printing</title>
+    <meta
+      name="description"
+      content="Delta 3D Printing provides cheap and high-quality 3D printing services and products for people across New Zealand. Benefits and discounts for students and returning customers. Partner With Us! Personalised services and discounts for businesses and organisations partnered with us."
+    />
+    <!-- ============================ EXTERNAL ============================ -->
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Chivo|Open+Sans|Raleway|Russo+One"
+      rel="stylesheet"
+    />
+
+    <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Maps API -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRepNytrdQFVYOgxLQP6DrHO6Ovkk8Ocg&libraries=places"
+      async
+      defer
+    ></script>
+
+    <!-- ============================= GLOBAL ============================= -->
+
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/global.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/global.css"
+    />
+
+    <!-- --------------------------- NAVIGATION --------------------------- -->
+
+    <!-- Toolbar -->
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/Toolbar/toolbar.css"
+    />
+
+    <!-- Navigation Drawer -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/NavigationDrawer/navigationDrawer.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/NavigationDrawer/navigationDrawer.css"
+    />
+
+    <!-- Profile Drawer -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/profileDrawer.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/profileDrawer.css"
+    />
+
+    <!-- Profile Drawer: Visitor -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/Visitor/visitor.js"></script>
+
+    <!-- Profile Drawer: User -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/User/user.js"></script>
+
+    <!-- Footer -->
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/Footer/footer.css"
+    />
+
+    <!-- ------------------------- USER INTERFACE ------------------------- -->
+
+    <!-- Modal -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Modal/modal.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Modal/modal.css"
+    />
+
+    <!-- Backdrop -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Backdrop/backdrop.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Backdrop/backdrop.css"
+    />
+
+    <!-- ---------------------------- ACCOUNT ----------------------------- -->
+
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/account.css"
+    />
+
+    <!-- Login -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Login/login.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Login/login.css"
+    />
+
+    <!-- Signup -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Signup/signup.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Signup/signup.css"
+    />
+
+    <!-- ---------------------- ADDRESS AUTOCOMPLETE ---------------------- -->
+
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/AddressAutocomplete/addressAutocomplete.js"></script>
+
+    <!-- --------------------------- VALIDATION --------------------------- -->
+
+    <!-- Login Status -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Validation/LoginStatus/loginStatus.js"></script>
+
+    <!-- ======================= LOCAL: PARTNERSHIP ======================= -->
+
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Partnership/partnership.css"
+    />
+
+    <!-- --------------------------- DISCOUNTS ---------------------------- -->
+
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Partnership/Discounts/discounts.js"></script>
+  </head>
+
+  <body>
+    <!-- ============================ TOOLBAR ============================= -->
+
+    <div id="toolbar">
+      <div id="navigation_drawer_toggle">
+        <div
+          id="navigation_drawer_toggle_bar_1"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+        <div
+          id="navigation_drawer_toggle_bar_2"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+        <div
+          id="navigation_drawer_toggle_bar_3"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+      </div>
+      <div id="homepage_logo_container"></div>
+      <div id="profile_drawer_toggle">
+        <img
+          src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/assets/profile_icon.png"
+          alt="profile_icon"
+          id="profile_drawer_icon"
+        />
+      </div>
+    </div>
+
+    <!-- ======================= NAVIGATION DRAWER ======================== -->
+
+    <div id="navigation_drawer" class="navigation_drawer_close">
+      <a href="/" class="navigation_link">Home</a>
+      <a href="/services" class="navigation_link">Services</a>
+      <a href="/pricing" class="navigation_link">Pricing</a>
+      <a href="/partnership" class="navigation_link">Partnership</a>
+    </div>
+
+    <!-- ========================= PROFILE DRAWER ========================= -->
+
+    <div id="profile_drawer" class="profile_drawer_close"></div>
+
+    <!-- =========================== MAIN BODY ============================ -->
+    <div id="partnership_body">
+      <div id="partnership_navigation_tabs">
+        <div class="partnership_navigation_tab">
+          <a href="/partnership" class="partnership_navigation_tab_text">
+            Overview
+          </a>
+        </div>
+        <div class="partnership_navigation_tab">
+          <p
+            class="partnership_navigation_tab_text partnership_navigation_tab_text_selected"
+          >
+            Discounts
+          </p>
+        </div>
+        <div class="partnership_navigation_tab">
+          <a
+            href="/partnership/become-a-partner"
+            class="partnership_navigation_tab_text"
+          >
+            Become a Partner
+          </a>
+        </div>
+      </div>
+      <div id="partnership_contents_body">
+        <div id="partnership_main_header_body">
+          <h1 id="partnership_main_header_text">Partner Discounts</h1>
+        </div>
+        <div id="partnership_opening_description_body">
+          <h3 id="partnership_opening_description_text">
+            Do more for less the price!
+          </h3>
+        </div>
+        <div class="partnership_body_one">
+          <div class="partnership_header_body_one">
+            <h2 class="partnership_header_text_one">15% Discount</h2>
+          </div>
+          <div class="partnership_description_body_one">
+            <p class="partnership_description_text_one">
+              Partners receives an automatic 15% discount for all of their 3D
+              printing orders.
+            </p>
+          </div>
+        </div>
+        <div class="partnership_body_two">
+          <div class="partnership_header_body_two">
+            <h2 class="partnership_header_text_two">Monthly Discounts</h2>
+          </div>
+          <div class="partnership_description_body_two">
+            <p class="partnership_description_text_two">
+              Additional discount for the month is applied based on the previous
+              month's cumulative order value.
+            </p>
+          </div>
+          <div class="partnership_table_body_two">
+            <table class="partnership_table">
+              <tr class="partnership_table_row_header">
+                <th class="partnership_table_header_one">
+                  Previous Month's Cumulative Order Value
+                </th>
+                <th class="partnership_table_header_two">
+                  Additional Discount
+                </th>
+              </tr>
+              <tr class="partnership_table_row_one">
+                <td class="partnership_table_column_one">$2000</td>
+                <td class="partnership_table_column_two">+5%</td>
+              </tr>
+              <tr class="partnership_table_row_two">
+                <td class="partnership_table_column_one">$3000</td>
+                <td class="partnership_table_column_two">+10%</td>
+              </tr>
+              <tr class="partnership_table_row_one">
+                <td class="partnership_table_column_one">$4000</td>
+                <td class="partnership_table_column_two">+15%</td>
+              </tr>
+              <tr class="partnership_table_row_two">
+                <td class="partnership_table_column_one">$5000+</td>
+                <td class="partnership_table_column_two">+20%</td>
+              </tr>
+            </table>
+          </div>
+          <div class="partnership_description_body_two">
+            <p class="partnership_description_text_two">
+              For example, a cumulative order value of $3400 on the month of
+              January 2019 will provide partners an additional 10% discount for
+              the entire month of February 2019 on top of the 15% discount and
+              weekly discount (if applied).
+            </p>
+          </div>
+        </div>
+        <div class="partnership_body_one">
+          <div class="partnership_header_body_one">
+            <h2 class="partnership_header_text_one">Weekly Discounts</h2>
+          </div>
+          <div class="partnership_description_body_one">
+            <p class="partnership_description_text_one">
+              Additional discount for the week is applied based on the previous
+              week's cumulative order value.
+            </p>
+          </div>
+          <div class="partnership_table_body_one">
+            <table class="partnership_table">
+              <tr class="partnership_table_row_header">
+                <th class="partnership_table_header_one">
+                  Previous Week's Cumulative Order Value
+                </th>
+                <th class="partnership_table_header_two">
+                  Additional Discount
+                </th>
+              </tr>
+              <tr class="partnership_table_row_one">
+                <td class="partnership_table_column_one">$1000</td>
+                <td class="partnership_table_column_two">+7.5%</td>
+              </tr>
+              <tr class="partnership_table_row_two">
+                <td class="partnership_table_column_one">$2000+</td>
+                <td class="partnership_table_column_two">+15%</td>
+              </tr>
+            </table>
+          </div>
+          <div class="partnership_description_body_one">
+            <p class="partnership_description_text_one">
+              For example, a cumulative order value of $1600 on the week of 28
+              January - 03 February 2019 will provide partners an additional 10%
+              discount for the entire week of 04 - 10 February 2019 on top of
+              the 15% discount and monthly discount (if applied).
+            </p>
+          </div>
+        </div>
+        <div class="partnership_body_two">
+          <div class="partnership_header_body_two">
+            <h2 class="partnership_header_text_two">Free Priority Upgrade</h2>
+          </div>
+          <div class="partnership_description_body_two">
+            <p class="partnership_description_text_two">
+              Orders from partners will automatically be prioritised. This means
+              that as soon as the order is paid, 3D printing of the order will
+              start regardless of the queue.
+            </p>
+          </div>
+          <div class="partnership_description_body_two">
+            <p class="partnership_description_text_two">
+              Normally, 20% and 40% additional charges are applied for orders
+              that are 'priority' and 'urgent', respectively. Orders from
+              partners are treated as 'priority' and 'urgent' for free.
+            </p>
+          </div>
+        </div>
+        <div class="partnership_body_one">
+          <div class="partnership_header_body_one">
+            <h2 class="partnership_header_text_one">Example Scenario</h2>
+          </div>
+          <div class="partnership_description_body_one">
+            <p class="partnership_description_text_one">
+              Using the examples above, we'll demonstarte how these discounts
+              can stack up.
+            </p>
+          </div>
+          <div class="partnership_description_body_one">
+            <p class="partnership_description_text_one">
+              Assuming a cumulative order value of $3400 on the month of January
+              2019. This will provide partners an additional 10% discount for
+              the entire month of February 2019.
+            </p>
+          </div>
+          <div class="partnership_description_body_one">
+            <p class="partnership_description_text_one">
+              And assuming a cumulative order value of $1600 on the week of 28
+              January - 03 February 2019. This will provide partners an
+              additional 7.5% discount for the entire week of 04 - 10 February
+              2019.
+            </p>
+          </div>
+          <div class="partnership_description_body_one">
+            <p class="partnership_description_text_one">
+              As a result, orders sent and paid for the week of 04 - 10 February
+              2019 will have a total discount of 32.5% coming from the 15%
+              automatic discount, 10% monthly discount and 7.5% weekly discount.
+            </p>
+          </div>
+        </div>
+        <div
+          id="partnership_discounts_on_services_body"
+          class="partnership_body_two"
+        >
+          <div class="partnership_header_body_two">
+            <h2 class="partnership_header_text_two">Becoming a Partner</h2>
+          </div>
+          <div class="partnership_description_body_two">
+            <p class="partnership_description_text_two">
+              Becoming a partner is simple! You just need a minimum average
+              monthly cumulative order value of $1,000. This can be based on
+              your previous order history with us or based on a forecast.
+            </p>
+          </div>
+          <div class="partnership_details_button_body_two">
+            <div class="partnership_button">
+              <a
+                href="/partnership/become-a-partner"
+                class="partnership_button_text"
+                >See requirements</a
+              >
+            </div>
+          </div>
+        </div>
+        <div id="partnership_become_a_partner_body">
+          <div id="partnership_become_a_partner_header_body">
+            <h2 id="partnership_become_a_partner_header_text">
+              Let's build a strong partnership
+            </h2>
+          </div>
+          <div id="partnership_become_a_partner_button_body">
+            <div
+              id="partnership_become_a_partner_button"
+              class="partnership_button"
+            >
+              <a
+                href="/partnership/become-a-partner"
+                class="partnership_button_text"
+                >Become a partner</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================= FOOTER ============================= -->
+
+    <div id="footer">
+      <div class="footer_divider">
+        <p class="footer_divider_header">Services</p>
+        <div
+          id="footer_3d_printing_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/3d-printing"
+            id="footer_3d_printing"
+            class="footer_content"
+            >3D Printing</a
+          >
+        </div>
+        <div
+          id="footer_3d_modelling_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/3d-modelling"
+            id="footer_3d_modelling"
+            class="footer_content"
+            >3D Modelling</a
+          >
+        </div>
+        <div
+          id="footer_marketplace_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/marketplace"
+            id="footer_marketplace"
+            class="footer_content"
+            >Marketplace</a
+          >
+        </div>
+      </div>
+      <div class="footer_divider">
+        <p class="footer_divider_header">Resources</p>
+      </div>
+      <div class="footer_divider">
+        <p class="footer_divider_header">Delta 3D Printing</p>
+        <div
+          id="footer_about_us_body"
+          class="footer_content_body footer_about_us_content_body"
+        >
+          <a href="/about" id="footer_about_us" class="footer_content">About</a>
+        </div>
+        <div
+          id="footer_contact_us_body"
+          class="footer_content_body footer_about_us_content_body"
+        >
+          <a href="/contact-us" id="footer_contact_us" class="footer_content"
+            >Contact Us</a
+          >
+        </div>
+        <div
+          id="footer_partnership_body"
+          class="footer_content_body footer_about_content_body"
+        >
+          <a href="/partnership" id="footer_partnership" class="footer_content"
+            >Partnership Program</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

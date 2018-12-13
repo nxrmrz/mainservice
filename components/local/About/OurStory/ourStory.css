@@ -1,0 +1,59 @@
+.about_our_story_content_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8vmin 6vmin 8vmin 6vmin;
+  background-color: rgb(255, 250, 250);
+}
+
+.about_our_story_content_header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about_our_story_content_header_text {
+  font-family: "Russo One", sans-serif;
+  font-size: 6.5vmin;
+  color: rgb(170, 10, 10);
+}
+
+.about_our_story_content_text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.6vmin;
+  text-align: justify;
+  color: rgb(60, 60, 60);
+  margin: 3vmin 0 3vmin 0;
+}
+
+#about_our_story_our_mission_body {
+  background-color: rgb(255, 225, 225);
+}
+
+#about_our_story_our_mission_content_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 4.5vmin;
+  text-align: center;
+  margin-top: 6vmin;
+}
+
+@media only screen and (min-width: 600px) {
+  .about_our_story_content_body {
+    padding: 4vmin 3vmin 4vmin 3vmin;
+  }
+
+  .about_our_story_content_header_text {
+    font-size: 3.25vmin;
+  }
+
+  .about_our_story_content_text {
+    font-size: 1.8vmin;
+    margin: 1.5vmin 0 1.5vmin 0;
+  }
+
+  #about_our_story_our_mission_content_text {
+    font-size: 2.25vmin;
+    margin-top: 3vmin;
+  }
+}

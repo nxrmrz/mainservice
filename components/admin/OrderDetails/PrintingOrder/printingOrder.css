@@ -1,0 +1,108 @@
+#admin_printing_order_modal_footer_contents {
+  flex-direction: column;
+}
+
+#admin_order_details_printing_order_order_list_table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2vmin;
+}
+
+.admin_order_details_printing_order_order_list_table_row_header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.admin_order_details_printing_order_order_list_table_column_header_1 {
+  height: 12vmin;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: rgb(60, 60, 60);
+  border-width: 0.2vmin;
+  font-family: "Russo One", sans-serif;
+  font-size: 3.4vmin;
+  text-align: center;
+}
+
+.admin_order_details_printing_order_order_list_table_column_header_2 {
+  height: 12vmin;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: rgb(60, 60, 60);
+  border-width: 0.2vmin;
+  font-family: "Russo One", sans-serif;
+  font-size: 3.4vmin;
+  text-align: center;
+}
+
+.admin_order_details_printing_order_order_list_table_row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.admin_order_details_printing_order_order_list_table_column_1 {
+  height: 12vmin;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: rgb(60, 60, 60);
+  border-width: 0.2vmin;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.4vmin;
+  text-align: center;
+}
+
+.admin_order_details_printing_order_order_list_table_column_2 {
+  height: 12vmin;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: rgb(60, 60, 60);
+  border-width: 0.2vmin;
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  #admin_order_details_printing_order_order_list_table {
+    padding: 1vmin;
+  }
+
+  .admin_order_details_printing_order_order_list_table_column_header_1 {
+    height: 6vmin;
+    border-width: 0.1vmin;
+    font-size: 1.7vmin;
+  }
+
+  .admin_order_details_printing_order_order_list_table_column_header_2 {
+    height: 6vmin;
+    border-width: 0.1vmin;
+    font-size: 1.7vmin;
+  }
+
+  .admin_order_details_printing_order_order_list_table_column_1 {
+    height: 6vmin;
+    border-width: 0.1vmin;
+    font-size: 1.7vmin;
+  }
+
+  .admin_order_details_printing_order_order_list_table_column_2 {
+    height: 6vmin;
+    border-width: 0.1vmin;
+    font-size: 2vmin;
+  }
+}

@@ -1,0 +1,169 @@
+.order_new_print_parts_part_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-style: solid;
+  border-color: rgba(170, 10, 10, 0.8);
+  border-radius: 0.7vmin;
+}
+
+.order_new_print_parts_part_form_body {
+  max-height: 300vmin;
+  transition: max-height 1.2s ease;
+  overflow: hidden;
+}
+
+.order_new_print_parts_part_body_close {
+  overflow: hidden;
+  max-height: 0;
+}
+
+.order_new_print_parts_part_upload_model_form_body {
+  padding: 2vmin;
+}
+
+.order_new_print_parts_part_select_material_form_body {
+  padding: 2vmin;
+}
+
+.order_new_print_parts_part_choose_options_form_body {
+  padding: 2vmin;
+}
+
+/* ======================================== TOGGLE BAR ========================================= */
+
+.order_new_print_parts_part_toggle_bar {
+  height: 8vmin;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2vmin 0 2vmin;
+  background-color: rgba(170, 10, 10, 0.8);
+}
+
+.order_new_print_parts_part_toggle_header_body {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.order_new_print_parts_part_toggle_header_text {
+  color: rgba(255, 255, 255, 0.95);
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  font-weight: 700;
+}
+
+/* --------------------------------------- DELETE BUTTON --------------------------------------- */
+
+.order_new_print_parts_delete_part_body {
+  width: 35%;
+}
+
+.order_new_print_parts_delete_part_button {
+  height: 6vmin;
+  padding: 0 2.5vmin 0 2.5vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.95);
+  border-radius: 3vmin;
+  border-width: 0.5vmin;
+  box-shadow: 0 0 1.5vmin 0.1vmin rgba(100, 100, 100, 0.3);
+}
+
+.order_new_print_parts_delete_part_button_text {
+  color: rgba(255, 255, 255, 0.95);
+  font-family: "Chivo";
+  font-size: 3vmin;
+  font-weight: 600;
+}
+
+/* INPUT ERROR HANDLER */
+.order_new_print_parts_part_input_error_handler {
+  width: 100%;
+  font-family: "Chivo", sans-serif;
+  font-size: 3vmin;
+  color: rgb(170, 10, 10);
+  text-align: right;
+}
+
+@media only screen and (min-width: 600px) {
+  .order_new_print_parts_part_body {
+    border-radius: 0.4vmin;
+  }
+
+  .order_new_print_parts_part_form_body {
+    max-height: 120vh;
+  }
+
+  .order_new_print_parts_part_body_close {
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  .order_new_print_parts_part_upload_model_form_body {
+    padding: 1.2vmin;
+  }
+
+  .order_new_print_parts_part_select_material_form_body {
+    padding: 1.2vmin;
+  }
+
+  .order_new_print_parts_part_choose_options_form_body {
+    padding: 1.2vmin;
+  }
+
+  /* ======================================== TOGGLE BAR ========================================= */
+
+  .order_new_print_parts_part_toggle_header_body {
+    width: 65%;
+  }
+
+  .order_new_print_parts_part_toggle_bar {
+    height: 4.5vmin;
+    padding: 0 1.2vmin 0 1.2vmin;
+  }
+
+  .order_new_print_parts_part_toggle_header_text {
+    font-size: 1.6vmin;
+  }
+
+  /* --------------------------------------- DELETE BUTTON --------------------------------------- */
+
+  .order_new_print_parts_delete_part_body {
+    width: 30%;
+  }
+
+  .order_new_print_parts_delete_part_button {
+    height: 3.6vmin;
+    padding: 0 1.6vmin 0 1.6vmin;
+    border-radius: 1.6vmin;
+    border-width: 0.3vmin;
+  }
+
+  .order_new_print_parts_delete_part_button_text {
+    font-size: 1.6vmin;
+  }
+
+  /* INPUT ERROR HANDLER */
+  .order_new_print_parts_part_input_error_handler {
+    font-size: 1.8vmin;
+  }
+}
+
+@media only screen and (min-width: 1250px) {
+  /* ======================================== TOGGLE BAR ========================================= */
+
+  .order_new_print_parts_part_toggle_header_body {
+    width: 75%;
+  }
+
+  /* --------------------------------------- DELETE BUTTON --------------------------------------- */
+
+  .order_new_print_parts_delete_part_body {
+    width: 20%;
+  }
+}

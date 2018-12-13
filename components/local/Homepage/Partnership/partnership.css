@@ -1,0 +1,109 @@
+#homepage_partnership_body {
+  height: 50vmin;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(170, 10, 10);
+  padding: 4vmin 8vmin 4vmin 8vmin;
+}
+
+#homepage_partnership_header_body {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#homepage_partnership_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Russo One", sans-serif;
+  text-align: justify;
+  font-size: 5vmin;
+  font-weight: 500;
+  color: rgb(220, 220, 220);
+  text-shadow: 0 0vmin 1.5vmin rgb(120, 10, 10);
+}
+
+#homepage_partnership_subitle_body {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#homepage_partnership_subitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Russo One", sans-serif;
+  text-align: center;
+  font-size: 6vmin;
+  font-weight: 500;
+  color: rgb(245, 245, 245);
+  text-shadow: 0 0vmin 1.5vmin rgb(120, 10, 10);
+}
+
+#homepage_partnership_button_body {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#homepage_partnership_button {
+  height: 9vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 75, 90);
+  padding: 0 6vmin 0 6vmin;
+  border-radius: 4.5vmin;
+  box-shadow: 0 0 1.5vmin rgb(120, 10, 10);
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  font-weight: 500;
+  text-align: center;
+  color: rgb(245, 245, 245);
+  z-index: 1;
+}
+
+#homepage_partnership_button:hover {
+  background-color: rgb(255, 100, 115);
+}
+
+#homepage_partnership_button:active {
+  background-color: rgb(230, 50, 65);
+  box-shadow: 0 0 0 rgb(120, 10, 10);
+}
+
+/* =================================== DESKTOP ==================================== */
+
+@media only screen and (min-width: 600px) {
+  #homepage_partnership_body {
+    height: 25vmin;
+    padding: 2vmin 4vmin 2vmin 4vmin;
+  }
+
+  #homepage_partnership_header {
+    font-size: 2.5vmin;
+    text-shadow: 0 0vmin 0.75vmin rgb(120, 10, 10);
+  }
+
+  #homepage_partnership_subitle {
+    font-size: 3vmin;
+    text-shadow: 0 0vmin 0.75vmin rgb(120, 10, 10);
+  }
+
+  #homepage_partnership_button {
+    height: 4.5vmin;
+    padding: 0 3vmin 0 3vmin;
+    border-radius: 2.25vmin;
+    box-shadow: 0 0 0.75vmin rgb(120, 10, 10);
+    font-size: 1.75vmin;
+  }
+}

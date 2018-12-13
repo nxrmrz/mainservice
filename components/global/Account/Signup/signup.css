@@ -1,0 +1,96 @@
+#signup_modal_body {
+  background-color: rgb(100, 10, 10);
+}
+
+#signup_modal_footer_contents {
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2vmin 0 0;
+}
+
+/* ================================== SIGNUP CONTENT =================================== */
+/* --- PASSWORD --- */
+
+#modal_signup_password_input_field_header {
+  width: 100%;
+}
+
+#modal_signup_password_input_body {
+  width: 100%;
+}
+
+#modal_signup_password_input {
+  width: 47.5%;
+}
+
+#modal_signup_confirm_password_input {
+  width: 47.5%;
+}
+
+/* --- NAMES --- */
+
+#modal_signup_first_name_input_field_header {
+  width: 100%;
+}
+
+#modal_signup_first_name_input_body {
+  width: 100%;
+}
+
+#modal_signup_first_name_input_field {
+  width: 47.5%;
+}
+
+#modal_signup_last_name_input_field_header {
+  width: 100%;
+}
+
+#modal_signup_last_name_input_body {
+  width: 100%;
+}
+
+#modal_signup_last_name_input_field {
+  width: 47.5%;
+}
+
+/* STREET ADDRESS */
+
+#modal_signup_street_address_input_field_header {
+  width: 100%;
+}
+
+#modal_signup_street_address_input_body {
+  width: 100%;
+}
+
+#modal_signup_street_number_input {
+  width: 25%;
+}
+
+#modal_signup_route_input {
+  width: 70%;
+}
+
+/* LOCALITY AND POSTAL CODE */
+
+#modal_signup_locality_postal_code_input_field_header {
+  width: 100%;
+}
+
+#modal_signup_locality_postal_code_input_body {
+  width: 100%;
+}
+
+#modal_signup_locality_input {
+  width: 65%;
+}
+
+#modal_signup_postal_code_input {
+  width: 30%;
+}
+
+@media only screen and (min-width: 600px) {
+  #signup_modal_footer_contents {
+    padding: 0 1vmin 0 0;
+  }
+}

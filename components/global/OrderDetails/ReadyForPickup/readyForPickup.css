@@ -1,0 +1,280 @@
+#ready_for_pickup_modal_footer_contents {
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.ready_for_pickup_footer_buttons_body_close {
+  height: 0;
+  opacity: 0;
+  z-index: 0;
+}
+
+.ready_for_pickup_footer_buttons_body_open {
+  height: 14vmin;
+  opacity: 1;
+  z-index: 1;
+}
+
+.order_details_ready_for_pickup_address_body {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  margin: 2vmin 0 2vmin 0;
+}
+
+.order_details_ready_for_pickup_address_text {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.2vmin;
+  color: rgb(60, 60, 60);
+}
+
+.order_details_ready_for_pickup_instruction_body {
+  width: 90%;
+  display: flex;
+  margin: 1vmin 0 1vmin 0;
+}
+
+.order_details_ready_for_pickup_instruction_number {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.2vmin;
+  color: rgb(60, 60, 60);
+}
+
+.order_details_ready_for_pickup_instruction_text {
+  width: 90%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.2vmin;
+  color: rgb(60, 60, 60);
+}
+
+/* ======================================== BOOKING FORM ======================================== */
+
+#ready_for_pickup_booking_form_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2vmin 0 2vmin 0;
+  padding: 0 4vmin 0 4vmin;
+}
+
+#ready_for_pickup_booking_form_header {
+  width: 100%;
+}
+
+#ready_for_pickup_booking_form_header_text {
+  font-family: "Russo One", sans-serif;
+  font-size: 4.4vmin;
+  color: rgb(170, 10, 10);
+  margin: 2vmin 0 2vmin 0;
+}
+
+.ready_for_pickup_booking_form_input_field {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 1vmin 0 1vmin 0;
+  padding: 0 4vmin 0 4vmin;
+}
+
+.ready_for_pickup_booking_form_input_field_header {
+  width: 100%;
+  margin: 2vmin 0 2vmin 0;
+}
+
+.ready_for_pickup_booking_form_input_field_header_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  font-weight: bold;
+  color: rgb(170, 10, 10);
+}
+
+.ready_for_pickup_booking_form_input_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2vmin 0 2vmin 0;
+}
+
+.ready_for_pickup_booking_form_input_select {
+  height: 6vmin;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 250, 250);
+  border: solid;
+  border-color: rgb(180, 180, 180);
+  border-radius: 0.7vmin;
+  border-width: 0.35vmin;
+  box-shadow: 0 0 1vmin 0.05vmin rgb(200, 200, 200);
+  color: rgb(120, 120, 120);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3vmin;
+  font-weight: 700;
+}
+
+#ready_for_pickup_booking_date_input {
+  width: 20%;
+}
+
+#ready_for_pickup_booking_month_input {
+  width: 50%;
+}
+
+#ready_for_pickup_booking_year_input {
+  width: 25%;
+}
+
+#ready_for_pickup_booking_time_input_field_header {
+  width: 30%;
+}
+
+#ready_for_pickup_booking_time_input_body {
+  width: 70%;
+}
+
+#ready_for_pickup_booking_hour_input {
+  width: 35%;
+}
+
+#ready_for_pickup_booking_minute_input {
+  width: 35%;
+}
+
+#ready_for_pickup_booking_period_input {
+  width: 25%;
+}
+
+#ready_for_pickup_booking_form_button_body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#ready_for_pickup_booking_form_button {
+  height: 8vmin;
+  width: 16vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 75, 90);
+  border-radius: 2vmin;
+  box-shadow: 0 0.5vmin 1vmin 0 rgb(180, 180, 180);
+}
+
+#ready_for_pickup_booking_form_button:hover {
+  background-color: rgb(255, 100, 115);
+}
+
+#ready_for_pickup_booking_form_button:active {
+  background-color: rgb(230, 50, 65);
+  box-shadow: 0 0 0 rgb(180, 180, 180);
+}
+
+#ready_for_pickup_booking_form_button_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 3.4vmin;
+  font-weight: 800;
+  text-align: center;
+  color: rgb(245, 245, 245);
+}
+
+.ready_for_pickup_booking_form_error_body {
+  width: 100%;
+}
+
+#ready_for_pickup_booking_form_error_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 2.6vmin;
+  text-align: right;
+  color: red;
+}
+
+/* ========================================= DESKTOP CSS ======================================== */
+
+@media only screen and (min-width: 600px) {
+  .ready_for_pickup_footer_buttons_body_open {
+    height: 7vmin;
+  }
+
+  .order_details_ready_for_pickup_address_body {
+    margin: 1vmin 0 1vmin 0;
+  }
+
+  .order_details_ready_for_pickup_address_text {
+    font-size: 1.6vmin;
+  }
+
+  .order_details_ready_for_pickup_instruction_body {
+    margin: 0.5vmin 0 0.5vmin 0;
+  }
+
+  .order_details_ready_for_pickup_instruction_number {
+    font-size: 1.6vmin;
+  }
+
+  .order_details_ready_for_pickup_instruction_text {
+    font-size: 1.6vmin;
+  }
+
+  /* ======================================== BOOKING FORM ======================================== */
+
+  #ready_for_pickup_booking_form_body {
+    margin: 1vmin 0 1vmin 0;
+    padding: 0 2vmin 0 2vmin;
+  }
+
+  #ready_for_pickup_booking_form_header_text {
+    font-size: 2.2vmin;
+    margin: 1vmin 0 1vmin 0;
+  }
+
+  .ready_for_pickup_booking_form_input_field {
+    width: 80%;
+    margin: 0.5vmin 0 0.5vmin 0;
+    padding: 0 2vmin 0 2vmin;
+  }
+
+  .ready_for_pickup_booking_form_input_field_header {
+    margin: 1vmin 0 1vmin 0;
+  }
+
+  .ready_for_pickup_booking_form_input_field_header_text {
+    font-size: 2vmin;
+  }
+
+  .ready_for_pickup_booking_form_input_body {
+    margin: 1vmin 0 1vmin 0;
+  }
+
+  .ready_for_pickup_booking_form_input_select {
+    height: 3vmin;
+    border-radius: 0.35vmin;
+    border-width: 0.175vmin;
+    box-shadow: 0 0 0.5vmin 0.025vmin rgb(200, 200, 200);
+    font-size: 1.5vmin;
+  }
+
+  #ready_for_pickup_booking_form_button {
+    height: 4vmin;
+    width: 8vmin;
+    border-radius: 1vmin;
+    box-shadow: 0 0.25vmin 0.5vmin 0 rgb(180, 180, 180);
+  }
+
+  #ready_for_pickup_booking_form_button_text {
+    font-size: 1.7vmin;
+  }
+
+  #ready_for_pickup_booking_form_error_text {
+    font-size: 1.3vmin;
+  }
+}

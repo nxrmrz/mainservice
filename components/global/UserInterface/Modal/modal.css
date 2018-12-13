@@ -1,0 +1,96 @@
+.modal {
+  height: 0;
+  width: 0;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: rgb(245, 245, 245);
+  border-radius: 1vmin;
+  transition: all 0.5s ease;
+  z-index: 100;
+}
+
+.modal_header {
+  height: 0;
+  width: 0;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  display: flex;
+  align-items: center;
+  background-color: rgb(170, 10, 10);
+  border-radius: 1vmin 1vmin 0 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.modal_header_text {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 4vmin;
+  font-family: "Russo One", sans-serif;
+  font-size: 5vmin;
+  font-weight: 200;
+  color: rgb(245, 245, 245);
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.modal_body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  opacity: 0;
+  overflow-y: scroll;
+  transition: opacity 1.5s ease;
+}
+
+.modal_footer {
+  height: 0;
+  width: 0;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  background-color: rgb(220, 220, 220);
+  border-radius: 0 0 1vmin 1vmin;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.modal_footer_contents {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+/* =================================== DESKTOP ==================================== */
+
+@media only screen and (min-width: 600px) {
+  .modal {
+    border-radius: 0.5vmin;
+  }
+
+  .modal_header {
+    border-radius: 0.5vmin 0.5vmin 0 0;
+  }
+
+  .modal_header_text {
+    padding: 0 0 0 2vmin;
+    font-size: 2.5vmin;
+  }
+
+  .modal_footer {
+    border-radius: 0 0 0.5vmin 0.5vmin;
+  }
+}

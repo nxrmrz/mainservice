@@ -1,0 +1,58 @@
+#admin_profile_body {
+  width: 100%;
+  position: relative;
+  top: 10vmin;
+  display: flex;
+  flex-direction: column;
+}
+
+#admin_profile_navigation_tabs {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.admin_profile_navigation_tab {
+  height: 8vmin;
+  width: calc(100% / 3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(170, 10, 10);
+  border-color: rgb(170, 10, 10);
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
+}
+
+.admin_profile_navigation_tab_selected {
+  border-style: solid none solid none;
+  border-top-color: rgb(245, 245, 245);
+  background-color: rgb(245, 245, 245);
+  opacity: 1;
+}
+
+.admin_profile_navigation_tab_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  font-weight: 800;
+  color: rgb(245, 245, 245);
+}
+
+.admin_profile_navigation_tab_text_selected {
+  color: rgb(170, 10, 10);
+}
+
+@media only screen and (min-width: 600px) {
+  #admin_profile_body {
+    top: 5vmin;
+  }
+
+  .admin_profile_navigation_tab {
+    height: 4vmin;
+    width: calc(100% / 3);
+  }
+
+  .admin_profile_navigation_tab_text {
+    font-size: 1.75vmin;
+  }
+}

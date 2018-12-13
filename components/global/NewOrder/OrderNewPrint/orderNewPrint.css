@@ -1,0 +1,182 @@
+/* ============================================ MODAL ============================================ */
+
+#order_new_print_modal_footer_contents {
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.order_new_print_footer_button {
+  height: 10vmin;
+  width: 20vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 75, 90);
+  border-radius: 2vmin;
+  box-shadow: 0 1vmin 1.5vmin 0 rgb(180, 180, 180);
+}
+
+.order_new_print_footer_button:hover {
+  background-color: rgb(255, 100, 115);
+}
+
+.order_new_print_footer_button:active {
+  background-color: rgb(230, 50, 65);
+  box-shadow: 0 0 0 rgb(180, 180, 180);
+}
+
+.order_new_print_footer_button_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  font-weight: 800;
+  text-align: center;
+  color: rgb(245, 245, 245);
+}
+
+/* ==================================== ORDER NEW PRINT MAIN ===================================== */
+
+#order_new_print_modal_body {
+  background-color: rgb(255, 250, 250);
+}
+
+#order_new_print_form_body {
+  width: 100%;
+  padding: 2vmin;
+}
+
+#order_new_print_global_options_form_body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ======================================== INPUT FIELDS ========================================= */
+
+.order_new_print_option_input_field {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4vmin 0 4vmin 0;
+}
+
+.order_new_print_option_input_field_header_body {
+  width: 30%;
+  margin: 0 4vmin 0 0;
+}
+
+.order_new_print_option_input_field_header_text {
+  color: rgb(170, 10, 10);
+  font-family: "Chivo", sans-serif;
+  font-weight: bold;
+  text-align: right;
+  font-size: 4vmin;
+}
+
+.order_new_print_option_input_body {
+  width: 50%;
+}
+
+.order_new_print_option_input_select {
+  height: 7vmin;
+  width: 100%;
+  padding: 0.5vmin;
+  background-color: rgb(255, 250, 250);
+  border: solid;
+  border-color: rgb(180, 180, 180);
+  border-radius: 0.7vmin;
+  border-width: 0.35vmin;
+  box-shadow: 0 0 1vmin 0.05vmin rgb(200, 200, 200);
+  color: rgb(120, 120, 120);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.5vmin;
+  font-weight: 700;
+}
+
+.order_new_print_form_header_body {
+  margin: 2vmin 0 2vmin 0;
+}
+
+.order_new_print_form_header_text {
+  color: rgb(170, 10, 10);
+  font-family: "Russo One", sans-serif;
+  font-size: 5vmin;
+}
+
+.order_new_print_option_input_textarea {
+  min-height: 24vmin;
+  width: 100%;
+  overflow: hidden;
+  padding: 0.5vmin;
+  background-color: rgb(255, 250, 250);
+  border: solid;
+  border-color: rgb(180, 180, 180);
+  border-radius: 0.7vmin;
+  border-width: 0.35vmin;
+  box-shadow: 0 0 1vmin 0.05vmin rgb(200, 200, 200);
+  color: rgb(120, 120, 120);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.5vmin;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 600px) {
+  /* ============================================ MODAL ============================================ */
+
+  .order_new_print_footer_button {
+    height: 5vmin;
+    width: 10vmin;
+    border-radius: 1vmin;
+    box-shadow: 0 0.5vmin 0.75vmin 0 rgb(180, 180, 180);
+  }
+
+  .order_new_print_footer_button_text {
+    font-size: 2vmin;
+  }
+
+  /* ==================================== ORDER NEW PRINT MAIN ===================================== */
+
+  #order_new_print_form_body {
+    padding: 1vmin;
+  }
+
+  /* ======================================== INPUT FIELDS ========================================= */
+
+  .order_new_print_option_input_field {
+    margin: 2vmin 0 2vmin 0;
+  }
+
+  .order_new_print_option_input_field_header_body {
+    margin: 0 2vmin 0 0;
+  }
+
+  .order_new_print_option_input_field_header_text {
+    font-size: 2vmin;
+  }
+
+  .order_new_print_option_input_select {
+    height: 3.5vmin;
+    padding: 0.25vmin;
+    border-radius: 0.35vmin;
+    border-width: 0.175vmin;
+    box-shadow: 0 0 0.5vmin 0.025vmin rgb(200, 200, 200);
+    font-size: 1.75vmin;
+  }
+
+  .order_new_print_form_header_body {
+    margin: 1vmin 0 1vmin 0;
+  }
+
+  .order_new_print_form_header_text {
+    font-size: 2.5vmin;
+  }
+
+  .order_new_print_option_input_textarea {
+    min-height: 12vmin;
+    padding: 0.25vmin;
+    border-radius: 0.35vmin;
+    border-width: 0.175vmin;
+    box-shadow: 0 0 0.5vmin 0.025vmin rgb(200, 200, 200);
+    font-size: 1.75vmin;
+  }
+}

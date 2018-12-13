@@ -1,0 +1,167 @@
+.order_details_comments_header {
+  height: 10vmin;
+  width: 100%;
+  padding: 1vmin 0 0 0;
+  font-family: "Russo One", sans-serif;
+  color: rgb(170, 10, 10);
+  font-size: 5vmin;
+}
+
+#order_details_add_comment_body {
+  width: 100%;
+  padding: 3vmin 6vmin 3vmin 6vmin;
+}
+
+#order_details_add_comment_input {
+  height: 18vmin;
+  width: 100%;
+  background-color: rgb(255, 250, 250);
+  border-radius: 1vmin;
+}
+
+#order_details_add_comment_post_button_body {
+  width: 18vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vmin 0 0 0;
+}
+
+#order_details_add_comment_post_button {
+  padding: 1vmin 3vmin 1vmin 3vmin;
+  border-radius: 1.8vmin;
+  background-color: rgb(170, 10, 10);
+  color: rgb(240, 240, 240);
+  font-family: "Chivo", sans-serif;
+  box-shadow: 0 0 0.5vmin 0.2vmin rgb(180, 180, 180);
+}
+
+#order_details_add_comment_post_button:active {
+  box-shadow: none;
+}
+
+#order_details_comments_body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.order_details_comment_body {
+  width: 95%;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  margin: 1.6vmin 0 1.6vmin 0;
+}
+
+.order_details_comment {
+  min-height: 24vmin;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border-radius: 1vmin;
+  background-color: rgb(255, 250, 250);
+}
+
+.order_details_comment_date {
+  padding: 2vmin 0 2vmin 5vmin;
+  font-family: "Chivo", sans-serif;
+  font-size: 2.4vmin;
+}
+
+.order_details_comment_text {
+  padding: 0 2vmin;
+  margin: 0 0 2vmin;
+  font-family: "Open Sans", sans-serif;
+  font-size: 3vmin;
+}
+
+.order_details_comment_author_details {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.order_details_comment_author_profile_picture {
+  height: 12vmin;
+  width: 12vmin;
+  border-radius: 6vmin;
+  margin: 1vmin 0 3vmin 0;
+  background-color: rgb(240, 240, 240);
+}
+
+.order_details_comment_author_profile_name {
+  font-family: "Russo One", sans-serif;
+  font-size: 3.4vmin;
+  font-weight: 100;
+}
+
+@media only screen and (min-width: 600px) {
+  .order_details_comments_header {
+    height: 5vmin;
+    padding: 0.5vmin 0 0 0;
+    font-size: 2.5vmin;
+  }
+
+  #order_details_add_comment_body {
+    padding: 1.5vmin 10vmin;
+  }
+
+  #order_details_add_comment_input {
+    height: 9vmin;
+    border-radius: 0.5vmin;
+  }
+
+  #order_details_add_comment_post_button_body {
+    width: 9vmin;
+    padding: 0.5vmin 0 0 0;
+  }
+
+  #order_details_add_comment_post_button {
+    padding: 0.5vmin 1.5vmin 0.5vmin 1.5vmin;
+    border-radius: 0.9vmin;
+    box-shadow: 0 0 0.25vmin 0.1vmin rgb(180, 180, 180);
+  }
+
+  .order_details_comment_body {
+    width: 80%;
+    margin: 0.8vmin 0 0.8vmin 0;
+  }
+
+  .order_details_comment {
+    min-height: 12vmin;
+    width: 80%;
+    border-radius: 0.5vmin;
+  }
+
+  .order_details_comment_date {
+    padding: 1vmin 0 1vmin 2.5vmin;
+    font-size: 1.2vmin;
+  }
+
+  .order_details_comment_text {
+    padding: 0 1vmin;
+    margin: 0 0 1vmin;
+    font-size: 1.5vmin;
+  }
+
+  .order_details_comment_author_details {
+    width: 20%;
+  }
+
+  .order_details_comment_author_profile_picture {
+    height: 6vmin;
+    width: 6vmin;
+    border-radius: 3vmin;
+    margin: 0.5vmin 0 1.5vmin 0;
+  }
+
+  .order_details_comment_author_profile_name {
+    font-size: 1.7vmin;
+  }
+}

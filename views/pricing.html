@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Zealand Based 3D Printing Service | Delta 3D Printing</title>
+    <meta
+      name="description"
+      content="Delta 3D Printing provides cheap and high-quality 3D printing services and products for people across New Zealand. Benefits and discounts for students and returning customers. Partner With Us! Personalised services and discounts for businesses and organisations partnered with us."
+    />
+    <!-- ============================ EXTERNAL ============================ -->
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Chivo|Open+Sans|Raleway|Russo+One"
+      rel="stylesheet"
+    />
+
+    <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Maps API -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRepNytrdQFVYOgxLQP6DrHO6Ovkk8Ocg&libraries=places"
+      async
+      defer
+    ></script>
+
+    <!-- ============================= GLOBAL ============================= -->
+
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/global.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/global.css"
+    />
+
+    <!-- --------------------------- NAVIGATION --------------------------- -->
+
+    <!-- Toolbar -->
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/Toolbar/toolbar.css"
+    />
+
+    <!-- Navigation Drawer -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/NavigationDrawer/navigationDrawer.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/NavigationDrawer/navigationDrawer.css"
+    />
+
+    <!-- Profile Drawer -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/profileDrawer.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/profileDrawer.css"
+    />
+
+    <!-- Profile Drawer: Visitor -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/Visitor/visitor.js"></script>
+
+    <!-- Profile Drawer: User -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/ProfileDrawer/User/user.js"></script>
+
+    <!-- Footer -->
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Navigation/Footer/footer.css"
+    />
+
+    <!-- ------------------------- USER INTERFACE ------------------------- -->
+
+    <!-- Modal -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Modal/modal.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Modal/modal.css"
+    />
+
+    <!-- Backdrop -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Backdrop/backdrop.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/UserInterface/Backdrop/backdrop.css"
+    />
+
+    <!-- ---------------------------- ACCOUNT ----------------------------- -->
+
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/account.css"
+    />
+
+    <!-- Login -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Login/login.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Login/login.css"
+    />
+
+    <!-- Signup -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Signup/signup.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Account/Signup/signup.css"
+    />
+
+    <!-- ---------------------- ADDRESS AUTOCOMPLETE ---------------------- -->
+
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/AddressAutocomplete/addressAutocomplete.js"></script>
+
+    <!-- --------------------------- VALIDATION --------------------------- -->
+
+    <!-- Login Status -->
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/global/Validation/LoginStatus/loginStatus.js"></script>
+
+    <!-- ======================== LOCAL: PRICING ========================= -->
+
+    <script src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Pricing/pricing.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/components/local/Pricing/pricing.css"
+    />
+  </head>
+
+  <body>
+    <!-- ============================ TOOLBAR ============================= -->
+
+    <div id="toolbar">
+      <div id="navigation_drawer_toggle">
+        <div
+          id="navigation_drawer_toggle_bar_1"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+        <div
+          id="navigation_drawer_toggle_bar_2"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+        <div
+          id="navigation_drawer_toggle_bar_3"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+      </div>
+      <div id="homepage_logo_container"></div>
+      <div id="profile_drawer_toggle">
+        <img
+          src="https://gitcdn.link/repo/delta3dprinting/delta3dprinting/master/assets/profile_icon.png"
+          alt="profile_icon"
+          id="profile_drawer_icon"
+        />
+      </div>
+    </div>
+
+    <!-- ======================= NAVIGATION DRAWER ======================== -->
+
+    <div id="navigation_drawer" class="navigation_drawer_close">
+      <a href="/" class="navigation_link">Home</a>
+      <a href="/services" class="navigation_link">Services</a>
+      <a href="/pricing" class="navigation_link">Pricing</a>
+      <a href="/partnership" class="navigation_link">Partnership</a>
+    </div>
+
+    <!-- ========================= PROFILE DRAWER ========================= -->
+
+    <div id="profile_drawer" class="profile_drawer_close"></div>
+
+    <!--
+      ===================================== MAIN BODY =====================================
+    -->
+
+    <div id="pricing_body">
+      <div id="pricing_navigation_tabs">
+        <div id="pricing_overview_tab" class="pricing_navigation_tab">
+          <p
+            id="pricing_overview_tab_text"
+            class="pricing_navigation_tab_text pricing_navigation_tab_text_selected"
+          >
+            3D Printing
+          </p>
+        </div>
+        <div id="pricing_3d_modelling_tab" class="pricing_navigation_tab">
+          <a href="/pricing/3d-modelling" class="pricing_navigation_tab_text"
+            >3D Modelling</a
+          >
+        </div>
+        <div id="pricing_marketplace_tab" class="pricing_navigation_tab">
+          <a href="/pricing/marketplace" class="pricing_navigation_tab_text"
+            >Marketplace</a
+          >
+        </div>
+      </div>
+      <div class="pricing_contents_body">
+        <div class="pricing_header_body">
+          <h1 class="pricing_header_text">Our Pricing</h1>
+        </div>
+        <div class="pricing_subtitle_body">
+          <h3 class="pricing_subtitle_text">
+            Aiming to be New Zealand's leading provider of high-quality 3D
+            printed products at the cheapest and most affordable prices
+          </h3>
+        </div>
+        <div class="pricing_content_body">
+          <div class="pricing_material_content_body">
+            <div id="pricing_table_body">
+              <div
+                id="pricing_material_type_row_body"
+                class="pricing_selection_row_body"
+              >
+                <div
+                  class="pricing_selection_row pricing_selection_row_selected"
+                >
+                  <div
+                    id="pricing_selection_column_plastic"
+                    class="pricing_selection_column pricing_material_type_column"
+                  >
+                    Plastic
+                  </div>
+                </div>
+              </div>
+              <div
+                id="pricing_process_row_body"
+                class="pricing_selection_row_body"
+              >
+                <div
+                  id="pricing_selection_row_plastic"
+                  class="pricing_selection_row"
+                >
+                  <div
+                    id="pricing_selection_column_fdm"
+                    class="pricing_selection_column pricing_process_column"
+                  >
+                    FDM
+                  </div>
+                </div>
+              </div>
+              <div
+                id="pricing_material_row_body"
+                class="pricing_selection_row_body"
+              >
+                <div
+                  id="pricing_selection_row_fdm"
+                  class="pricing_selection_row"
+                >
+                  <div
+                    id="pricing_selection_column_pla"
+                    class="pricing_selection_column pricing_material_column"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    id="pricing_selection_column_abs"
+                    class="pricing_selection_column pricing_material_column"
+                  >
+                    ABS
+                  </div>
+                  <div
+                    id="pricing_selection_column_petg"
+                    class="pricing_selection_column pricing_material_column"
+                  >
+                    PETG
+                  </div>
+                  <div
+                    id="pricing_selection_column_flex"
+                    class="pricing_selection_column pricing_material_column"
+                  >
+                    FLEX
+                  </div>
+                </div>
+              </div>
+              <div class="pricing_tables pricing_tables_fdm">
+                <!-- PLA PRICING TABLE -->
+                <table id="pricing_table_pla" class="pricing_table">
+                  <tr class="pricing_table_row pricing_table_odd_row_one">
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Quality
+                    </th>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      Normal
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      High
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      Very High
+                    </td>
+                  </tr>
+                  <tr
+                    class="pricing_table_row pricing_table_even_row_one pricing_table_suitable_for_row"
+                  >
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Suitable For
+                    </th>
+                    <td
+                      class="pricing_table_column pricing_table_suitable_for_column_fdm"
+                      colspan="3"
+                    >
+                      PLA is the most commonly used filament. It’s
+                      biodegradable, easy to print, and very strong. The perfect
+                      choice for printing large objects thanks to its low
+                      thermal expansion (little to no warping) and for printing
+                      tiny parts because of its low melting temperature.
+                    </td>
+                  </tr>
+                  <tr class="pricing_table_row pricing_table_odd_row_one">
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Z-Resolution
+                    </th>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      200 Micron
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      100 Micron
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      50 Micron
+                    </td>
+                  </tr>
+                  <tr class="pricing_table_row pricing_table_even_row_one">
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Price
+                    </th>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      $0.20 per gram
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      $0.30 per gram
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      $0.45 per gram
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- ABS PRICING TABLE -->
+
+                <table id="pricing_table_abs" class="pricing_table">
+                  <tr class="pricing_table_row pricing_table_odd_row_one">
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Quality
+                    </th>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      Normal
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      High
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      Very High
+                    </td>
+                  </tr>
+                  <tr
+                    class="pricing_table_row pricing_table_even_row_one pricing_table_suitable_for_row"
+                  >
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Suitable For
+                    </th>
+                    <td
+                      class="pricing_table_column pricing_table_suitable_for_column_fdm"
+                      colspan="3"
+                    >
+                      ABS is a very strong and versatile material with great
+                      thermal resistance. It’s suitable for both indoor and
+                      outdoor use. ABS includes high wear-resistance synthetic
+                      rubber, which makes it very strong and impact resistant​.
+                    </td>
+                  </tr>
+                  <tr class="pricing_table_row pricing_table_odd_row_one">
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Z-Resolution
+                    </th>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      200 Micron
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      100 Micron
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      50 Micron
+                    </td>
+                  </tr>
+                  <tr class="pricing_table_row pricing_table_even_row_one">
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Price
+                    </th>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      $0.24 per gram
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      $0.36 per gram
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      $0.54 per gram
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- PETG PRICING TABLE -->
+
+                <table id="pricing_table_petg" class="pricing_table">
+                  <tr class="pricing_table_row pricing_table_odd_row_one">
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Quality
+                    </th>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      Normal
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      High
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      Very High
+                    </td>
+                  </tr>
+                  <tr
+                    class="pricing_table_row pricing_table_even_row_one pricing_table_suitable_for_row"
+                  >
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Suitable For
+                    </th>
+                    <td
+                      class="pricing_table_column pricing_table_suitable_for_column_fdm"
+                      colspan="3"
+                    >
+                      PETG is a very tough material with good thermal
+                      resistance. It is a universal material, but it's
+                      especially suitable for mechanical parts and both indoor
+                      and outdoor use. PETG has almost no warping​, so printing
+                      large objects isn’t a problem.
+                    </td>
+                  </tr>
+                  <tr class="pricing_table_row pricing_table_odd_row_one">
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Z-Resolution
+                    </th>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      200 Micron
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      100 Micron
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      50 Micron
+                    </td>
+                  </tr>
+                  <tr class="pricing_table_row pricing_table_even_row_one">
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Price
+                    </th>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      $0.28 per gram
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      $0.42 per gram
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      $0.63 per gram
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- FLEX PRICING TABLE -->
+
+                <table id="pricing_table_flex" class="pricing_table">
+                  <tr class="pricing_table_row pricing_table_odd_row_one">
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Quality
+                    </th>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      Normal
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      High
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      Very High
+                    </td>
+                  </tr>
+                  <tr
+                    class="pricing_table_row pricing_table_even_row_one pricing_table_suitable_for_row"
+                  >
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Suitable For
+                    </th>
+                    <td
+                      class="pricing_table_column pricing_table_suitable_for_column_fdm"
+                      colspan="3"
+                    >
+                      Flex is a very strong and flexible material. There are
+                      many use cases when hard plastic is not the best option.
+                      Whether you need a phone cover, an action camera case or
+                      wheels for your RC car, flexible is the way to go. Flex
+                      has a very good abrasion resistance, remains flexible in
+                      cold environments, and is resistant to many solvents. It
+                      doesn’t shrink much when cooling down, so you can be
+                      fairly accurate with your measurements and models
+                      requiring a perfect fit.
+                    </td>
+                  </tr>
+                  <tr class="pricing_table_row pricing_table_odd_row_one">
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Z-Resolution
+                    </th>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      200 Micron
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      100 Micron
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      50 Micron
+                    </td>
+                  </tr>
+                  <tr class="pricing_table_row pricing_table_even_row_one">
+                    <th
+                      class="pricing_table_column pricing_table_column_header"
+                    >
+                      Price
+                    </th>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      $0.32 per gram
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      $0.48 per gram
+                    </td>
+                    <td class="pricing_table_column pricing_table_column_fdm">
+                      $0.72 per gram
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- ================ SPEED OF ORDER COMPLETION ================= -->
+          <div class="pricing_content_body_two">
+            <div class="pricing_table_body_two">
+              <table class="pricing_table_two">
+                <tr class="pricing_table_row_two pricing_table_row_header_two">
+                  <th colspan="2" class="pricing_table_header_two">
+                    Speed of Order Completion
+                  </th>
+                </tr>
+                <tr class="pricing_table_row_two pricing_table_odd_row_two">
+                  <th class="pricing_table_column_header_two">
+                    Basic (up to 5 days)
+                  </th>
+                  <td class="pricing_table_column_two">+0%</td>
+                </tr>
+                <tr class="pricing_table_row_two pricing_table_even_row_two">
+                  <th class="pricing_table_column_header_two">
+                    Priority (up to 3 days)
+                  </th>
+                  <td class="pricing_table_column_two">+25%</td>
+                </tr>
+                <tr class="pricing_table_row_two pricing_table_odd_row_two">
+                  <th class="pricing_table_column_header_two">
+                    Urgent (1 day)
+                  </th>
+                  <td class="pricing_table_column_two">+50%</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="service_description_body_two">
+              <p class="service_description_text_two">
+                Work with our experienced design engineers to turn your idea
+                into a 3D model.
+              </p>
+            </div>
+          </div>
+          <!-- ================== DELIVERY PRICING TABLE ================== -->
+          <div class="pricing_content_body_one">
+            <div class="pricing_table_body_one">
+              <table class="pricing_table_one">
+                <tr class="pricing_table_row_one pricing_table_row_header_one">
+                  <th colspan="2" class="pricing_table_header_one">
+                    Delivery Pricing
+                  </th>
+                </tr>
+                <tr class="pricing_table_row_one pricing_table_odd_row_one">
+                  <th class="pricing_table_column_header_one">
+                    Pickup (booking)
+                  </th>
+                  <td class="pricing_table_column_one">Free</td>
+                </tr>
+                <tr class="pricing_table_row_one pricing_table_even_row_one">
+                  <th class="pricing_table_column_header_one">
+                    Tracking (1-3 working days)
+                  </th>
+                  <td class="pricing_table_column_one">+$7.00</td>
+                </tr>
+                <tr class="pricing_table_row_one pricing_table_odd_row_one">
+                  <th class="pricing_table_column_header_one">
+                    Courier (next working day)
+                  </th>
+                  <td class="pricing_table_column_one">+$8.50</td>
+                </tr>
+              </table>
+            </div>
+            <div class="pricing_description_body_one">
+              <p class="pricing_description_text_one">
+                Pickup is available 24/7, just book at least 1 day prior.
+                Booking will be available once your order is ready for pickup. A
+                tracking number will be provided for both Tracking and Courier
+                in order to allow you to follow your packages.
+              </p>
+            </div>
+            <div class="pricing_description_body_one">
+              <p class="pricing_description_text_one">
+                Courier is an overnight delivery target across town and between
+                major towns and cities. If distance is more than 2 major cities
+                worth, delivery may take more than 1 working day.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================= FOOTER ============================= -->
+
+    <div id="footer">
+      <div class="footer_divider">
+        <p class="footer_divider_header">Services</p>
+        <div
+          id="footer_3d_printing_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/3d-printing"
+            id="footer_3d_printing"
+            class="footer_content"
+            >3D Printing</a
+          >
+        </div>
+        <div
+          id="footer_3d_modelling_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/3d-modelling"
+            id="footer_3d_modelling"
+            class="footer_content"
+            >3D Modelling</a
+          >
+        </div>
+        <div
+          id="footer_marketplace_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/marketplace"
+            id="footer_marketplace"
+            class="footer_content"
+            >Marketplace</a
+          >
+        </div>
+      </div>
+      <div class="footer_divider">
+        <p class="footer_divider_header">Resources</p>
+      </div>
+      <div class="footer_divider">
+        <p class="footer_divider_header">Delta 3D Printing</p>
+        <div
+          id="footer_about_us_body"
+          class="footer_content_body footer_about_us_content_body"
+        >
+          <a href="/about" id="footer_about_us" class="footer_content">About</a>
+        </div>
+        <div
+          id="footer_contact_us_body"
+          class="footer_content_body footer_about_us_content_body"
+        >
+          <a href="/contact-us" id="footer_contact_us" class="footer_content"
+            >Contact Us</a
+          >
+        </div>
+        <div
+          id="footer_partnership_body"
+          class="footer_content_body footer_about_content_body"
+        >
+          <a href="/partnership" id="footer_partnership" class="footer_content"
+            >Partnership Program</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

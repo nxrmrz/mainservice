@@ -1,0 +1,148 @@
+/* ========================================= MOBILE CSS ========================================= */
+
+/* ---------------------------------------- MODAL FOOTER ---------------------------------------- */
+
+.admin_order_details_footer_buttons_body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.admin_order_details_footer_buttons_body_close {
+  height: 0;
+  opacity: 0;
+  z-index: 0;
+}
+
+.admin_order_details_footer_buttons_body_open {
+  height: 14vmin;
+  opacity: 1;
+  z-index: 1;
+}
+
+.admin_order_details_footer_button_body {
+  height: 14vmin;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin_order_details_footer_button {
+  height: 10vmin;
+  width: 24vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 75, 90);
+  border-radius: 2vmin;
+  box-shadow: 0 1vmin 1.5vmin 0 rgb(180, 180, 180);
+}
+
+.admin_order_details_footer_button:hover {
+  background-color: rgb(255, 100, 115);
+}
+
+.admin_order_details_footer_button:active {
+  background-color: rgb(230, 50, 65);
+  box-shadow: 0 0 0 rgb(180, 180, 180);
+}
+
+.admin_order_details_footer_button_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  font-weight: 800;
+  text-align: center;
+  color: rgb(245, 245, 245);
+}
+
+/* ----------------------------------------- MODAL BODY ----------------------------------------- */
+
+.admin_order_details_modal_body {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------------------------------------------ BUTTONS ------------------------------------------- */
+
+.admin_order_details_button_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vmin 0 4vmin 0;
+}
+
+.admin_order_details_button {
+  height: 10vmin;
+  width: 20vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 75, 90);
+  border-radius: 2vmin;
+  box-shadow: 0 1vmin 1.5vmin 0 rgb(180, 180, 180);
+}
+
+.admin_order_details_button:hover {
+  background-color: rgb(255, 100, 115);
+}
+
+.admin_order_details_button:active {
+  background-color: rgb(230, 50, 65);
+  box-shadow: 0 0 0 rgb(180, 180, 180);
+}
+
+.admin_order_details_button_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  font-weight: 800;
+  text-align: center;
+  color: rgb(245, 245, 245);
+}
+
+/* ======================================== DESKTOP CSS ========================================= */
+
+@media only screen and (min-width: 600px) {
+  /* ---------------------------------------- MODAL FOOTER ---------------------------------------- */
+
+  .admin_order_details_footer_button_body {
+    height: 7vmin;
+  }
+
+  .admin_order_details_footer_button {
+    height: 5vmin;
+    width: 12vmin;
+    border-radius: 1vmin;
+    box-shadow: 0 0.5vmin 0.75vmin 0 rgb(180, 180, 180);
+  }
+
+  .admin_order_details_footer_button_text {
+    font-size: 2vmin;
+  }
+
+  /* ------------------------------------------ BUTTONS ------------------------------------------- */
+
+  .admin_order_details_button_body {
+    padding: 2vmin 0 2vmin 0;
+  }
+
+  .admin_order_details_button {
+    height: 5vmin;
+    width: 10vmin;
+    border-radius: 1vmin;
+    box-shadow: 0 0.5vmin 0.75vmin 0 rgb(180, 180, 180);
+  }
+
+  .admin_order_details_button_text {
+    font-size: 2vmin;
+  }
+}
+
+/* ============================================================================================== */

@@ -1,0 +1,45 @@
+#profile_settings_tabs_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile_settings_tab_body {
+  height: 8vmin;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(170, 10, 10);
+  transition: opacity 1s ease;
+  opacity: 0.3;
+}
+
+.profile_settings_tab_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  font-weight: 800;
+  color: rgb(245, 245, 245);
+}
+
+.profile_settings_tab_body_selected {
+  border-style: none none solid none;
+  border-color: rgb(170, 10, 10);
+  background-color: rgb(245, 245, 245);
+  opacity: 1;
+}
+
+.profile_settings_tab_text_selected {
+  color: rgb(170, 10, 10);
+}
+
+@media only screen and (min-width: 600px) {
+  .profile_settings_tab_body {
+    height: 4.5vmin;
+    width: 20%;
+  }
+
+  .profile_settings_tab_text {
+    font-size: 1.8vmin;
+  }
+}

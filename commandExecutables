@@ -1,0 +1,2 @@
+// Start MongoDB Server
+mongod --dbpath "D:\Users\Carl Velasco\mongo-data"

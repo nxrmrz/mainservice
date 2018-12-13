@@ -1,0 +1,13 @@
+#homepage_body {
+  width: 100%;
+  position: relative;
+  top: 10vmin;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 600px) {
+  #homepage_body {
+    top: 5vmin;
+  }
+}

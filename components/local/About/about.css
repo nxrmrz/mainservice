@@ -1,0 +1,152 @@
+#about_body {
+  position: relative;
+  top: 10vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgb(255, 250, 250);
+}
+
+#about_navigation_tabs {
+  height: 10vmin;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  background-color: rgb(170, 10, 10);
+  opacity: 0.7;
+  z-index: 5;
+}
+
+.about_navigation_tab {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about_navigation_tab_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 3vmin;
+  color: rgb(255, 250, 250);
+  transition: all 0.5s ease;
+}
+
+.about_navigation_tab_text_selected {
+  font-size: 3.2vmin;
+  font-weight: bold;
+}
+
+#about_our_story_tab:hover > #about_our_story_tab_text {
+  font-size: 3.2vmin;
+  font-weight: bold;
+}
+
+#about_team_tab:hover > #about_team_tab_text {
+  font-size: 3.2vmin;
+  font-weight: bold;
+}
+
+#about_partners_tab:hover > #about_partners_tab_text {
+  font-size: 3.2vmin;
+  font-weight: bold;
+}
+
+#about_our_story_tab:active > #about_our_story_tab_text {
+  font-size: 3.2vmin;
+  font-weight: bold;
+}
+
+#about_team_tab:active > #about_team_tab_text {
+  font-size: 3.2vmin;
+  font-weight: bold;
+}
+
+#about_partners_tab:active > #about_partners_tab_text {
+  font-size: 3.2vmin;
+  font-weight: bold;
+}
+
+#about_contents_body {
+  width: 100%;
+  padding: 10vmin 0 0 0;
+}
+
+.about_content_body {
+  width: 100%;
+}
+
+.about_header {
+  height: 26vmin;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(170, 10, 10);
+}
+
+.about_header_text {
+  font-family: "Russo One", sans-serif;
+  font-size: 7vmin;
+  color: rgb(255, 250, 250);
+}
+
+@media only screen and (min-width: 600px) {
+  #about_body {
+    top: 5vmin;
+  }
+
+  #about_navigation_tabs {
+    height: 5vmin;
+  }
+
+  .about_navigation_tab {
+    width: 15%;
+  }
+
+  .about_navigation_tab_text {
+    font-size: 1.5vmin;
+  }
+
+  .about_navigation_tab_text_selected {
+    font-size: 1.6vmin;
+  }
+
+  #about_our_story_tab:hover > #about_our_story_tab_text {
+    font-size: 1.6vmin;
+  }
+
+  #about_team_tab:hover > #about_team_tab_text {
+    font-size: 1.6vmin;
+  }
+
+  #about_partners_tab:hover > #about_partners_tab_text {
+    font-size: 1.6vmin;
+  }
+
+  #about_our_story_tab:active > #about_our_story_tab_text {
+    font-size: 1.6vmin;
+  }
+
+  #about_team_tab:active > #about_team_tab_text {
+    font-size: 1.6vmin;
+  }
+
+  #about_partners_tab:active > #about_partners_tab_text {
+    font-size: 1.6vmin;
+  }
+
+  #about_contents_body {
+    padding: 5vmin 0 0 0;
+  }
+
+  .about_header {
+    height: 13vmin;
+  }
+
+  .about_header_text {
+    font-size: 3.5vmin;
+  }
+}

@@ -1,0 +1,109 @@
+#profile_settings_profile_body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4vmin;
+}
+
+.profile_settings_edit_profile_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile_settings_edit_profile_header {
+  width: 100%;
+  padding: 1vmin;
+  margin: 5vmin 0 5vmin 0;
+  border-style: none none solid none;
+  border-color: rgb(170, 10, 10);
+  font-family: "Russo One", sans-serif;
+  font-size: 5vmin;
+  color: rgb(170, 10, 10);
+}
+
+.profile_settings_edit_profile_form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.profile_settings_edit_profile_input_field {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3vmin 3vmin 3vmin 3vmin;
+}
+
+.profile_settings_edit_profile_input_field_header {
+  width: 35%;
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  font-weight: 600;
+  color: rgb(80, 80, 80);
+}
+
+.profile_settings_edit_profile_input_body {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile_settings_edit_profile_input {
+  height: 7vmin;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.4vmin;
+  font-weight: 550;
+  color: rgb(80, 80, 80);
+  padding: 0 2vmin 0 2vmin;
+  border-radius: 1vmin;
+}
+
+.profile_settings_edit_profile_input_field_error_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2vmin 0 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 3vmin;
+  color: rgb(170, 10, 10);
+}
+
+@media only screen and (min-width: 600px) {
+  #profile_settings_profile_body {
+    padding: 2vmin;
+  }
+
+  .profile_settings_edit_profile_header {
+    padding: 1vmin;
+    margin: 3vmin 0 3vmin 0;
+    font-size: 3vmin;
+    color: rgb(170, 10, 10);
+  }
+
+  .profile_settings_edit_profile_input_field {
+    width: 47.5%;
+    display: flex;
+    align-items: center;
+    padding: 1.8vmin;
+  }
+
+  .profile_settings_edit_profile_input_field_header {
+    font-size: 2.2vmin;
+  }
+
+  .profile_settings_edit_profile_input {
+    height: 4vmin;
+    font-size: 1.8vmin;
+    padding: 0 1.2vmin 0 1.2vmin;
+    border-radius: 0.7vmin;
+  }
+}

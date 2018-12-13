@@ -1,0 +1,200 @@
+/* ===================================== TABS ===================================== */
+
+.homepage_service_tab {
+  height: 14vmin;
+  width: calc(100% / 3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.homepage_service_tab_deselected {
+  background-color: rgb(220, 220, 220);
+}
+
+.homepage_service_tab_selected {
+  background-color: rgb(245, 245, 245);
+}
+
+.homepage_service_tab_text {
+  font-family: "Russo One", sans-serif;
+  font-size: 5vmin;
+  color: rgb(170, 10, 10);
+  transition: opacity 0.5s ease;
+}
+
+.homepage_service_tab_text_deselected {
+  opacity: 0.3;
+}
+
+.homepage_service_tab_text_selected {
+  opacity: 1;
+}
+
+#homepage_3d_printing_tab:hover > #homepage_3d_printing_tab_text {
+  opacity: 1;
+}
+
+#homepage_3d_modelling_tab:hover > #homepage_3d_modelling_tab_text {
+  opacity: 1;
+}
+
+#homepage_marketplace_tab:hover > #homepage_marketplace_tab_text {
+  opacity: 1;
+}
+
+/* =================================== CONTENTS =================================== */
+
+.homepage_service_content {
+  height: 126vmin;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10vmin 0 10vmin;
+  transition: opacity 0.5s ease;
+}
+
+.homepage_service_content_deselected {
+  opacity: 0;
+  z-index: 0;
+}
+
+.homepage_service_content_selected {
+  opacity: 1;
+  z-index: 1;
+}
+
+.homepage_service_content_header_body {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.homepage_service_content_header {
+  height: 20vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Russo One", sans-serif;
+  text-align: center;
+  font-size: 8vmin;
+  font-weight: 500;
+  color: rgb(140, 10, 10);
+}
+
+.homepage_service_content_subtitle_body {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage_service_content_subtitle {
+  font-family: "Russo One", sans-serif;
+  text-align: center;
+  font-size: 5vmin;
+  font-weight: 500;
+  color: rgb(160, 160, 160);
+}
+
+.homepage_service_content_button_body {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage_service_content_button {
+  height: 9vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 75, 90);
+  padding: 0 6vmin 0 6vmin;
+  border-radius: 4.5vmin;
+  box-shadow: 0 1vmin 1.5vmin 0 rgb(180, 180, 180);
+  font-family: "Chivo", sans-serif;
+  font-size: 3.5vmin;
+  font-weight: 500;
+  text-align: center;
+  color: rgb(245, 245, 245);
+  z-index: 1;
+}
+
+.homepage_service_content_button:hover {
+  background-color: rgb(255, 100, 115);
+}
+
+.homepage_service_content_button:active {
+  background-color: rgb(230, 50, 65);
+  box-shadow: 0 0 0 rgb(180, 180, 180);
+}
+
+.homepage_service_content_description_body {
+  height: 35%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 6vmin 0 0 0;
+}
+
+.homepage_service_content_description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 4vmin;
+  font-weight: 700;
+  text-align: justify;
+  color: rgb(80, 80, 80);
+}
+
+/* =================================== DESKTOP ==================================== */
+
+@media only screen and (min-width: 600px) {
+  /* ===================================== TABS ===================================== */
+
+  .homepage_service_tab {
+    height: 7vmin;
+  }
+
+  .homepage_service_tab_text {
+    font-size: 2.5vmin;
+  }
+
+  /* =================================== CONTENTS =================================== */
+
+  .homepage_service_content {
+    height: 63vmin;
+    padding: 0 5vmin 0 5vmin;
+  }
+
+  .homepage_service_content_header {
+    height: 10vmin;
+    font-size: 4vmin;
+  }
+
+  .homepage_service_content_subtitle {
+    font-size: 2.5vmin;
+  }
+
+  .homepage_service_content_button {
+    height: 4.5vmin;
+    padding: 0 3vmin 0 3vmin;
+    border-radius: 2.25vmin;
+    box-shadow: 0 0.5vmin 0.75vmin 0 rgb(180, 180, 180);
+    font-size: 1.75vmin;
+  }
+
+  .homepage_service_content_description_body {
+    padding: 3vmin 0 0 0;
+  }
+
+  .homepage_service_content_description {
+    font-size: 2vmin;
+  }
+}

@@ -1,0 +1,185 @@
+#order_details_request_refund_form_body {
+  height: 66vmin;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.order_details_request_refund_input_field {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2vmin;
+}
+
+.order_details_request_refund_input_header_body {
+  width: 20%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 2vmin;
+}
+
+.order_details_request_refund_input_header {
+  font-family: "Chivo", sans-serif;
+  font-size: 3.6vmin;
+  font-weight: bold;
+  text-align: right;
+  color: rgb(170, 10, 10);
+}
+
+.order_details_request_refund_input_body {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2vmin;
+}
+
+.order_details_request_refund_input_textarea {
+  height: 24vmin;
+  width: 100%;
+  overflow: hidden;
+  padding: 0.5vmin;
+  background-color: rgb(255, 250, 250);
+  border: solid;
+  border-color: rgb(180, 180, 180);
+  border-radius: 0.7vmin;
+  border-width: 0.35vmin;
+  box-shadow: 0 0 1vmin 0.05vmin rgb(200, 200, 200);
+  color: rgb(120, 120, 120);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.5vmin;
+  font-weight: 700;
+}
+
+.order_details_request_refund_error_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 2vmin;
+}
+
+.order_details_request_refund_error {
+  width: 100%;
+  font-family: "Chivo", sans-serif;
+  font-size: 2.4vmin;
+  text-align: right;
+  color: rgb(200, 10, 10);
+}
+
+.request_refund_footer_buttons_body_close {
+  height: 0;
+  opacity: 0;
+  z-index: 0;
+}
+
+.request_refund_footer_buttons_body_open {
+  height: 80vmin;
+  opacity: 1;
+  z-index: 1;
+}
+
+/* ======================================== BANK NUMBER ========================================= */
+
+.order_details_request_refund_input_text {
+  height: 6vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 250, 250);
+  border: solid;
+  border-color: rgb(180, 180, 180);
+  border-radius: 0.7vmin;
+  border-width: 0.35vmin;
+  box-shadow: 0 0 1vmin 0.05vmin rgb(200, 200, 200);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.5vmin;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.7vmin;
+  color: rgb(120, 120, 120);
+}
+
+#order_details_request_refund_bank_number_input {
+  width: 10%;
+}
+
+#order_details_request_refund_branch_number_input {
+  width: 20%;
+}
+
+#order_details_request_refund_account_number_input {
+  width: 35%;
+}
+
+#order_details_request_refund_suffix_number_input {
+  width: 15%;
+}
+
+.order_details_request_refund_bank_number_separator_input {
+  height: 6vmin;
+  width: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .request_refund_footer_buttons_body_open {
+    height: 40vmin;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .order_details_request_refund_input_field {
+    padding: 1vmin;
+  }
+
+  .order_details_request_refund_input_header_body {
+    padding: 1vmin;
+  }
+
+  .order_details_request_refund_input_header {
+    font-size: 1.8vmin;
+  }
+
+  .order_details_request_refund_input_body {
+    padding: 1vmin;
+  }
+
+  .order_details_request_refund_input_textarea {
+    height: 12vmin;
+    padding: 0.25vmin;
+    border-radius: 0.35vmin;
+    border-width: 0.175vmin;
+    box-shadow: 0 0 0.5vmin 0.025vmin rgb(200, 200, 200);
+    font-size: 1.75vmin;
+  }
+
+  .order_details_request_refund_error_body {
+    padding: 0 1vmin;
+  }
+
+  .order_details_request_refund_error {
+    font-size: 1.2vmin;
+  }
+
+  #order_details_request_refund_form_body {
+    height: 33vmin;
+  }
+
+  /* ======================================== BANK NUMBER ========================================= */
+
+  .order_details_request_refund_input_text {
+    height: 3vmin;
+    border-radius: 0.35vmin;
+    border-width: 0.175vmin;
+    box-shadow: 0 0 0.5vmin 0.025vmin rgb(200, 200, 200);
+    font-size: 1.75vmin;
+    letter-spacing: 0.7vmin;
+  }
+
+  .order_details_request_refund_bank_number_separator_input {
+    height: 3vmin;
+  }
+}

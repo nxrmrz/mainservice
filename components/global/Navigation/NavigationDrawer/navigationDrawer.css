@@ -1,0 +1,131 @@
+#navigation_drawer {
+  height: 100vh;
+  width: 38vmin;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 3vmin;
+  background-color: rgb(245, 245, 245);
+  transition: transform 0.5s ease-out;
+  z-index: 100;
+}
+
+.navigation_drawer_close {
+  transform: translateX(-100%);
+}
+
+.navigation_drawer_open {
+  transform: translateX(0);
+}
+
+.navigation_link {
+  height: 9vmin;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2vmin;
+  margin: 2vmin 0 2vmin 0;
+  border-radius: 2vmin;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.6vmin;
+  font-weight: 600;
+  color: rgb(170, 10, 10);
+  letter-spacing: 0.2vmin;
+  text-decoration: none;
+}
+
+.selected_navigation_link {
+  background-color: rgb(220, 50, 50);
+  color: rgb(245, 245, 245);
+  box-shadow: inset 0 0 0.8vmin rgb(120, 120, 120);
+}
+
+#navigation_drawer_toggle {
+  height: 9vmin;
+  width: 9vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1vmin;
+  border-radius: 1vmin;
+  z-index: 20;
+}
+
+#navigation_drawer_toggle:active {
+  background-color: rgb(200, 10, 10);
+  box-shadow: inset 0 0 1.5vmin rgb(120, 10, 10);
+}
+
+#navigation_drawer_toggle_bar_1 {
+  width: 60%;
+}
+
+#navigation_drawer_toggle:hover > #navigation_drawer_toggle_bar_1 {
+  width: 100%;
+}
+
+#navigation_drawer_toggle:active > #navigation_drawer_toggle_bar_1 {
+  width: 100%;
+}
+
+#navigation_drawer_toggle_bar_2 {
+  width: 90%;
+}
+
+#navigation_drawer_toggle:hover > #navigation_drawer_toggle_bar_2 {
+  width: 100%;
+}
+
+#navigation_drawer_toggle:active > #navigation_drawer_toggle_bar_2 {
+  width: 100%;
+}
+
+#navigation_drawer_toggle_bar_3 {
+  width: 75%;
+}
+
+#navigation_drawer_toggle:hover > #navigation_drawer_toggle_bar_3 {
+  width: 100%;
+}
+
+#navigation_drawer_toggle:active > #navigation_drawer_toggle_bar_3 {
+  width: 100%;
+}
+
+.navigation_drawer_toggle_bar {
+  border-style: solid;
+  border-color: rgb(245, 245, 245);
+  border-width: 0.4vmin;
+  border-radius: 0.4vmin;
+  transition: width 0.5s ease;
+}
+
+@media only screen and (min-width: 600px) {
+  #navigation_drawer {
+    width: 19vmin;
+    padding: 1.5vmin;
+  }
+
+  .navigation_link {
+    height: 4.5vmin;
+    padding: 1vmin;
+    margin: 1vmin 0 1vmin 0;
+    border-radius: 1vmin;
+    font-size: 1.8vmin;
+    letter-spacing: 0.1vmin;
+  }
+
+  #navigation_drawer_toggle {
+    height: 4.5vmin;
+    width: 4.5vmin;
+    padding: 0.5vmin;
+    border-radius: 1vmin;
+  }
+
+  .navigation_drawer_toggle_bar {
+    border-width: 0.2vmin;
+    border-radius: 0.2vmin;
+  }
+}

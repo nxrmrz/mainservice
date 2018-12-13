@@ -1,0 +1,615 @@
+/* ========================================= MOBILE CSS ========================================= */
+
+/* ----------------------------------------- MAIN BODY ------------------------------------------ */
+
+#pricing_body {
+  width: 100%;
+  position: relative;
+  top: 10vmin;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing_contents_body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10vmin 0 0 0;
+  background-color: rgb(255, 255, 255);
+}
+
+/* --------------------------------------- NAVIGATION BAR --------------------------------------- */
+
+#pricing_navigation_tabs {
+  height: 10vmin;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  background-color: rgb(170, 10, 10);
+  opacity: 0.7;
+  z-index: 5;
+}
+
+.pricing_navigation_tab {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricing_navigation_tab_text {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Chivo", sans-serif;
+  font-size: 3vmin;
+  text-align: center;
+  color: rgb(255, 250, 250);
+  transition: all 0.5s ease;
+}
+
+.pricing_navigation_tab_text_selected {
+  font-size: 3.2vmin;
+  font-weight: bold;
+}
+
+/* ------------------------------------ HEADER AND SUBTITLE ------------------------------------- */
+
+.pricing_header_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12vmin 8vmin;
+}
+
+.pricing_header_text {
+  font-family: "Russo One", sans-serif;
+  font-size: 7vmin;
+  color: rgb(170, 10, 10);
+  letter-spacing: 0.3vmin;
+  text-align: center;
+}
+
+.pricing_subtitle_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8vmin;
+  background-color: rgb(200, 40, 40);
+}
+
+.pricing_subtitle_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  text-align: justify;
+  color: rgb(255, 250, 250);
+  letter-spacing: 0.2vmin;
+}
+
+/* ---------------------------------------- CONTENT ONE ----------------------------------------- */
+
+.pricing_content_body_one {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 6vmin;
+  background-color: rgb(255, 250, 250);
+}
+
+.pricing_description_body_one {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6vmin 12vmin 6vmin 6vmin;
+}
+
+.pricing_description_text_one {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.6vmin;
+  font-weight: bold;
+  text-align: justify;
+  color: rgb(80, 10, 10);
+  letter-spacing: 0.1vmin;
+}
+
+.pricing_table_body_one {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vmin 10vmin 4vmin 4vmin;
+}
+
+.pricing_table_odd_row_one {
+  background-color: rgb(255, 220, 220);
+}
+
+.pricing_table_even_row_one {
+  background-color: rgb(255, 240, 240);
+}
+
+.pricing_table_one {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pricing_table_row_header_one {
+  background-color: rgb(150, 10, 10);
+}
+
+.pricing_table_header_one {
+  height: 12vmin;
+  width: 50%;
+  border-style: solid;
+  border-width: 0.2vmin;
+  border-color: rgb(200, 200, 200);
+  font-family: "Chivo", sans-serif;
+  font-size: 5vmin;
+  color: rgb(255, 250, 250);
+}
+
+.pricing_table_row_one {
+  width: 100%;
+}
+
+.pricing_table_column_header_one {
+  height: 10vmin;
+  width: 70%;
+  padding: 0 3vmin;
+  border-style: solid;
+  border-width: 0.2vmin;
+  border-color: rgb(200, 200, 200);
+  font-family: "Chivo", sans-serif;
+  font-size: 3.6vmin;
+  color: rgb(150, 10, 10);
+  text-align: right;
+}
+
+.pricing_table_column_one {
+  height: 10vmin;
+  width: 30%;
+  border-style: solid;
+  border-width: 0.2vmin;
+  border-color: rgb(200, 200, 200);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.6vmin;
+  color: rgb(60, 60, 60);
+  text-align: center;
+}
+
+/* ---------------------------------------- CONTENT TWO ----------------------------------------- */
+
+.pricing_content_body_two {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 6vmin;
+  background-color: rgb(255, 220, 220);
+}
+
+.service_description_body_two {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6vmin 6vmin 6vmin 12vmin;
+}
+
+.service_description_text_two {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.6vmin;
+  font-weight: bold;
+  text-align: justify;
+  color: rgb(20, 20, 20);
+  letter-spacing: 0.1vmin;
+}
+
+.pricing_table_body_two {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vmin 4vmin 4vmin 10vmin;
+}
+
+.pricing_table_odd_row_two {
+  background-color: rgb(255, 200, 200);
+}
+
+.pricing_table_even_row_two {
+  background-color: rgb(255, 230, 230);
+}
+
+.pricing_table_two {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pricing_table_row_header_two {
+  background-color: rgb(120, 10, 10);
+}
+
+.pricing_table_header_two {
+  height: 12vmin;
+  width: 50%;
+  border-style: solid;
+  border-width: 0.2vmin;
+  border-color: rgb(255, 250, 250);
+  font-family: "Chivo", sans-serif;
+  font-size: 5vmin;
+  color: rgb(255, 250, 250);
+}
+
+.pricing_table_row_two {
+  width: 100%;
+}
+
+.pricing_table_column_header_two {
+  height: 10vmin;
+  width: 70%;
+  padding: 0 3vmin;
+  border-style: solid;
+  border-width: 0.2vmin;
+  border-color: rgb(255, 250, 250);
+  font-family: "Chivo", sans-serif;
+  font-size: 3.6vmin;
+  color: rgb(120, 10, 10);
+  text-align: right;
+}
+
+.pricing_table_column_two {
+  height: 10vmin;
+  width: 30%;
+  border-style: solid;
+  border-width: 0.2vmin;
+  border-color: rgb(255, 250, 250);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.6vmin;
+  color: rgb(40, 40, 40);
+  text-align: center;
+}
+
+/* -------------------------------------- MATERIAL PRICES --------------------------------------- */
+
+.pricing_material_content_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 6vmin;
+  background-color: rgb(255, 250, 250);
+}
+
+#pricing_table_body {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing_selection_row_body {
+  width: 80vw;
+}
+
+#pricing_material_type_row_body {
+  height: 8vmin;
+}
+
+.pricing_plastic_process_row_body {
+  height: 8vmin;
+}
+
+.pricing_fdm_material_row_body {
+  height: 8vmin;
+}
+
+.pricing_selection_row {
+  width: inherit;
+  position: absolute;
+  display: flex;
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+.pricing_selection_row_selected {
+  opacity: 1;
+  z-index: 1;
+}
+
+.pricing_selection_column {
+  height: 8vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+  border-width: 0.2vmin;
+  background-color: rgb(150, 10, 10);
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  letter-spacing: 0.2vmin;
+  color: rgb(255, 250, 250);
+  opacity: 0.5;
+  transition: all 0.5s ease;
+}
+
+.pricing_selection_column_selected {
+  border-color: rgb(240, 240, 240);
+  opacity: 1;
+}
+
+.pricing_material_type_column {
+  width: 100%;
+}
+
+.pricing_process_column {
+  width: 100%;
+}
+
+.pricing_material_column {
+  width: 25%;
+}
+
+.pricing_tables {
+  width: 80vw;
+}
+
+.pricing_tables_fdm {
+  height: 126vmin;
+}
+
+.pricing_table {
+  width: inherit;
+  position: absolute;
+  border-collapse: collapse;
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+.pricing_table_selected {
+  opacity: 1;
+  z-index: 1;
+}
+
+.pricing_table_row {
+  height: 18vmin;
+  width: 100%;
+}
+
+.pricing_table_suitable_for_row {
+  height: 72vmin;
+}
+
+.pricing_table_column {
+  padding: 1vmin;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+  border-width: 0.2vmin;
+  font-family: "Chivo", sans-serif;
+  text-align: center;
+  font-size: 3.6vmin;
+  color: rgb(40, 40, 40);
+}
+
+.pricing_table_suitable_for_column_fdm {
+  text-align: justify;
+}
+
+.pricing_table_column_header {
+  width: 25%;
+  font-family: "Chivo", sans-serif;
+  text-align: center;
+  font-size: 3.6vmin;
+  font-weight: bold;
+  color: rgb(170, 10, 10);
+}
+
+.pricing_table_column_fdm {
+  width: 25%;
+}
+
+/* ======================================== DESKTOP CSS ========================================= */
+
+@media only screen and (min-width: 600px) {
+  /* ---------------------------------------- MAIN BODY ----------------------------------------- */
+
+  #pricing_body {
+    top: 5vmin;
+  }
+
+  .pricing_contents_body {
+    padding: 5vmin 0 0 0;
+  }
+
+  /* -------------------------------------- NAVIGATION BAR -------------------------------------- */
+
+  #pricing_navigation_tabs {
+    height: 5vmin;
+  }
+
+  .pricing_navigation_tab {
+    width: 15%;
+  }
+
+  .pricing_navigation_tab_text {
+    font-size: 1.5vmin;
+  }
+
+  .pricing_navigation_tab_text_selected {
+    font-size: 1.6vmin;
+  }
+
+  /* ----------------------------------- HEADER AND SUBTITLE ------------------------------------ */
+
+  .pricing_header_body {
+    padding: 6vmin 4vmin;
+  }
+
+  .pricing_header_text {
+    font-size: 3.5vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .pricing_subtitle_body {
+    padding: 4vmin;
+  }
+
+  .pricing_subtitle_text {
+    font-size: 2vmin;
+    letter-spacing: 0.1vmin;
+  }
+
+  /* ---------------------------------------- CONTENT ONE ----------------------------------------- */
+
+  .pricing_content_body_one {
+    padding: 5vmin 5vmin 5vmin 10vmin;
+  }
+
+  .pricing_description_body_one {
+    width: 60%;
+    padding: 3vmin 6vmin 3vmin 3vmin;
+  }
+
+  .pricing_description_text_one {
+    font-size: 1.8vmin;
+    letter-spacing: 0.05vmin;
+  }
+
+  .pricing_table_body_one {
+    width: 60%;
+    padding: 2vmin 5vmin 2vmin 2vmin;
+  }
+
+  .pricing_table_header_one {
+    height: 6vmin;
+    border-width: 0.1vmin;
+    font-size: 2.5vmin;
+  }
+
+  .pricing_table_column_header_one {
+    height: 5vmin;
+    padding: 0 1.5vmin;
+    border-width: 0.1vmin;
+    font-size: 1.8vmin;
+  }
+
+  .pricing_table_column_one {
+    height: 5vmin;
+    border-width: 0.1vmin;
+    font-size: 1.8vmin;
+  }
+
+  /* ---------------------------------------- CONTENT TWO ----------------------------------------- */
+
+  .pricing_content_body_two {
+    padding: 5vmin 10vmin 5vmin 5vmin;
+  }
+
+  .service_description_body_two {
+    width: 60%;
+    padding: 3vmin 3vmin 3vmin 6vmin;
+  }
+
+  .service_description_text_two {
+    font-size: 1.8vmin;
+    letter-spacing: 0.05vmin;
+  }
+
+  .pricing_table_body_two {
+    width: 60%;
+    padding: 2vmin 2vmin 2vmin 5vmin;
+  }
+
+  .pricing_table_header_two {
+    height: 6vmin;
+    border-width: 0.1vmin;
+    font-size: 2.5vmin;
+  }
+
+  .pricing_table_column_header_two {
+    height: 5vmin;
+    padding: 0 1.5vmin;
+    border-width: 0.1vmin;
+    font-size: 1.8vmin;
+  }
+
+  .pricing_table_column_two {
+    height: 5vmin;
+    border-width: 0.1vmin;
+    font-size: 1.8vmin;
+  }
+
+  /* -------------------------------------- MATERIAL PRICES --------------------------------------- */
+
+  .pricing_material_content_body {
+    padding: 5vmin;
+  }
+
+  #pricing_table_body {
+    width: 50vw;
+  }
+
+  .pricing_selection_row_body {
+    width: 50vw;
+  }
+
+  #pricing_material_type_row_body {
+    height: 4vmin;
+  }
+
+  .pricing_plastic_process_row_body {
+    height: 4vmin;
+  }
+
+  .pricing_fdm_material_row_body {
+    height: 4vmin;
+  }
+
+  .pricing_selection_column {
+    height: 4vmin;
+    border-width: 0.1vmin;
+    font-size: 2vmin;
+    letter-spacing: 0.1vmin;
+  }
+
+  .pricing_tables {
+    width: 50vw;
+  }
+
+  .pricing_tables_fdm {
+    height: 63vmin;
+  }
+
+  .pricing_table_row {
+    height: 9vmin;
+  }
+
+  .pricing_table_suitable_for_row {
+    height: 36vmin;
+  }
+
+  .pricing_table_column {
+    padding: 0.5vmin;
+    border-width: 0.1vmin;
+    font-size: 1.8vmin;
+  }
+
+  .pricing_table_column_header {
+    font-size: 1.8vmin;
+  }
+}
+
+/* ============================================================================================== */

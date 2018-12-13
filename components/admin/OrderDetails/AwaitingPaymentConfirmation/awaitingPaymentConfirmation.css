@@ -1,0 +1,149 @@
+#admin_awaiting_payment_confirmation_modal_footer_contents {
+  flex-direction: column;
+}
+
+#admin_awaiting_payment_confirmation_order_price_calculation_body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 4vmin;
+}
+
+.admin_awaiting_payment_confirmation_price_calculation_row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-color: rgb(100, 100, 100);
+  border-width: 0.2vmin;
+}
+
+.admin_awaiting_payment_confirmation_price_calculation_column_one {
+  height: 10vmin;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  padding: 0 4vmin;
+  border-style: solid;
+  border-color: rgb(100, 100, 100);
+  border-width: 0.2vmin;
+  font-family: "Open Sans", sans-serif;
+  font-size: 3vmin;
+}
+
+.admin_awaiting_payment_confirmation_price_calculation_column_two {
+  height: 10vmin;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  padding: 0 4vmin;
+  border-style: solid;
+  border-color: rgb(100, 100, 100);
+  border-width: 0.2vmin;
+  font-family: "Chivo", sans-serif;
+  font-size: 3vmin;
+}
+
+.admin_awaiting_payment_confirmation_order_summary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 4vmin;
+}
+
+.admin_awaiting_payment_confirmation_order_summary_row_header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-color: rgb(100, 100, 100);
+  border-width: 0.2vmin;
+}
+
+.admin_awaiting_payment_confirmation_order_summary_column_header {
+  height: 8vmin;
+  width: calc(100% / 3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4vmin;
+  border-style: solid;
+  border-color: rgb(100, 100, 100);
+  border-width: 0.2vmin;
+  font-family: "Russo One", sans-serif;
+  font-size: 3.2vmin;
+}
+
+.admin_awaiting_payment_confirmation_order_summary_row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-color: rgb(100, 100, 100);
+  border-width: 0.2vmin;
+}
+
+.admin_awaiting_payment_confirmation_order_summary_column {
+  height: 14vmin;
+  width: calc(100% / 3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4vmin;
+  border-style: solid;
+  border-color: rgb(100, 100, 100);
+  border-width: 0.2vmin;
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.8vmin;
+  font-weight: bolder;
+}
+
+@media only screen and (min-width: 600px) {
+  #admin_awaiting_payment_confirmation_order_price_calculation_body {
+    padding: 2vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_price_calculation_row {
+    border-width: 0.1vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_price_calculation_column_one {
+    height: 5vmin;
+    padding: 0 2vmin;
+    border-width: 0.1vmin;
+    font-size: 1.5vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_price_calculation_column_two {
+    height: 5vmin;
+    padding: 0 2vmin;
+    border-width: 0.1vmin;
+    font-size: 1.5vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_order_summary {
+    padding: 2vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_order_summary_row_header {
+    border-width: 0.1vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_order_summary_column_header {
+    height: 4vmin;
+    padding: 0 2vmin;
+    border-width: 0.1vmin;
+    font-size: 1.6vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_order_summary_row {
+    border-width: 0.1vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_order_summary_column {
+    height: 7vmin;
+    padding: 0 2vmin;
+    border-width: 0.1vmin;
+    font-size: 1.9vmin;
+  }
+}

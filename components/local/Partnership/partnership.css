@@ -1,0 +1,523 @@
+#partnership_body {
+  width: 100%;
+  position: relative;
+  top: 10vmin;
+  display: flex;
+  flex-direction: column;
+}
+
+#partnership_navigation_tabs {
+  height: 10vmin;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  background-color: rgb(170, 10, 10);
+  opacity: 0.7;
+  z-index: 5;
+}
+
+.partnership_navigation_tab {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partnership_navigation_tab_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 3vmin;
+  text-align: center;
+  color: rgb(255, 250, 250);
+  transition: all 0.5s ease;
+}
+
+.partnership_navigation_tab_text_selected {
+  font-size: 3.2vmin;
+  font-weight: bold;
+}
+
+#partnership_contents_body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10vmin 0 0 0;
+  background-color: rgb(255, 255, 255);
+}
+
+#partnership_main_header_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12vmin 8vmin;
+}
+
+#partnership_main_header_text {
+  font-family: "Russo One", sans-serif;
+  font-size: 7vmin;
+  color: rgb(170, 10, 10);
+  letter-spacing: 0.3vmin;
+  text-align: center;
+}
+
+#partnership_opening_description_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8vmin;
+  background-color: rgb(200, 40, 40);
+}
+
+#partnership_opening_description_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  text-align: justify;
+  color: rgb(255, 250, 250);
+  letter-spacing: 0.2vmin;
+}
+
+.partnership_body_one {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 6vmin;
+  background-color: rgb(255, 250, 250);
+}
+
+.partnership_header_body_one {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 6vmin;
+}
+
+.partnership_header_text_one {
+  font-family: "Russo One", sans-serif;
+  font-size: 5.6vmin;
+  color: rgb(120, 10, 10);
+  letter-spacing: 0.2vmin;
+}
+
+.partnership_sub_header_body_one {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4vmin 6vmin;
+}
+
+.partnership_sub_header_text_one {
+  font-family: "Russo One", sans-serif;
+  font-size: 4.6vmin;
+  color: rgb(120, 10, 10);
+  letter-spacing: 0.2vmin;
+}
+
+.partnership_description_body_one {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6vmin 12vmin 6vmin 6vmin;
+}
+
+.partnership_description_text_one {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.6vmin;
+  font-weight: bold;
+  text-align: justify;
+  color: rgb(80, 10, 10);
+  letter-spacing: 0.1vmin;
+}
+
+.partnership_body_two {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 6vmin;
+  background-color: rgb(255, 220, 220);
+}
+
+.partnership_header_body_two {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 6vmin;
+}
+
+.partnership_header_text_two {
+  font-family: "Russo One", sans-serif;
+  font-size: 5.6vmin;
+  color: rgb(50, 50, 50);
+  letter-spacing: 0.2vmin;
+}
+
+.partnership_description_body_two {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6vmin 6vmin 6vmin 12vmin;
+}
+
+.partnership_description_text_two {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.6vmin;
+  font-weight: bold;
+  text-align: justify;
+  color: rgb(20, 20, 20);
+  letter-spacing: 0.1vmin;
+}
+
+.partnership_details_button_body_one {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6vmin 12vmin 6vmin 6vmin;
+}
+
+.partnership_button {
+  padding: 2vmin;
+}
+
+.partnership_details_button_body_two {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6vmin 6vmin 6vmin 12vmin;
+}
+
+.partnership_button {
+  height: 10vmin;
+  width: 40vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1vmin;
+  background-color: rgb(255, 75, 90);
+  box-shadow: 0 0.5vmin 1vmin 0 rgb(180, 180, 180);
+}
+
+.partnership_button:hover {
+  background-color: rgb(255, 100, 115);
+}
+
+.partnership_button:active {
+  background-color: rgb(230, 50, 65);
+  box-shadow: 0 0 0 rgb(180, 180, 180);
+}
+
+.partnership_button_text {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Chivo", sans-serif;
+  font-size: 3.6vmin;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.2vmin;
+  color: rgb(255, 250, 250);
+  text-decoration: none;
+}
+
+#partnership_become_a_partner_header_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6vmin;
+}
+
+#partnership_become_a_partner_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 6vmin;
+  background-color: rgb(255, 250, 250);
+}
+
+#partnership_become_a_partner_button_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6vmin;
+}
+
+#partnership_become_a_partner_header_text {
+  font-family: "Russo One", sans-serif;
+  font-size: 6.4vmin;
+  text-align: center;
+  letter-spacing: 0.3vmin;
+  color: rgb(170, 10, 10);
+}
+
+.partnership_table_body_one {
+  width: 100%;
+  padding: 6vmin 12vmin 6vmin 6vmin;
+}
+
+.partnership_table_body_two {
+  width: 100%;
+  padding: 6vmin 6vmin 6vmin 12vmin;
+}
+
+.partnership_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.partnership_table_row_header {
+  background-color: rgb(170, 10, 10);
+}
+
+.partnership_table_header_one {
+  width: 70%;
+  padding: 2vmin;
+  border-style: solid;
+  border-width: 0.4vmin;
+  border-color: rgb(200, 200, 200);
+  font-family: "Chivo", sans-serif;
+  font-size: 3.8vmin;
+  font-weight: bold;
+  color: rgb(255, 250, 250);
+}
+
+.partnership_table_header_two {
+  width: 30%;
+  padding: 2vmin;
+  border-style: solid;
+  border-width: 0.4vmin;
+  border-color: rgb(200, 200, 200);
+  background-color: rgb(170, 10, 10);
+  font-family: "Chivo", sans-serif;
+  font-size: 3.8vmin;
+  font-weight: bold;
+  color: rgb(255, 250, 250);
+}
+
+.partnership_table_row_one {
+  background-color: rgb(255, 220, 220);
+}
+
+.partnership_table_row_two {
+  background-color: rgb(255, 250, 250);
+}
+
+.partnership_table_column_one {
+  width: 70%;
+  padding: 2vmin;
+  border-style: solid;
+  border-width: 0.4vmin;
+  border-color: rgb(200, 200, 200);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.6vmin;
+  text-align: center;
+  color: rgb(20, 20, 20);
+}
+
+.partnership_table_column_two {
+  width: 30%;
+  padding: 2vmin;
+  border-style: solid;
+  border-width: 0.4vmin;
+  border-color: rgb(200, 200, 200);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.6vmin;
+  text-align: center;
+  color: rgb(20, 20, 20);
+}
+
+@media only screen and (min-width: 600px) {
+  #partnership_body {
+    top: 5vmin;
+  }
+
+  #partnership_navigation_tabs {
+    height: 5vmin;
+  }
+
+  .partnership_navigation_tab {
+    width: 10%;
+  }
+
+  .partnership_navigation_tab_text {
+    font-size: 1.5vmin;
+  }
+
+  .partnership_navigation_tab_text_selected {
+    font-size: 1.6vmin;
+  }
+
+  #partnership_contents_body {
+    padding: 5vmin 0 0 0;
+  }
+
+  #partnership_main_header_body {
+    height: 12vmin;
+    padding: 0 3vmin;
+  }
+
+  #partnership_main_header_text {
+    font-size: 3.5vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  #partnership_opening_description_body {
+    padding: 4vmin;
+  }
+
+  #partnership_opening_description_text {
+    font-size: 2vmin;
+    letter-spacing: 0.1vmin;
+  }
+
+  .partnership_body_one {
+    padding: 5vmin 5vmin 5vmin 10vmin;
+  }
+
+  .partnership_header_body_one {
+    width: 60%;
+    padding: 3vmin;
+  }
+
+  .partnership_header_text_one {
+    font-size: 2.8vmin;
+    letter-spacing: 0.1vmin;
+  }
+
+  .partnership_sub_header_body_one {
+    width: 60%;
+    padding: 2vmin 3vmin;
+  }
+
+  .partnership_sub_header_text_one {
+    font-size: 2.3vmin;
+    letter-spacing: 0.1vmin;
+  }
+
+  .partnership_description_body_one {
+    width: 60%;
+    padding: 3vmin 6vmin 3vmin 3vmin;
+  }
+
+  .partnership_description_text_one {
+    font-size: 1.8vmin;
+    letter-spacing: 0.05vmin;
+  }
+
+  .partnership_body_two {
+    padding: 5vmin 10vmin 5vmin 5vmin;
+    justify-content: flex-end;
+  }
+
+  .partnership_header_body_two {
+    width: 60%;
+    padding: 3vmin;
+    justify-content: flex-end;
+  }
+
+  .partnership_header_text_two {
+    width: 60%;
+    font-size: 2.8vmin;
+    letter-spacing: 0.1vmin;
+    text-align: right;
+  }
+
+  .partnership_description_body_two {
+    width: 60%;
+    padding: 3vmin 3vmin 3vmin 6vmin;
+  }
+
+  .partnership_description_text_two {
+    font-size: 1.8vmin;
+    letter-spacing: 0.05vmin;
+  }
+
+  .partnership_details_button_body_one {
+    width: 60%;
+    padding: 3vmin 6vmin 3vmin 3vmin;
+  }
+
+  .partnership_details_button_body_two {
+    width: 60%;
+    padding: 3vmin 3vmin 3vmin 6vmin;
+  }
+
+  .partnership_button {
+    height: 5vmin;
+    width: 20vmin;
+    padding: 1vmin;
+    border-radius: 0.5vmin;
+    box-shadow: 0 0.25vmin 0.5vmin 0 rgb(180, 180, 180);
+  }
+
+  .partnership_button_text {
+    font-size: 1.8vmin;
+    letter-spacing: 0.1vmin;
+  }
+
+  #partnership_become_a_partner_header_body {
+    padding: 3vmin;
+  }
+
+  #partnership_become_a_partner_body {
+    padding: 3vmin;
+  }
+
+  #partnership_become_a_partner_button_body {
+    padding: 3vmin;
+  }
+
+  #partnership_become_a_partner_header_text {
+    font-size: 3.2vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .partnership_table_body_one {
+    width: 60%;
+    padding: 3vmin 6vmin 3vmin 3vmin;
+  }
+
+  .partnership_table_body_two {
+    width: 60%;
+    padding: 3vmin 3vmin 3vmin 6vmin;
+  }
+
+  .partnership_table_header_one {
+    padding: 1vmin;
+    border-width: 0.2vmin;
+    font-size: 1.9vmin;
+  }
+
+  .partnership_table_header_two {
+    padding: 1vmin;
+    border-width: 0.2vmin;
+    font-size: 1.9vmin;
+  }
+
+  .partnership_table_column_one {
+    padding: 1vmin;
+    border-width: 0.2vmin;
+    font-size: 1.8vmin;
+  }
+
+  .partnership_table_column_two {
+    padding: 1vmin;
+    border-width: 0.2vmin;
+    font-size: 1.8vmin;
+  }
+}

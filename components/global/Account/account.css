@@ -1,0 +1,144 @@
+.modal_account_form_body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.modal_account_form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 4vmin;
+}
+
+.modal_account_input_field {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal_account_input_field_header {
+  width: 30%;
+  display: flex;
+  font-family: "Chivo", sans-serif;
+  margin: 1vmin 0 1vmin 0;
+  font-weight: 700;
+  color: rgb(240, 240, 240);
+  font-size: 3.5vmin;
+}
+
+.modal_account_input_body {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal_account_input {
+  height: 7vmin;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 2.5vmin 0 2.5vmin 0;
+  padding: 1vmin 3vmin 1vmin 3vmin;
+  border-radius: 2vmin;
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.5vmin;
+  font-weight: 700;
+  color: rgb(50, 50, 50);
+  background-color: rgb(240, 240, 240);
+}
+
+.form_submit_button_body {
+  height: 10vmin;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_submit_button {
+  height: 8vmin;
+  border-radius: 1vmin;
+  border-color: rgb(255, 75, 90);
+  padding: 0 8vmin 0 8vmin;
+  margin: 4vmin 0 0 0;
+  font-size: 4vmin;
+  font-family: "Chivo", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1vmin;
+  color: rgb(240, 240, 240);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 75, 90);
+}
+
+.modal_account_statement_body {
+  display: flex;
+}
+
+.modal_account_statement_text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.5vmin;
+}
+
+.modal_account_statement_text_link {
+  margin: 0 1vmin 0 0;
+  color: rgb(80, 150, 255);
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.modal_account_statement_text_normal {
+  color: rgb(50, 50, 50);
+}
+
+@media only screen and (min-width: 600px) {
+  .modal_account_form {
+    padding: 2vmin;
+  }
+
+  .modal_account_input_field_header {
+    width: 20%;
+    margin: 0.5vmin 0 0.5vmin 0;
+    font-size: 1.75vmin;
+  }
+
+  .modal_account_input_body {
+    width: 75%;
+  }
+
+  .modal_account_input {
+    height: 3.5vmin;
+    margin: 1.25vmin 0 1.25vmin 0;
+    padding: 0.5vmin 1.5vmin 0.5vmin 1.5vmin;
+    border-radius: 1vmin;
+    font-size: 1.75vmin;
+  }
+
+  .form_submit_button_body {
+    height: 5vmin;
+  }
+
+  .form_submit_button {
+    height: 4vmin;
+    border-radius: 0.5vmin;
+    padding: 0 4vmin 0 4vmin;
+    margin: 2vmin 0 0 0;
+    font-size: 2vmin;
+    letter-spacing: 0.5vmin;
+  }
+
+  .modal_account_statement_text {
+    font-size: 1.75vmin;
+  }
+
+  .modal_account_statement_text_link {
+    margin: 0 0.5vmin 0 0;
+  }
+}

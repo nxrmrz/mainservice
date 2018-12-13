@@ -1,0 +1,14 @@
+#order_details_refund_approved_declined_auto_complete_timer {
+  width: 100%;
+  text-align: center;
+  font-size: 4vmin;
+  font-weight: bold;
+  padding: 2vmin 0;
+}
+
+@media only screen and (min-width: 600px) {
+  #order_details_refund_approved_declined_auto_complete_timer {
+    font-size: 2vmin;
+    padding: 1vmin 0;
+  }
+}
