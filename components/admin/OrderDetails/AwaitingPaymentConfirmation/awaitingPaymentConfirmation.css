@@ -98,7 +98,61 @@
   font-weight: bolder;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #admin_awaiting_payment_confirmation_order_price_calculation_body {
+    padding: 3vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_price_calculation_row {
+    border-width: 0.15vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_price_calculation_column_one {
+    height: 7.5vmin;
+    padding: 0 3vmin;
+    border-width: 0.15vmin;
+    font-size: 2.25vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_price_calculation_column_two {
+    height: 7.5vmin;
+    padding: 0 3vmin;
+    border-width: 0.15vmin;
+    font-size: 2.25vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_order_summary {
+    padding: 3vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_order_summary_row_header {
+    border-width: 0.15vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_order_summary_column_header {
+    height: 6vmin;
+    padding: 0 3vmin;
+    border-width: 0.15vmin;
+    font-size: 2.4vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_order_summary_row {
+    border-width: 0.15vmin;
+  }
+
+  .admin_awaiting_payment_confirmation_order_summary_column {
+    height: 10.5vmin;
+    padding: 0 3vmin;
+    border-width: 0.15vmin;
+    font-size: 2.85vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   #admin_awaiting_payment_confirmation_order_price_calculation_body {
     padding: 2vmin;
   }
@@ -147,3 +201,5 @@
     font-size: 1.9vmin;
   }
 }
+
+/* ============================================================================================== */

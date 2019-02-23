@@ -239,22 +239,25 @@ const adminOrderDetailsReadyForShippingToggleFooterButtons = () => {
 
 /* ==================================== UPDATE ORDER STATUS ===================================== */
 
-const adminOrderDetailsReadyForShippingUpdateOrderStatus = (order, modalId) => {
-  adminOrderDetailsReadyForShippingSaveTrackingNumber(order._id);
+const adminOrderDetailsReadyForShippingUpdateOrderStatus = (
+  orderDetails,
+  modalId
+) => {
+  adminOrderDetailsReadyForShippingSaveTrackingNumber(orderDetails._id);
 
   loadLoader(
     document.querySelector("#admin_ready_for_shipping_modal_body")
   ).then(() => {
     $.ajax({
       type: "POST",
-      url: "/admin/order/update-order-status",
-      data: JSON.stringify(order),
+      url: "/order/update-order-status",
+      data: JSON.stringify({ orderDetails }),
       contentType: "application/json",
       success: data => {
         removeModal(modalId);
         removeBackdrop(modalId);
         setTimeout(() => {
-          viewAdminProfileOrdersPrintsOrderDetails(data);
+          viewAdminProfileOrdersPrintsOrderDetails(data.content.orderNumber);
         }, 500);
       }
     });

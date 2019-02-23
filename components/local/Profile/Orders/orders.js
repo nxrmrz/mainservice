@@ -2,147 +2,131 @@
 
 const profileOrdersInit = () => {
   document.querySelector("#profile_contents_body").innerHTML = "";
-  addProfileOrdersBody();
-  addProfileOrdersComponentsBody();
-  contructProfileOrdersNavigation();
+  selectedProfileOrdersTabId = undefined;
+  profileOrdersStructure();
+  profileOrdersTabs();
+  profileOrdersPrintsInit();
+  selectProfileOrdersTab("prints");
 };
 
-// Add Orders Body
-const addProfileOrdersBody = () => {
-  // Orders Body HTML
-  const profileOrdersBodyHTML =
-    "<div id='profile_orders_body' class='profile_component_body'></div>";
-  // Insert HTML
-  document
-    .querySelector("#profile_contents_body")
-    .insertAdjacentHTML("beforeend", profileOrdersBodyHTML);
+/* ========================================= STRUCTURE ========================================== */
+
+const profileOrdersStructure = () => {
+  /* --------------------------------------- CREATE HTML ---------------------------------------- */
+  const html =
+    "<div id='profile_orders_body'>" +
+    "<div id='profile_orders_tabs_body' class='profile_tabs'></div>" +
+    "<div id='profile_orders_contents'></div>" +
+    "</div>";
+  /* --------------------------------------- INSERT HTML ---------------------------------------- */
+  document.querySelector("#profile_contents_body").innerHTML = html;
 };
 
-// Add Orders Navigation Tab Body
-const addProfileOrdersComponentsBody = () => {
-  // Add Navigation Body
-  const profileOrdersNavigationTabsBodyHTML =
-    "<div id='profile_orders_navigation_tabs_body'></div>" +
-    "<div id='profile_orders_components_body'></div>";
-  // Insert HTML
-  document
-    .querySelector("#profile_orders_body")
-    .insertAdjacentHTML("beforeend", profileOrdersNavigationTabsBodyHTML);
-};
+/* ============================================ TABS ============================================ */
 
-// Class Object for Profile Orders Components
-class profileOrdersComponentObject {
-  constructor(id, name, method) {
-    this.id = id;
-    this.name = name;
-    this.method = method;
+const profileOrdersTabs = () => {
+  /* ----------------------------- CREATE THE OBJECT ARRAY FOR TABS ----------------------------- */
+  // PRINTS
+  const printsTab = new TabObject("prints", "Prints", profileOrdersPrintsInit);
+  // MARKETPLACE
+  const marketplaceTab = new TabObject(
+    "marketplace",
+    "Marketplace",
+    profileOrdersMarketplaceInit
+  );
+  // TABS ARRAY
+  const TabsArray = [printsTab, marketplaceTab];
+  /* ---------------------------------------- TAB WIDTH ----------------------------------------- */
+  // MOBILE
+  let mobileWidth;
+  if (TabsArray.length < 3) {
+    mobileWidth = 100 / TabsArray.length;
+  } else {
+    mobileWidth = 100 / 3;
   }
-}
-
-// Construct the Orders Component Objects Array
-// Keep track of what tab is selected
-let selectedProfileOrdersComponentId;
-
-let profileOrdersComponentObjectsArray;
-
-// Contruct the profile orders naviagtion
-const contructProfileOrdersNavigation = () => {
-  constructProfileOrdersComponentObjectsArray();
-  constructProfileOrdersNavigationTabs(profileOrdersComponentObjectsArray);
-  selectProfileOrdersNavigationTab(profileOrdersComponentObjectsArray[0]);
-};
-
-// Construct the profile orders component objects array
-const constructProfileOrdersComponentObjectsArray = () => {
-  // Assign Object Values
-  contructProfileOrdersPrintsObject();
-  contructProfileOrdersMarketplaceObject();
-  // Assign Object Array Value
-  profileOrdersComponentObjectsArray = [
-    profileOrdersPrintsObject,
-    profileOrdersMarketplaceObject
-  ];
-};
-
-// Contruct the profile orders navigation tabs
-const constructProfileOrdersNavigationTabs = objArr => {
-  // Determine the width of each tabs
-  const profileOrdersNavigationTabWidth = 100 / objArr.length + "%";
-  objArr.forEach(obj => {
-    // Create the profile navigation tab HTML
-    const profileOrdersNavigationTabHTML =
-      "<div id='" +
-      obj.id +
-      "_profile_orders_navigation_tab_body' class='profile_orders_navigation_tab_body' style='width:" +
-      profileOrdersNavigationTabWidth +
-      "'>" +
-      "<div id='" +
-      obj.id +
-      "_profile_orders_navigation_tab_text' class='profile_orders_navigation_tab_text'>" +
-      obj.name +
+  // DESKTOP
+  let desktopWidth;
+  if (TabsArray.length < 6) {
+    desktopWidth = 100 / TabsArray.length;
+  } else {
+    desktopWidth = 100 / 6;
+  }
+  /* ----------------------------------- CREATE THE HTML TABS ----------------------------------- */
+  for (let i = 0; i < TabsArray.length; i++) {
+    // CREATE HTML
+    const html =
+      "<div id='profile_orders_" +
+      TabsArray[i].id +
+      "_tab_body' class='profile_tab_body'>" +
+      "<div id='profile_orders_" +
+      TabsArray[i].id +
+      "_tab' class='profile_tab'>" +
+      TabsArray[i].name +
       "</div>" +
       "</div>";
-    // Add the HTML to the navigation tabs body
+    // INSERT HTML
     document
-      .querySelector("#profile_orders_navigation_tabs_body")
-      .insertAdjacentHTML("beforeend", profileOrdersNavigationTabHTML);
-    // Add Event Listener for Tab Selection
+      .querySelector("#profile_orders_tabs_body")
+      .insertAdjacentHTML("beforeend", html);
+    // ADD EVENT LISTENER
     document
-      .querySelector("#" + obj.id + "_profile_orders_navigation_tab_body")
+      .querySelector("#profile_orders_" + TabsArray[i].id + "_tab_body")
       .addEventListener("click", () => {
-        selectProfileOrdersNavigationTab(obj);
+        document.querySelector("#profile_orders_contents").innerHTML = "";
+        TabsArray[i].method();
+        selectProfileOrdersTab(TabsArray[i].id);
       });
-  });
-};
+    /* --------------------------------------- WIDTH CSS ---------------------------------------- */
+    screensize = window.matchMedia("(min-width: 600px)");
 
-// Select Profile Orders Navigation Tab
-const selectProfileOrdersNavigationTab = obj => {
-  // First, deselect any selected tab
-  deselectProfileOrdersNavigationTab();
+    const resize = screensize => {
+      if (screensize.matches) {
+        document.querySelector(
+          "#profile_orders_" + TabsArray[i].id + "_tab_body"
+        ).style.width = desktopWidth + "%";
+      } else {
+        document.querySelector(
+          "#profile_orders_" + TabsArray[i].id + "_tab_body"
+        ).style.width = mobileWidth + "%";
+      }
+    };
 
-  // Create a pointer
-  const pointer = document.querySelector(
-    "#" + obj.id + "_profile_orders_navigation_tab_body"
-  );
-
-  // Change CSS Stylings
-  pointer.style.opacity = "1";
-  pointer.style.backgroundColor = "rgb(245, 245, 245)";
-  pointer.style.borderStyle = "none none solid none";
-  document.querySelector(
-    "#" + obj.id + "_profile_orders_navigation_tab_text"
-  ).style.color = "rgb(170, 10, 10)";
-
-  // Execute selected tab's method
-  // Clear Page
-  document.querySelector("#profile_orders_components_body").innerHTML = "";
-  obj.method();
-
-  // Update selected tab
-  selectedProfileOrdersComponentId = obj.id;
-};
-
-// Deselect Profile Orders Navigation Tab
-const deselectProfileOrdersNavigationTab = () => {
-  if (!selectedProfileOrdersComponentId) {
-    return;
+    resize(screensize);
+    screensize.addListener(resize);
   }
+};
 
-  const pointer = document.querySelector(
-    "#" +
-      selectedProfileOrdersComponentId +
-      "_profile_orders_navigation_tab_body"
-  );
+/* ================================= SELECT PROFILE ORDERS TAB ================================== */
 
-  // Change CSS Stylings
-  pointer.style.opacity = "0.3";
-  pointer.style.backgroundColor = "rgb(170, 10, 10)";
-  pointer.style.borderStyle = "none none none none";
-  document.querySelector(
-    "#" +
-      selectedProfileOrdersComponentId +
-      "_profile_orders_navigation_tab_text"
-  ).style.color = "white";
+/* -------------------------------- SELECTED PROFILE ORDERS TAB --------------------------------- */
+let selectedProfileOrdersTabId;
+
+const selectProfileOrdersTab = id => {
+  /* -------------------------------------- PRE-VALIDATION -------------------------------------- */
+  if (selectedProfileOrdersTabId) {
+    deselectProfileOrdersTab(selectedProfileOrdersTabId);
+  }
+  /* -------------------------------------- UPDATE CLASSES -------------------------------------- */
+  document
+    .querySelector("#profile_orders_" + id + "_tab_body")
+    .classList.toggle("profile_tab_body_selected");
+  document
+    .querySelector("#profile_orders_" + id + "_tab")
+    .classList.toggle("profile_tab_selected");
+  /* ----------------------------------- UPDATE SELECTED TAB ------------------------------------ */
+  selectedProfileOrdersTabId = id;
+};
+
+/* =============================== DESELECT PROFILE SETTINGS TAB ================================ */
+
+const deselectProfileOrdersTab = id => {
+  /* -------------------------------------- UPDATE CLASSES -------------------------------------- */
+  document
+    .querySelector("#profile_orders_" + id + "_tab_body")
+    .classList.toggle("profile_tab_body_selected");
+  document
+    .querySelector("#profile_orders_" + id + "_tab")
+    .classList.toggle("profile_tab_selected");
 };
 
 /* ============================================================================================== */

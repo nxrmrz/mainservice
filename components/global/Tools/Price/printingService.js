@@ -7,7 +7,10 @@ const getPartPrice = (orderNumber, promise) => {
     return new Promise((resolve, reject) => {
       getOrderDetailsByOrderNumber(orderNumber)
         .then(orderDetails => {
-          resolve(partPriceCalculation(orderDetails));
+          resolve(partPriceCalculation(orderDetails, false));
+          partPriceCalculation(orderDetails)
+            .then(partsPriceObject => resolve(partsPriceObject))
+            .catch(error => reject(error));
         })
         .catch(error => reject(error));
     });
@@ -15,11 +18,11 @@ const getPartPrice = (orderNumber, promise) => {
     const data = getOrderDetailsByOrderNumber(orderNumber, false);
     const status = data.status;
     if (status == "success") {
-      const orderDetails = data.orderDetails;
-      const partsPriceObject = partPriceCalculation(orderDetails);
+      const orderDetails = data.content;
+      const partsPriceObject = partPriceCalculation(orderDetails, false);
       return { status, partsPriceObject };
     } else if (status == "failed") {
-      const error = data.error;
+      const error = data.content;
       return { status, error };
     }
   }
@@ -27,24 +30,66 @@ const getPartPrice = (orderNumber, promise) => {
 
 /* ----------------------------------- PART PRICE CALCULATION ----------------------------------- */
 
-const partPriceCalculation = orderDetails => {
-  /* --------------------------------- DECLARE LOCAL VARIABLES ---------------------------------- */
+const partPriceCalculation = (orderDetails, promise) => {
+  const fileIdArray = orderDetails.parts.map(part => part.fileId);
+  if (promise != false) {
+    return new Promise((resolve, reject) => {
+      getFileDetailsArrayByFileIdArray(fileIdArray)
+        .then(fileDetailsArray => {
+          const partsPriceObject = constructPartsPriceObject(
+            orderDetails,
+            fileDetailsArray
+          );
+
+          resolve(partsPriceObject);
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  } else {
+    fileDetailsArray = getFileDetailsArrayByFileIdArray(fileIdArray, false)
+      .content;
+
+    const partsPriceObject = constructPartsPriceObject(
+      orderDetails,
+      fileDetailsArray
+    );
+
+    return partsPriceObject;
+  }
+};
+
+/* -------------------------------- CONSTRUCT PARTS PRICE OBJECT -------------------------------- */
+
+const constructPartsPriceObject = (orderDetails, fileDetailsArray) => {
+  /* ------------------------------- DECLARE LOCAL VARIABLES -------------------------------- */
   let partPriceObjectArray = [];
   let totalPrice = 0;
   let calculation = "";
   // Simplify parts variable
   const parts = orderDetails.parts;
-
   // Create the Part Price Object for each Part
   for (let i = 0; i < parts.length; i++) {
     // Get File Details of the Part
-    const fileDetails = getFileDetails(parts[i].fileId);
+    const fileDetails = fileDetailsArray.filter(
+      fileDetails => String(fileDetails._id) == String(parts[i].fileId)
+    )[0];
     // Construct Part Price Object
-    const partPriceObject = new PartPriceObject(
-      parts[i].fileName,
-      parts[i].orderQuantity,
-      fileDetails.fileDetail.price
-    );
+    let partPriceObject;
+    if (orderDetails.orderStatus != "Awaiting Quote") {
+      partPriceObject = new PartPriceObject(
+        parts[i].fileName,
+        parts[i].orderQuantity,
+        fileDetails.metadata.price
+      );
+    } else {
+      partPriceObject = new PartPriceObject(
+        parts[i].fileName,
+        parts[i].orderQuantity,
+        0
+      );
+    }
     // Add the Part Price Object to the an Array
     partPriceObjectArray.push(partPriceObject);
     // Calculate the collective price of all the parts
@@ -113,7 +158,9 @@ const getPricingPrice = (orderNumber, promise) => {
     return new Promise((resolve, reject) => {
       getOrderDetailsByOrderNumber(orderNumber)
         .then(orderDetails => {
-          resolve(pricingPriceCalculation(orderDetails));
+          pricingPriceCalculation(orderDetails)
+            .then(pricingPriceObject => resolve(pricingPriceObject))
+            .catch(error => reject(error));
         })
         .catch(error => reject(error));
     });
@@ -121,11 +168,11 @@ const getPricingPrice = (orderNumber, promise) => {
     const data = getOrderDetailsByOrderNumber(orderNumber, false);
     const status = data.status;
     if (status == "success") {
-      const orderDetails = data.orderDetails;
-      const pricingPriceObject = pricingPriceCalculation(orderDetails);
+      const orderDetails = data.content;
+      const pricingPriceObject = pricingPriceCalculation(orderDetails, false);
       return { status, pricingPriceObject };
     } else if (status == "failed") {
-      const error = data.error;
+      const error = data.content;
       return { status, error };
     }
   }
@@ -133,9 +180,39 @@ const getPricingPrice = (orderNumber, promise) => {
 
 /* --------------------------------- PRICING PRICE CALCULATION ---------------------------------- */
 
-const pricingPriceCalculation = orderDetails => {
-  /* ----------------------------- GET THE PARTS PRICING DETAILS ------------------------------ */
-  partsPriceObject = partPriceCalculation(orderDetails);
+const pricingPriceCalculation = (orderDetails, promise) => {
+  if (promise != false) {
+    return new Promise((resolve, reject) => {
+      /* ----------------------------- GET THE PARTS PRICING DETAILS ------------------------------ */
+      partPriceCalculation(orderDetails)
+        .then(partsPriceObject => {
+          const pricingPriceObject = constructPricingPriceObject(
+            orderDetails,
+            partsPriceObject
+          );
+
+          resolve(pricingPriceObject);
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  } else {
+    /* ----------------------------- GET THE PARTS PRICING DETAILS ------------------------------ */
+    partsPriceObject = partPriceCalculation(orderDetails, false);
+
+    const pricingPriceObject = constructPricingPriceObject(
+      orderDetails,
+      partsPriceObject
+    );
+
+    return pricingPriceObject;
+  }
+};
+
+/* ------------------------------- CONSTRUCT PRICING PRICE OBJECT ------------------------------- */
+
+const constructPricingPriceObject = (orderDetails, partsPriceObject) => {
   /* ---------------------------- DECLARE LOCAL VARIABLES ----------------------------- */
   let pricing;
   let pricingMultiplier;
@@ -144,12 +221,12 @@ const pricingPriceCalculation = orderDetails => {
   /* ---------------------------- DEFINE VARIABLE: PRICING ---------------------------- */
   pricing = orderDetails.pricing;
   /* ---------------------- DEFINE VARIABLE: PRICING MULTIPLIER ----------------------- */
-  if (orderDetails.pricing == "Basic") {
+  if (pricing == "Basic") {
     pricingMultiplier = 0;
-  } else if (orderDetails.pricing == "Priority") {
-    pricingMultiplier = 0.25;
-  } else if (orderDetails.pricing == "Urgent") {
-    pricingMultiplier = 0.5;
+  } else if (pricing == "Priority") {
+    pricingMultiplier = 0.3;
+  } else if (pricing == "Urgent") {
+    pricingMultiplier = 0.6;
   }
   /* ------------------------- DEFINE VARIABLE: PRICING PRICE ------------------------- */
   pricingPrice = Number(partsPriceObject.totalPrice) * pricingMultiplier;
@@ -163,7 +240,7 @@ const pricingPriceCalculation = orderDetails => {
     numberToTwoDecimalStringConverter(pricingPrice);
   /* --------------------- DEFINE VARIABLE: PRICING PRICE OBJECT ---------------------- */
   const pricingPriceObject = new PricingPriceObject(
-    orderDetails.pricing,
+    pricing,
     pricingPrice,
     calculation
   );
@@ -190,7 +267,9 @@ const getDiscountPrice = (orderNumber, promise) => {
     return new Promise((resolve, reject) => {
       getOrderDetailsByOrderNumber(orderNumber)
         .then(orderDetails => {
-          resolve(discountPriceCalculation(orderDetails));
+          discountPriceCalculation(orderDetails)
+            .then(discountsPriceObject => resolve(discountsPriceObject))
+            .catch(error => reject(error));
         })
         .catch(error => reject(error));
     });
@@ -198,11 +277,14 @@ const getDiscountPrice = (orderNumber, promise) => {
     const data = getOrderDetailsByOrderNumber(orderNumber, false);
     const status = data.status;
     if (status == "success") {
-      const orderDetails = data.orderDetails;
-      const discountsPriceObject = discountPriceCalculation(orderDetails);
+      const orderDetails = data.content;
+      const discountsPriceObject = discountPriceCalculation(
+        orderDetails,
+        false
+      );
       return { status, discountsPriceObject };
     } else if (status == "failed") {
-      const error = data.error;
+      const error = data.content;
       return { status, error };
     }
   }
@@ -210,11 +292,54 @@ const getDiscountPrice = (orderNumber, promise) => {
 
 /* --------------------------------- DISCOUNT PRICE CALCULATION --------------------------------- */
 
-const discountPriceCalculation = orderDetails => {
-  /* ----------------------------- GET THE PARTS PRICING DETAILS ------------------------------ */
-  partsPriceObject = partPriceCalculation(orderDetails);
-  /* --------------------------- GET THE PRICING PRICE DETAILS ---------------------------- */
-  pricingPriceObject = pricingPriceCalculation(orderDetails);
+const discountPriceCalculation = (orderDetails, promise) => {
+  if (promise != false) {
+    return new Promise((resolve, reject) => {
+      /* ----------------------------- GET THE PARTS PRICING DETAILS ------------------------------ */
+      partPriceCalculation(orderDetails)
+        .then(partsPriceObject => {
+          /* --------------------------- GET THE PRICING PRICE DETAILS ---------------------------- */
+          pricingPriceCalculation(orderDetails)
+            .then(pricingPriceObject => {
+              const discountsPriceObject = constructDiscountsPriceObject(
+                orderDetails,
+                partsPriceObject,
+                pricingPriceObject
+              );
+
+              resolve(discountsPriceObject);
+            })
+            .catch(error => {
+              reject(error);
+            });
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  } else {
+    /* ----------------------------- GET THE PARTS PRICING DETAILS ------------------------------ */
+    partsPriceObject = partPriceCalculation(orderDetails, false);
+    /* --------------------------- GET THE PRICING PRICE DETAILS ---------------------------- */
+    pricingPriceObject = pricingPriceCalculation(orderDetails, false);
+
+    const discountsPriceObject = constructDiscountsPriceObject(
+      orderDetails,
+      partsPriceObject,
+      pricingPriceObject
+    );
+
+    return discountsPriceObject;
+  }
+};
+
+/* ------------------------------ CONSTRUCT DISCOUNTS PRICE OBJECT ------------------------------ */
+
+const constructDiscountsPriceObject = (
+  orderDetails,
+  partsPriceObject,
+  pricingPriceObject
+) => {
   /* -------------------------- DECLARE LOCAL VARIABLES --------------------------- */
   const totalPreDiscountPrice =
     Number(partsPriceObject.totalPrice) +
@@ -373,11 +498,11 @@ const getDeliveryPrice = (orderNumber, promise) => {
     const data = getOrderDetailsByOrderNumber(orderNumber, false);
     const status = data.status;
     if (status == "success") {
-      const orderDetails = data.orderDetails;
+      const orderDetails = data.content;
       const deliveryPriceObject = deliveryPriceCalculation(orderDetails);
       return { status, deliveryPriceObject };
     } else if (status == "failed") {
-      const error = data.error;
+      const error = data.content;
       return { status, error };
     }
   }
@@ -400,11 +525,11 @@ const deliveryPriceCalculation = orderDetails => {
   } else if (delivery == "Tracking") {
     details =
       "Tracking takes up to 3 working days nationwide. You will be given a tracking number to track parcel.";
-    price = 7;
+    price = 5.5;
   } else if (delivery == "Courier") {
     details =
       "Parcels shipped using the Courier service usually arrive the next working day between major towns and cities.";
-    price = 8.5;
+    price = 7;
   }
   /* -------------------------- CREATE THE DELIVERY PRICE OBJECT -------------------------- */
   const deliveryPriceObject = new DeliveryPriceObject(delivery, details, price);
@@ -431,7 +556,9 @@ const getOrderPrice = (orderNumber, promise) => {
     return new Promise((resolve, reject) => {
       getOrderDetailsByOrderNumber(orderNumber)
         .then(orderDetails => {
-          resolve(orderPriceCalculation(orderDetails));
+          orderPriceCalculation(orderDetails)
+            .then(orderPriceObject => resolve(orderPriceObject))
+            .catch(error => reject(error));
         })
         .catch(error => reject(error));
     });
@@ -439,11 +566,11 @@ const getOrderPrice = (orderNumber, promise) => {
     const data = getOrderDetailsByOrderNumber(orderNumber, false);
     const status = data.status;
     if (status == "success") {
-      const orderDetails = data.orderDetails;
-      const orderPriceObject = orderPriceCalculation(orderDetails);
+      const orderDetails = data.content;
+      const orderPriceObject = orderPriceCalculation(orderDetails, false);
       return { status, orderPriceObject };
     } else if (status == "failed") {
-      const error = data.error;
+      const error = data.content;
       return { status, error };
     }
   }
@@ -451,15 +578,70 @@ const getOrderPrice = (orderNumber, promise) => {
 
 /* ---------------------------------- ORDER PRICE CALCULATION ----------------------------------- */
 
-const orderPriceCalculation = orderDetails => {
-  /* ----------------------------- GET THE PARTS PRICING DETAILS ------------------------------ */
-  partsPriceObject = partPriceCalculation(orderDetails);
-  /* --------------------------- GET THE PRICING PRICE DETAILS ---------------------------- */
-  pricingPriceObject = pricingPriceCalculation(orderDetails);
-  /* ------------------------ GET THE DISCOUNTS PRICE DETAILS ------------------------- */
-  discountsPriceObject = discountPriceCalculation(orderDetails);
-  /* ----------------------- GET THE DELIVERY PRICE DETAILS ----------------------- */
-  deliveryPriceObject = deliveryPriceCalculation(orderDetails);
+const orderPriceCalculation = (orderDetails, promise) => {
+  if (promise != false) {
+    return new Promise((resolve, reject) => {
+      /* ----------------------------- GET THE PARTS PRICING DETAILS ------------------------------ */
+      partPriceCalculation(orderDetails)
+        .then(partsPriceObject => {
+          /* --------------------------- GET THE PRICING PRICE DETAILS ---------------------------- */
+          pricingPriceCalculation(orderDetails)
+            .then(pricingPriceObject => {
+              /* ------------------------ GET THE DISCOUNTS PRICE DETAILS ------------------------- */
+              discountPriceCalculation(orderDetails)
+                .then(discountsPriceObject => {
+                  /* ----------------------- GET THE DELIVERY PRICE DETAILS ----------------------- */
+                  deliveryPriceObject = deliveryPriceCalculation(orderDetails);
+
+                  const orderPriceObject = constructOrderPriceObject(
+                    partsPriceObject,
+                    pricingPriceObject,
+                    discountsPriceObject,
+                    deliveryPriceObject
+                  );
+
+                  resolve(orderPriceObject);
+                })
+                .catch(error => {
+                  reject(error);
+                });
+            })
+            .catch(error => {
+              reject(error);
+            });
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  } else {
+    /* ----------------------------- GET THE PARTS PRICING DETAILS ------------------------------ */
+    partsPriceObject = partPriceCalculation(orderDetails, false);
+    /* --------------------------- GET THE PRICING PRICE DETAILS ---------------------------- */
+    pricingPriceObject = pricingPriceCalculation(orderDetails, false);
+    /* ------------------------ GET THE DISCOUNTS PRICE DETAILS ------------------------- */
+    discountsPriceObject = discountPriceCalculation(orderDetails, false);
+    /* ----------------------- GET THE DELIVERY PRICE DETAILS ----------------------- */
+    deliveryPriceObject = deliveryPriceCalculation(orderDetails);
+
+    const orderPriceObject = constructOrderPriceObject(
+      partsPriceObject,
+      pricingPriceObject,
+      discountsPriceObject,
+      deliveryPriceObject
+    );
+
+    return orderPriceObject;
+  }
+};
+
+/* -------------------------------- CONSTRUCT ORDER PRICE OBJECT -------------------------------- */
+const constructOrderPriceObject = (
+  partsPriceObject,
+  pricingPriceObject,
+  discountsPriceObject,
+  deliveryPriceObject
+) => {
   /* ------------------------ DECLARE LOCAL VARIABLES ------------------------- */
   let orderPrice;
   let calculation;
@@ -500,117 +682,115 @@ class OrderPriceObject {
 
 /* --------------------------- CUMULATIVE ORDER VALUE BY ORDER STATUS --------------------------- */
 
-const cumulativeOrderValueByOrderStatus = orderStatus => {
-  orderDetailsArray = getOrderDetailsArrayByOrderStatus(orderStatus, false)
-    .orderDetailsArray;
-  let filteredOrderDetailsArray = [];
-  let cumulativeOrderValue = 0;
+const cumulativeOrderValueByOrderStatus = (orderStatus, promise) => {
+  if (promise != false) {
+    return new Promise((resolve, reject) => {
+      getOrderDetailsArrayByOrderStatus(orderStatus)
+        .then(orderArray => {
+          let filteredOrderArray = [];
+          let cumulativeOrderValue = 0;
+          let promiseArray = [];
 
-  for (let i = 0; i < orderDetailsArray.length; i++) {
-    let orderPrice = 0;
-    let date = "";
-    if (orderStatus == "Awaiting Quote") {
-      return;
-    } else if (orderStatus == "Awaiting Payment") {
-      date = orderDetailsArray[i].creationDate;
-    } else if (orderStatus == "Awaiting Payment Confirmation") {
-      date = orderDetailsArray[i].creationDate;
-    } else if (orderStatus == "Printing Order") {
-      date = orderDetailsArray[i].paymentConfirmationDate;
-    } else if (orderStatus == "Ready for Pickup") {
-      date = orderDetailsArray[i].paymentConfirmationDate;
-    } else if (orderStatus == "Order Picked Up") {
-      date = orderDetailsArray[i].orderDeliveryDate;
-    } else if (orderStatus == "Ready for Shipping") {
-      date = orderDetailsArray[i].paymentConfirmationDate;
-    } else if (orderStatus == "Order Shipped") {
-      date = orderDetailsArray[i].orderDeliveryDate;
-    } else if (data.orderStatus == "Order Completed") {
-      date = orderDetailsArray[i].orderCompletionDate;
-    } else if (data.orderStatus == "Requesting Refund") {
-      date = orderDetailsArray[i].creationDate;
-    } else if (data.orderStatus == "Refund Approved") {
-      date = orderDetailsArray[i].processDate;
-    } else if (data.orderStatus == "Refund Declined") {
-      date = orderDetailsArray[i].processDate;
-    } else if (data.orderStatus == "Refund Processed") {
-      date = orderDetailsArray[i].processDate;
-    }
+          for (let i = 0; i < orderArray.length; i++) {
+            promiseArray.push(getOrderPrice(orderArray[i].orderNumber));
+          }
 
-    const orderPriceObject = getOrderPrice(
-      orderDetailsArray[i].orderNumber,
-      false
-    ).orderPriceObject;
+          Promise.all(promiseArray)
+            .then(orderPriceObjectArray => {
+              for (let i = 0; i < orderPriceObjectArray.length; i++) {
+                const orderPriceObject = orderPriceObjectArray[i];
+                let orderPrice = 0;
+                let date = "";
+                if (orderStatus == "Awaiting Quote") {
+                  return;
+                } else if (orderStatus == "Awaiting Payment") {
+                  date = orderArray[i].creationDate;
+                } else if (orderStatus == "Awaiting Payment Confirmation") {
+                  date = orderArray[i].creationDate;
+                } else if (orderStatus == "Printing Order") {
+                  date = orderArray[i].paymentConfirmationDate;
+                } else if (orderStatus == "Ready for Pickup") {
+                  date = orderArray[i].paymentConfirmationDate;
+                } else if (orderStatus == "Order Picked Up") {
+                  date = orderArray[i].orderDeliveryDate;
+                } else if (orderStatus == "Ready for Shipping") {
+                  date = orderArray[i].paymentConfirmationDate;
+                } else if (orderStatus == "Order Shipped") {
+                  date = orderArray[i].orderDeliveryDate;
+                } else if (orderStatus == "Order Completed") {
+                  date = orderArray[i].orderCompletionDate;
+                } else if (orderStatus == "Requesting Refund") {
+                  date = orderArray[i].creationDate;
+                } else if (orderStatus == "Refund Approved") {
+                  date = orderArray[i].processDate;
+                } else if (orderStatus == "Refund Declined") {
+                  date = orderArray[i].processDate;
+                } else if (orderStatus == "Refund Processed") {
+                  date = orderArray[i].processDate;
+                }
 
-    orderPrice = orderPriceObject.orderPrice;
-    cumulativeOrderValue += orderPrice;
+                orderPrice = orderPriceObject.orderPrice;
+                cumulativeOrderValue += orderPrice;
 
-    filteredOrderDetailsArray.push(
-      new CumulativeOrderValueOrderDetailsObject(
-        orderDetailsArray[i].orderNumber,
-        orderDetailsArray[i].orderStatus,
-        date,
-        orderPrice
-      )
-    );
-  }
+                filteredOrderArray.push(
+                  new CumulativeOrderValueOrderDetailsObject(
+                    orderArray[i].orderNumber,
+                    orderArray[i].orderStatus,
+                    date,
+                    orderPrice
+                  )
+                );
+              }
 
-  const cumulativeOrderValueObject = new CumulativeOrderValueObject(
-    filteredOrderDetailsArray,
-    cumulativeOrderValue
-  );
+              const cumulativeOrderValueObject = new CumulativeOrderValueObject(
+                filteredOrderArray,
+                cumulativeOrderValue
+              );
 
-  return cumulativeOrderValueObject;
-};
+              resolve(cumulativeOrderValueObject);
+            })
+            .catch(error => reject(error));
+        })
+        .catch(error => reject(error));
+    });
+  } else {
+    orderDetailsArray = getOrderDetailsArrayByOrderStatus(orderStatus, false)
+      .content;
+    let filteredOrderDetailsArray = [];
+    let cumulativeOrderValue = 0;
 
-/* ------------------- CUMULATIVE ORDER VALUE BY ORDER STATUS AND DATE RANGE -------------------- */
+    for (let i = 0; i < orderDetailsArray.length; i++) {
+      let orderPrice = 0;
+      let date = "";
+      if (orderStatus == "Awaiting Quote") {
+        return;
+      } else if (orderStatus == "Awaiting Payment") {
+        date = orderDetailsArray[i].creationDate;
+      } else if (orderStatus == "Awaiting Payment Confirmation") {
+        date = orderDetailsArray[i].creationDate;
+      } else if (orderStatus == "Printing Order") {
+        date = orderDetailsArray[i].paymentConfirmationDate;
+      } else if (orderStatus == "Ready for Pickup") {
+        date = orderDetailsArray[i].paymentConfirmationDate;
+      } else if (orderStatus == "Order Picked Up") {
+        date = orderDetailsArray[i].orderDeliveryDate;
+      } else if (orderStatus == "Ready for Shipping") {
+        date = orderDetailsArray[i].paymentConfirmationDate;
+      } else if (orderStatus == "Order Shipped") {
+        date = orderDetailsArray[i].orderDeliveryDate;
+      } else if (orderStatus == "Order Completed") {
+        date = orderDetailsArray[i].orderCompletionDate;
+      } else if (orderStatus == "Requesting Refund") {
+        date = orderDetailsArray[i].creationDate;
+      } else if (orderStatus == "Refund Approved") {
+        date = orderDetailsArray[i].processDate;
+      } else if (orderStatus == "Refund Declined") {
+        date = orderDetailsArray[i].processDate;
+      } else if (orderStatus == "Refund Processed") {
+        date = orderDetailsArray[i].processDate;
+      }
 
-const cumulativeOrderValueByOrderStatusAndDateRange = (
-  orderStatus,
-  startDate,
-  endDate
-) => {
-  orderDetailsArray = getOrderDetailsArrayByOrderStatus(orderStatus, false)
-    .orderDetailsArray;
-  let filteredOrderDetailsArray = [];
-  let cumulativeOrderValue = 0;
-
-  for (let i = 0; i < orderDetailsArray.length; i++) {
-    let orderPrice = 0;
-    let date = "";
-    if (orderStatus == "Awaiting Quote") {
-      date = orderDetailsArray[i].creationDate;
-    } else if (orderStatus == "Awaiting Payment") {
-      date = orderDetailsArray[i].creationDate;
-    } else if (orderStatus == "Awaiting Payment Confirmation") {
-      date = orderDetailsArray[i].creationDate;
-    } else if (orderStatus == "Printing Order") {
-      date = orderDetailsArray[i].paymentConfirmationDate;
-    } else if (orderStatus == "Ready for Pickup") {
-      date = orderDetailsArray[i].paymentConfirmationDate;
-    } else if (orderStatus == "Order Picked Up") {
-      date = orderDetailsArray[i].orderDeliveryDate;
-    } else if (orderStatus == "Ready for Shipping") {
-      date = orderDetailsArray[i].paymentConfirmationDate;
-    } else if (orderStatus == "Order Shipped") {
-      date = orderDetailsArray[i].orderDeliveryDate;
-    } else if (data.orderStatus == "Order Completed") {
-      date = orderDetailsArray[i].orderCompletionDate;
-    } else if (data.orderStatus == "Requesting Refund") {
-      date = orderDetailsArray[i].creationDate;
-    } else if (data.orderStatus == "Refund Approved") {
-      date = orderDetailsArray[i].processDate;
-    } else if (data.orderStatus == "Refund Declined") {
-      date = orderDetailsArray[i].processDate;
-    } else if (data.orderStatus == "Refund Processed") {
-      date = orderDetailsArray[i].processDate;
-    }
-
-    if (isDateWithinRange(date, startDate, endDate)) {
-      const orderPriceObject = getOrderPrice(
-        orderDetailsArray[i].orderNumber,
-        false
-      ).orderPriceObject;
+      const orderPriceObject = getOrderPrice(orderDetailsArray[i].orderNumber);
 
       orderPrice = orderPriceObject.orderPrice;
       cumulativeOrderValue += orderPrice;
@@ -624,14 +804,244 @@ const cumulativeOrderValueByOrderStatusAndDateRange = (
         )
       );
     }
+
+    const cumulativeOrderValueObject = new CumulativeOrderValueObject(
+      filteredOrderDetailsArray,
+      cumulativeOrderValue
+    );
+
+    return cumulativeOrderValueObject;
   }
+};
 
-  const cumulativeOrderValueObject = new CumulativeOrderValueObject(
-    filteredOrderDetailsArray,
-    cumulativeOrderValue
-  );
+/* ------------------- CUMULATIVE ORDER VALUE BY ORDER STATUS AND DATE RANGE -------------------- */
 
-  return cumulativeOrderValueObject;
+const cumulativeOrderValueByOrderStatusAndDateRange = (
+  orderStatus,
+  startDate,
+  endDate,
+  promise
+) => {
+  if (promise != false) {
+    return new Promise((resolve, reject) => {
+      getOrderDetailsArrayByOrderStatus(orderStatus)
+        .then(orders => {
+          let filteredOrders = [];
+          let cumulativeOrderValue = 0;
+          let promises = [];
+
+          for (let i = 0; i < orders.length; i++) {
+            const order = orders[i];
+            promises.push(getOrderPrice(order.orderNumber));
+          }
+
+          Promise.all(promises)
+            .then(orderPrices => {
+              for (let i = 0; i < orders.length; i++) {
+                const order = orders[i];
+                /* ----------------------------- FILTERED ORDER CONTENTS ------------------------------ */
+                const orderNumber = order.orderNumber;
+                const orderStatus = order.orderStatus;
+                let date;
+                let orderPrice;
+                if (orderStatus != "Awaiting Quote") {
+                  orderPrice = orderPrices[i].orderPrice;
+                } else {
+                  orderPrice = 0;
+                }
+
+                if (orderStatus == "Awaiting Quote") {
+                  date = order.creationDate;
+                } else if (orderStatus == "Awaiting Payment") {
+                  date = order.creationDate;
+                } else if (orderStatus == "Awaiting Payment Confirmation") {
+                  date = order.creationDate;
+                } else if (orderStatus == "Printing Order") {
+                  date = order.paymentConfirmationDate;
+                } else if (orderStatus == "Ready for Pickup") {
+                  date = order.paymentConfirmationDate;
+                } else if (orderStatus == "Order Picked Up") {
+                  date = order.orderDeliveryDate;
+                } else if (orderStatus == "Ready for Shipping") {
+                  date = order.paymentConfirmationDate;
+                } else if (orderStatus == "Order Shipped") {
+                  date = order.orderDeliveryDate;
+                } else if (orderStatus == "Order Completed") {
+                  date = order.orderCompletionDate;
+                } else if (orderStatus == "Requesting Refund") {
+                  date = order.creationDate;
+                } else if (orderStatus == "Refund Approved") {
+                  date = order.processDate;
+                } else if (orderStatus == "Refund Declined") {
+                  date = order.processDate;
+                } else if (orderStatus == "Refund Processed") {
+                  date = order.processDate;
+                }
+
+                if (isDateWithinRange(date, startDate, endDate)) {
+                  const filteredOrder = {
+                    orderNumber,
+                    orderStatus,
+                    date,
+                    orderPrice
+                  };
+                  cumulativeOrderValue += orderPrice;
+                  filteredOrders.push(filteredOrder);
+                }
+              }
+              resolve(
+                new CumulativeOrderValueObject(
+                  filteredOrders,
+                  cumulativeOrderValue
+                )
+              );
+            })
+            .catch(error => reject(error));
+        })
+        .catch(error => reject(error));
+    });
+  } else {
+    orderDetailsArray = getOrderDetailsArrayByOrderStatus(orderStatus, false)
+      .content;
+    let filteredOrderDetailsArray = [];
+    let cumulativeOrderValue = 0;
+
+    for (let i = 0; i < orderDetailsArray.length; i++) {
+      let orderPrice = 0;
+      let date = "";
+      if (orderStatus == "Awaiting Quote") {
+        date = orderDetailsArray[i].creationDate;
+      } else if (orderStatus == "Awaiting Payment") {
+        date = orderDetailsArray[i].creationDate;
+      } else if (orderStatus == "Awaiting Payment Confirmation") {
+        date = orderDetailsArray[i].creationDate;
+      } else if (orderStatus == "Printing Order") {
+        date = orderDetailsArray[i].paymentConfirmationDate;
+      } else if (orderStatus == "Ready for Pickup") {
+        date = orderDetailsArray[i].paymentConfirmationDate;
+      } else if (orderStatus == "Order Picked Up") {
+        date = orderDetailsArray[i].orderDeliveryDate;
+      } else if (orderStatus == "Ready for Shipping") {
+        date = orderDetailsArray[i].paymentConfirmationDate;
+      } else if (orderStatus == "Order Shipped") {
+        date = orderDetailsArray[i].orderDeliveryDate;
+      } else if (orderStatus == "Order Completed") {
+        date = orderDetailsArray[i].orderCompletionDate;
+      } else if (orderStatus == "Requesting Refund") {
+        date = orderDetailsArray[i].creationDate;
+      } else if (orderStatus == "Refund Approved") {
+        date = orderDetailsArray[i].processDate;
+      } else if (orderStatus == "Refund Declined") {
+        date = orderDetailsArray[i].processDate;
+      } else if (orderStatus == "Refund Processed") {
+        date = orderDetailsArray[i].processDate;
+      }
+
+      if (isDateWithinRange(date, startDate, endDate)) {
+        const orderPriceObject = getOrderPrice(
+          orderDetailsArray[i].orderNumber,
+          false
+        ).orderPriceObject;
+
+        orderPrice = orderPriceObject.orderPrice;
+        cumulativeOrderValue += orderPrice;
+
+        filteredOrderDetailsArray.push(
+          new CumulativeOrderValueOrderDetailsObject(
+            orderDetailsArray[i].orderNumber,
+            orderDetailsArray[i].orderStatus,
+            date,
+            orderPrice
+          )
+        );
+      }
+    }
+
+    const cumulativeOrderValueObject = new CumulativeOrderValueObject(
+      filteredOrderDetailsArray,
+      cumulativeOrderValue
+    );
+
+    return cumulativeOrderValueObject;
+  }
+};
+
+/* ---------------------------- CUMULATIVE ORDER VALUE BY DATE RANGE ---------------------------- */
+
+const cumulativeOrderValueByDateRange = (startDate, endDate, promise) => {
+  if (promise != false) {
+    return new Promise((resolve, reject) => {
+      getOrderDetailsArray().then(orders => {
+        let filteredOrders = [];
+        let cumulativeOrderValue = 0;
+        let promises = [];
+
+        for (let i = 0; i < orders.length; i++) {
+          const order = orders[i];
+          promises.push(getOrderPrice(order.orderNumber));
+        }
+
+        Promise.all(promises)
+          .then(orderPrices => {
+            for (let i = 0; i < orders.length; i++) {
+              const order = orders[i];
+              /* ----------------------------- FILTERED ORDER CONTENTS ------------------------------ */
+              const orderNumber = order.orderNumber;
+              const orderStatus = order.orderStatus;
+              let date;
+              let orderPrice;
+              if (orderStatus != "Awaiting Quote") {
+                orderPrice = orderPrices[i].orderPrice;
+              } else {
+                orderPrice = 0;
+              }
+
+              if (orderStatus == "Awaiting Quote") {
+                date = order.creationDate;
+              } else if (orderStatus == "Awaiting Payment") {
+                date = order.creationDate;
+              } else if (orderStatus == "Awaiting Payment Confirmation") {
+                date = order.creationDate;
+              } else if (orderStatus == "Printing Order") {
+                date = order.paymentConfirmationDate;
+              } else if (orderStatus == "Ready for Pickup") {
+                date = order.paymentConfirmationDate;
+              } else if (orderStatus == "Order Picked Up") {
+                date = order.orderDeliveryDate;
+              } else if (orderStatus == "Ready for Shipping") {
+                date = order.paymentConfirmationDate;
+              } else if (orderStatus == "Order Shipped") {
+                date = order.orderDeliveryDate;
+              } else if (orderStatus == "Order Completed") {
+                date = order.orderCompletionDate;
+              } else if (orderStatus == "Requesting Refund") {
+                date = order.creationDate;
+              } else if (orderStatus == "Refund Approved") {
+                date = order.processDate;
+              } else if (orderStatus == "Refund Declined") {
+                date = order.processDate;
+              } else if (orderStatus == "Refund Processed") {
+                date = order.processDate;
+              }
+
+              if (isDateWithinRange(date, startDate, endDate)) {
+                const filteredOrder = {
+                  orderNumber,
+                  orderStatus,
+                  date,
+                  orderPrice
+                };
+                cumulativeOrderValue += orderPrice;
+                filteredOrders.push(filteredOrder);
+              }
+            }
+            resolve(filteredOrders);
+          })
+          .catch(error => reject(error));
+      });
+    });
+  } else {
+  }
 };
 
 /* ------------------------ CUMULATIVE ORDER VALUE ORDER DETAILS OBJECT ------------------------- */

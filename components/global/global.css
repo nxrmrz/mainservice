@@ -1,4 +1,345 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
 }
+
+/* ========================================= MAIN BODY ========================================== */
+
+.main_body {
+  width: 100%;
+  position: relative;
+  top: 10vmin;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ========================================== BUTTONS =========================================== */
+
+/* ----------------------------------------- BUTTON ONE ----------------------------------------- */
+
+.button_one_body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button_one {
+  height: 8vmin;
+  display: flex;
+  align-items: center;
+  padding: 0 4vmin;
+  margin: 0 1vmin 0 5vmin;
+  border-width: 0;
+  border-radius: 4vmin;
+  outline: 0;
+  background-color: rgb(255, 75, 90);
+  box-shadow: 0 0.5vmin 1vmin 0 rgb(180, 180, 180);
+}
+
+.button_one:hover {
+  background-color: rgb(255, 100, 115);
+}
+
+.button_one:active {
+  background-color: rgb(230, 50, 65);
+  box-shadow: 0 0 0 rgb(180, 180, 180);
+}
+
+.button_one_label {
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  text-align: center;
+  letter-spacing: 0.2vmin;
+  color: rgb(255, 252, 252);
+}
+
+.button_one_loader {
+  height: 4vmin;
+  width: 4vmin;
+  display: flex;
+  align-items: center;
+  font-family: "Chivo", sans-serif;
+  font-size: 2.4vmin;
+  letter-spacing: 0.4vmin;
+  color: rgb(255, 50, 50);
+}
+
+.button_one_success {
+  color: rgb(45, 180, 45);
+}
+
+/* ----------------------------------------- BUTTON TWO ----------------------------------------- */
+
+.button_two_body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button_two {
+  height: 6vmin;
+  display: flex;
+  align-items: center;
+  padding: 0 3vmin;
+  margin: 0 0.75vmin 0 3.75vmin;
+  border-width: 0;
+  border-radius: 3vmin;
+  outline: 0;
+  background-color: rgb(255, 75, 90);
+  box-shadow: 0 0.375vmin 0.75vmin 0 rgb(180, 180, 180);
+}
+
+.button_two:hover {
+  background-color: rgb(255, 100, 115);
+}
+
+.button_two:active {
+  background-color: rgb(230, 50, 65);
+  box-shadow: 0 0 0 rgb(180, 180, 180);
+}
+
+.button_two_label {
+  font-family: "Chivo", sans-serif;
+  font-size: 3vmin;
+  text-align: center;
+  letter-spacing: 0.15vmin;
+  color: rgb(255, 252, 252);
+}
+
+.button_two_loader {
+  height: 4vmin;
+  width: 4vmin;
+  display: flex;
+  align-items: center;
+  font-family: "Chivo", sans-serif;
+  font-size: 2.4vmin;
+  letter-spacing: 0.4vmin;
+  color: rgb(255, 50, 50);
+}
+
+.button_two_success {
+  color: rgb(45, 180, 45);
+}
+
+/* ========================================== HEADING =========================================== */
+
+/* ---------------------------------------- HEADING ONE ----------------------------------------- */
+
+.heading_one_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12vmin 8vmin;
+}
+
+.heading_one {
+  font-family: "Russo One", sans-serif;
+  font-size: 7vmin;
+  letter-spacing: 0.3vmin;
+  text-align: center;
+  color: rgb(170, 10, 10);
+}
+
+/* ========================================== SUBTITLE ========================================== */
+
+/* ---------------------------------------- SUBTITLE ONE ---------------------------------------- */
+
+.subtitle_one_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8vmin;
+  background-color: rgb(200, 40, 40);
+}
+
+.subtitle_one {
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  letter-spacing: 0.2vmin;
+  text-align: justify;
+  color: rgb(255, 250, 250);
+}
+
+/* ========================================= PARAGRAPH ========================================== */
+
+/* --------------------------------------- PARAGRAPH ONE ---------------------------------------- */
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  /* ========================================= MAIN BODY ========================================== */
+
+  .main_body {
+    top: 7.5vmin;
+  }
+
+  /* ========================================== BUTTONS =========================================== */
+
+  /* ----------------------------------------- BUTTON ONE ----------------------------------------- */
+
+  .button_one {
+    height: 6vmin;
+    padding: 0 3vmin;
+    margin: 0 0.75vmin 0 3.75vmin;
+    border-radius: 3vmin;
+    box-shadow: 0 0.375vmin 0.75vmin 0 rgb(180, 180, 180);
+  }
+
+  .button_one_label {
+    font-size: 3vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .button_one_loader {
+    height: 3vmin;
+    width: 3vmin;
+    font-size: 1.8vmin;
+    letter-spacing: 0.3vmin;
+  }
+
+  /* ----------------------------------------- BUTTON TWO ----------------------------------------- */
+
+  .button_two {
+    height: 4.5vmin;
+    padding: 0 2.25vmin;
+    margin: 0 0.5625vmin 0 2.8125vmin;
+    border-radius: 2.25vmin;
+    box-shadow: 0 0.28125vmin 0.5625vmin 0 rgb(180, 180, 180);
+  }
+
+  .button_two_label {
+    font-size: 2.25vmin;
+    letter-spacing: 0.1125vmin;
+  }
+
+  .button_two_loader {
+    height: 3vmin;
+    width: 3vmin;
+    font-size: 1.8vmin;
+    letter-spacing: 0.3vmin;
+  }
+
+  /* ========================================== HEADING =========================================== */
+
+  /* ---------------------------------------- HEADING ONE ----------------------------------------- */
+
+  .heading_one_body {
+    padding: 9vmin 6vmin;
+  }
+
+  .heading_one {
+    font-size: 5.25vmin;
+    letter-spacing: 0.225vmin;
+  }
+
+  /* ========================================== SUBTITLE ========================================== */
+
+  /* ---------------------------------------- SUBTITLE ONE ---------------------------------------- */
+
+  .subtitle_one_body {
+    padding: 6vmin;
+  }
+
+  .subtitle_one {
+    font-size: 3vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  /* ========================================= PARAGRAPH ========================================== */
+
+  /* --------------------------------------- PARAGRAPH ONE ---------------------------------------- */
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  /* ======================================== MAIN BODY ========================================= */
+
+  .main_body {
+    top: 5vmin;
+  }
+
+  /* ========================================= BUTTONS ========================================== */
+
+  /* ---------------------------------------- BUTTON ONE ---------------------------------------- */
+
+  .button_one {
+    height: 4vmin;
+    padding: 0 2vmin;
+    margin: 0 0.5vmin 0 2.5vmin;
+    border-radius: 2vmin;
+    box-shadow: 0 0.25vmin 0.5vmin 0 rgb(180, 180, 180);
+  }
+
+  .button_one_label {
+    font-size: 2vmin;
+    letter-spacing: 0.1vmin;
+  }
+
+  .button_one_loader {
+    height: 2vmin;
+    width: 2vmin;
+  }
+
+  /* ----------------------------------------- BUTTON TWO ----------------------------------------- */
+
+  .button_two {
+    height: 3vmin;
+    padding: 0 1.5vmin;
+    margin: 0 0.375vmin 0 1.875vmin;
+    border-radius: 1.5vmin;
+    box-shadow: 0 0.1875vmin 0.375vmin 0 rgb(180, 180, 180);
+  }
+
+  .button_two_label {
+    font-size: 1.5vmin;
+    letter-spacing: 0.075vmin;
+  }
+
+  .button_two_loader {
+    height: 2vmin;
+    width: 2vmin;
+    font-size: 1.2vmin;
+    letter-spacing: 0.2vmin;
+  }
+
+  /* ========================================= HEADING ========================================== */
+
+  /* --------------------------------------- HEADING ONE ---------------------------------------- */
+
+  .heading_one_body {
+    padding: 6vmin 4vmin;
+  }
+
+  .heading_one {
+    font-size: 3.5vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  /* ========================================= SUBTITLE ========================================= */
+
+  /* --------------------------------------- SUBTITLE ONE --------------------------------------- */
+
+  .subtitle_one_body {
+    padding: 4vmin;
+  }
+
+  .subtitle_one {
+    font-size: 2vmin;
+    letter-spacing: 0.1vmin;
+  }
+
+  /* ======================================== PARAGRAPH ========================================= */
+
+  /* -------------------------------------- PARAGRAPH ONE --------------------------------------- */
+}
+
+/* ============================================================================================== */

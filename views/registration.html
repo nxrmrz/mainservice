@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration | Delta 3D Printing</title>
+    <meta
+      name="description"
+      content="Delta 3D Printing provides cheap and high-quality 3D printing services and products for people across New Zealand. Benefits and discounts for students and returning customers. Partner With Us! Personalised services and discounts for businesses and organisations partnered with us."
+    />
+    <!-- ============================ EXTERNAL ============================ -->
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Chivo|Open+Sans|Raleway|Russo+One"
+      rel="stylesheet"
+    />
+
+    <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- ============================= GLOBAL ============================= -->
+
+    <script src="/components/global/global.js"></script>
+    <link rel="stylesheet" href="/components/global/global.css" />
+    <!-- ----------------------------- TOOLS ------------------------------ -->
+    <!-- VALIDATION -->
+    <script src="/components/global/Tools/Validation/string.js"></script>
+    <!-- --------------------------- NAVIGATION --------------------------- -->
+
+    <!-- Toolbar -->
+    <link
+      rel="stylesheet"
+      href="/components/global/Navigation/Toolbar/toolbar.css"
+    />
+    <!-- Navigation Drawer -->
+    <script src="/components/global/Navigation/NavigationDrawer/navigationDrawer.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/Navigation/NavigationDrawer/navigationDrawer.css"
+    />
+    <!-- Profile Drawer -->
+    <script src="/components/global/Navigation/ProfileDrawer/profileDrawer.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/Navigation/ProfileDrawer/profileDrawer.css"
+    />
+    <!-- Profile Drawer: Visitor -->
+    <script src="/components/global/Navigation/ProfileDrawer/Visitor/visitor.js"></script>
+    <!-- Profile Drawer: User -->
+    <script src="/components/global/Navigation/ProfileDrawer/User/user.js"></script>
+    <!-- Footer -->
+    <link
+      rel="stylesheet"
+      href="/components/global/Navigation/Footer/footer.css"
+    />
+
+    <!-- ------------------------- USER INTERFACE ------------------------- -->
+
+    <!-- Modal -->
+    <script src="/components/global/UserInterface/Modal/modal.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/UserInterface/Modal/modal.css"
+    />
+    <!-- Backdrop -->
+    <script src="/components/global/UserInterface/Backdrop/backdrop.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/UserInterface/Backdrop/backdrop.css"
+    />
+    <!-- User Interface: Loader -->
+    <script src="/components/global/UserInterface/Loader/loader.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/UserInterface/Loader/loader.css"
+    />
+
+    <!-- ---------------------------- ACCOUNT ----------------------------- -->
+    <link rel="stylesheet" href="/components/global/Account/account.css" />
+
+    <!-- Account: Login -->
+    <script src="/components/global/Account/Login/login.js"></script>
+    <link rel="stylesheet" href="/components/global/Account/Login/login.css" />
+
+    <!-- Account: Profile -->
+    <script src="/components/global/Account/Signup/signup.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/Account/Signup/signup.css"
+    />
+
+    <!-- ---------------------- ADDRESS AUTOCOMPLETE ---------------------- -->
+
+    <script src="/components/global/AddressAutocomplete/addressAutocomplete.js"></script>
+
+    <!-- --------------------------- VALIDATION --------------------------- -->
+
+    <!-- Login Status -->
+    <script src="/components/global/Validation/LoginStatus/loginStatus.js"></script>
+
+    <!-- ---------------------------- NEW ORDER --------------------------- -->
+
+    <!-- Order New Print -->
+    <script src="/components/global/NewOrder/OrderNewPrint/orderNewPrint.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/NewOrder/OrderNewPrint/orderNewPrint.css"
+    />
+
+    <!-- Order New Print: Parts -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/parts.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/NewOrder/OrderNewPrint/Parts/parts.css"
+    />
+
+    <!-- Order New Print: Parts: Part -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/part.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/NewOrder/OrderNewPrint/Parts/Part/part.css"
+    />
+
+    <!-- Order New Print: Parts: Part: Upload Model -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/UploadModel/uploadModel.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/NewOrder/OrderNewPrint/Parts/Part/UploadModel/uploadModel.css"
+    />
+
+    <!-- Order New Print: Parts: Part: Select Material -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/selectMaterial.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/selectMaterial.css"
+    />
+
+    <!-- Order New Print: Parts: Part: Select Material: Material Group -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/MaterialGroup/materialGroup.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/MaterialGroup/materialGroup.css"
+    />
+
+    <!-- Order New Print: Parts: Part: Select Material: Process -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Process/process.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Process/process.css"
+    />
+
+    <!-- Order New Print: Parts: Part: Select Material: Material -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Material/material.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Material/material.css"
+    />
+
+    <!-- Order New Print: Parts: Part: Select Material: Plastic -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Plastic/plastic.js"></script>
+
+    <!-- Order New Print: Parts: Part: Select Material: Plastic: FDM -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Plastic/FDM/fdm.js"></script>
+
+    <!-- Order New Print: Parts: Part: Select Material: Plastic: FDM: PLA -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Plastic/FDM/PLA/pla.js"></script>
+
+    <!-- Order New Print: Parts: Part: Select Material: Plastic: FDM: ABS -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Plastic/FDM/ABS/abs.js"></script>
+
+    <!-- Order New Print: Parts: Part: Select Material: Plastic: FDM: PETG -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Plastic/FDM/PETG/petg.js"></script>
+
+    <!-- Order New Print: Parts: Part: Select Material: Plastic: FDM: FLEX -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Plastic/FDM/FLEX/flex.js"></script>
+
+    <!-- Order New Print: Parts: Part: Select Material: Plastic: SLA -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Plastic/SLA/sla.js"></script>
+
+    <!-- Order New Print: Parts: Part: Select Material: Metal -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/SelectMaterial/Metal/metal.js"></script>
+
+    <!-- Order New Print: Parts: Part: Choose Options -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/ChooseOptions/chooseOptions.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/NewOrder/OrderNewPrint/Parts/Part/ChooseOptions/chooseOptions.css"
+    />
+
+    <!-- Order New Print: Parts: Part: Choose Options: Material Options -->
+    <script src="/components/global/NewOrder/OrderNewPrint/Parts/Part/ChooseOptions/MaterialOptions/materialOptions.js"></script>
+
+    <!-- Order New Print: Global Options -->
+    <script src="/components/global/NewOrder/OrderNewPrint/GlobalOptions/globalOptions.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/NewOrder/OrderNewPrint/GlobalOptions/globalOptions.css"
+    />
+
+    <!-- Order New Print: Submit New Print Order -->
+    <script src="/components/global/NewOrder/OrderNewPrint/SubmitNewPrintOrder/submitNewPrintOrder.js"></script>
+    <link
+      rel="stylesheet"
+      href="/components/global/NewOrder/OrderNewPrint/SubmitNewPrintOrder/submitNewPrintOrder.css"
+    />
+
+    <!-- LOCAL: REGISTRATION -->
+    <link
+      rel="stylesheet"
+      href="/components/local/Registration/registration.css"
+    />
+    <script src="/components/local/Registration/registration.js"></script>
+  </head>
+
+  <body>
+    <!-- ============================ TOOLBAR ============================= -->
+
+    <div id="toolbar">
+      <div id="navigation_drawer_toggle">
+        <div
+          id="navigation_drawer_toggle_bar_1"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+        <div
+          id="navigation_drawer_toggle_bar_2"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+        <div
+          id="navigation_drawer_toggle_bar_3"
+          class="navigation_drawer_toggle_bar"
+        ></div>
+      </div>
+      <div id="homepage_logo_container"></div>
+      <div id="profile_drawer_toggle">
+        <img
+          src="/assets/profile_icon.png"
+          alt="profile_icon"
+          id="profile_drawer_icon"
+        />
+      </div>
+    </div>
+
+    <!-- ======================= NAVIGATION DRAWER ======================== -->
+
+    <div id="navigation_drawer" class="navigation_drawer_close">
+      <a href="/" class="navigation_link">Home</a>
+      <a href="/services" class="navigation_link">Services</a>
+      <a href="/pricing" class="navigation_link">Pricing</a>
+      <a href="/partnership" class="navigation_link">Partnership</a>
+    </div>
+
+    <!-- ========================= PROFILE DRAWER ========================= -->
+
+    <div id="profile_drawer" class="profile_drawer_close"></div>
+
+    <!-- =========================== MAIN BODY ============================ -->
+
+    <div id="registration_contents" class="main_body">
+      <div id="registration_signup_contents" class="registration_content">
+        <div class="registration_heading_body">
+          <h1 class="registration_heading">Signup</h1>
+        </div>
+        <form
+          action="/users/signup"
+          class="registration_form"
+          method="POST"
+          onsubmit="return signupValidation()"
+        >
+          <div class="registration_input_field">
+            <div class="registration_input_heading_body">
+              <p class="registration_input_heading">Username</p>
+            </div>
+            <div class="registration_inputs">
+              <div class="registration_input">
+                <input
+                  type="text"
+                  name="username"
+                  id="registration_signup_username_input"
+                  class="registration_input_text"
+                  onfocus="signupUsernameValidation()"
+                  oninput="signupUsernameValidation()"
+                />
+              </div>
+            </div>
+            <div class="registration_error_body">
+              <div
+                id="registration_signup_username_error"
+                class="registration_error"
+              ></div>
+            </div>
+          </div>
+          <div class="registration_input_field">
+            <div class="registration_input_heading_body">
+              <p class="registration_input_heading">Email</p>
+            </div>
+            <div class="registration_inputs">
+              <div class="registration_input">
+                <input
+                  type="email"
+                  name="email"
+                  id="registration_signup_email_input"
+                  class="registration_input_text"
+                  onfocus="signupEmailValidation()"
+                  oninput="signupEmailValidation()"
+                />
+              </div>
+            </div>
+            <div class="registration_error_body">
+              <div
+                id="registration_signup_email_error"
+                class="registration_error"
+              ></div>
+            </div>
+          </div>
+          <div class="registration_input_field">
+            <div class="registration_input_heading_body">
+              <p class="registration_input_heading">Password</p>
+            </div>
+            <div class="registration_inputs">
+              <div class="registration_input">
+                <input
+                  type="password"
+                  name="password"
+                  id="registration_signup_password_input"
+                  class="registration_input_text"
+                  onfocus="signupPasswordValidation()"
+                  oninput="signupPasswordValidation()"
+                />
+              </div>
+            </div>
+            <div class="registration_error_body">
+              <div
+                id="registration_signup_password_error"
+                class="registration_error"
+              ></div>
+            </div>
+          </div>
+          <div class="registration_input_field">
+            <div class="registration_input_heading_body">
+              <p class="registration_input_heading"></p>
+            </div>
+            <div class="registration_inputs">
+              <div class="registration_input">
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  id="registration_signup_confirm_password_input"
+                  class="registration_input_text"
+                  placeholder="Confirm Password"
+                  onfocus="signupConfirmPasswordValidation()"
+                  oninput="signupConfirmPasswordValidation()"
+                />
+              </div>
+            </div>
+            <div class="registration_error_body">
+              <div
+                id="registration_signup_confirm_password_error"
+                class="registration_error"
+              ></div>
+            </div>
+          </div>
+          <div class="registration_sub_heading_body">
+            <h2 class="registration_sub_heading">Basic Information</h2>
+          </div>
+          <div class="registration_input_field">
+            <div class="registration_input_heading_body">
+              <p class="registration_input_heading">First Name</p>
+            </div>
+            <div class="registration_inputs">
+              <div class="registration_input">
+                <input
+                  type="text"
+                  name="firstName"
+                  id="registration_signup_first_name_input"
+                  class="registration_input_text"
+                  onfocus="signupFirstNameValidation()"
+                  oninput="signupFirstNameValidation()"
+                />
+              </div>
+            </div>
+            <div class="registration_error_body">
+              <div
+                id="registration_signup_first_name_error"
+                class="registration_error"
+              ></div>
+            </div>
+          </div>
+          <div class="registration_input_field">
+            <div class="registration_input_heading_body">
+              <p class="registration_input_heading">Last Name</p>
+            </div>
+            <div class="registration_inputs">
+              <div class="registration_input">
+                <input
+                  type="text"
+                  name="lastName"
+                  id="registration_signup_last_name_input"
+                  class="registration_input_text"
+                  onfocus="signupLastNameValidation()"
+                  oninput="signupLastNameValidation()"
+                />
+              </div>
+            </div>
+            <div class="registration_error_body">
+              <div
+                id="registration_signup_last_name_error"
+                class="registration_error"
+              ></div>
+            </div>
+          </div>
+          <div class="registration_sub_heading_body">
+            <h2 class="registration_sub_heading">Shipping Address</h2>
+          </div>
+          <div class="registration_input_field">
+            <div class="registration_input_heading_body">
+              <p class="registration_input_heading">Unit</p>
+            </div>
+            <div class="registration_inputs">
+              <div class="registration_input">
+                <input
+                  type="text"
+                  name="unit"
+                  id="registration_signup_unit_input"
+                  class="registration_input_text"
+                />
+              </div>
+            </div>
+            <div class="registration_error_body">
+              <div class="registration_error"></div>
+            </div>
+          </div>
+          <div class="registration_input_field">
+            <div class="registration_input_heading_body">
+              <p class="registration_input_heading">Street Address</p>
+            </div>
+            <div class="registration_inputs">
+              <div style="width: 20%;" class="registration_input">
+                <input
+                  type="text"
+                  name="streetNumber"
+                  id="registration_signup_street_number_input"
+                  class="registration_input_text"
+                  onfocus="signupStreetAddressValidation()"
+                  oninput="signupStreetAddressValidation()"
+                />
+              </div>
+              <div style="width: 75%;" class="registration_input">
+                <input
+                  type="text"
+                  name="streetName"
+                  id="registration_signup_route_input"
+                  class="registration_input_text"
+                  onfocus="signupStreetAddressValidation()"
+                  oninput="signupStreetAddressValidation()"
+                />
+              </div>
+            </div>
+            <div class="registration_error_body">
+              <div
+                id="registration_signup_street_address_error"
+                class="registration_error"
+              ></div>
+            </div>
+          </div>
+          <div class="registration_input_field">
+            <div class="registration_input_heading_body">
+              <p class="registration_input_heading">Suburb</p>
+            </div>
+            <div class="registration_inputs">
+              <div class="registration_input">
+                <input
+                  type="text"
+                  name="suburb"
+                  id="registration_signup_suburb_input"
+                  class="registration_input_text"
+                  onfocus="signupSuburbValidation()"
+                  oninput="signupSuburbValidation()"
+                />
+              </div>
+            </div>
+            <div class="registration_error_body">
+              <div
+                id="registration_signup_suburb_error"
+                class="registration_error"
+              ></div>
+            </div>
+          </div>
+          <div class="registration_input_field">
+            <div class="registration_input_heading_body">
+              <p class="registration_input_heading">City, Postcode</p>
+            </div>
+            <div class="registration_inputs">
+              <div style="width: 65%;" class="registration_input">
+                <input
+                  type="text"
+                  name="city"
+                  id="registration_signup_city_input"
+                  class="registration_input_text"
+                  onfocus="signupCityPostcodeValidation()"
+                  oninput="signupCityPostcodeValidation()"
+                />
+              </div>
+              <div style="width: 30%;" class="registration_input">
+                <input
+                  type="text"
+                  name="postcode"
+                  id="registration_signup_postcode_input"
+                  class="registration_input_text"
+                  onfocus="signupCityPostcodeValidation()"
+                  oninput="signupCityPostcodeValidation()"
+                />
+              </div>
+            </div>
+            <div class="registration_error_body">
+              <div
+                id="registration_signup_city_postcode_error"
+                class="registration_error"
+              ></div>
+            </div>
+          </div>
+          <div class="registration_input_field">
+            <div class="registration_input_heading_body">
+              <p class="registration_input_heading">Country</p>
+            </div>
+            <div class="registration_inputs">
+              <div class="registration_input">
+                <input
+                  type="text"
+                  name="country"
+                  id="registration_signup_country_input"
+                  class="registration_input_text"
+                  onfocus="signupCountryValidation()"
+                  oninput="signupCountryValidation()"
+                />
+              </div>
+            </div>
+            <div class="registration_error_body">
+              <div
+                id="registration_signup_country_error"
+                class="registration_error"
+              ></div>
+            </div>
+          </div>
+          <div class="registration_button">
+            <div class="button_one_body">
+              <button class="button_one">
+                <p class="button_one_label">Signup</p>
+              </button>
+              <div class="button_one_loader"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="registration_login_contents" class="registration_content">
+        <div class="registration_heading_body">
+          <h1 class="registration_heading">Login</h1>
+        </div>
+        <form
+          action="/users/login"
+          class="registration_form"
+          method="POST"
+          onsubmit="return loginValidation()"
+        >
+          <div class="registration_input_field">
+            <div class="registration_input_heading_body">
+              <p class="registration_input_heading">Email</p>
+            </div>
+            <div class="registration_inputs">
+              <div class="registration_input">
+                <input
+                  type="email"
+                  name="email"
+                  id="registration_login_email_input"
+                  class="registration_input_text"
+                  onfocus="loginEmailValidation()"
+                  oninput="loginEmailValidation()"
+                />
+              </div>
+            </div>
+            <div class="registration_error_body">
+              <div
+                id="registration_login_email_error"
+                class="registration_error"
+              ></div>
+            </div>
+          </div>
+          <div class="registration_input_field">
+            <div class="registration_input_heading_body">
+              <p class="registration_input_heading">Password</p>
+            </div>
+            <div class="registration_inputs">
+              <div class="registration_input">
+                <input
+                  type="password"
+                  name="password"
+                  id="registration_login_password_input"
+                  class="registration_input_text"
+                  autocomplete="new-password"
+                  onfocus="loginPasswordValidation()"
+                  oninput="loginPasswordValidation()"
+                />
+              </div>
+            </div>
+            <div class="registration_error_body">
+              <div
+                id="registration_login_password_error"
+                class="registration_error"
+              ></div>
+            </div>
+          </div>
+          <div class="registration_button">
+            <div class="button_one_body">
+              <button id="registration_login_button" class="button_one">
+                <p class="button_one_label">Login</p>
+              </button>
+              <div class="button_one_loader"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ============================= FOOTER ============================= -->
+
+    <div id="footer">
+      <div class="footer_divider">
+        <p class="footer_divider_header">Services</p>
+        <div
+          id="footer_3d_printing_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/3d-printing"
+            id="footer_3d_printing"
+            class="footer_content"
+            >3D Printing</a
+          >
+        </div>
+        <div
+          id="footer_3d_modelling_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/3d-modelling"
+            id="footer_3d_modelling"
+            class="footer_content"
+            >3D Modelling</a
+          >
+        </div>
+        <div
+          id="footer_marketplace_body"
+          class="footer_content_body footer_services_content_body"
+        >
+          <a
+            href="/services/marketplace"
+            id="footer_marketplace"
+            class="footer_content"
+            >Marketplace</a
+          >
+        </div>
+      </div>
+      <div class="footer_divider">
+        <p class="footer_divider_header">Resources</p>
+      </div>
+      <div class="footer_divider">
+        <p class="footer_divider_header">Delta 3D Printing</p>
+        <div
+          id="footer_about_us_body"
+          class="footer_content_body footer_about_us_content_body"
+        >
+          <a href="/about" id="footer_about_us" class="footer_content">About</a>
+        </div>
+        <div
+          id="footer_contact_us_body"
+          class="footer_content_body footer_about_us_content_body"
+        >
+          <a href="/contact-us" id="footer_contact_us" class="footer_content"
+            >Contact Us</a
+          >
+        </div>
+        <div
+          id="footer_partnership_body"
+          class="footer_content_body footer_about_content_body"
+        >
+          <a href="/partnership" id="footer_partnership" class="footer_content"
+            >Partnership Program</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

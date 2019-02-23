@@ -1,7 +1,8 @@
 /* ======================================= INITIALISATION ======================================= */
 
-const addProfileDrawerUserContents = () => {
-  document.querySelector("#profile_drawer").innerHTML - "";
+const addProfileDrawerUserContents = profile => {
+  document.querySelector("#profile_drawer").innerHTML = "";
+  profileDrawerToggleIcon(profile);
   addProfileDrawerUserProfileContents();
   addProfileDrawerUserLogoutContents();
 };
@@ -10,11 +11,26 @@ const addProfileDrawerUserContents = () => {
 
 const addProfileDrawerUserProfileContents = () => {
   const profileDrawerUserProfileHTML =
-    "<a href='/Profile' class='profile_drawer_link'>Profile</a>";
+    "<a href='/profile' class='profile_drawer_link'>Profile</a>";
 
   document
     .querySelector("#profile_drawer")
     .insertAdjacentHTML("beforeend", profileDrawerUserProfileHTML);
+};
+
+/* ======================================== TOGGLE ICON ========================================= */
+
+const profileDrawerToggleIcon = profile => {
+  let html;
+  if (profile.profilePicture) {
+    html = `<img src="/profile-picture/${
+      profile.profilePicture.id
+    }" class="profile_drawer_picture_icon">`;
+  } else {
+    html = `<img src="/assets/profile_icon.png" id="profile_drawer_icon">`;
+  }
+
+  document.querySelector("#profile_drawer_toggle").innerHTML = html;
 };
 
 /* =========================================== LOGOUT =========================================== */

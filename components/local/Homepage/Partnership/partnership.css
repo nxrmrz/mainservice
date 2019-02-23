@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 #homepage_partnership_body {
   height: 50vmin;
   width: 100%;
@@ -81,12 +83,39 @@
   box-shadow: 0 0 0 rgb(120, 10, 10);
 }
 
-/* =================================== DESKTOP ==================================== */
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #homepage_partnership_body {
+    height: 37.5vmin;
+    padding: 3vmin 6vmin;
+  }
+
+  #homepage_partnership_header {
+    font-size: 3.75vmin;
+    text-shadow: 0 0vmin 1.125vmin rgb(120, 10, 10);
+  }
+
+  #homepage_partnership_subitle {
+    font-size: 4.5vmin;
+    text-shadow: 0 0vmin 1.125vmin rgb(120, 10, 10);
+  }
+
+  #homepage_partnership_button {
+    height: 6.75vmin;
+    padding: 0 4.5vmin;
+    border-radius: 3.375vmin;
+    box-shadow: 0 0 1.125vmin rgb(120, 10, 10);
+    font-size: 2.625vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   #homepage_partnership_body {
     height: 25vmin;
-    padding: 2vmin 4vmin 2vmin 4vmin;
+    padding: 2vmin 4vmin;
   }
 
   #homepage_partnership_header {
@@ -101,9 +130,11 @@
 
   #homepage_partnership_button {
     height: 4.5vmin;
-    padding: 0 3vmin 0 3vmin;
+    padding: 0 3vmin;
     border-radius: 2.25vmin;
     box-shadow: 0 0 0.75vmin rgb(120, 10, 10);
     font-size: 1.75vmin;
   }
 }
+
+/* ============================================================================================== */

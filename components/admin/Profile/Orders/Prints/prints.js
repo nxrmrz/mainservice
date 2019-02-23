@@ -20,7 +20,7 @@ const contructAdminProfileOrdersPrintsObject = () => {
 
 const adminProfileOrdersPrintsInit = () => {
   constructAdminProfileOrdersPrintsBaseHTML();
-  loadAdminProfileOrdersPrintsOrderList();
+  loadAdminProfileOrdersPrintsOrderLists();
   adminProfileOrdersPrintsDiscountInit();
 };
 
@@ -80,6 +80,48 @@ const constructAdminProfileOrdersPrintsBaseHTML = () => {
 
 /* ======================================= LOAD ORDER LIST ====================================== */
 
+const adminPorfileOrdersOrderStatusArray = [
+  "Awaiting Quote",
+  "Awaiting Payment Confirmation",
+  "Printing Order",
+  "Ready for Pickup",
+  "Ready for Shipping",
+  "Requesting Refund",
+  "Orders"
+];
+
+const loadAdminProfileOrdersPrintsOrderLists = () => {
+  adminPorfileOrdersOrderStatusArray.forEach(orderStatus => {
+    const orderStatusId = constructOrderStatusId(orderStatus);
+
+    loadLoader(
+      document.querySelector(
+        "#admin_profile_orders_prints_" + orderStatusId + "_list_contents_body"
+      )
+    ).then(() => {
+      if (orderStatus == "Orders") {
+        $.ajax({
+          type: "POST",
+          url: "/order/get-order-details-array",
+          success: data => {
+            addAdminProfileOrdersPrintsOrderList(data.content, orderStatusId);
+          }
+        });
+      } else {
+        $.ajax({
+          type: "POST",
+          url: "/order/get-order-details-array-by-order-status",
+          data: JSON.stringify({ orderStatus }),
+          contentType: "application/json",
+          success: data => {
+            addAdminProfileOrdersPrintsOrderList(data.content, orderStatusId);
+          }
+        });
+      }
+    });
+  });
+};
+
 const adminPorfileOrdersOrderStatusIdsArray = [
   "awaiting_quote",
   "awaiting_payment_confirmation",
@@ -89,48 +131,6 @@ const adminPorfileOrdersOrderStatusIdsArray = [
   "requesting_refund",
   "orders"
 ];
-
-const loadAdminProfileOrdersPrintsOrderList = () => {
-  adminPorfileOrdersOrderStatusIdsArray.forEach(element => {
-    loadLoader(
-      document.querySelector(
-        "#admin_profile_orders_prints_" + element + "_list_contents_body"
-      )
-    ).then(() => {
-      let url;
-
-      switch (element) {
-        case "awaiting_quote":
-          url = "/admin/orders/awaiting-quote";
-          break;
-        case "awaiting_payment_confirmation":
-          url = "/admin/orders/awaiting-payment-confirmation";
-          break;
-        case "printing_order":
-          url = "/admin/orders/printing-order";
-          break;
-        case "ready_for_pickup":
-          url = "/admin/orders/ready-for-pickup";
-          break;
-        case "ready_for_shipping":
-          url = "/admin/orders/ready-for-shipping";
-          break;
-        case "requesting_refund":
-          url = "/admin/orders/requesting-refund";
-          break;
-        case "orders":
-          url = "/admin/orders";
-      }
-
-      $.ajax({
-        url: url,
-        success: data => {
-          addAdminProfileOrdersPrintsOrderList(data, element);
-        }
-      });
-    });
-  });
-};
 
 const addAdminProfileOrdersPrintsOrderList = (orders, id) => {
   // Table Body

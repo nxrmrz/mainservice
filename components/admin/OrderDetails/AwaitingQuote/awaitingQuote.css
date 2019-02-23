@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 #admin_awaiting_quote_modal_footer_contents {
   flex-direction: column;
 }
@@ -64,7 +66,50 @@
   font-size: 3.6vmin;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  .admin_order_details_awaiting_quote_part_body {
+    padding: 1.5vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_file_name_body {
+    height: 6vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_file_name_text {
+    font-size: 2.7vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_quantity_body {
+    height: 6vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_quantity_text {
+    font-size: 2.7vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_price_per_unit_body {
+    height: 6vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_price_per_unit_input {
+    font-size: 2.7vmin;
+    margin: 0 1.5vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_total_price_body {
+    height: 6vmin;
+  }
+
+  .admin_order_details_awaiting_quote_part_total_price_text {
+    font-size: 2.7vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   .admin_order_details_awaiting_quote_part_body {
     padding: 1vmin;
   }
@@ -91,7 +136,7 @@
 
   .admin_order_details_awaiting_quote_part_price_per_unit_input {
     font-size: 1.8vmin;
-    margin: 0 1vmin 0 1vmin;
+    margin: 0 1vmin;
   }
 
   .admin_order_details_awaiting_quote_part_total_price_body {
@@ -102,3 +147,5 @@
     font-size: 1.8vmin;
   }
 }
+
+/* ============================================================================================== */

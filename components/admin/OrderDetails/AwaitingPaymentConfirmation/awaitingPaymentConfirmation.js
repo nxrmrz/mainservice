@@ -6,13 +6,7 @@ const adminAwaitingPaymentConfirmationInit = order => {
     order,
     orderStatusId
   );
-  constructAdminAwaitingPaymentConfirmationDescriptionBodyDetails();
-  setAdminAwaitingPaymentConfirmationVariables(order);
-  adminAwaitingPaymentConfirmationOrderPriceCalculation(
-    adminAwaitingPaymentConfirmationOrderPartFileDetailsArray,
-    order
-  );
-  adminAwaitingPaymentConfirmationOrderSummary(order);
+  constructAdminAwaitingPaymentConfirmationDescriptionBodyDetails(order);
 };
 
 /* =========================================== MODAL ============================================ */
@@ -22,8 +16,8 @@ const constructAdminOrderDetailsAwaitingPaymentConfirmationModal = (
   orderStatusId
 ) => {
   // ELEMENTS
-  const adminOrderDetailsAwaitingPaymentConfirmationModalHeader = adminOrderDetailsModalHeader;
-  const adminOrderDetailsAwaitingPaymentConfirmationModalFooter =
+  const modalHeader = adminOrderDetailsModalHeader;
+  const modalFooter =
     "<div id='admin_order_details_awaiting_payment_confirmation_buttons_body' class='admin_order_details_footer_buttons_body'>" +
     "<div id='admin_order_details_payment_confirmed_button' class='admin_order_details_footer_button'>" +
     "<div class='admin_order_details_footer_button_text'>Payment Confirmed</div>" +
@@ -37,29 +31,26 @@ const constructAdminOrderDetailsAwaitingPaymentConfirmationModal = (
     "<div class='order_details_footer_button_text'>Cancel</div>" +
     "</div>" +
     "</div>";
-  const adminOrderDetailsAwaitingPaymentConfirmationModalElementObject = new modalElementObject(
+  const modalElementObject = new ModalElementObject(
     orderStatusId,
-    adminOrderDetailsAwaitingPaymentConfirmationModalHeader,
-    adminOrderDetailsAwaitingPaymentConfirmationModalFooter
+    modalHeader,
+    modalFooter
   );
   // CSS
-  const adminOrderDetailsAwaitingPaymentConfirmationModalMobileHeight = 90;
-  const adminOrderDetailsAwaitingPaymentConfirmationModalMobileWidth = 90;
-  const adminOrderDetailsAwaitingPaymentConfirmationModalDesktopHeight = 90;
-  const adminOrderDetailsAwaitingPaymentConfirmationModalDesktopWidth = 60;
-  const adminOrderDetailsAwaitingPaymentConfirmationModalFooterHeight = 14;
-  const adminOrderDetailsAwaitingPaymentConfirmationModalCSSObject = new modalCSSObject(
-    adminOrderDetailsAwaitingPaymentConfirmationModalMobileHeight,
-    adminOrderDetailsAwaitingPaymentConfirmationModalMobileWidth,
-    adminOrderDetailsAwaitingPaymentConfirmationModalDesktopHeight,
-    adminOrderDetailsAwaitingPaymentConfirmationModalDesktopWidth,
-    adminOrderDetailsAwaitingPaymentConfirmationModalFooterHeight
+  const modalMobileHeight = 90;
+  const modalMobileWidth = 90;
+  const modalDesktopHeight = 90;
+  const modalDesktopWidth = 60;
+  const modalFooterHeight = 14;
+  const modalCSSObject = new ModalCSSObject(
+    modalMobileHeight,
+    modalMobileWidth,
+    modalDesktopHeight,
+    modalDesktopWidth,
+    modalFooterHeight
   );
 
-  addModal(
-    adminOrderDetailsAwaitingPaymentConfirmationModalElementObject,
-    adminOrderDetailsAwaitingPaymentConfirmationModalCSSObject
-  );
+  addModal(modalElementObject, modalCSSObject);
 
   document
     .querySelector("#admin_order_details_payment_confirmed_button")
@@ -87,34 +78,9 @@ const constructAdminOrderDetailsAwaitingPaymentConfirmationModal = (
 
 /* ================ ADMIN: ORDER DETAILS: AWAITING PAYMENT CONFIRMATION CONTENTS ================ */
 
-let adminAwaitingPaymentConfirmationOrderOwnerDetails;
-let adminAwaitingPaymentConfirmationOrderPartFileDetailsArray;
-let adminAwaitingPaymentConfirmationTotalOrderPrice;
-
-const setAdminAwaitingPaymentConfirmationVariables = order => {
-  adminAwaitingPaymentConfirmationOrderOwnerDetails = getOrderOwnerDetails(
-    order
-  );
-  adminAwaitingPaymentConfirmationOrderPartFileDetailsArray = [];
-
-  for (i = 0; i < order.parts.length; i++) {
-    fileDetails = getOrderPartFileDetails(order.parts[i]);
-
-    fileDetailsObject = new PartDetailsObject(
-      adminOrderDetailsPartFileNameFormatter(order.parts[i].fileName),
-      order.parts[i].orderQuantity,
-      Number(fileDetails.metadata.price)
-    );
-
-    adminAwaitingPaymentConfirmationOrderPartFileDetailsArray.push(
-      fileDetailsObject
-    );
-  }
-};
-
 /* ----------------------------------------- BASE HTML ------------------------------------------ */
 
-const constructAdminAwaitingPaymentConfirmationDescriptionBodyDetails = () => {
+const constructAdminAwaitingPaymentConfirmationDescriptionBodyDetails = order => {
   const adminAwaitingPaymentConfirmationDescriptionBodyDetailsHTML =
     "<div class='admin_order_details_modal_body'>" +
     "<div id='admin_awaiting_payment_confirmation_order_summary_body'></div>" +
@@ -124,223 +90,179 @@ const constructAdminAwaitingPaymentConfirmationDescriptionBodyDetails = () => {
   document.querySelector(
     "#admin_awaiting_payment_confirmation_modal_body"
   ).innerHTML = adminAwaitingPaymentConfirmationDescriptionBodyDetailsHTML;
+  // CONTENTS
+  partPriceCalculation(order).then(partsPriceObject => {
+    pricingPriceCalculation(order).then(pricingPriceObject => {
+      discountPriceCalculation(order).then(discountsPriceObject => {
+        orderPriceCalculation(order).then(orderPriceObject => {
+          deliveryPriceObject = deliveryPriceCalculation(order);
+          // Summary
+          adminAwaitingPaymentConfirmationSummary(
+            order,
+            orderPriceObject.orderPrice
+          );
+          adminAwaitingPaymentConfirmationCalculation(
+            partsPriceObject,
+            pricingPriceObject,
+            discountsPriceObject,
+            deliveryPriceObject,
+            orderPriceObject
+          );
+        });
+      });
+    });
+  });
 };
 
 /* ------------------------------------------ SUMMARY ------------------------------------------- */
 
-const adminAwaitingPaymentConfirmationOrderSummary = order => {
-  const initials =
-    adminAwaitingPaymentConfirmationOrderOwnerDetails.firstName[0].toUpperCase() +
-    adminAwaitingPaymentConfirmationOrderOwnerDetails.lastName[0].toUpperCase();
+const adminAwaitingPaymentConfirmationSummary = (order, orderPrice) => {
+  getOrderOwnerDetails(true, order).then(owner => {
+    const initials =
+      owner.firstName[0].toUpperCase() + owner.lastName[0].toUpperCase();
 
-  const adminAwaitingPaymentConfirmationOrderSummaryHTML =
-    "<div class='admin_awaiting_payment_confirmation_order_summary'>" +
-    "<div class='admin_awaiting_payment_confirmation_order_summary_row_header'>" +
-    "<div class='admin_awaiting_payment_confirmation_order_summary_column_header'>Order No.</div>" +
-    "<div class='admin_awaiting_payment_confirmation_order_summary_column_header'>Initials</div>" +
-    "<div class='admin_awaiting_payment_confirmation_order_summary_column_header'>Total Price</div>" +
-    "</div>" +
-    "<div class='admin_awaiting_payment_confirmation_order_summary_row'>" +
-    "<div class='admin_awaiting_payment_confirmation_order_summary_column'>" +
-    order.orderNumber +
-    "</div>" +
-    "<div class='admin_awaiting_payment_confirmation_order_summary_column'>" +
-    initials +
-    "</div>" +
-    "<div class='admin_awaiting_payment_confirmation_order_summary_column'>$" +
-    adminAwaitingPaymentConfirmationTotalOrderPrice +
-    "</div>" +
-    "</div>" +
-    "</div>";
+    const adminAwaitingPaymentConfirmationOrderSummaryHTML =
+      `<div class='admin_awaiting_payment_confirmation_order_summary'>` +
+      `<div class='admin_awaiting_payment_confirmation_order_summary_row_header'>` +
+      `<div class='admin_awaiting_payment_confirmation_order_summary_column_header'>Order No.</div>` +
+      `<div class='admin_awaiting_payment_confirmation_order_summary_column_header'>Initials</div>` +
+      `<div class='admin_awaiting_payment_confirmation_order_summary_column_header'>Total Price</div>` +
+      `</div>` +
+      `<div class='admin_awaiting_payment_confirmation_order_summary_row'>` +
+      `<div class='admin_awaiting_payment_confirmation_order_summary_column'>${
+        order.orderNumber
+      }</div>` +
+      `<div class='admin_awaiting_payment_confirmation_order_summary_column'>` +
+      initials +
+      `</div>` +
+      `<div class='admin_awaiting_payment_confirmation_order_summary_column'>$${orderPrice}</div>` +
+      `</div>` +
+      `</div>`;
 
-  document.querySelector(
-    "#admin_awaiting_payment_confirmation_order_summary_body"
-  ).innerHTML = adminAwaitingPaymentConfirmationOrderSummaryHTML;
+    document.querySelector(
+      "#admin_awaiting_payment_confirmation_order_summary_body"
+    ).innerHTML = adminAwaitingPaymentConfirmationOrderSummaryHTML;
+  });
 };
 
 /* ---------------------------------------- CALCULATION ----------------------------------------- */
 
-const adminAwaitingPaymentConfirmationOrderPriceCalculation = (
-  partFileDetailsArray,
-  order
+const adminAwaitingPaymentConfirmationCalculation = (
+  partsPriceObject,
+  pricingPriceObject,
+  discountsPriceObject,
+  deliveryPriceObject,
+  orderPriceObject
 ) => {
-  let totalPartsPrice = 0;
-  for (i = 0; i < partFileDetailsArray.length; i++) {
-    const totalPartPrice =
-      partFileDetailsArray[i].pricePerUnit *
-      partFileDetailsArray[i].orderQuantity;
-    const adminAwaitingPaymentConfirmationOrderPartFileDetailsHTML =
-      "<div class='admin_awaiting_payment_confirmation_price_calculation_row'>" +
-      "<div class='admin_awaiting_payment_confirmation_price_calculation_column_one'>x" +
-      partFileDetailsArray[i].orderQuantity +
-      " " +
-      partFileDetailsArray[i].fileName +
-      " (@ $" +
-      partFileDetailsArray[i].pricePerUnit +
-      " per unit)</div>" +
-      "<div class='admin_awaiting_payment_confirmation_price_calculation_column_two'>$" +
-      totalPartPrice +
-      "</div>" +
-      "</div>";
-
-    totalPartsPrice = totalPartsPrice + totalPartPrice;
-
-    document
-      .querySelector(
-        "#admin_awaiting_payment_confirmation_order_price_calculation_body"
-      )
-      .insertAdjacentHTML(
-        "beforeend",
-        adminAwaitingPaymentConfirmationOrderPartFileDetailsHTML
-      );
+  /* --------------------------------------- CREATE HTML ---------------------------------------- */
+  let html = ``;
+  // PARTS
+  const totalPartsPrice = partsPriceObject.totalPrice;
+  for (let i = 0; i < partsPriceObject.partPriceObjectArray.length; i++) {
+    const partPriceObject = partsPriceObject.partPriceObjectArray[i];
+    const quantity = partPriceObject.quantity;
+    const name = partPriceObject.name;
+    const totalPartPrice = partPriceObject.totalPrice;
+    html +=
+      `<div class='admin_awaiting_payment_confirmation_price_calculation_row'>` +
+      `<div class='admin_awaiting_payment_confirmation_price_calculation_column_one'>x${quantity} ${name} (@ $ per unit)</div>` +
+      `<div class='admin_awaiting_payment_confirmation_price_calculation_column_two'>$${totalPartPrice}</div>` +
+      `</div>`;
   }
-
-  const adminAwaitingPaymentConfirmationOrderTotalPartsPriceHTML =
-    "<div class='admin_awaiting_payment_confirmation_price_calculation_row'>" +
-    "<div class='admin_awaiting_payment_confirmation_price_calculation_column_one'>Parts Total</div>" +
-    "<div class='admin_awaiting_payment_confirmation_price_calculation_column_two'>$" +
-    totalPartsPrice +
-    "</div>" +
-    "</div>";
-
-  document
-    .querySelector(
-      "#admin_awaiting_payment_confirmation_order_price_calculation_body"
-    )
-    .insertAdjacentHTML(
-      "beforeend",
-      adminAwaitingPaymentConfirmationOrderTotalPartsPriceHTML
-    );
-
-  let pricingDetails;
-  let pricingPrice;
-
-  if (order.pricing == "Basic") {
-    pricingDetails = "Pricing: Basic (0% x $" + totalPartsPrice + ")";
-    pricingPrice = totalPartsPrice * 0;
-  } else if (order.pricing == "Priority") {
-    pricingDetails = "Pricing: Priority (25% x $" + totalPartsPrice + ")";
-    pricingPrice = totalPartsPrice * 0.25;
-  } else if (order.pricing == "Urgent") {
-    pricingDetails = "Pricing: Urgent (50% x $" + totalPartsPrice + ")";
-    pricingPrice = totalPartsPrice * 0.5;
+  html +=
+    `<div class='admin_awaiting_payment_confirmation_price_calculation_row'>` +
+    `<div class='admin_awaiting_payment_confirmation_price_calculation_column_one'>Parts Total</div>` +
+    `<div class='admin_awaiting_payment_confirmation_price_calculation_column_two'>$${totalPartsPrice}</div>` +
+    `</div>`;
+  // PRICING
+  const pricingDetails = `Pricing: ${pricingPriceObject.pricing} (${
+    pricingPriceObject.calculation
+  })`;
+  html +=
+    `<div class='admin_awaiting_payment_confirmation_price_calculation_row'>` +
+    `<div class='admin_awaiting_payment_confirmation_price_calculation_column_one'>${pricingDetails}</div>` +
+    `<div class='admin_awaiting_payment_confirmation_price_calculation_column_two'>$${
+      pricingPriceObject.pricingPrice
+    }</div>` +
+    `</div>`;
+  // DISCOUNTS
+  const totalDiscountsPrice = discountsPriceObject.totalDiscount;
+  for (
+    let i = 0;
+    i < discountsPriceObject.discountPriceObjectArray.length;
+    i++
+  ) {
+    const discountPriceObject =
+      discountsPriceObject.discountPriceObjectArray[i];
+    const name = discountPriceObject.name;
+    const calculation = discountPriceObject.calculation;
+    const discount = discountPriceObject.discount;
+    html +=
+      `<div class='admin_awaiting_payment_confirmation_price_calculation_row'>` +
+      `<div class='admin_awaiting_payment_confirmation_price_calculation_column_one'>${name} (${calculation})</div>` +
+      `<div class='admin_awaiting_payment_confirmation_price_calculation_column_two'>-$${discount}</div>` +
+      `</div>`;
   }
-
-  const adminAwaitingPaymentConfirmationOrderPricingHTML =
-    "<div class='admin_awaiting_payment_confirmation_price_calculation_row'>" +
-    "<div class='admin_awaiting_payment_confirmation_price_calculation_column_one'>" +
-    pricingDetails +
-    "</div>" +
-    "<div class='admin_awaiting_payment_confirmation_price_calculation_column_two'>$" +
-    pricingPrice +
-    "</div>" +
-    "</div>";
-
-  document
-    .querySelector(
-      "#admin_awaiting_payment_confirmation_order_price_calculation_body"
-    )
-    .insertAdjacentHTML(
-      "beforeend",
-      adminAwaitingPaymentConfirmationOrderPricingHTML
-    );
-
-  let deliveryDetails;
-  let deliveryPrice;
-
-  if (order.delivery == "Pickup") {
-    deliveryDetails = "Delivery: Pickup";
-    deliveryPrice = 0;
-  } else if (order.delivery == "Tracking") {
-    deliveryDetails = "Delivery: Tracking";
-    deliveryPrice = 7.0;
-  } else if (order.delivery == "Courier") {
-    deliveryDetails = "Delivery: Courier";
-    deliveryPrice = 8.5;
-  }
-
-  const adminAwaitingPaymentConfirmationOrderDeliveryHTML =
-    "<div class='admin_awaiting_payment_confirmation_price_calculation_row'>" +
-    "<div class='admin_awaiting_payment_confirmation_price_calculation_column_one'>" +
-    deliveryDetails +
-    "</div>" +
-    "<div class='admin_awaiting_payment_confirmation_price_calculation_column_two'>$" +
-    deliveryPrice +
-    "</div>" +
-    "</div>";
-
-  document
-    .querySelector(
-      "#admin_awaiting_payment_confirmation_order_price_calculation_body"
-    )
-    .insertAdjacentHTML(
-      "beforeend",
-      adminAwaitingPaymentConfirmationOrderDeliveryHTML
-    );
-
-  adminAwaitingPaymentConfirmationTotalOrderPrice =
-    totalPartsPrice + pricingPrice + deliveryPrice;
-
-  const adminAwaitingPaymentConfirmationTotalOrderPriceHTML =
-    "<div class='admin_awaiting_payment_confirmation_price_calculation_row'>" +
-    "<div class='admin_awaiting_payment_confirmation_price_calculation_column_one'>Order Total</div>" +
-    "<div class='admin_awaiting_payment_confirmation_price_calculation_column_two'>$" +
-    adminAwaitingPaymentConfirmationTotalOrderPrice +
-    "</div>" +
-    "</div>";
-
-  document
-    .querySelector(
-      "#admin_awaiting_payment_confirmation_order_price_calculation_body"
-    )
-    .insertAdjacentHTML(
-      "beforeend",
-      adminAwaitingPaymentConfirmationTotalOrderPriceHTML
-    );
+  html +=
+    `<div class='admin_awaiting_payment_confirmation_price_calculation_row'>` +
+    `<div class='admin_awaiting_payment_confirmation_price_calculation_column_one'>Discounts Total</div>` +
+    `<div class='admin_awaiting_payment_confirmation_price_calculation_column_two'>-$${totalDiscountsPrice}</div>` +
+    `</div>`;
+  // DELIVERY
+  html +=
+    `<div class='admin_awaiting_payment_confirmation_price_calculation_row'>` +
+    `<div class='admin_awaiting_payment_confirmation_price_calculation_column_one'>Delivery: ${
+      deliveryPriceObject.delivery
+    }</div>` +
+    `<div class='admin_awaiting_payment_confirmation_price_calculation_column_two'>$${
+      deliveryPriceObject.price
+    }</div>` +
+    `</div>`;
+  // TOTAL
+  html +=
+    `<div class='admin_awaiting_payment_confirmation_price_calculation_row'>` +
+    `<div class='admin_awaiting_payment_confirmation_price_calculation_column_one'>Order Total</div>` +
+    `<div class='admin_awaiting_payment_confirmation_price_calculation_column_two'>$${
+      orderPriceObject.orderPrice
+    }</div>` +
+    `</div>`;
+  /* --------------------------------------- INSERT HTML ---------------------------------------- */
+  document.querySelector(
+    "#admin_awaiting_payment_confirmation_order_price_calculation_body"
+  ).innerHTML = html;
 };
 
 /* =========================================== TOOLS ============================================ */
 
-class PartDetailsObject {
-  constructor(fileName, orderQuantity, pricePerUnit) {
-    this.fileName = fileName;
-    this.orderQuantity = orderQuantity;
-    this.pricePerUnit = pricePerUnit;
+const getOrderOwnerDetails = (promise, order) => {
+  if (promise != false) {
+    return new Promise((resolve, reject) => {
+      $.ajax({
+        type: "POST",
+        url: "/order/owner-details",
+        data: JSON.stringify(order),
+        contentType: "application/json",
+        success: data => {
+          resolve(data);
+        }
+      });
+    });
+  } else {
+    let orderDetails;
+
+    $.ajax({
+      type: "POST",
+      async: false,
+      url: "/order/owner-details",
+      data: JSON.stringify(order),
+      contentType: "application/json",
+      success: data => {
+        orderDetails = data;
+      }
+    });
+
+    return orderDetails;
   }
-}
-
-const getOrderOwnerDetails = order => {
-  let orderDetails;
-
-  $.ajax({
-    type: "POST",
-    async: false,
-    url: "/order/owner-details",
-    data: JSON.stringify(order),
-    contentType: "application/json",
-    success: data => {
-      orderDetails = data;
-    }
-  });
-
-  return orderDetails;
-};
-
-const getOrderPartFileDetails = part => {
-  let fileDetails;
-
-  $.ajax({
-    type: "POST",
-    async: false,
-    url: "/order/part/file-details",
-    data: JSON.stringify(part),
-    contentType: "application/json",
-    success: data => {
-      fileDetails = data;
-    }
-  });
-
-  return fileDetails;
 };
 
 /* ==================================== FOOTER BUTTON TOGGLE ==================================== */
@@ -362,7 +284,7 @@ const adminOrderDetailsAwaitingPaymentConfirmationToggleFooterButtons = () => {
 /* ==================================== UPDATE ORDER STATUS ===================================== */
 
 const adminOrderDetailsAwaitingPaymentConfirmationUpdateOrderStatus = (
-  order,
+  orderDetails,
   modalId
 ) => {
   loadLoader(
@@ -370,14 +292,14 @@ const adminOrderDetailsAwaitingPaymentConfirmationUpdateOrderStatus = (
   ).then(() => {
     $.ajax({
       type: "POST",
-      url: "/admin/order/update-order-status",
-      data: JSON.stringify(order),
+      url: "/order/update-order-status",
+      data: JSON.stringify({ orderDetails }),
       contentType: "application/json",
       success: data => {
         removeModal(modalId);
         removeBackdrop(modalId);
         setTimeout(() => {
-          viewAdminProfileOrdersPrintsOrderDetails(data);
+          viewAdminProfileOrdersPrintsOrderDetails(data.content.orderNumber);
         }, 500);
       }
     });
