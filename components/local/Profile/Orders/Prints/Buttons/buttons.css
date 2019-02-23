@@ -1,53 +1,84 @@
-#profile_orders_prints_buttons_body {
-  height: 20vmin;
-  display: flex;
-  align-items: center;
-  padding: 0 5vmin 0 5vmin;
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+/* ==================================== ADD NEW ORDER BUTTON ==================================== */
+
+#profile_orders_prints_new_order_add_body {
   width: 100%;
+  display: flex;
+  padding: 2vmin;
 }
 
-.profile_orders_prints_button_body {
-  border-style: dashed;
-  border-color: rgb(80, 80, 80);
-  border-radius: 3vmin;
+#profile_orders_prints_new_order_add {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-style: dashed;
+  border-color: rgb(50, 160, 30);
+  border-radius: 3vmin;
   padding: 1.5vmin;
-  opacity: 0.7;
+  box-shadow: 0 0.5vmin 1vmin 0 rgb(180, 180, 180);
 }
 
-.profile_orders_prints_button_image {
-  height: 4vmin;
-  width: 4vmin;
-  margin: 0 2vmin 0 0;
+#profile_orders_prints_new_order_add:hover {
+  border-color: rgb(80, 190, 60);
+  box-shadow: 0 0 0 0 rgb(180, 180, 180);
 }
 
-.profile_orders_prints_button_text {
+#profile_orders_prints_new_order_add:active {
+  border-color: rgb(40, 120, 20);
+}
+
+#profile_orders_prints_new_order_add_label {
   font-family: "Chivo", sans-serif;
   font-size: 3vmin;
   font-weight: 800;
-  color: rgb(80, 80, 80);
+  color: rgb(50, 160, 30);
 }
 
-@media only screen and (min-width: 600px) {
-  #profile_orders_prints_buttons_body {
-    height: 12vmin;
-    padding: 0 3vmin 0 3vmin;
+#profile_orders_prints_new_order_add:hover
+  > #profile_orders_prints_new_order_add_label {
+  color: rgb(80, 190, 60);
+}
+
+#profile_orders_prints_new_order_add:active
+  > #profile_orders_prints_new_order_add_label {
+  color: rgb(40, 120, 20);
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #profile_orders_prints_new_order_add_body {
+    padding: 1.5vmin;
   }
 
-  .profile_orders_prints_button_body {
-    border-radius: 1.8vmin;
-    padding: 0.9vmin;
+  #profile_orders_prints_new_order_add {
+    border-radius: 2.25vmin;
+    padding: 1.125vmin;
+    box-shadow: 0 0.375vmin 0.75vmin 0 rgb(180, 180, 180);
   }
 
-  .profile_orders_prints_button_image {
-    height: 2.2vmin;
-    width: 2.2vmin;
-    margin: 0 1.5vmin 0 0;
-  }
-
-  .profile_orders_prints_button_text {
-    font-size: 1.8vmin;
+  #profile_orders_prints_new_order_add_label {
+    font-size: 2.25vmin;
   }
 }
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  #profile_orders_prints_new_order_add_body {
+    padding: 1vmin;
+  }
+
+  #profile_orders_prints_new_order_add {
+    border-radius: 1.5vmin;
+    padding: 0.75vmin;
+    box-shadow: 0 0.25vmin 0.5vmin 0 rgb(180, 180, 180);
+  }
+
+  #profile_orders_prints_new_order_add_label {
+    font-size: 1.5vmin;
+  }
+}
+
+/* ============================================================================================== */

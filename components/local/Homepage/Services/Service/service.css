@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 /* ===================================== TABS ===================================== */
 
 .homepage_service_tab {
@@ -153,9 +155,113 @@
   color: rgb(80, 80, 80);
 }
 
-/* =================================== DESKTOP ==================================== */
+/* =========================== TEMPORARY MODEL MESSAGE ============================ */
 
-@media only screen and (min-width: 600px) {
+.homepage_services_temporary_message_contents {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  padding: 4vmin;
+}
+
+.homepage_services_temporary_message_heading_body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 4vmin;
+}
+
+.homepage_services_temporary_message_heading {
+  font-family: "Russo One", sans-serif;
+  font-size: 6vmin;
+  color: rgb(170, 10, 10);
+}
+
+.homepage_services_temporary_message_body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 4vmin;
+}
+
+.homepage_services_temporary_message {
+  font-family: "Open Sans", sans-serif;
+  font-size: 4vmin;
+  text-align: center;
+  color: rgb(60, 60, 60);
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  /* ===================================== TABS ===================================== */
+
+  .homepage_service_tab {
+    height: 10.5vmin;
+  }
+
+  .homepage_service_tab_text {
+    font-size: 3.75vmin;
+  }
+
+  /* =================================== CONTENTS =================================== */
+
+  .homepage_service_content {
+    height: 94.5vmin;
+    padding: 0 7.5vmin;
+  }
+
+  .homepage_service_content_header {
+    height: 15vmin;
+    font-size: 6vmin;
+  }
+
+  .homepage_service_content_subtitle {
+    font-size: 3.75vmin;
+  }
+
+  .homepage_service_content_button {
+    height: 6.75vmin;
+    padding: 0 4.5vmin;
+    border-radius: 3.375vmin;
+    box-shadow: 0 0.75vmin 1.125vmin 0 rgb(180, 180, 180);
+    font-size: 2.625vmin;
+  }
+
+  .homepage_service_content_description_body {
+    padding: 4.5vmin 0 0 0;
+  }
+
+  .homepage_service_content_description {
+    font-size: 3vmin;
+  }
+
+  /* =========================== TEMPORARY MODEL MESSAGE ============================ */
+
+  .homepage_services_temporary_message_contents {
+    padding: 3vmin;
+  }
+
+  .homepage_services_temporary_message_heading_body {
+    padding: 3vmin;
+  }
+
+  .homepage_services_temporary_message_heading {
+    font-size: 4.5vmin;
+  }
+
+  .homepage_services_temporary_message_body {
+    padding: 3vmin;
+  }
+
+  .homepage_services_temporary_message {
+    font-size: 3vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   /* ===================================== TABS ===================================== */
 
   .homepage_service_tab {
@@ -197,4 +303,28 @@
   .homepage_service_content_description {
     font-size: 2vmin;
   }
+
+  /* ========================== TEMPORARY MODEL MESSAGE =========================== */
+
+  .homepage_services_temporary_message_contents {
+    padding: 2vmin;
+  }
+
+  .homepage_services_temporary_message_heading_body {
+    padding: 2vmin;
+  }
+
+  .homepage_services_temporary_message_heading {
+    font-size: 3vmin;
+  }
+
+  .homepage_services_temporary_message_body {
+    padding: 2vmin;
+  }
+
+  .homepage_services_temporary_message {
+    font-size: 2vmin;
+  }
 }
+
+/* ================================================================================ */

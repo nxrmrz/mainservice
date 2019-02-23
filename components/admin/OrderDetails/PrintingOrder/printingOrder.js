@@ -95,7 +95,7 @@ const constructAdminOrderDetailsPrintingOrderBase = order => {
     .addEventListener("click", () => {
       updateAdminOrderDetailsPrintingOrderProducedQuantity(
         order.parts,
-        order._id
+        order.orderNumber
       );
     });
 };
@@ -152,7 +152,7 @@ const addAdminOrderDetailsPrintingOrderOrderList = order => {
 
 const updateAdminOrderDetailsPrintingOrderProducedQuantity = (
   parts,
-  orderId
+  orderNumber
 ) => {
   for (i = 0; i < parts.length; i++) {
     const input = document.querySelector(
@@ -162,7 +162,12 @@ const updateAdminOrderDetailsPrintingOrderProducedQuantity = (
     $.ajax({
       type: "POST",
       url: "/admin/part/update-produced-quantity",
-      data: { producedQuantity: input, orderId: orderId, partId: parts[i]._id },
+      data: JSON.stringify({
+        producedQuantity: input,
+        orderNumber,
+        partId: parts[i]._id
+      }),
+      contentType: "application/json",
       success: data => {
         console.log(data);
       }
@@ -186,19 +191,22 @@ const adminOrderDetailsPrintingOrderToggleFooterButtons = () => {
 
 /* ==================================== UPDATE ORDER STATUS ===================================== */
 
-const adminOrderDetailsPrintingOrderUpdateOrderStatus = (order, modalId) => {
+const adminOrderDetailsPrintingOrderUpdateOrderStatus = (
+  orderDetails,
+  modalId
+) => {
   loadLoader(document.querySelector("#admin_printing_order_modal_body")).then(
     () => {
       $.ajax({
         type: "POST",
-        url: "/admin/order/update-order-status",
-        data: JSON.stringify(order),
+        url: "/order/update-order-status",
+        data: JSON.stringify({ orderDetails }),
         contentType: "application/json",
         success: data => {
           removeModal(modalId);
           removeBackdrop(modalId);
           setTimeout(() => {
-            viewAdminProfileOrdersPrintsOrderDetails(data);
+            viewAdminProfileOrdersPrintsOrderDetails(data.content.orderNumber);
           }, 500);
         }
       });

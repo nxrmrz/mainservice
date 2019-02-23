@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 #admin_profile_body {
   width: 100%;
   position: relative;
@@ -42,7 +44,25 @@
   color: rgb(170, 10, 10);
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #admin_profile_body {
+    top: 7.5vmin;
+  }
+
+  .admin_profile_navigation_tab {
+    height: 6vmin;
+  }
+
+  .admin_profile_navigation_tab_text {
+    font-size: 2.625vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   #admin_profile_body {
     top: 5vmin;
   }
@@ -56,3 +76,5 @@
     font-size: 1.75vmin;
   }
 }
+
+/* ============================================================================================== */

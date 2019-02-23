@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 #footer {
   width: 100%;
   position: relative;
@@ -75,7 +77,66 @@
   text-shadow: 0 0 7vmin rgb(170, 10, 10);
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #footer {
+    top: 7.5vmin;
+    padding: 3vmin 1.5vmin;
+  }
+
+  .footer_divider {
+    width: calc(100% / 4);
+    padding: 0 1.5vmin;
+  }
+
+  .footer_divider_header {
+    height: 4.5vmin;
+    font-size: 2.1vmin;
+  }
+
+  .footer_content_body {
+    height: 6vmin;
+  }
+
+  .footer_content {
+    height: 5.25vmin;
+    font-size: 2.25vmin;
+  }
+
+  #footer_3d_printing_body:hover > #footer_3d_printing {
+    text-shadow: 0 0 5.25vmin rgb(170, 10, 10);
+  }
+
+  #footer_3d_modelling_body:hover > #footer_3d_modelling {
+    text-shadow: 0 0 5.25vmin rgb(170, 10, 10);
+  }
+
+  #footer_marketplace_body:hover > #footer_marketplace {
+    text-shadow: 0 0 5.25vmin rgb(170, 10, 10);
+  }
+
+  #footer_about_us_body:hover > #footer_about_us {
+    text-shadow: 0 0 5.25vmin rgb(170, 10, 10);
+  }
+
+  #footer_what_is_delta_3d_printing_body:hover
+    > #footer_what_is_delta_3d_printing {
+    text-shadow: 0 0 5.25vmin rgb(170, 10, 10);
+  }
+
+  #footer_contact_us_body:hover > #footer_contact_us {
+    text-shadow: 0 0 5.25vmin rgb(170, 10, 10);
+  }
+
+  #footer_partnership_body:hover > #footer_partnership {
+    text-shadow: 0 0 5.25vmin rgb(170, 10, 10);
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   #footer {
     top: 5vmin;
     justify-content: flex-start;
@@ -130,3 +191,5 @@
     text-shadow: 0 0 3vmin rgb(170, 10, 10);
   }
 }
+
+/* ============================================================================================== */

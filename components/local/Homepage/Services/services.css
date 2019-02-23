@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 #homepage_services_body {
   height: 140vmin;
   width: 100%;
@@ -17,7 +19,26 @@
   background-color: rgb(245, 245, 245);
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #homepage_services_body {
+    height: 105vmin;
+  }
+
+  #homepage_service_tabs_body {
+    height: 5.25vmin;
+  }
+
+  #homepage_service_contents_body {
+    height: 99.75vmin;
+    padding: 5.25vmin 0 0 0;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   #homepage_services_body {
     height: 70vmin;
   }

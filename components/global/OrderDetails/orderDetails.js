@@ -3,35 +3,35 @@
 const viewOrderDetails = orderNumber => {
   $.ajax({
     type: "POST",
-    url: "/order",
-    data: { orderNumber: orderNumber },
+    url: "/order/get-order-details-by-order-number",
+    data: { orderNumber },
     success: data => {
-      if (data.orderStatus == "Awaiting Quote") {
-        awaitingQuoteInit(data);
-      } else if (data.orderStatus == "Awaiting Payment") {
-        awaitingPaymentInit(data);
-      } else if (data.orderStatus == "Awaiting Payment Confirmation") {
-        awaitingPaymentConfirmationInit(data);
-      } else if (data.orderStatus == "Printing Order") {
-        printingOrderInit(data);
-      } else if (data.orderStatus == "Ready for Pickup") {
-        readyForPickupInit(data);
-      } else if (data.orderStatus == "Order Picked Up") {
-        orderPickedUpInit(data);
-      } else if (data.orderStatus == "Ready for Shipping") {
-        readyForShippingInit(data);
-      } else if (data.orderStatus == "Order Shipped") {
-        orderShippedInit(data);
-      } else if (data.orderStatus == "Order Completed") {
-        orderCompletedInit(data);
-      } else if (data.orderStatus == "Requesting Refund") {
-        requestingRefundInit(data);
-      } else if (data.orderStatus == "Refund Approved") {
-        refundApprovedInit(data);
-      } else if (data.orderStatus == "Refund Declined") {
-        refundDeclinedInit(data);
-      } else if (data.orderStatus == "Refund Processed") {
-        refundProcessedInit(data);
+      if (data.content.orderStatus == "Awaiting Quote") {
+        awaitingQuoteInit(data.content);
+      } else if (data.content.orderStatus == "Awaiting Payment") {
+        awaitingPaymentInit(data.content);
+      } else if (data.content.orderStatus == "Awaiting Payment Confirmation") {
+        awaitingPaymentConfirmationInit(data.content);
+      } else if (data.content.orderStatus == "Printing Order") {
+        printingOrderInit(data.content);
+      } else if (data.content.orderStatus == "Ready for Pickup") {
+        readyForPickupInit(data.content);
+      } else if (data.content.orderStatus == "Order Picked Up") {
+        orderPickedUpInit(data.content);
+      } else if (data.content.orderStatus == "Ready for Shipping") {
+        readyForShippingInit(data.content);
+      } else if (data.content.orderStatus == "Order Shipped") {
+        orderShippedInit(data.content);
+      } else if (data.content.orderStatus == "Order Completed") {
+        orderCompletedInit(data.content);
+      } else if (data.content.orderStatus == "Requesting Refund") {
+        requestingRefundInit(data.content);
+      } else if (data.content.orderStatus == "Refund Approved") {
+        refundApprovedInit(data.content);
+      } else if (data.content.orderStatus == "Refund Declined") {
+        refundDeclinedInit(data.content);
+      } else if (data.content.orderStatus == "Refund Processed") {
+        refundProcessedInit(data.content);
       } else {
         console.log("Couldn't Determine Order Status");
       }
@@ -43,40 +43,76 @@ const constructOrderStatusId = orderStatus => {
   return orderStatus.toLowerCase().replace(/ /g, "_");
 };
 
-/* MODAL */
-const orderDetailsModalHeader = "Order Details";
+/* ======================================== ORDER MODAL ========================================= */
 
-/* ======================================= HTML STRUCTURE ======================================= */
+const orderModal = (modalFooter, order) => {
+  // ELEMENTS
+  const modalId = "order";
+  const modalHeader = "Order";
+  const modalElementObject = new ModalElementObject(
+    modalId,
+    modalHeader,
+    modalFooter
+  );
+  // CSS
+  const modalHeight = 90;
+  const modalWidth = 90;
+  const modalDesktopHeight = 90;
+  const modalDesktopWidth = 60;
+  let modalFooterHeight;
+  if (modalFooter) {
+    modalFooterHeight = 14;
+  } else {
+    modalFooterHeight = 0;
+  }
+  const modalCSSObject = new ModalCSSObject(
+    modalHeight,
+    modalWidth,
+    modalDesktopHeight,
+    modalDesktopWidth,
+    modalFooterHeight
+  );
 
-const constructHTMLStructure = orderStatusId => {
-  const htmlStructure =
-    "<div id='" +
-    orderStatusId +
-    "_body' class='order_details_main_body'>" +
-    "<div id='" +
-    orderStatusId +
-    "_order_status_description_body' class='order_status_description_body order_details_body'></div>" +
-    "<div id='" +
-    orderStatusId +
-    "_order_options_details_body' class='order_options_details_body order_details_body'></div>" +
-    "<div id='" +
-    orderStatusId +
-    "_order_details_attached_files_body' class='order_details_attached_files_body order_details_body'></div>" +
-    "<div id='" +
-    orderStatusId +
-    "_order_details_comments_body' class='order_details_comments_body order_details_body'></div>" +
-    "</div>";
+  addModal(modalElementObject, modalCSSObject);
 
-  document.querySelector(
-    "#" + orderStatusId + "_modal_body"
-  ).innerHTML = htmlStructure;
+  orderModalStructure(order);
 };
 
-/* =============================== ORDER STATUS DESCRIPTION BODY ================================ */
+/* ========================================= STRUCTURE ========================================== */
+
+const orderModalStructure = order => {
+  const html =
+    "<div id='order_body' class='order_details_main_body'>" +
+    "<div class='order_component_body'>" +
+    "<div id='order_description_order_status_tabs_body'></div>" +
+    "<div id='order_description_heading_body'></div>" +
+    "<div id='order_description_contents_body'></div>" +
+    "</div>" +
+    "<div id='order_details_body' class='order_component_body'></div>" +
+    "<div id='order_attachments_body' class='order_component_body'></div>" +
+    "<div id='order_comments_body' class='order_component_body'></div>" +
+    "</div>";
+
+  document.querySelector("#order_modal_body").innerHTML = html;
+
+  orderDescription(order);
+  orderDetailsInit(order);
+  orderAttachments(order);
+  orderCommentsInit(order);
+};
+
+/* ===================================== ORDER DESCRIPTION ====================================== */
+
+const orderDescription = order => {
+  const orderStatus = order.orderStatus;
+  const delivery = order.delivery;
+  const orderStatusId = orderStatus.toLowerCase().replace(/ /g, "_");
+  orderStatusDescriptionBodyTabs(orderStatusId, delivery);
+  orderStatusDescriptionBodyHeader(orderStatus, orderStatusId);
+};
 
 const orderStatusDescriptionBodyTabs = (orderStatusId, delivery) => {
-  const orderStatusDescriptionBodyTabsHTML =
-    "<div id='order_status_tabs_body'>" +
+  const html =
     "<div id='awaiting_quote_order_status_tab_body' class='order_status_tab_body'>" +
     "<div id='awaiting_quote_order_status_tab_text' class='order_status_tab_text'>" +
     "Awaiting Quote" +
@@ -96,15 +132,12 @@ const orderStatusDescriptionBodyTabs = (orderStatusId, delivery) => {
     "<div id='printing_order_order_status_tab_text' class='order_status_tab_text'>" +
     "Printing Order" +
     "</div>" +
-    "</div>" +
     "</div>";
 
-  document
-    .querySelector("#" + orderStatusId + "_order_status_description_body")
-    .insertAdjacentHTML("beforeend", orderStatusDescriptionBodyTabsHTML);
+  let deliveryHTML;
 
   if (delivery == "Pickup") {
-    const orderStatusPickupTabsHTML =
+    deliveryHTML =
       "<div id='ready_for_pickup_order_status_tab_body' class='order_status_tab_body'>" +
       "<div id='ready_for_pickup_order_status_tab_text' class='order_status_tab_text'>" +
       "Ready for Pickup" +
@@ -112,7 +145,7 @@ const orderStatusDescriptionBodyTabs = (orderStatusId, delivery) => {
       "</div>" +
       "<div id='order_picked_up_order_status_tab_body' class='order_status_tab_body'>" +
       "<div id='order_picked_up_order_status_tab_text' class='order_status_tab_text'>" +
-      "Order Picked Up" +
+      "Order Picked-Up" +
       "</div>" +
       "</div>" +
       "<div id='order_completed_order_status_tab_body' class='order_status_tab_body'>" +
@@ -120,12 +153,8 @@ const orderStatusDescriptionBodyTabs = (orderStatusId, delivery) => {
       "Order Completed" +
       "</div>" +
       "</div>";
-
-    document
-      .querySelector("#order_status_tabs_body")
-      .insertAdjacentHTML("beforeend", orderStatusPickupTabsHTML);
   } else {
-    const orderStatusShippingTabsHTML =
+    deliveryHTML =
       "<div id='ready_for_shipping_order_status_tab_body' class='order_status_tab_body'>" +
       "<div id='ready_for_shipping_order_status_tab_text' class='order_status_tab_text'>" +
       "Ready for Shipping" +
@@ -141,11 +170,11 @@ const orderStatusDescriptionBodyTabs = (orderStatusId, delivery) => {
       "Order Completed" +
       "</div>" +
       "</div>";
-
-    document
-      .querySelector("#order_status_tabs_body")
-      .insertAdjacentHTML("beforeend", orderStatusShippingTabsHTML);
   }
+
+  document.querySelector(
+    "#order_description_order_status_tabs_body"
+  ).innerHTML = html + deliveryHTML;
 
   document
     .querySelector("#" + orderStatusId + "_order_status_tab_body")
@@ -155,51 +184,47 @@ const orderStatusDescriptionBodyTabs = (orderStatusId, delivery) => {
     .classList.add("order_status_tab_text_selected");
 };
 
-const orderStatusDescriptionBodyHeader = (orderStatus, orderStatusId) => {
+const orderStatusDescriptionBodyHeader = orderStatus => {
   let heading;
 
   if (orderStatus == "Awaiting Quote") {
-    heading = "Awaiting Quote";
+    heading = "Waiting for Quotation";
   } else if (orderStatus == "Awaiting Payment") {
-    heading = "Waiting for Your Payment";
+    heading = "Proceed with Payment";
   } else if (orderStatus == "Awaiting Payment Confirmation") {
-    heading = "Awaiting Payment Confirmation";
+    heading = "Processing Your Payment";
   } else if (orderStatus == "Printing Order") {
-    heading = "Awaiting Your Order's Completion";
+    heading = "3D Printing Your Order";
   } else if (orderStatus == "Ready for Pickup") {
-    heading = "Waiting for Pickup";
+    heading = "Your 3D Prints are Available for Pickup";
   } else if (orderStatus == "Order Picked Up") {
-    heading = "You have Picked Up Your Order";
+    heading = "Your 3D Prints have been Picked-Up";
   } else if (orderStatus == "Ready for Shipping") {
-    heading = "Wait while We Ship Your Order";
+    heading = "Preparing Your 3D Prints for Shipping";
   } else if (orderStatus == "Order Shipped") {
-    heading = "Wait for Your Shipment's Arrival";
+    heading = "Your 3D Prints have been Sent for Shipping";
   } else if (orderStatus == "Order Completed") {
     heading = "Your Order has been Completed";
   }
 
-  const orderStatusDescriptionBodyHeaderHTML =
-    "<div id='order_status_description_heading_body'>" +
-    "<div id='order_status_description_heading_text'>" +
+  const html =
+    "<div id='orders_description_heading_body'>" +
+    "<div id='order_description_heading'>" +
     heading +
     "</div>" +
     "</div>";
 
-  document
-    .querySelector("#" + orderStatusId + "_order_status_description_body")
-    .insertAdjacentHTML("beforeend", orderStatusDescriptionBodyHeaderHTML);
+  document.querySelector("#order_description_heading_body").innerHTML = html;
 };
 
 /* ================================ ORDER DETAILS ATTACHED FILES ================================ */
 
-const constructOrderDetailsAttachments = (order, orderStatusId) => {
-  const orderDetailsAttachmentsStructureHTML =
+const orderAttachments = order => {
+  const html =
     "<div class='order_details_attachments_header'>Attachments:</div>" +
     "<div id='order_details_add_attachment_body'></div>" +
     "<div id='order_details_attachments_body'></div>";
-  document
-    .querySelector("#" + orderStatusId + "_order_details_attached_files_body")
-    .insertAdjacentHTML("beforeend", orderDetailsAttachmentsStructureHTML);
+  document.querySelector("#order_attachments_body").innerHTML = html;
 };
 
 /* ============================================================================================== */

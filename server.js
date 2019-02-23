@@ -35,6 +35,9 @@ app.use(methodOverride("_method"));
 app.use(morgan("dev")); // Log Every Request to the Console
 app.use(cookieParser()); // Read Cookies (for Authentication)
 
+// Static Files
+app.use(express.static("./"));
+
 /* ================================= DATABASE CONFIGURATION ================================= */
 
 // Database URI
@@ -76,10 +79,11 @@ app.use(passport.session()); // Persistent Logan Sessions
 /* ======================================== ROUTING ========================================= */
 
 require("./routes/general")(app, passport); // General
-require("./routes/users")(app, passport); // Users
+require("./routes/users")(app, passport, conn); // Users
 require("./routes/profile")(app, passport); // Profile
 require("./routes/prints")(app, passport, upload, conn); // Prints
 require("./routes/discount")(app, passport, conn); // Discount
+require("./routes/level")(app, passport); // Level
 require("./routes/file")(app, passport, upload, conn); // File
 
 /* ========================================================================================== */

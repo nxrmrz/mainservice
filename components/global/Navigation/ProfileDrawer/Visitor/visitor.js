@@ -29,19 +29,11 @@ const addProfileDrawerVisitorLoginContents = () => {
 
 const addProfileDrawerVisitorSignupContents = () => {
   const profileDrawerVisitorSignupHTML =
-    "<p id='profile_drawer_signup' class='profile_drawer_link'>Signup</p>";
+    "<a href='/registration' id='profile_drawer_signup' class='profile_drawer_link'>Signup</a>";
 
   document
     .querySelector("#profile_drawer")
     .insertAdjacentHTML("beforeend", profileDrawerVisitorSignupHTML);
-
-  document
-    .querySelector("#profile_drawer_signup")
-    .addEventListener("click", () => {
-      profileDrawerToggle();
-      removeBackdrop("profile_drawer");
-      addSignupModal();
-    });
 };
 
 /* ============================================================================================== */

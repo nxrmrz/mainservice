@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 .admin_profile_orders_prints_order_list_body {
   width: 100%;
   display: flex;
@@ -92,7 +94,51 @@
   font-size: 3vmin;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  .admin_profile_orders_prints_order_list_body {
+    padding: 3vmin;
+  }
+
+  .admin_profile_orders_prints_order_list_header_body {
+    padding: 3vmin;
+  }
+
+  .admin_profile_orders_prints_order_list_header_text {
+    font-size: 2.7vmin;
+  }
+
+  .admin_profile_orders_prints_order_list_contents_body {
+    min-height: 15vmin;
+    box-shadow: 0vmin 0vmin 1.5vmin 0vmin rgb(200, 200, 200);
+  }
+
+  .admin_profile_orders_prints_orders_list_table_row {
+    border-width: 0.375vmin;
+  }
+
+  .admin_profile_orders_prints_orders_list_table_content {
+    height: 7.5vmin;
+    border-width: 0.225vmin;
+  }
+
+  .admin_profile_orders_prints_orders_list_table_header {
+    font-size: 2.4vmin;
+  }
+
+  #admin_profile_orders_prints_orders_list_table_content_main_body {
+    min-height: 15vmin;
+  }
+
+  .admin_profile_orders_prints_orders_list_table_content_text {
+    font-size: 2.25vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   .admin_profile_orders_prints_order_list_body {
     padding: 2vmin;
   }
@@ -128,7 +174,8 @@
   }
 
   .admin_profile_orders_prints_orders_list_table_content_text {
-    font-family: "Chivo", sans-serif;
     font-size: 1.5vmin;
   }
 }
+
+/* ============================================================================================== */

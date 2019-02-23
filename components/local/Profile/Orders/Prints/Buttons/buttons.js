@@ -1,31 +1,29 @@
-const profileOrdersPrintsButtonsInit = () => {
-  addProfileOrdersPrintsButtonBody();
-  addProfileOrdersPrintsNewOrderButton();
+/* ======================================= INITIALISATION ======================================= */
+
+const profileOrdersPrintsNewOrderInit = () => {
+  profileOrdersPrintsNewOrderStructure();
 };
 
-/* ====================== Construct the Buttons Container ====================== */
-const addProfileOrdersPrintsButtonBody = () => {
-  const profileOrdersPrintsButtonBodyHTML =
-    "<div id='profile_orders_prints_buttons_body'></div>";
-  document
-    .querySelector("#profile_orders_prints_body")
-    .insertAdjacentHTML("beforeend", profileOrdersPrintsButtonBodyHTML);
-};
+/* ======================================= ADD NEW ORDER ======================================== */
 
-/* ====================== Construct the Start a New Order ====================== */
-const addProfileOrdersPrintsNewOrderButton = () => {
-  const profileOrdersPrintsNewOrderButtonBodyHTML =
-    "<div id='profile_orders_prints_new_order_button_body' class='profile_orders_prints_button_body'>" +
-    "<div id='profile_orders_prints_new_order_button_image' class='profile_orders_prints_button_image'></div>" +
-    "<div id='profile_orders_prints_new_order_button_text' class='profile_orders_prints_button_text'>Add New Order</div>" +
+const profileOrdersPrintsNewOrderStructure = () => {
+  /* --------------------------------------- CREATE HTML ---------------------------------------- */
+  const html =
+    "<div id='profile_orders_prints_new_order_add_body'>" +
+    "<div id='profile_orders_prints_new_order_add'>" +
+    "<div id='profile_orders_prints_new_order_add_label'>Add New Order</div>" +
+    "</div>" +
     "</div>";
+  /* --------------------------------------- INSERT HTML ---------------------------------------- */
+  document.querySelector(
+    "#profile_orders_prints_new_order_contents"
+  ).innerHTML = html;
+  /* ------------------------------------ ADD EVENT LISTENER ------------------------------------ */
   document
-    .querySelector("#profile_orders_prints_buttons_body")
-    .insertAdjacentHTML("beforeend", profileOrdersPrintsNewOrderButtonBodyHTML);
-
-  document
-    .querySelector("#profile_orders_prints_new_order_button_body")
+    .querySelector("#profile_orders_prints_new_order_add")
     .addEventListener("click", () => {
       orderNewPrint();
     });
 };
+
+/* ============================================================================================== */

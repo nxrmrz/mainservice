@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 #order_new_print_parts_add_part_body {
   height: 12vmin;
   display: flex;
@@ -14,7 +16,7 @@
   border-color: rgb(10, 140, 10);
   border-radius: 3.5vmin;
   border-width: 0.5vmin;
-  box-shadow: 0 0 1.5vmin 0.1vmin rgba(100, 100, 100, 0.3);
+  box-shadow: 0 0 1.5vmin 0.1vmin rgb(100, 100, 100);
 }
 
 #order_new_print_parts_add_part_button:hover {
@@ -44,7 +46,41 @@
   font-size: 3.2vmin;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #order_new_print_parts_add_part_body {
+    height: 9vmin;
+  }
+
+  #order_new_print_parts_add_part_button {
+    height: 5.25vmin;
+    padding: 0 3vmin;
+    border-radius: 2.625vmin;
+    border-width: 0.375vmin;
+    box-shadow: 0 0 1.125vmin 0.075vmin rgb(100, 100, 100);
+  }
+
+  #order_new_print_parts_add_part_button:hover {
+    height: 5.625vmin;
+    padding: 0 3.225vmin;
+    border-radius: 2.8125vmin;
+    border-width: 0.525vmin;
+  }
+
+  #order_new_print_parts_add_part_button_text {
+    font-size: 2.25vmin;
+  }
+
+  #order_new_print_parts_add_part_button:hover
+    > #order_new_print_parts_add_part_button_text {
+    font-size: 2.4vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   #order_new_print_parts_add_part_body {
     height: 6vmin;
   }
@@ -54,7 +90,7 @@
     padding: 0 2vmin 0 2vmin;
     border-radius: 1.75vmin;
     border-width: 0.25vmin;
-    box-shadow: 0 0 0.75vmin 0.05vmin rgba(100, 100, 100, 0.3);
+    box-shadow: 0 0 0.75vmin 0.05vmin rgb(100, 100, 100);
   }
 
   #order_new_print_parts_add_part_button:hover {
@@ -70,7 +106,8 @@
 
   #order_new_print_parts_add_part_button:hover
     > #order_new_print_parts_add_part_button_text {
-    color: rgb(10, 180, 10);
     font-size: 1.6vmin;
   }
 }
+
+/* ============================================================================================== */

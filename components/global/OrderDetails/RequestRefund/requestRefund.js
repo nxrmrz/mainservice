@@ -1,17 +1,20 @@
 /* ======================================= INITIALISATION ======================================= */
 
-const orderDetailsRequestRefundInit = (orderNumber, orderStatusId) => {
+const orderRequestRefundInit = order => {
+  const orderNumber = order.orderNumber;
+  const orderStatus = order.orderStatus;
+  const orderStatusId = orderStatus.toLowerCase().replace(/ /g, "_");
   requestRefundToggled = false;
-  addOrderDetailsRequestRefundFooter(orderStatusId);
+  addOrderDetailsRequestRefundFooter();
   addOrderDetailsRequestRefundButtonClickListener(orderNumber, orderStatusId);
 };
 
 /* ================================= ADD REQUEST REFUND FOOTER ================================== */
 
-const addOrderDetailsRequestRefundFooter = orderStatusId => {
+const addOrderDetailsRequestRefundFooter = () => {
   // Element
   const footerContentElement = document.querySelector(
-    "#" + orderStatusId + "_modal_footer_contents"
+    "#order_modal_footer_contents"
   );
 
   const requestRefundFooter =
@@ -41,17 +44,15 @@ const addOrderDetailsRequestRefundButtonClickListener = (
   orderStatusId
 ) => {
   // Elements
-  const modalElement = document.querySelector("#" + orderStatusId + "_modal");
-  const footerElement = document.querySelector(
-    "#" + orderStatusId + "_modal_footer"
-  );
+  const modalElement = document.querySelector("#order_modal");
+  const footerElement = document.querySelector("#order_modal_footer");
   const footerButtonsBodyElement = document.querySelector(
-    "#" + orderStatusId + "_footer_buttons_body"
+    "#order_footer_buttons_body"
   );
 
   // Request Refund Button
   document
-    .querySelector("#" + orderStatusId + "_request_refund_footer_button")
+    .querySelector("#order_request_refund_footer_button")
     .addEventListener("click", () => {
       toggleRequestRefundButton(
         modalElement,

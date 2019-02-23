@@ -10,7 +10,7 @@ const homepageServicesPrintingGetAQuote = () => {
   document
     .querySelector("#homepage_3d_printing_content_button")
     .addEventListener("click", () => {
-      loginStatus
+      loginStatus()
         .then(() => {
           orderNewPrint();
         })

@@ -1,107 +1,150 @@
-#profile_orders_prints_orders_list_body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  max-height: 60vh;
-  width: 90vw;
-  border: solid;
-  border-width: 0.3vmin;
-  border-color: rgba(150, 150, 150, 0.8);
-  border-radius: 1vmin;
-  box-shadow: 0vmin 0vmin 2vmin 0vmin rgb(200, 200, 200);
-}
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
 
-.profile_orders_prints_orders_list_table {
-  border-collapse: collapse;
-  border-spacing: none;
+.profile_orders_prints_orders_summary_list {
   width: 100%;
-}
-
-#profile_orders_prints_orders_list_table_header_main_body {
-  width: 100%;
-}
-
-#profile_orders_prints_orders_list_table_header_body {
-  width: 100%;
-}
-
-.profile_orders_prints_orders_list_table_row {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  border: solid;
-  border-width: 0.5vmin;
+  border-style: solid solid none none;
+  border-radius: 0.8vmin;
+  border-width: 0.2vmin;
   border-color: rgb(180, 180, 180);
-  border-spacing: none;
+  box-shadow: 0 0 0.8vmin 0 rgb(200, 200, 200);
 }
 
-.profile_orders_prints_orders_list_table_content {
-  height: 10vmin;
-  width: 25%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: solid;
-  border-width: 0.3vmin;
-  border-color: rgb(220, 220, 220);
-  border-spacing: none;
-}
-
-.profile_orders_prints_orders_list_table_header {
-  font-family: "Chivo", sans-serif;
-  font-size: 3.2vmin;
-  font-weight: bold;
-}
-
-.profile_orders_prints_orders_list_print_setting_content {
-  width: 50%;
-}
-
-#profile_orders_prints_orders_list_table_content_main_body {
-  min-height: 20vmin;
+#profile_orders_prints_orders_summary_list_tables {
+  min-height: 32vmin;
+  max-height: 96vmin;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 0.8vmin;
+  background-color: rgb(255, 250, 250);
   overflow-y: overlay;
 }
 
-.profile_orders_prints_orders_list_table_content_text {
+.profile_orders_prints_orders_summary_list_table {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid none none none;
+  border-width: 0.2vmin;
+  border-color: rgb(180, 180, 180);
+}
+
+.profile_orders_prints_orders_summary_list_cell {
+  height: 16vmin;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none none solid solid;
+  border-width: 0.2vmin;
+  border-color: rgb(180, 180, 180);
+  padding: 2vmin;
+  background-color: rgb(255, 250, 250);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.2vmin;
+  text-align: center;
+  letter-spacing: 0.1vmin;
+  color: rgb(60, 60, 60);
+}
+
+.profile_orders_prints_orders_summary_list_print_setting {
+  width: 50%;
+}
+
+#profile_orders_prints_orders_summary_list_no_order {
+  min-height: inherit;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none none solid solid;
+  border-width: 0.2vmin;
+  border-color: rgb(180, 180, 180);
   font-family: "Chivo", sans-serif;
-  font-size: 3vmin;
+  font-size: 5vmin;
+  font-weight: bold;
+  letter-spacing: 0.2vmin;
+  color: rgb(170, 10, 10);
 }
 
-@media only screen and (min-width: 600px) {
-  #profile_orders_prints_orders_list_body {
-    max-height: 60vh;
-    width: 90vw;
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  .profile_orders_prints_orders_summary_list {
+    border-radius: 0.6vmin;
     border-width: 0.15vmin;
-    border-radius: 0.7vmin;
-    box-shadow: 0vmin 0vmin 1.5vmin 0vmin rgb(200, 200, 200);
+    box-shadow: 0 0 0.6vmin 0 rgb(200, 200, 200);
   }
 
-  .profile_orders_prints_orders_list_table_row {
-    border-width: 0.25vmin;
+  #profile_orders_prints_orders_summary_list_tables {
+    min-height: 24vmin;
+    max-height: 72vmin;
+    border-radius: 0.6vmin;
   }
 
-  .profile_orders_prints_orders_list_table_content {
-    height: 6vmin;
+  .profile_orders_prints_orders_summary_list_table {
     border-width: 0.15vmin;
   }
 
-  .profile_orders_prints_orders_list_table_header {
-    font-size: 1.8vmin;
+  .profile_orders_prints_orders_summary_list_cell {
+    height: 12vmin;
+    width: 18.75%;
+    border-width: 0.15vmin;
+    padding: 1.5vmin;
+    font-size: 2.4vmin;
+    letter-spacing: 0.075vmin;
   }
 
-  #profile_orders_prints_orders_list_table_content_main_body {
-    min-height: 12vmin;
+  .profile_orders_prints_orders_summary_list_print_setting {
+    width: 37.5%;
   }
 
-  .profile_orders_prints_orders_list_table_content_text {
-    font-size: 1.8vmin;
+  #profile_orders_prints_orders_summary_list_no_order {
+    border-width: 0.15vmin;
+    font-size: 3.75vmin;
+    letter-spacing: 0.15vmin;
   }
 }
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  .profile_orders_prints_orders_summary_list {
+    border-radius: 0.4vmin;
+    border-width: 0.1vmin;
+    box-shadow: 0 0 0.4vmin 0 rgb(200, 200, 200);
+  }
+
+  #profile_orders_prints_orders_summary_list_tables {
+    min-height: 16vmin;
+    max-height: 48vmin;
+    border-radius: 0.4vmin;
+  }
+
+  .profile_orders_prints_orders_summary_list_table {
+    border-width: 0.1vmin;
+  }
+
+  .profile_orders_prints_orders_summary_list_cell {
+    height: 8vmin;
+    width: 12.5%;
+    border-width: 0.1vmin;
+    padding: 1vmin;
+    font-size: 1.6vmin;
+    letter-spacing: 0.05vmin;
+  }
+
+  .profile_orders_prints_orders_summary_list_print_setting {
+    width: 25%;
+  }
+
+  #profile_orders_prints_orders_summary_list_no_order {
+    border-width: 0.1vmin;
+    font-size: 2.5vmin;
+    letter-spacing: 0.1vmin;
+  }
+}
+
+/* ============================================================================================== */

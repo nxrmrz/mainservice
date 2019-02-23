@@ -1,18 +1,22 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+/* ============================================ MAIN ============================================ */
+
 .order_details_main_body {
   width: 100%;
   display: flex;
   flex-flow: column;
   align-items: center;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(255, 250, 250);
 }
 
-.order_details_body {
+.order_component_body {
   width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
-  background-color: rgb(255, 230, 230);
+  background-color: rgb(255, 235, 235);
   border-radius: 1vmin;
   padding: 2vmin;
   margin: 2vmin 0 0 0;
@@ -77,6 +81,8 @@
   color: rgb(245, 245, 245);
 }
 
+/* ======================================== DESCRIPTION ========================================= */
+
 .order_status_description_body {
   margin: 2vmin 0 0 0;
 }
@@ -85,7 +91,7 @@
   margin: 2vmin 0 2vmin 0;
 }
 
-#order_status_tabs_body {
+#order_description_order_status_tabs_body {
   display: flex;
   flex-wrap: wrap;
   border-radius: 1vmin;
@@ -118,32 +124,142 @@
   font-weight: 700;
 }
 
-#order_status_description_heading_body {
+#order_description_heading_body {
+  width: 100%;
   display: flex;
-  align-items: center;
-  padding: 5vmin 0 5vmin 0;
+  justify-content: center;
+  padding: 5vmin 2vmin;
 }
 
-#order_status_description_heading_text {
+#order_description_heading {
   font-family: "Russo One", sans-serif;
   font-size: 5vmin;
   text-align: center;
   color: rgb(170, 10, 10);
 }
 
-.order_status_description_details_body {
+.order_description_sub_heading_body {
   width: 100%;
   display: flex;
-  align-items: center;
-  padding: 0 2vmin 0 2vmin;
-  margin: 1vmin 0 1vmin 0;
+  padding: 4vmin 4vmin;
 }
 
-.order_status_description_details_text {
+.order_description_sub_heading {
+  font-family: "Russo One", sans-serif;
+  font-size: 4vmin;
+  color: rgb(170, 10, 10);
+}
+
+.order_description_content_paragraph_body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2vmin;
+}
+
+.order_description_content_paragraph {
   font-family: "Open Sans", sans-serif;
   font-size: 3.5vmin;
   text-align: justify;
   color: rgb(80, 80, 80);
+}
+
+.order_description_content_instruction_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2vmin;
+}
+
+.order_description_content_instruction_heading_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1vmin 2vmin;
+}
+
+.order_description_content_instruction_heading {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.5vmin;
+  text-align: justify;
+  color: rgb(80, 80, 80);
+}
+
+.order_description_content_instruction_list_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1vmin 2vmin;
+}
+
+.order_description_content_instruction_list_label_body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 1vmin 2vmin;
+}
+
+.order_description_content_instruction_list_text_label_body {
+  width: 35%;
+}
+
+.order_description_content_instruction_list_number_label_body {
+  width: 20%;
+}
+
+.order_description_content_instruction_list_label {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.2vmin;
+  text-align: right;
+  color: rgb(60, 60, 60);
+}
+
+.order_description_content_instruction_list_content_body {
+  width: 65%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1vmin 2vmin;
+}
+
+.order_description_content_instruction_list_content {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.2vmin;
+  text-align: justify;
+  color: rgb(60, 60, 60);
+}
+
+.order_description_content_button_body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2vmin;
+}
+
+.order_description_content_button {
+  height: 6.4vmin;
+  display: flex;
+  align-items: center;
+  padding: 0 4vmin;
+  border-radius: 3.2vmin;
+  background-color: rgb(255, 75, 90);
+  box-shadow: 0 0.5vmin 1vmin 0 rgb(180, 180, 180);
+}
+
+.order_description_content_button:hover {
+  background-color: rgb(255, 100, 115);
+}
+
+.order_description_content_button:active {
+  background-color: rgb(230, 50, 65);
+  box-shadow: 0 0 0 rgb(180, 180, 180);
+}
+
+.order_description_content_button_label {
+  font-family: "Chivo", sans-serif;
+  font-size: 3vmin;
+  letter-spacing: 0.4vmin;
+  color: rgb(245, 245, 245);
 }
 
 .order_status_description_sub_details_body {
@@ -161,8 +277,152 @@
   font-size: 5vmin;
 }
 
-@media only screen and (min-width: 600px) {
-  .order_details_body {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  /* ============================================ MAIN ============================================ */
+
+  .order_component_body {
+    border-radius: 0.75vmin;
+    padding: 1.5vmin;
+    margin: 1.5vmin 0 0 0;
+  }
+
+  .order_details_footer_buttons_body_open {
+    height: 10.5vmin;
+  }
+
+  .order_details_footer_button_body {
+    height: 10.5vmin;
+  }
+
+  .order_details_footer_button {
+    height: 7.5vmin;
+    width: 15vmin;
+    border-radius: 1.5vmin;
+    box-shadow: 0 0.75vmin 1.125vmin 0 rgb(180, 180, 180);
+  }
+
+  .order_details_footer_button_text {
+    font-size: 3vmin;
+  }
+
+  /* ======================================== DESCRIPTION ========================================= */
+
+  .order_status_description_body {
+    margin: 1.5vmin 0 0 0;
+  }
+
+  .order_details_comments_body {
+    margin: 1.5vmin 0;
+  }
+
+  #order_description_order_status_tabs_body {
+    border-radius: 0.75vmin;
+  }
+
+  .order_status_tab_body {
+    height: 10.5vmin;
+    width: calc(100% / 4);
+    padding: 0 2.1vmin;
+    border-radius: 0.75vmin;
+  }
+
+  .order_status_tab_text {
+    font-size: 2.55vmin;
+  }
+
+  #order_description_heading_body {
+    padding: 3.75vmin 1.5vmin;
+  }
+
+  #order_description_heading {
+    font-size: 3.75vmin;
+  }
+
+  .order_description_sub_heading_body {
+    padding: 3vmin;
+  }
+
+  .order_description_sub_heading {
+    font-size: 3vmin;
+  }
+
+  .order_description_content_paragraph_body {
+    padding: 1.5vmin;
+  }
+
+  .order_description_content_paragraph {
+    font-size: 2.625vmin;
+  }
+
+  .order_description_content_instruction_body {
+    padding: 1.5vmin;
+  }
+
+  .order_description_content_instruction_heading_body {
+    padding: 0.75vmin 1.5vmin;
+  }
+
+  .order_description_content_instruction_heading {
+    font-size: 2.625vmin;
+  }
+
+  .order_description_content_instruction_list_body {
+    padding: 0.75vmin 1.5vmin;
+  }
+
+  .order_description_content_instruction_list_label_body {
+    padding: 0.75vmin 1.5vmin;
+  }
+
+  .order_description_content_instruction_list_label {
+    font-size: 2.4vmin;
+  }
+
+  .order_description_content_instruction_list_content_body {
+    padding: 0.75vmin 1.5vmin;
+  }
+
+  .order_description_content_instruction_list_content {
+    font-size: 2.4vmin;
+  }
+
+  .order_description_content_button_body {
+    padding: 1.5vmin;
+  }
+
+  .order_description_content_button {
+    height: 4.8vmin;
+    padding: 0 3vmin;
+    border-radius: 2.4vmin;
+    box-shadow: 0 0.375vmin 0.75vmin 0 rgb(180, 180, 180);
+  }
+
+  .order_description_content_button_label {
+    font-size: 2.25vmin;
+    letter-spacing: 0.3vmin;
+  }
+
+  .order_status_description_sub_details_body {
+    padding: 0 4.5vmin;
+  }
+
+  /* ATTACHMENT */
+
+  .order_details_attachments_header {
+    height: 7.5vmin;
+    padding: 0.75vmin 0 0 0;
+    font-size: 3.75vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  /* ============================================ MAIN ============================================ */
+
+  .order_component_body {
     border-radius: 0.5vmin;
     padding: 1vmin;
     margin: 1vmin 0 0 0;
@@ -176,10 +436,6 @@
     height: 7vmin;
   }
 
-  .request_refund_footer_buttons_body_open {
-    height: 22vmin;
-  }
-
   .order_details_footer_button {
     height: 5vmin;
     width: 10vmin;
@@ -191,6 +447,8 @@
     font-size: 2vmin;
   }
 
+  /* ======================================== DESCRIPTION ========================================= */
+
   .order_status_description_body {
     margin: 1vmin 0 0 0;
   }
@@ -199,13 +457,13 @@
     margin: 1vmin 0 1vmin 0;
   }
 
-  #order_status_tabs_body {
+  #order_description_order_status_tabs_body {
     border-radius: 0.5vmin;
   }
 
   .order_status_tab_body {
     height: 7vmin;
-    width: calc(100% / 4);
+    width: calc(100% / 5);
     padding: 0 1.4vmin 0 1.4vmin;
     border-radius: 0.5vmin;
   }
@@ -214,21 +472,76 @@
     font-size: 1.7vmin;
   }
 
-  #order_status_description_heading_body {
-    padding: 2.5vmin 0 2.5vmin 0;
+  #order_description_heading_body {
+    padding: 2.5vmin 1vmin;
   }
 
-  #order_status_description_heading_text {
+  #order_description_heading {
     font-size: 2.5vmin;
   }
 
-  .order_status_description_details_body {
-    padding: 0 1vmin 0 1vmin;
-    margin: 0.5vmin 0 0.5vmin 0;
+  .order_description_sub_heading_body {
+    padding: 2vmin 2vmin;
   }
 
-  .order_status_description_details_text {
+  .order_description_sub_heading {
+    font-size: 2vmin;
+  }
+
+  .order_description_content_paragraph_body {
+    padding: 1vmin;
+  }
+
+  .order_description_content_paragraph {
     font-size: 1.75vmin;
+  }
+
+  .order_description_content_instruction_body {
+    padding: 1vmin;
+  }
+
+  .order_description_content_instruction_heading_body {
+    padding: 0.5vmin 1vmin;
+  }
+
+  .order_description_content_instruction_heading {
+    font-size: 1.75vmin;
+  }
+
+  .order_description_content_instruction_list_body {
+    padding: 0.5vmin 1vmin;
+  }
+
+  .order_description_content_instruction_list_label_body {
+    padding: 0.5vmin 1vmin;
+  }
+
+  .order_description_content_instruction_list_label {
+    font-size: 1.6vmin;
+  }
+
+  .order_description_content_instruction_list_content_body {
+    padding: 0.5vmin 1vmin;
+  }
+
+  .order_description_content_instruction_list_content {
+    font-size: 1.6vmin;
+  }
+
+  .order_description_content_button_body {
+    padding: 1vmin;
+  }
+
+  .order_description_content_button {
+    height: 3.2vmin;
+    padding: 0 2vmin;
+    border-radius: 1.6vmin;
+    box-shadow: 0 0.25vmin 0.5vmin 0 rgb(180, 180, 180);
+  }
+
+  .order_description_content_button_label {
+    font-size: 1.5vmin;
+    letter-spacing: 0.2vmin;
   }
 
   .order_status_description_sub_details_body {
@@ -243,3 +556,5 @@
     font-size: 2.5vmin;
   }
 }
+
+/* ============================================================================================== */

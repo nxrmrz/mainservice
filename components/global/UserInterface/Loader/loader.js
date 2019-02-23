@@ -1,12 +1,24 @@
 // Create the Loader Element
-const loadLoader = element => {
+const loadLoader = (elementArray, size) => {
   return new Promise((resolve, reject) => {
-    const html =
-      "<div class='loader_element_body'>" +
-      "<div class='loader_element'></div>" +
-      "</div>";
+    let html;
 
-    element.innerHTML = html;
+    if (size == "small") {
+      html =
+        "<div class='loader_element_body'>" +
+        "<div class='small_loader'></div>" +
+        "</div>";
+    } else if (size == "large") {
+    } else {
+      html =
+        "<div class='loader_element_body'>" +
+        "<div class='loader_element'></div>" +
+        "</div>";
+    }
+
+    for (let i = 0; i < elementArray.length; i++) {
+      elementArray[i].innerHTML = html;
+    }
 
     resolve();
   });

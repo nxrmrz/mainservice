@@ -1,0 +1,141 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+#order_detail_prices_body {
+  border-radius: 0 0 1vmin 1vmin;
+  background-color: rgb(255, 220, 220);
+}
+
+.order_detail_prices_table_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.order_detail_price_table_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.order_detail_price_heading_cell_body {
+  width: 50%;
+  display: flex;
+  padding: 4vmin 8vmin;
+  border-style: none none solid none;
+  border-width: 0.1vmin;
+  border-color: rgb(210, 210, 210);
+}
+
+.order_detail_price_heading_cell_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  color: rgb(100, 100, 100);
+}
+
+.order_detail_price_content_cell_body {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 4vmin 8vmin;
+  border-style: none none solid none;
+  border-width: 0.1vmin;
+  border-color: rgb(210, 210, 210);
+}
+
+.order_detail_price_content_cell_text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 4vmin;
+  color: rgb(100, 100, 100);
+}
+
+.order_detail_order_price_heading_cell_body {
+  border-style: none;
+  background-color: rgb(255, 240, 240);
+}
+
+.order_detail_order_price_heading_cell_text {
+  font-weight: bolder;
+  font-size: 4vmin;
+  color: rgb(60, 60, 60);
+}
+
+.order_detail_order_price_content_cell_body {
+  border-style: none;
+  background-color: rgb(255, 240, 240);
+}
+
+#order_detail_order_price_content_cell_text {
+  font-weight: bolder;
+  font-size: 4vmin;
+  color: rgb(60, 60, 60);
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #order_detail_prices_body {
+    border-radius: 0 0 0.75vmin 0.75vmin;
+  }
+
+  .order_detail_price_heading_cell_body {
+    padding: 3vmin 6vmin;
+    border-width: 0.075vmin;
+  }
+
+  .order_detail_price_heading_cell_text {
+    font-size: 3vmin;
+  }
+
+  .order_detail_price_content_cell_body {
+    padding: 3vmin 6vmin;
+    border-width: 0.075vmin;
+  }
+
+  .order_detail_price_content_cell_text {
+    font-size: 3vmin;
+  }
+
+  .order_detail_order_price_heading_cell_text {
+    font-size: 3vmin;
+  }
+
+  #order_detail_order_price_content_cell_text {
+    font-size: 3vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  #order_detail_prices_body {
+    border-radius: 0 0 0.5vmin 0.5vmin;
+  }
+
+  .order_detail_price_heading_cell_body {
+    padding: 2vmin 4vmin;
+    border-width: 0.05vmin;
+  }
+
+  .order_detail_price_heading_cell_text {
+    font-size: 2vmin;
+  }
+
+  .order_detail_price_content_cell_body {
+    padding: 2vmin 4vmin;
+    border-width: 0.05vmin;
+  }
+
+  .order_detail_price_content_cell_text {
+    font-size: 2vmin;
+  }
+
+  .order_detail_order_price_heading_cell_text {
+    font-size: 2vmin;
+  }
+
+  #order_detail_order_price_content_cell_text {
+    font-size: 2vmin;
+  }
+}
+
+/* ============================================================================================== */

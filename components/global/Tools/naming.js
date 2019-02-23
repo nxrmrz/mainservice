@@ -3,7 +3,6 @@
 const numberToTwoDecimalStringConverter = number => {
   number = Number(number);
   let numberOfDecimalPlaces;
-
   if (number % 1 == 0) {
     numberOfDecimalPlaces = 0;
   } else {
@@ -60,4 +59,25 @@ const fileNameToNameFormatter = (fileName, numberOfCharacters) => {
   return formattedFileName;
 };
 
+/* ===================================== GET FILE EXTENSION ===================================== */
+
+const fileExtension = fileName => {
+  const fileExtensionPosition = fileName.indexOf(".");
+  const extension = fileName
+    .slice(fileExtensionPosition + 1, fileName.length)
+    .toUpperCase();
+
+  return extension;
+};
+
 /* ============================================================================================== */
+
+const numberWithCommas = x => {
+  var parts = x.toString().split(".");
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return parts.join(".");
+};
+
+const capitaliseFirstLetter = string => {
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+};

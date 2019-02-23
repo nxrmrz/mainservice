@@ -1,0 +1,38 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+#profile_settings_profile_get_featured_inputs {
+  align-items: center;
+}
+
+#profile_settings_profile_get_featured_loader {
+  height: 4vmin;
+  width: 4vmin;
+  margin: 0 2vmin;
+}
+
+#profile_settings_profile_get_featured_error_body {
+  width: 50%;
+  justify-content: flex-start;
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #profile_settings_profile_get_featured_loader {
+    height: 3vmin;
+    width: 3vmin;
+    margin: 0 1.5vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  #profile_settings_profile_get_featured_loader {
+    height: 2vmin;
+    width: 2vmin;
+    margin: 0 1vmin;
+  }
+}
+
+/* ============================================================================================== */
