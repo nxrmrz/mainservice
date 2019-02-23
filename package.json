@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/delta3dprinting/delta3dprinting.git"
+    "url": "git+https://github.com/delta3dprinting/mainservice.git"
   },
   "author": "Carl Velasco",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/delta3dprinting/delta3dprinting/issues"
+    "url": "https://github.com/delta3dprinting/mainservice/issues"
   },
-  "homepage": "https://github.com/delta3dprinting/delta3dprinting#readme",
+  "homepage": "https://github.com/delta3dprinting/mainservice#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
