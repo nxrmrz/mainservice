@@ -1,0 +1,76 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+/* =========================================== FOOTER =========================================== */
+
+#awaiting_payment_modal_footer_contents {
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+#awaiting_payment_footer_buttons_body {
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.awaiting_payment_footer_buttons_body_close {
+  height: 0;
+  opacity: 0;
+  z-index: 0;
+}
+
+.awaiting_payment_footer_buttons_body_open {
+  height: 14vmin;
+  opacity: 1;
+  z-index: 1;
+}
+
+#awaiting_payment_pre_submit_contents_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.awaiting_payment_pre_submit_contents_body_close {
+  height: 0;
+  opacity: 0;
+  z-index: 0;
+}
+
+.awaiting_payment_pre_submit_contents_body_open {
+  height: 14vmin;
+  opacity: 1;
+  z-index: 1;
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  /* ========================================== FOOTER ========================================== */
+
+  .awaiting_payment_footer_buttons_body_open {
+    height: 10.5vmin;
+  }
+
+  .awaiting_payment_pre_submit_contents_body_open {
+    height: 10.5vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  /* ========================================== FOOTER ========================================== */
+
+  .awaiting_payment_footer_buttons_body_open {
+    height: 7vmin;
+  }
+
+  .awaiting_payment_pre_submit_contents_body_open {
+    height: 7vmin;
+  }
+}
+
+/* ============================================================================================== */

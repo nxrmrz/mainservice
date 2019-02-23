@@ -1,23 +1,40 @@
-#profile_settings_edit_profile_search_address_input_field {
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+#profile_settings_profile_search_shipping_address {
   width: 100%;
+  padding: 3vmin;
 }
 
-#profile_settings_edit_profile_search_address_input_body {
-  width: 100%;
-}
-
-#profile_settings_edit_profile_street_number_input {
+#profile_settings_profile_street_number_input {
   width: 25%;
 }
 
-#profile_settings_edit_profile_route_input {
+#profile_settings_profile_route_input {
   width: 70%;
 }
 
-#profile_settings_edit_profile_locality_input {
+#profile_settings_profile_locality_input {
   width: 65%;
 }
 
-#profile_settings_edit_profile_postal_code_input {
+#profile_settings_profile_postal_code_input {
   width: 30%;
 }
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #profile_settings_profile_search_shipping_address {
+    padding: 2.25vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  #profile_settings_profile_search_shipping_address {
+    padding: 1.5vmin;
+  }
+}
+
+/* ============================================================================================== */

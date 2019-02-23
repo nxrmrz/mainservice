@@ -1,0 +1,108 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+/* ==================================== REQUEST PARTNERSHIP ===================================== */
+
+/* ------------------------------------------ MESSAGE ------------------------------------------- */
+
+.request_partnership_message_body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vmin;
+}
+
+.request_partnership_message {
+  font-family: "Open Sans", sans-serif;
+  font-size: 5vmin;
+  letter-spacing: 0.2vmin;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(120, 120, 120);
+}
+
+/* ======================================= TEMPORARY CSS ======================================== */
+
+#temporary_partnership_button_handler_modal_body {
+  overflow: hidden;
+}
+
+#temporary_partnership_button_handler_modal_contents_body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.temporary_partnership_button_handler_modal_content_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vmin;
+}
+
+.temporary_partnership_button_handler_modal_content_text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 4vmin;
+  color: rgb(60, 60, 60);
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  /* ==================================== REQUEST PARTNERSHIP ===================================== */
+
+  /* ------------------------------------------ MESSAGE ------------------------------------------- */
+
+  .request_partnership_message_body {
+    padding: 3vmin;
+  }
+
+  .request_partnership_message {
+    font-size: 3.75vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  /* ======================================= TEMPORARY CSS ======================================== */
+
+  .temporary_partnership_button_handler_modal_content_body {
+    padding: 3vmin;
+  }
+
+  .temporary_partnership_button_handler_modal_content_text {
+    font-size: 3vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  /* ==================================== REQUEST PARTNERSHIP ===================================== */
+
+  /* ------------------------------------------ MESSAGE ------------------------------------------- */
+
+  .request_partnership_message_body {
+    padding: 2vmin;
+  }
+
+  .request_partnership_message {
+    font-size: 2.5vmin;
+    letter-spacing: 0.1vmin;
+  }
+
+  /* ======================================= TEMPORARY CSS ======================================== */
+
+  .temporary_partnership_button_handler_modal_content_body {
+    padding: 2vmin;
+  }
+
+  .temporary_partnership_button_handler_modal_content_text {
+    font-size: 2vmin;
+  }
+}
+
+/* ============================================================================================== */

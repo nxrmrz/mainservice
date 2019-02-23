@@ -1,0 +1,138 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+#order_detail_parts_body {
+  background-color: rgb(255, 250, 250);
+  box-shadow: 0 0 0.8vmin 0 rgb(200, 200, 200);
+  z-index: 1;
+}
+
+#order_detail_parts_table_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: none none solid solid;
+  border-width: 0.1vmin;
+  border-color: rgb(200, 200, 200);
+}
+
+.order_detail_part_table_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.order_detail_part_table_cell {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1vmin;
+  border-style: solid solid none none;
+  border-width: 0.1vmin;
+  border-color: rgb(200, 200, 200);
+}
+
+.order_detail_part_name_table_cell {
+  width: 100%;
+}
+
+.order_detail_part_table_cell_heading_body {
+  width: 100%;
+  padding: 1vmin 2vmin;
+}
+
+.order_detail_part_table_cell_heading_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 3vmin;
+  letter-spacing: 0.4vmin;
+  color: rgb(120, 120, 120);
+}
+
+.order_detail_part_table_cell_content_body {
+  width: 100%;
+  padding: 1vmin 2vmin;
+}
+
+.order_detail_part_table_cell_content_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  letter-spacing: 0.2vmin;
+  color: rgb(60, 60, 60);
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #order_detail_parts_body {
+    box-shadow: 0 0 0.6vmin 0 rgb(200, 200, 200);
+  }
+
+  #order_detail_parts_table_body {
+    border-width: 0.075vmin;
+  }
+
+  .order_detail_part_table_cell {
+    width: calc(100% / 3);
+    padding: 0.75vmin;
+    border-width: 0.075vmin;
+  }
+
+  .order_detail_part_table_cell_heading_body {
+    padding: 0.75vmin 1.5vmin;
+  }
+
+  .order_detail_part_table_cell_heading_text {
+    font-size: 2.25vmin;
+    letter-spacing: 0.3vmin;
+  }
+
+  .order_detail_part_table_cell_content_body {
+    padding: 0.75vmin 1.5vmin;
+  }
+
+  .order_detail_part_table_cell_content_text {
+    font-size: 3vmin;
+    letter-spacing: 0.15vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  #order_detail_parts_body {
+    box-shadow: 0 0 0.4vmin 0 rgb(200, 200, 200);
+  }
+
+  #order_detail_parts_table_body {
+    border-width: 0.05vmin;
+  }
+
+  .order_detail_part_table_cell {
+    width: 25%;
+    padding: 0.5vmin;
+    border-width: 0.05vmin;
+  }
+
+  .order_detail_part_name_table_cell {
+    width: 50%;
+  }
+
+  .order_detail_part_table_cell_heading_body {
+    padding: 0.5vmin 1vmin;
+  }
+
+  .order_detail_part_table_cell_heading_text {
+    font-size: 1.5vmin;
+    letter-spacing: 0.2vmin;
+  }
+
+  .order_detail_part_table_cell_content_body {
+    padding: 0.5vmin 1vmin;
+  }
+
+  .order_detail_part_table_cell_content_text {
+    font-size: 2vmin;
+    letter-spacing: 0.1vmin;
+  }
+}
+
+/* ============================================================================================== */

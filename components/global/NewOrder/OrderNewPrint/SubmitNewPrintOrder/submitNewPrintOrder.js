@@ -2,11 +2,13 @@
 
 const submitNewPrintOrder = () => {
   // Validate Inputs
-  if (!orderNewPrintInputValidation) {
+  if (!orderNewPrintInputValidation()) {
+    console.log("failed");
     return;
   }
   // Collect Inputs
   orderNewPrintCollectInput();
+
   // Pre Submit
   loadLoader(document.querySelector("#order_new_print_modal_body")).then(() => {
     orderNewPrintSubmitLoadingHandler();
@@ -131,6 +133,8 @@ const orderNewPrintInputValidation = () => {
       return false;
     }
   }
+
+  return true;
 };
 
 /* ================================== SUBMIT LOADING HANDLER =================================== */
@@ -207,7 +211,9 @@ const orderNewPrintSubmitOrder = () => {
       success: data => {
         // Post Submit
         orderNewPrintSubmitSuccessHandler();
-        loadProfileOrdersPrintsOrdersListTableContents();
+        profileOrdersPrintsOrdersSummaryFilterUpdateOrderList(
+          profileOrdersPrintsOrdersSummaryFilterSelected
+        );
       }
     });
   }, 0);

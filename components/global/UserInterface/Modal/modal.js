@@ -1,5 +1,31 @@
 /* ==================================== MODAL CLASS OBJECT ===================================== */
 
+class ModalElementObject {
+  constructor(id, header, footer) {
+    this.id = id;
+    this.header = header;
+    this.footer = footer;
+  }
+}
+
+class ModalCSSObject {
+  constructor(
+    mobileBodyHeight,
+    mobileBodyWidth,
+    desktopBodyHeight,
+    desktopBodyWidth,
+    footerHeight
+  ) {
+    this.mobileBodyHeight = mobileBodyHeight;
+    this.mobileBodyWidth = mobileBodyWidth;
+    this.desktopBodyHeight = desktopBodyHeight;
+    this.desktopBodyWidth = desktopBodyWidth;
+    this.footerHeight = footerHeight;
+  }
+}
+
+// Temporary
+
 class modalElementObject {
   constructor(id, header, footer) {
     this.id = id;

@@ -1,9 +1,11 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 .order_new_print_parts_part_body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   border-style: solid;
-  border-color: rgba(170, 10, 10, 0.8);
+  border-color: rgb(170, 10, 10);
   border-radius: 0.7vmin;
 }
 
@@ -32,20 +34,20 @@
 
 /* ======================================== TOGGLE BAR ========================================= */
 
+.order_new_print_parts_part_toggle_header_body {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .order_new_print_parts_part_toggle_bar {
   height: 8vmin;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2vmin 0 2vmin;
-  background-color: rgba(170, 10, 10, 0.8);
-}
-
-.order_new_print_parts_part_toggle_header_body {
-  width: 60%;
-  height: 100%;
-  display: flex;
-  align-items: center;
+  background-color: rgb(170, 10, 10);
 }
 
 .order_new_print_parts_part_toggle_header_text {
@@ -90,30 +92,27 @@
   text-align: right;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
   .order_new_print_parts_part_body {
-    border-radius: 0.4vmin;
+    border-radius: 0.525vmin;
   }
 
   .order_new_print_parts_part_form_body {
-    max-height: 120vh;
-  }
-
-  .order_new_print_parts_part_body_close {
-    overflow: hidden;
-    max-height: 0;
+    max-height: 225vmin;
   }
 
   .order_new_print_parts_part_upload_model_form_body {
-    padding: 1.2vmin;
+    padding: 1.5vmin;
   }
 
   .order_new_print_parts_part_select_material_form_body {
-    padding: 1.2vmin;
+    padding: 1.5vmin;
   }
 
   .order_new_print_parts_part_choose_options_form_body {
-    padding: 1.2vmin;
+    padding: 1.5vmin;
   }
 
   /* ======================================== TOGGLE BAR ========================================= */
@@ -123,12 +122,12 @@
   }
 
   .order_new_print_parts_part_toggle_bar {
-    height: 4.5vmin;
-    padding: 0 1.2vmin 0 1.2vmin;
+    height: 6vmin;
+    padding: 0 1.5vmin;
   }
 
   .order_new_print_parts_part_toggle_header_text {
-    font-size: 1.6vmin;
+    font-size: 2.625vmin;
   }
 
   /* --------------------------------------- DELETE BUTTON --------------------------------------- */
@@ -138,27 +137,59 @@
   }
 
   .order_new_print_parts_delete_part_button {
-    height: 3.6vmin;
-    padding: 0 1.6vmin 0 1.6vmin;
-    border-radius: 1.6vmin;
-    border-width: 0.3vmin;
+    height: 4.5vmin;
+    padding: 0 1.875vmin;
+    border-radius: 2.25vmin;
+    border-width: 0.375vmin;
+    box-shadow: 0 0 1.125vmin 0.075vmin rgb(100, 100, 100);
   }
 
   .order_new_print_parts_delete_part_button_text {
-    font-size: 1.6vmin;
+    font-size: 2.25vmin;
   }
 
   /* INPUT ERROR HANDLER */
   .order_new_print_parts_part_input_error_handler {
-    font-size: 1.8vmin;
+    font-size: 2.25vmin;
   }
 }
 
-@media only screen and (min-width: 1250px) {
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  .order_new_print_parts_part_body {
+    border-radius: 0.35vmin;
+  }
+
+  .order_new_print_parts_part_form_body {
+    max-height: 150vmin;
+  }
+
+  .order_new_print_parts_part_upload_model_form_body {
+    padding: 1vmin;
+  }
+
+  .order_new_print_parts_part_select_material_form_body {
+    padding: 1vmin;
+  }
+
+  .order_new_print_parts_part_choose_options_form_body {
+    padding: 1vmin;
+  }
+
   /* ======================================== TOGGLE BAR ========================================= */
 
   .order_new_print_parts_part_toggle_header_body {
     width: 75%;
+  }
+
+  .order_new_print_parts_part_toggle_bar {
+    height: 4vmin;
+    padding: 0 1vmin;
+  }
+
+  .order_new_print_parts_part_toggle_header_text {
+    font-size: 1.75vmin;
   }
 
   /* --------------------------------------- DELETE BUTTON --------------------------------------- */
@@ -166,4 +197,23 @@
   .order_new_print_parts_delete_part_body {
     width: 20%;
   }
+
+  .order_new_print_parts_delete_part_button {
+    height: 3vmin;
+    padding: 0 1.25vmin;
+    border-radius: 1.5vmin;
+    border-width: 0.25vmin;
+    box-shadow: 0 0 0.75vmin 0.05vmin rgb(100, 100, 100);
+  }
+
+  .order_new_print_parts_delete_part_button_text {
+    font-size: 1.5vmin;
+  }
+
+  /* INPUT ERROR HANDLER */
+  .order_new_print_parts_part_input_error_handler {
+    font-size: 1.5vmin;
+  }
 }
+
+/* ============================================================================================== */

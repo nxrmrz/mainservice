@@ -1,4 +1,4 @@
-/* ========================================= MOBILE CSS ========================================= */
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
 
 /* ---------------------------------------- MODAL FOOTER ---------------------------------------- */
 
@@ -107,10 +107,56 @@
   color: rgb(245, 245, 245);
 }
 
-/* ======================================== DESKTOP CSS ========================================= */
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
   /* ---------------------------------------- MODAL FOOTER ---------------------------------------- */
+
+  .admin_order_details_footer_buttons_body_open {
+    height: 10.5vmin;
+  }
+
+  .admin_order_details_footer_button_body {
+    height: 10.5vmin;
+  }
+
+  .admin_order_details_footer_button {
+    height: 7.5vmin;
+    width: 18vmin;
+    border-radius: 1.5vmin;
+    box-shadow: 0 0.75vmin 1.125vmin 0 rgb(180, 180, 180);
+  }
+
+  .admin_order_details_footer_button_text {
+    font-size: 3vmin;
+  }
+
+  /* ------------------------------------------ BUTTONS ------------------------------------------- */
+
+  .admin_order_details_button_body {
+    padding: 3vmin 0;
+  }
+
+  .admin_order_details_button {
+    height: 7.5vmin;
+    width: 15vmin;
+    border-radius: 1.5vmin;
+    box-shadow: 0 0.75vmin 1.125vmin 0 rgb(180, 180, 180);
+  }
+
+  .admin_order_details_button_text {
+    font-size: 3vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  /* --------------------------------------- MODAL FOOTER --------------------------------------- */
+
+  .admin_order_details_footer_buttons_body_open {
+    height: 7vmin;
+  }
 
   .admin_order_details_footer_button_body {
     height: 7vmin;
@@ -127,10 +173,10 @@
     font-size: 2vmin;
   }
 
-  /* ------------------------------------------ BUTTONS ------------------------------------------- */
+  /* ----------------------------------------- BUTTONS ------------------------------------------ */
 
   .admin_order_details_button_body {
-    padding: 2vmin 0 2vmin 0;
+    padding: 2vmin 0;
   }
 
   .admin_order_details_button {

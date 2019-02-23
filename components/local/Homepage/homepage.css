@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 #homepage_body {
   width: 100%;
   position: relative;
@@ -6,8 +8,20 @@
   flex-direction: column;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #homepage_body {
+    top: 7.5vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   #homepage_body {
     top: 5vmin;
   }
 }
+
+/* ============================================================================================== */

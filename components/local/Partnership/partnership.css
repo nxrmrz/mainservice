@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 #partnership_body {
   width: 100%;
   position: relative;
@@ -341,7 +343,191 @@
   color: rgb(20, 20, 20);
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #partnership_body {
+    top: 7.5vmin;
+  }
+
+  #partnership_navigation_tabs {
+    height: 7.5vmin;
+  }
+
+  .partnership_navigation_tab {
+    width: 15%;
+  }
+
+  .partnership_navigation_tab_text {
+    font-size: 2.25vmin;
+  }
+
+  .partnership_navigation_tab_text_selected {
+    font-size: 2.4vmin;
+  }
+
+  #partnership_contents_body {
+    padding: 7.5vmin 0 0 0;
+  }
+
+  #partnership_main_header_body {
+    padding: 9vmin 6vmin;
+  }
+
+  #partnership_main_header_text {
+    font-size: 5.25vmin;
+    letter-spacing: 0.225vmin;
+  }
+
+  #partnership_opening_description_body {
+    padding: 6vmin;
+  }
+
+  #partnership_opening_description_text {
+    font-size: 3vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .partnership_body_one {
+    padding: 4.5vmin;
+  }
+
+  .partnership_header_body_one {
+    width: 80%;
+    padding: 4.5vmin;
+  }
+
+  .partnership_header_text_one {
+    font-size: 4.2vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .partnership_sub_header_body_one {
+    width: 80%;
+    padding: 3vmin 4.5vmin;
+  }
+
+  .partnership_sub_header_text_one {
+    font-size: 3.45vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .partnership_description_body_one {
+    width: 80%;
+    padding: 4.5vmin 9vmin 4.5vmin 4.5vmin;
+  }
+
+  .partnership_description_text_one {
+    font-size: 2.7vmin;
+    letter-spacing: 0.075vmin;
+  }
+
+  .partnership_body_two {
+    padding: 4.5vmin;
+    justify-content: flex-end;
+  }
+
+  .partnership_header_body_two {
+    width: 80%;
+    padding: 4.5vmin;
+    justify-content: flex-end;
+  }
+
+  .partnership_header_text_two {
+    width: 80%;
+    font-size: 4.2vmin;
+    letter-spacing: 0.15vmin;
+    text-align: right;
+  }
+
+  .partnership_description_body_two {
+    width: 80%;
+    padding: 4.5vmin 4.5vmin 4.5vmin 9vmin;
+  }
+
+  .partnership_description_text_two {
+    font-size: 2.7vmin;
+    letter-spacing: 0.075vmin;
+  }
+
+  .partnership_details_button_body_one {
+    width: 80%;
+    padding: 4.5vmin 9vmin 4.5vmin 4.5vmin;
+  }
+
+  .partnership_details_button_body_two {
+    width: 80%;
+    padding: 4.5vmin 4.5vmin 4.5vmin 9vmin;
+  }
+
+  .partnership_button {
+    height: 7.5vmin;
+    width: 30vmin;
+    padding: 1.5vmin;
+    border-radius: 0.75vmin;
+    box-shadow: 0 0.375vmin 0.75vmin 0 rgb(180, 180, 180);
+  }
+
+  .partnership_button_text {
+    font-size: 2.7vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  #partnership_become_a_partner_header_body {
+    padding: 4.5vmin;
+  }
+
+  #partnership_become_a_partner_body {
+    padding: 4.5vmin;
+  }
+
+  #partnership_become_a_partner_button_body {
+    padding: 4.5vmin;
+  }
+
+  #partnership_become_a_partner_header_text {
+    font-size: 4.8vmin;
+    letter-spacing: 0.225vmin;
+  }
+
+  .partnership_table_body_one {
+    width: 80%;
+    padding: 4.5vmin 9vmin 4.5vmin 4.5vmin;
+  }
+
+  .partnership_table_body_two {
+    width: 80%;
+    padding: 4.5vmin 4.5vmin 4.5vmin 9vmin;
+  }
+
+  .partnership_table_header_one {
+    padding: 1.5vmin;
+    border-width: 0.3vmin;
+    font-size: 2.85vmin;
+  }
+
+  .partnership_table_header_two {
+    padding: 1.5vmin;
+    border-width: 0.3vmin;
+    font-size: 2.85vmin;
+  }
+
+  .partnership_table_column_one {
+    padding: 1.5vmin;
+    border-width: 0.3vmin;
+    font-size: 2.7vmin;
+  }
+
+  .partnership_table_column_two {
+    padding: 1.5vmin;
+    border-width: 0.3vmin;
+    font-size: 2.7vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   #partnership_body {
     top: 5vmin;
   }
@@ -521,3 +707,5 @@
     font-size: 1.8vmin;
   }
 }
+
+/* ============================================================================================== */

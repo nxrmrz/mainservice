@@ -23,6 +23,7 @@ module.exports = (app, passport, conn) => {
     gfs = Grid(conn.db, mongoose.mongo);
     gfs.collection("fs");
   });
+
   /* ====================================== DISCOUNTS ======================================= */
 
   // @route   POST /discounts

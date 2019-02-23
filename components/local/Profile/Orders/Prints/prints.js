@@ -1,29 +1,25 @@
-// Profile Orders Prints Object
-let profileOrdersPrintsObject;
+/* ======================================= INITIALISATION ======================================= */
 
-// Profile Orders Prints Object Properties
-const profileOrdersPrintsId = "prints";
-const profileOrdersPrintsName = "Prints";
-const profileOrdersPrintsMethod = () => {
-  addProfileOrdersPrintsBody();
-  profileOrdersPrintsButtonsInit();
+const profileOrdersPrintsInit = () => {
+  profileOrdersPrintsStructure();
+};
+
+/* ========================================= STRUCTURE ========================================== */
+
+const profileOrdersPrintsStructure = () => {
+  /* --------------------------------------- CREATE HTML ---------------------------------------- */
+  const html =
+    "<div id='profile_orders_prints_contents' class='profile_orders_content'>" +
+    "<div id='profile_orders_prints_new_order_contents' class='profile_orders_prints_content'></div>" +
+    "<div id='profile_orders_prints_orders_summary_contents' class='profile_orders_prints_content'></div>" +
+    "</div>";
+  /* --------------------------------------- INSERT HTML ---------------------------------------- */
+  document.querySelector("#profile_orders_contents").innerHTML = html;
+  /* ----------------------------------------- CONTENTS ----------------------------------------- */
+  // NEW ORDER
+  profileOrdersPrintsNewOrderInit();
+  // ORDER LIST
   profileOrdersPrintsOrdersSummaryInit();
 };
 
-// Contruct Profile Orders Prints Object
-const contructProfileOrdersPrintsObject = () => {
-  profileOrdersPrintsObject = new profileOrdersComponentObject(
-    profileOrdersPrintsId,
-    profileOrdersPrintsName,
-    profileOrdersPrintsMethod
-  );
-};
-
-/* ================= Construct the Profile Orders Prints Body ================== */
-const addProfileOrdersPrintsBody = () => {
-  const profileOrdersPrintsBodyHTML =
-    "<div id='profile_orders_prints_body' class='profile_orders_component_body'></div>";
-  document
-    .querySelector("#profile_orders_components_body")
-    .insertAdjacentHTML("beforeend", profileOrdersPrintsBodyHTML);
-};
+/* ============================================================================================== */

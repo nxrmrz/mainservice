@@ -1,47 +1,70 @@
 /* ======================================= INITIALISATION ======================================= */
 
-const homepage3DModellingServiceInit = () => {
-  constructhHomepage3DModellingServiceModalObjects();
-  homepage3DModellingServiceButtonClickListener();
+const homepageServicesModellingInit = () => {
+  homepageServicesModellingEventListener();
 };
 
-/* =================================== BUTTON CLICK LISTENER ==================================== */
+/* ======================================= EVENT LISTENER ======================================= */
 
-const homepage3DModellingServiceButtonClickListener = () => {
+const homepageServicesModellingEventListener = () => {
   document
     .querySelector("#homepage_3d_modelling_content_button")
     .addEventListener("click", () => {
-      addModal(
-        homepage3DModellingServiceModalElementObject,
-        homepage3DModellingServiceModalCSSObject
-      );
+      homepageServicesModellingModal();
     });
 };
 
-/* ====================================== MODAL PROPERTIES ====================================== */
+/* =========================================== MODAL ============================================ */
 
-// ELEMENTS
-const homepage3DModellingServiceModalId = "modelling";
-const homepage3DModellingServiceModalHeader = "3D Modelling Service";
-const homepage3DModellingServiceModalFooter = "";
-let homepage3DModellingServiceModalElementObject;
-
-// CSS
-const homepage3DModellingServiceModalBodyHeight = 90;
-const homepage3DModellingServiceModalBodyWidth = 90;
-const homepage3DModellingServiceModalFooterHeight = 10;
-let homepage3DModellingServiceModalCSSObject;
-
-const constructhHomepage3DModellingServiceModalObjects = () => {
-  homepage3DModellingServiceModalElementObject = new modalElementObject(
-    homepage3DModellingServiceModalId,
-    homepage3DModellingServiceModalHeader,
-    homepage3DModellingServiceModalFooter
+const homepageServicesModellingModal = () => {
+  // ELEMENTS
+  const modalId = "modelling";
+  const modalHeader = "3D Modelling";
+  const modalFooter = "";
+  const modalElementObject = new ModalElementObject(
+    modalId,
+    modalHeader,
+    modalFooter
+  );
+  // CSS
+  const modalHeight = 50;
+  const modalWidth = 80;
+  const modalDesktopHeight = 40;
+  const modalDesktopWidth = 40;
+  let modalFooterHeight;
+  if (modalFooter) {
+    modalFooterHeight = 14;
+  } else {
+    modalFooterHeight = 0;
+  }
+  const modalCSSObject = new ModalCSSObject(
+    modalHeight,
+    modalWidth,
+    modalDesktopHeight,
+    modalDesktopWidth,
+    modalFooterHeight
   );
 
-  homepage3DModellingServiceModalCSSObject = new modalCSSObject(
-    homepage3DModellingServiceModalBodyWidth,
-    homepage3DModellingServiceModalBodyHeight,
-    homepage3DModellingServiceModalFooterHeight
-  );
+  addModal(modalElementObject, modalCSSObject);
+
+  homepageServicesModellingTemporaryMessage();
 };
+
+/* ===================================== TEMPORARY MESSAGE ====================================== */
+
+const homepageServicesModellingTemporaryMessage = () => {
+  /* --------------------------------------- CREATE HTML ---------------------------------------- */
+  const html =
+    "<div class='homepage_services_temporary_message_contents'>" +
+    "<div class='homepage_services_temporary_message_heading_body'>" +
+    "<div class='homepage_services_temporary_message_heading'>TEMPORARY</div>" +
+    "</div>" +
+    "<div class='homepage_services_temporary_message_body'>" +
+    "<div class='homepage_services_temporary_message'>We are currently developing the 3D Modelling Service. If you are seeking design consultation or want us to design a particular 3D model, contact us at founder.delta3dprinting@gmail.com</div>" +
+    "</div>" +
+    "</div>";
+  /* --------------------------------------- INSERT HTML ---------------------------------------- */
+  document.querySelector("#modelling_modal_body").innerHTML = html;
+};
+
+/* ============================================================================================== */

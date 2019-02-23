@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 #admin_requesting_refund_summary_body {
   width: 100%;
 }
@@ -29,7 +31,9 @@
   padding: 2vmin;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
   .admin_awaiting_payment_confirmation_order_summary_bank_details_column {
     width: calc((100% / 3));
   }
@@ -56,3 +60,35 @@
     padding: 1vmin;
   }
 }
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  .admin_awaiting_payment_confirmation_order_summary_bank_details_column {
+    width: calc((100% / 3));
+  }
+
+  .admin_order_details_footer_buttons_body_open {
+    height: 7vmin;
+  }
+
+  .admin_requesting_refund_decline_header_body {
+    padding: 2vmin;
+  }
+
+  .admin_requesting_refund_decline_header {
+    font-size: 1.6vmin;
+  }
+
+  .admin_requesting_refund_decline_input_body {
+    padding: 2vmin;
+  }
+
+  .admin_requesting_refund_decline_input {
+    height: 20vmin;
+    width: 60vmin;
+    padding: 1vmin;
+  }
+}
+
+/* ============================================================================================== */

@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 .order_new_print_parts_part_select_material_input_field {
   display: flex;
   flex-direction: column;
@@ -19,9 +21,22 @@
   justify-content: space-evenly;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
   .order_new_print_parts_part_select_material_input_field_header_text {
-    font-size: 2.2vmin;
-    margin: 1.2vmin 0 1.2vmin 1.2vmin;
+    font-size: 3vmin;
+    margin: 1.5vmin 0 1.5vmin 1.5vmin;
   }
 }
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  .order_new_print_parts_part_select_material_input_field_header_text {
+    font-size: 2vmin;
+    margin: 1vmin 0 1vmin 1vmin;
+  }
+}
+
+/* ============================================================================================== */

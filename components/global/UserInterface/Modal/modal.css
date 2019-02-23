@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 .modal {
   height: 0;
   width: 0;
@@ -74,9 +76,30 @@
   transition: opacity 1.5s ease;
 }
 
-/* =================================== DESKTOP ==================================== */
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  .modal {
+    border-radius: 0.75vmin;
+  }
+
+  .modal_header {
+    border-radius: 0.75vmin 0.75vmin 0 0;
+  }
+
+  .modal_header_text {
+    padding: 0 0 0 3vmin;
+    font-size: 3.75vmin;
+  }
+
+  .modal_footer {
+    border-radius: 0 0 0.75vmin 0.75vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   .modal {
     border-radius: 0.5vmin;
   }

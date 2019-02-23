@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 #admin_printing_order_modal_footer_contents {
   flex-direction: column;
 }
@@ -77,7 +79,41 @@
   text-align: center;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #admin_order_details_printing_order_order_list_table {
+    padding: 1.5vmin;
+  }
+
+  .admin_order_details_printing_order_order_list_table_column_header_1 {
+    height: 9vmin;
+    border-width: 0.15vmin;
+    font-size: 2.55vmin;
+  }
+
+  .admin_order_details_printing_order_order_list_table_column_header_2 {
+    height: 9vmin;
+    border-width: 0.15vmin;
+    font-size: 2.55vmin;
+  }
+
+  .admin_order_details_printing_order_order_list_table_column_1 {
+    height: 9vmin;
+    border-width: 0.15vmin;
+    font-size: 2.55vmin;
+  }
+
+  .admin_order_details_printing_order_order_list_table_column_2 {
+    height: 9vmin;
+    border-width: 0.15vmin;
+    font-size: 3vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   #admin_order_details_printing_order_order_list_table {
     padding: 1vmin;
   }
@@ -106,3 +142,5 @@
     font-size: 2vmin;
   }
 }
+
+/* ============================================================================================== */

@@ -1,0 +1,102 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+.profile_dashboard_button_body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2vmin;
+}
+
+.profile_dashboard_button {
+  height: 6vmin;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3vmin;
+  background-color: rgb(255, 75, 90);
+  box-shadow: 0 0.5vmin 1vmin 0 rgb(180, 180, 180);
+}
+
+.profile_dashboard_button:hover {
+  background-color: rgb(255, 100, 115);
+}
+
+.profile_dashboard_button:active {
+  background-color: rgb(230, 50, 65);
+  box-shadow: 0 0 0 rgb(180, 180, 180);
+}
+
+.profile_dashboard_button_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 3vmin;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.2vmin;
+  color: rgb(255, 252, 252);
+}
+
+.profile_dashboard_table {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid solid none solid;
+  border-radius: 0.8vmin;
+  border-width: 0.2vmin;
+  border-color: rgb(180, 180, 180);
+  box-shadow: 0vmin 0vmin 0.8vmin 0vmin rgb(200, 200, 200);
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  .profile_dashboard_button_body {
+    padding: 1.5vmin;
+  }
+
+  .profile_dashboard_button {
+    height: 4.5vmin;
+    border-radius: 2.25vmin;
+    box-shadow: 0 0.375vmin 0.75vmin 0 rgb(180, 180, 180);
+  }
+
+  .profile_dashboard_button_text {
+    font-size: 2.25vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .profile_dashboard_table {
+    width: 93.75%;
+    border-radius: 0.6vmin;
+    border-width: 0.15vmin;
+    box-shadow: 0vmin 0vmin 0.6vmin 0vmin rgb(200, 200, 200);
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  .profile_dashboard_button_body {
+    padding: 1vmin;
+  }
+
+  .profile_dashboard_button {
+    height: 3vmin;
+    border-radius: 1.5vmin;
+    box-shadow: 0 0.25vmin 0.5vmin 0 rgb(180, 180, 180);
+  }
+
+  .profile_dashboard_button_text {
+    font-size: 1.5vmin;
+    letter-spacing: 0.1vmin;
+  }
+
+  .profile_dashboard_table {
+    width: 87.5%;
+    border-radius: 0.4vmin;
+    border-width: 0.1vmin;
+    box-shadow: 0vmin 0vmin 0.4vmin 0vmin rgb(200, 200, 200);
+  }
+}
+
+/* ============================================================================================== */

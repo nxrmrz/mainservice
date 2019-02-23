@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 #navigation_drawer {
   height: 100vh;
   width: 38vmin;
@@ -102,7 +104,47 @@
   transition: width 0.5s ease;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #navigation_drawer {
+    width: 28.5vmin;
+    padding: 2.25vmin;
+  }
+
+  .navigation_link {
+    height: 6.75vmin;
+    padding: 1.5vmin;
+    margin: 1.5vmin 0;
+    border-radius: 1.5vmin;
+    font-size: 2.7vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .selected_navigation_link {
+    box-shadow: inset 0 0 0.6vmin rgb(120, 120, 120);
+  }
+
+  #navigation_drawer_toggle {
+    height: 6.75vmin;
+    width: 6.75vmin;
+    padding: 0.75vmin;
+    border-radius: 0.75vmin;
+  }
+
+  #navigation_drawer_toggle:active {
+    box-shadow: inset 0 0 1.125vmin rgb(120, 10, 10);
+  }
+
+  .navigation_drawer_toggle_bar {
+    border-width: 0.3vmin;
+    border-radius: 0.3vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   #navigation_drawer {
     width: 19vmin;
     padding: 1.5vmin;
@@ -124,8 +166,14 @@
     border-radius: 1vmin;
   }
 
+  #navigation_drawer_toggle:active {
+    box-shadow: inset 0 0 0.75vmin rgb(120, 10, 10);
+  }
+
   .navigation_drawer_toggle_bar {
     border-width: 0.2vmin;
     border-radius: 0.2vmin;
   }
 }
+
+/* ============================================================================================== */
