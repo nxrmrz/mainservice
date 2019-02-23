@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 #profile_orders_navigation_tabs_body {
   height: 8vmin;
   display: flex;
@@ -26,7 +28,21 @@
   flex-direction: column;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #profile_orders_navigation_tabs_body {
+    height: 6.75vmin;
+  }
+
+  .profile_orders_navigation_tab_text {
+    font-size: 2.7vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   #profile_orders_navigation_tabs_body {
     height: 4.5vmin;
   }
@@ -35,3 +51,5 @@
     font-size: 1.8vmin;
   }
 }
+
+/* ============================================================================================== */

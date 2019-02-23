@@ -3,29 +3,30 @@
 const viewAdminProfileOrdersPrintsOrderDetails = orderNumber => {
   $.ajax({
     type: "POST",
-    url: "/admin/order",
-    data: { orderNumber: orderNumber },
+    url: "/order/get-order-details-by-order-number",
+    data: JSON.stringify({ orderNumber }),
+    contentType: "application/json",
     success: data => {
-      if (data.orderStatus == "Awaiting Quote") {
-        adminAwaitingQuoteInit(data);
-      } else if (data.orderStatus == "Awaiting Payment") {
-        awaitingPaymentInit(data);
-      } else if (data.orderStatus == "Awaiting Payment Confirmation") {
-        adminAwaitingPaymentConfirmationInit(data);
-      } else if (data.orderStatus == "Printing Order") {
-        adminPrintingOrderInit(data);
-      } else if (data.orderStatus == "Ready for Pickup") {
-        readyForPickupInit(data);
-      } else if (data.orderStatus == "Order Picked Up") {
-        adminOrderPickedUpInit(data);
-      } else if (data.orderStatus == "Ready for Shipping") {
-        adminReadyForShippingInit(data);
-      } else if (data.orderStatus == "Order Shipped") {
-        orderShippedInit(data);
-      } else if (data.orderStatus == "Order Completed") {
-        adminOrderCompletedInit(data);
-      } else if (data.orderStatus == "Requesting Refund") {
-        adminRequestingRefundInit(data);
+      if (data.content.orderStatus == "Awaiting Quote") {
+        adminAwaitingQuoteInit(data.content);
+      } else if (data.content.orderStatus == "Awaiting Payment") {
+        awaitingPaymentInit(data.content);
+      } else if (data.content.orderStatus == "Awaiting Payment Confirmation") {
+        adminAwaitingPaymentConfirmationInit(data.content);
+      } else if (data.content.orderStatus == "Printing Order") {
+        adminPrintingOrderInit(data.content);
+      } else if (data.content.orderStatus == "Ready for Pickup") {
+        readyForPickupInit(data.content);
+      } else if (data.content.orderStatus == "Order Picked Up") {
+        adminOrderPickedUpInit(data.content);
+      } else if (data.content.orderStatus == "Ready for Shipping") {
+        adminReadyForShippingInit(data.content);
+      } else if (data.content.orderStatus == "Order Shipped") {
+        orderShippedInit(data.content);
+      } else if (data.content.orderStatus == "Order Completed") {
+        adminOrderCompletedInit(data.content);
+      } else if (data.content.orderStatus == "Requesting Refund") {
+        adminRequestingRefundInit(data.content);
       } else {
         console.log("Couldn't Determine Order Status");
       }

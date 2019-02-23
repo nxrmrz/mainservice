@@ -1,0 +1,47 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+#profile_settings_profile_account_type {
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  color: rgb(120, 120, 120);
+}
+
+.profile_settings_profile_button_body {
+  width: 60%;
+  display: flex;
+  padding: 4vmin;
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #profile_settings_profile_account_type_input_field {
+    width: 100%;
+  }
+
+  #profile_settings_profile_account_type {
+    font-size: 3vmin;
+  }
+
+  .profile_settings_profile_button_body {
+    padding: 3vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  #profile_settings_profile_account_type_input_field {
+    width: 100%;
+  }
+
+  #profile_settings_profile_account_type {
+    font-size: 2vmin;
+  }
+
+  .profile_settings_profile_button_body {
+    padding: 2vmin;
+  }
+}
+
+/* ============================================================================================== */

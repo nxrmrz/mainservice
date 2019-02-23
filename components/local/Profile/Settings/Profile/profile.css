@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 #profile_settings_profile_body {
   display: flex;
   flex-direction: column;
@@ -6,7 +8,7 @@
   padding: 4vmin;
 }
 
-.profile_settings_edit_profile_body {
+.profile_settings_profile_content {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -77,33 +79,306 @@
   color: rgb(170, 10, 10);
 }
 
-@media only screen and (min-width: 600px) {
+/* ========================================== HEADING =========================================== */
+
+.profile_settings_profile_heading_body {
+  width: 100%;
+  padding: 1vmin 4vmin;
+  margin: 5vmin 0;
+  border-style: none none solid none;
+  border-color: rgb(170, 10, 10);
+}
+
+.profile_settings_profile_heading {
+  font-family: "Russo One", sans-serif;
+  font-size: 5vmin;
+  color: rgb(170, 10, 10);
+}
+
+/* ======================================== INPUT FIELD ========================================= */
+
+.profile_settings_profile_input_field {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vmin 3vmin;
+}
+
+/* ------------------------------------------ HEADING ------------------------------------------- */
+
+.profile_settings_profile_input_heading_body {
+  width: 35%;
+}
+
+.profile_settings_profile_input_heading {
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  font-weight: 600;
+  text-align: right;
+  color: rgb(80, 80, 80);
+}
+
+/* ------------------------------------------- INPUT -------------------------------------------- */
+
+.profile_settings_profile_inputs {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile_settings_profile_input_text {
+  height: 7vmin;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1vmin;
+  border-style: solid;
+  border-radius: 1vmin;
+  border-width: 0.2vmin;
+  border-color: rgb(200, 200, 200);
+  box-sizing: border-box;
+  box-shadow: 0 0.2vmin 0.2vmin 0 rgb(200, 200, 200);
+  outline: 0;
+  -webkit-transition: 300ms all ease;
+  font-family: "Open Sans", sans-serif;
+  font-size: 3vmin;
+  letter-spacing: 0.2vmin;
+  color: rgb(60, 60, 60);
+}
+
+.profile_settings_profile_input_textarea {
+  height: 21vmin;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1vmin;
+  border-style: solid;
+  border-radius: 1vmin;
+  border-width: 0.2vmin;
+  border-color: rgb(200, 200, 200);
+  box-sizing: border-box;
+  box-shadow: 0 0.2vmin 0.2vmin 0 rgb(200, 200, 200);
+  outline: 0;
+  -webkit-transition: 300ms all ease;
+  font-family: "Open Sans", sans-serif;
+  font-size: 3vmin;
+  letter-spacing: 0.2vmin;
+  color: rgb(60, 60, 60);
+}
+
+.profile_settings_profile_input_select {
+  height: 7vmin;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  border-radius: 1vmin;
+  border-width: 0.2vmin;
+  border-color: rgb(200, 200, 200);
+  box-shadow: 0 0.2vmin 0.2vmin 0 rgb(200, 200, 200);
+  padding: 0 2vmin;
+  background-color: rgb(255, 250, 250);
+  outline: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 3vmin;
+  letter-spacing: 0.2vmin;
+  color: rgb(60, 60, 60);
+}
+
+/* =========================================== ERROR ============================================ */
+
+.profile_settings_profile_error_body {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile_settings_profile_error {
+  height: 4vmin;
+  min-width: 10vmin;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 3vmin;
+  font-family: "Chivo", sans-serif;
+  font-size: 2.4vmin;
+  letter-spacing: 0.4vmin;
+  color: rgb(255, 50, 50);
+}
+
+.setting_profile_valid {
+  height: 4vmin;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: rgb(45, 180, 45);
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #profile_settings_profile_body {
+    padding: 3vmin;
+  }
+
+  /* ========================================= HEADING ========================================== */
+
+  .profile_settings_profile_heading_body {
+    padding: 0.75vmin 3vmin;
+    margin: 3.75vmin 0;
+  }
+
+  .profile_settings_profile_heading {
+    font-size: 3.75vmin;
+  }
+
+  /* ======================================= INPUT FIELD ======================================== */
+
+  .profile_settings_profile_input_field {
+    width: calc(100% / 2);
+    padding: 1.5vmin 2.25vmin;
+  }
+
+  /* ----------------------------------------- HEADING ------------------------------------------ */
+
+  .profile_settings_profile_input_heading_body {
+    width: 32.5%;
+  }
+
+  .profile_settings_profile_input_heading {
+    font-size: 3vmin;
+  }
+
+  /* ------------------------------------------ INPUT ------------------------------------------- */
+
+  .profile_settings_profile_input_text {
+    height: 5.25vmin;
+    padding: 0.75vmin;
+    border-radius: 0.75vmin;
+    border-width: 0.15vmin;
+    box-shadow: 0 0.15vmin 0.15vmin 0 rgb(200, 200, 200);
+    font-size: 2.25vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .profile_settings_profile_input_textarea {
+    height: 15.75vmin;
+    padding: 0.75vmin;
+    border-radius: 0.75vmin;
+    border-width: 0.15vmin;
+    box-shadow: 0 0.15vmin 0.15vmin 0 rgb(200, 200, 200);
+    font-size: 2.25vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .profile_settings_profile_input_select {
+    height: 5.25vmin;
+    border-radius: 0.75vmin;
+    border-width: 0.15vmin;
+    box-shadow: 0 0.15vmin 0.15vmin 0 rgb(200, 200, 200);
+    padding: 0 1.5vmin;
+    font-size: 2.25vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  /* ========================================== ERROR =========================================== */
+
+  .profile_settings_profile_error {
+    height: 3vmin;
+    min-width: 7.5vmin;
+    padding: 2.25vmin;
+    font-size: 2.25vmin;
+  }
+
+  .setting_profile_valid {
+    height: 3vmin;
+    font-size: 1.8vmin;
+    letter-spacing: 0.3vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   #profile_settings_profile_body {
     padding: 2vmin;
   }
 
-  .profile_settings_edit_profile_header {
-    padding: 1vmin;
-    margin: 3vmin 0 3vmin 0;
-    font-size: 3vmin;
-    color: rgb(170, 10, 10);
+  /* ========================================= HEADING ========================================== */
+
+  .profile_settings_profile_heading_body {
+    padding: 0.5vmin 2vmin;
+    margin: 2.5vmin 0;
   }
 
-  .profile_settings_edit_profile_input_field {
-    width: 47.5%;
-    display: flex;
-    align-items: center;
-    padding: 1.8vmin;
+  .profile_settings_profile_heading {
+    font-size: 2.5vmin;
   }
 
-  .profile_settings_edit_profile_input_field_header {
-    font-size: 2.2vmin;
+  /* ======================================= INPUT FIELD ======================================== */
+
+  .profile_settings_profile_input_field {
+    width: calc(100% / 3);
+    padding: 1vmin 1.5vmin;
   }
 
-  .profile_settings_edit_profile_input {
-    height: 4vmin;
-    font-size: 1.8vmin;
-    padding: 0 1.2vmin 0 1.2vmin;
-    border-radius: 0.7vmin;
+  /* ----------------------------------------- HEADING ------------------------------------------ */
+
+  .profile_settings_profile_input_heading_body {
+    width: 30%;
+  }
+
+  .profile_settings_profile_input_heading {
+    font-size: 2vmin;
+  }
+
+  /* ------------------------------------------ INPUT ------------------------------------------- */
+
+  .profile_settings_profile_input_text {
+    height: 3.5vmin;
+    padding: 0.5vmin;
+    border-radius: 0.5vmin;
+    border-width: 0.1vmin;
+    box-shadow: 0 0.1vmin 0.1vmin 0 rgb(200, 200, 200);
+    font-size: 1.5vmin;
+    letter-spacing: 0.1vmin;
+  }
+
+  .profile_settings_profile_input_textarea {
+    height: 10.5vmin;
+    padding: 0.5vmin;
+    border-radius: 0.5vmin;
+    border-width: 0.1vmin;
+    box-shadow: 0 0.1vmin 0.1vmin 0 rgb(200, 200, 200);
+    font-size: 1.5vmin;
+    letter-spacing: 0.1vmin;
+  }
+
+  .profile_settings_profile_input_select {
+    height: 3.5vmin;
+    border-radius: 0.5vmin;
+    border-width: 0.1vmin;
+    box-shadow: 0 0.1vmin 0.1vmin 0 rgb(200, 200, 200);
+    padding: 0 1vmin;
+    font-size: 1.5vmin;
+    letter-spacing: 0.1vmin;
+  }
+
+  /* ========================================== ERROR =========================================== */
+
+  .profile_settings_profile_error {
+    height: 2vmin;
+    min-width: 5vmin;
+    padding: 1.5vmin;
+    font-size: 1.5vmin;
+  }
+
+  .setting_profile_valid {
+    height: 2vmin;
+    font-size: 1.2vmin;
+    letter-spacing: 0.2vmin;
   }
 }
+
+/* ============================================================================================== */

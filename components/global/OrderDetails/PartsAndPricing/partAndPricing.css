@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 .order_details_order_options_header {
   height: 10vmin;
   width: 100%;
@@ -283,7 +285,161 @@
   color: rgb(50, 50, 50);
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  .order_details_order_options_header {
+    height: 7.5vmin;
+    padding: 0.75vmin 0 0 0;
+    font-size: 3.75vmin;
+  }
+
+  .order_details_part_details_file_name_body {
+    height: 10.5vmin;
+    border: 0.15vmin solid rgb(235, 235, 235);
+    padding: 1.5vmin 0.75vmin;
+  }
+
+  .order_details_part_details_file_name_content {
+    font-size: 2.625vmin;
+  }
+
+  .order_details_part_details_quantity_body {
+    height: 10.5vmin;
+    border: 0.15vmin solid rgb(235, 235, 235);
+    padding: 1.5vmin 0.75vmin;
+  }
+
+  .order_details_part_details_price_body {
+    height: 10.5vmin;
+    border: 0.15vmin solid rgb(235, 235, 235);
+    padding: 1.5vmin 0.75vmin;
+  }
+
+  .order_details_part_details_quantity_header {
+    height: 4.5vmin;
+    font-size: 2.625vmin;
+  }
+
+  .order_details_part_details_quantity_content {
+    height: 3.75vmin;
+    font-size: 2.625vmin;
+  }
+
+  .order_details_part_details_price_header {
+    height: 3.75vmin;
+    font-size: 2.625vmin;
+  }
+
+  .order_details_part_details_price_content {
+    height: 3.75vmin;
+    font-size: 2.625vmin;
+  }
+
+  /* ------------------------------- SUB-TOTAL/TOTAL -------------------------------- */
+
+  .order_details_order_total_body {
+    border-width: 0.15vmin;
+    padding: 0 3vmin;
+  }
+
+  .order_details_order_total_price_body {
+    border-width: 0.15vmin;
+    padding: 0 0.75vmin;
+  }
+
+  .order_details_order_total_header {
+    height: 5.25vmin;
+    padding: 0 0 0.3vmin 0;
+    font-size: 2.625vmin;
+  }
+
+  .order_details_order_total_price_header {
+    height: 5.25vmin;
+    padding: 0 0 0.3vmin 0;
+    font-size: 2.625vmin;
+  }
+
+  .order_details_order_total_content {
+    height: 5.25vmin;
+    padding: 0.3vmin 0 0 0;
+    font-size: 2.625vmin;
+  }
+
+  .order_details_order_total_price_content {
+    height: 5.25vmin;
+    padding: 0.3vmin 0 0 0;
+    font-size: 2.625vmin;
+  }
+
+  /* ----------------------------- PARTS PRICING HEADER ----------------------------- */
+
+  .order_details_pricing_type_body {
+    border-width: 0.15vmin;
+    padding: 0 3vmin;
+  }
+
+  .order_details_pricing_header {
+    height: 5.25vmin;
+    padding: 0 0 0.3vmin 0;
+    font-size: 2.625vmin;
+  }
+
+  .order_details_pricing_content {
+    height: 5.25vmin;
+    padding: 0.3vmin 0 0 0;
+    font-size: 2.625vmin;
+  }
+
+  .order_details_pricing_price_body {
+    border-width: 0.15vmin;
+    padding: 0 0.75vmin;
+  }
+
+  .order_details_pricing_header_body {
+    height: 7.5vmin;
+    border-width: 0.15vmin;
+    padding: 0 4.5vmin;
+  }
+
+  .order_details_pricing_header_text {
+    font-size: 3vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  /* ----------------------------------- DISCOUNT ----------------------------------- */
+
+  .order_details_pricing_discount_name_body {
+    border-width: 0.15vmin;
+    padding: 0 3vmin;
+  }
+
+  .order_details_pricing_discount_percent_body {
+    border-width: 0.15vmin;
+    padding: 0 0.75vmin;
+  }
+
+  .order_details_pricing_discount_value_body {
+    border-width: 0.15vmin;
+    padding: 0 0.75vmin;
+  }
+
+  .order_details_pricing_discount_header {
+    height: 5.25vmin;
+    padding: 0 0 0.3vmin 0;
+    font-size: 2.625vmin;
+  }
+
+  .order_details_pricing_discount_content {
+    height: 5.25vmin;
+    padding: 0.3vmin 0 0 0;
+    font-size: 2.625vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   .order_details_order_options_header {
     height: 5vmin;
     padding: 0.5vmin 0 0 0;
@@ -292,7 +448,6 @@
 
   .order_details_part_details_file_name_body {
     height: 7vmin;
-    width: 55%;
     border: 0.1vmin solid rgb(235, 235, 235);
     padding: 1vmin 0.5vmin 1vmin 0.5vmin;
   }
@@ -303,14 +458,12 @@
 
   .order_details_part_details_quantity_body {
     height: 7vmin;
-    width: 22.5%;
     border: 0.1vmin solid rgb(235, 235, 235);
     padding: 1vmin 0.5vmin 1vmin 0.5vmin;
   }
 
   .order_details_part_details_price_body {
     height: 7vmin;
-    width: 22.5%;
     border: 0.1vmin solid rgb(235, 235, 235);
     padding: 1vmin 0.5vmin 1vmin 0.5vmin;
   }
@@ -435,3 +588,5 @@
     font-size: 1.75vmin;
   }
 }
+
+/* ============================================================================================== */

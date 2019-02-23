@@ -1,0 +1,29 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+#order_details_refund_approved_declined_auto_complete_timer {
+  width: 100%;
+  text-align: center;
+  font-size: 4vmin;
+  font-weight: bold;
+  padding: 2vmin 0;
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #order_details_refund_approved_declined_auto_complete_timer {
+    font-size: 3vmin;
+    padding: 1.5vmin 0;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  #order_details_refund_approved_declined_auto_complete_timer {
+    font-size: 2vmin;
+    padding: 1vmin 0;
+  }
+}
+
+/* ============================================================================================== */

@@ -69,8 +69,13 @@ module.exports = passport => {
                 let newUserProfile = new UserProfile();
                 // Set user profile values
                 newUserProfile.ownerId = user._id;
+                // Basic Information
                 newUserProfile.firstName = req.body.firstName;
                 newUserProfile.lastName = req.body.lastName;
+                //
+                if (req.body.unit) {
+                  newUserProfile.shippingAddress.unit = req.body.unit;
+                }
                 newUserProfile.shippingAddress.streetNumber =
                   req.body.streetNumber;
                 newUserProfile.shippingAddress.streetName = req.body.streetName;

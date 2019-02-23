@@ -1,0 +1,72 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+#order_shipped_modal_footer_contents {
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.order_shipped_footer_buttons_body_close {
+  height: 0;
+  opacity: 0;
+  z-index: 0;
+}
+
+.order_shipped_footer_buttons_body_open {
+  height: 14vmin;
+  opacity: 1;
+  z-index: 1;
+}
+
+/* ------------------------------------ AUTO COMPLETE TIMER ------------------------------------- */
+
+#order_details_order_shipped_order_autocomplete_timer_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4vmin 0;
+}
+
+#order_details_order_shipped_order_autocomplete_timer_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 5vmin;
+  color: rgb(60, 60, 60);
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  .order_shipped_footer_buttons_body_open {
+    height: 10.5vmin;
+  }
+
+  /* ------------------------------------ AUTO COMPLETE TIMER ------------------------------------- */
+
+  #order_details_order_shipped_order_autocomplete_timer_body {
+    margin: 3vmin 0;
+  }
+
+  #order_details_order_shipped_order_autocomplete_timer_text {
+    font-size: 3.75vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  .order_shipped_footer_buttons_body_open {
+    height: 7vmin;
+  }
+
+  /* ------------------------------------ AUTO COMPLETE TIMER ------------------------------------- */
+
+  #order_details_order_shipped_order_autocomplete_timer_body {
+    margin: 2vmin 0;
+  }
+
+  #order_details_order_shipped_order_autocomplete_timer_text {
+    font-size: 2.5vmin;
+  }
+}
+
+/* ============================================================================================== */

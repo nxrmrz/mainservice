@@ -1,0 +1,104 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+#order_detail_global_options_body {
+  border-radius: 1vmin 1vmin 0 0;
+  background-color: rgb(255, 220, 220);
+}
+
+.order_detail_global_option_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4vmin 8vmin;
+}
+
+.order_detail_global_option_heading_body {
+  width: 100%;
+  display: flex;
+  padding: 1vmin;
+}
+
+.order_detail_global_option_heading {
+  font-family: "Chivo", sans-serif;
+  font-size: 4vmin;
+  letter-spacing: 0.4vmin;
+  color: rgb(120, 120, 120);
+}
+
+.order_detail_global_option_content_body {
+  width: 100%;
+  display: flex;
+  padding: 1vmin;
+}
+
+.order_detail_global_option_content {
+  font-family: "Open Sans", sans-serif;
+  font-size: 6vmin;
+  letter-spacing: 0.2vmin;
+  font-weight: bold;
+  color: rgb(60, 60, 60);
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #order_detail_global_options_body {
+    border-radius: 0.75vmin 0.75vmin 0 0;
+  }
+
+  .order_detail_global_option_body {
+    width: 75%;
+    padding: 3vmin 6vmin;
+  }
+
+  .order_detail_global_option_heading_body {
+    padding: 0.75vmin;
+  }
+
+  .order_detail_global_option_heading {
+    font-size: 3vmin;
+    letter-spacing: 0.3vmin;
+  }
+
+  .order_detail_global_option_content_body {
+    padding: 0.75vmin;
+  }
+
+  .order_detail_global_option_content {
+    font-size: 4.5vmin;
+    letter-spacing: 0.15vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  #order_detail_global_options_body {
+    border-radius: 0.5vmin 0.5vmin 0 0;
+  }
+
+  .order_detail_global_option_body {
+    width: 50%;
+    padding: 2vmin 4vmin;
+  }
+
+  .order_detail_global_option_heading_body {
+    padding: 0.5vmin;
+  }
+
+  .order_detail_global_option_heading {
+    font-size: 2vmin;
+    letter-spacing: 0.2vmin;
+  }
+
+  .order_detail_global_option_content_body {
+    padding: 0.5vmin;
+  }
+
+  .order_detail_global_option_content {
+    font-size: 3vmin;
+    letter-spacing: 0.1vmin;
+  }
+}
+
+/* ============================================================================================== */

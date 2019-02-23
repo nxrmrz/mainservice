@@ -1,4 +1,4 @@
-/* ========================================= MOBILE CSS ========================================= */
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
 
 /* ------------------------------------------ DISCOUNT ------------------------------------------ */
 
@@ -214,19 +214,118 @@
   color: rgb(245, 245, 245);
 }
 
-/* ======================================== DESKTOP CSS ========================================= */
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
 
-@media only screen and (min-width: 600px) {
-  /* ------------------------------------------ DISCOUNT ------------------------------------------ */
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  /* --------------------------------- ADD DISCOUNT: INPUT FIELD ---------------------------------- */
 
-  #admin_profile_orders_prints_discount_body {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  #admin_profile_orders_prints_discount_add_discount_body {
+    padding: 3vmin;
   }
 
+  .admin_profile_orders_prints_discount_add_discount_input_field_body {
+    width: calc(100% / 3);
+  }
+
+  .admin_profile_orders_prints_discount_add_discount_date_input_field_body {
+    width: calc((100% / 3) * 2);
+    padding: 0 7.5vmin;
+  }
+
+  .admin_profile_orders_prints_discount_add_discount_input_field_header_body {
+    padding: 0.75vmin 3.75vmin;
+  }
+
+  .admin_profile_orders_prints_discount_add_discount_input_field_header_text {
+    font-size: 1.95vmin;
+  }
+
+  .admin_profile_orders_prints_discount_add_discount_input_body {
+    padding: 0.75vmin 1.5vmin;
+  }
+
+  .admin_profile_orders_prints_discount_add_discount_input_text {
+    height: 4.5vmin;
+    padding: 0 1.5vmin;
+    border-radius: 0.75vmin;
+    border-width: 0.15vmin;
+    font-size: 2.25vmin;
+  }
+
+  .admin_profile_orders_prints_discount_add_discount_input_select {
+    height: 4.5vmin;
+    padding: 0 1.5vmin;
+    border-radius: 0.75vmin;
+    border-width: 0.15vmin;
+    font-size: 2.25vmin;
+  }
+
+  /* ------------------------------------ ADD DISCOUNT: BUTTON ------------------------------------ */
+
+  #admin_profile_orders_prints_discount_add_discount_button_body {
+    padding: 1.5vmin 0;
+  }
+
+  #admin_profile_orders_prints_discount_add_discount_button {
+    height: 6vmin;
+    padding: 0 3vmin;
+    border-radius: 3vmin;
+    box-shadow: 0 0.375vmin 0.75vmin 0 rgb(180, 180, 180);
+  }
+
+  #admin_profile_orders_prints_discount_add_discount_button_text {
+    font-size: 2.55vmin;
+  }
+
+  /* --------------------------------------- DISCOUNT LIST ---------------------------------------- */
+
+  #admin_profile_orders_prints_discount_discount_list_body {
+    max-height: 75vmin;
+    box-shadow: 0vmin 0vmin 1.5vmin 0vmin rgb(200, 200, 200);
+  }
+
+  .admin_profile_orders_prints_discount_discount_body {
+    border-width: 0.375vmin;
+  }
+
+  .admin_profile_orders_prints_discount_discount_field_body {
+    width: calc((100% / 3) * 2);
+  }
+
+  .admin_profile_orders_prints_discount_discount_field_header_body {
+    height: 7.5vmin;
+    padding: 0 2.25vmin;
+    border-width: 0.225vmin;
+  }
+
+  .admin_profile_orders_prints_discount_discount_input_body {
+    height: 7.5vmin;
+    padding: 0 2.25vmin;
+    border-width: 0.225vmin;
+  }
+
+  /* ----------------------------------- DELETE DISCOUNT BUTTON ----------------------------------- */
+
+  .admin_profile_orders_prints_discount_delete_discount_button_body {
+    padding: 1.5vmin 0;
+    border-width: 0.225vmin;
+  }
+
+  .admin_profile_orders_prints_discount_delete_discount_button {
+    height: 6vmin;
+    padding: 0 3vmin;
+    border-radius: 3vmin;
+    box-shadow: 0 0.375vmin 0.75vmin 0 rgb(180, 180, 180);
+  }
+
+  .admin_profile_orders_prints_discount_delete_discount_button_text {
+    font-size: 2.55vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   /* --------------------------------- ADD DISCOUNT: INPUT FIELD ---------------------------------- */
 
   #admin_profile_orders_prints_discount_add_discount_body {
@@ -243,7 +342,6 @@
   }
 
   .admin_profile_orders_prints_discount_add_discount_input_field_header_body {
-    width: 100%;
     padding: 0.5vmin 2.5vmin;
   }
 

@@ -1,4 +1,24 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 .order_new_print_parts_part_upload_model_input_file {
   font-family: "Chivo", sans-serif;
   padding: 2vmin 0 2vmin 2vmin;
 }
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  .order_new_print_parts_part_upload_model_input_file {
+    padding: 1.5vmin 0 1.5vmin 1.5vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  .order_new_print_parts_part_upload_model_input_file {
+    padding: 1vmin 0 1vmin 1vmin;
+  }
+}
+
+/* ============================================================================================== */

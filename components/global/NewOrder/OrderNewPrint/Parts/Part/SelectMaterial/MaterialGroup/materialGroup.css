@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 .order_new_print_parts_part_material_group_selection_body {
   height: 8vmin;
   width: 20vmin;
@@ -8,36 +10,58 @@
   border-style: solid;
   border-width: 0.5vmin;
   border-radius: 1vmin;
-  border-color: rgba(170, 10, 10, 1);
-  box-shadow: 0 0 1.5vmin 0.1vmin rgba(100, 100, 100, 0.4);
+  border-color: rgb(170, 10, 10);
+  box-shadow: 0 0 1.5vmin 0.1vmin rgb(100, 100, 100);
 }
 
 .order_new_print_parts_part_material_group_selection_text {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
-  color: rgba(170, 10, 10, 1);
+  color: rgb(170, 10, 10);
   font-size: 3.5vmin;
 }
 
 .order_new_print_parts_part_material_group_selection_body_selected {
-  background-color: rgba(170, 10, 10, 1);
-  box-shadow: 0 0 0 0 rgba(100, 100, 100, 0.5);
+  background-color: rgb(170, 10, 10);
+  box-shadow: 0 0 0 0 rgb(100, 100, 100);
 }
 
 .order_new_print_parts_part_material_group_selection_text_selected {
   color: rgb(245, 245, 245);
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
   .order_new_print_parts_part_material_group_selection_body {
-    height: 4.5vmin;
-    width: 12vmin;
-    margin: 2.2vmin;
-    border-width: 0.2vmin;
-    border-radius: 0.6vmin;
+    height: 6vmin;
+    width: 15vmin;
+    margin: 3vmin;
+    border-width: 0.375vmin;
+    border-radius: 0.75vmin;
+    box-shadow: 0 0 1.125vmin 0.075vmin rgb(100, 100, 100);
   }
 
   .order_new_print_parts_part_material_group_selection_text {
-    font-size: 2vmin;
+    font-size: 2.625vmin;
   }
 }
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  .order_new_print_parts_part_material_group_selection_body {
+    height: 4vmin;
+    width: 10vmin;
+    margin: 2vmin;
+    border-width: 0.25vmin;
+    border-radius: 0.5vmin;
+    box-shadow: 0 0 0.75vmin 0.05vmin rgb(100, 100, 100);
+  }
+
+  .order_new_print_parts_part_material_group_selection_text {
+    font-size: 1.75vmin;
+  }
+}
+
+/* ============================================================================================== */

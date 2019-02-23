@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 #services_body {
   width: 100%;
   position: relative;
@@ -363,7 +365,198 @@
   text-decoration: none;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #services_body {
+    top: 7.5vmin;
+  }
+
+  #services_navigation_tabs {
+    height: 7.5vmin;
+  }
+
+  .services_navigation_tab {
+    width: 20%;
+  }
+
+  .services_navigation_tab_text {
+    font-size: 2.25vmin;
+  }
+
+  .services_navigation_tab_text_selected {
+    font-size: 2.4vmin;
+  }
+
+  .services_contents_body {
+    padding: 7.5vmin 0 0 0;
+  }
+
+  .services_header_body {
+    padding: 9vmin 6vmin;
+  }
+
+  .services_header_text {
+    font-size: 5.25vmin;
+    letter-spacing: 0.225vmin;
+  }
+
+  .services_opening_description_body {
+    padding: 6vmin;
+  }
+
+  .services_opening_description_text {
+    font-size: 3vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .services_content_body_one {
+    padding: 7.5vmin 7.5vmin 7.5vmin 10vmin;
+  }
+
+  .service_header_body_one {
+    width: 80%;
+    padding: 4.5vmin;
+  }
+
+  .service_header_text_one {
+    font-size: 4.2vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .service_content_body_one {
+    width: 80%;
+    padding: 4.5vmin 9vmin 4.5vmin 4.5vmin;
+  }
+
+  .service_content_text_one {
+    font-size: 2.7vmin;
+    letter-spacing: 0.075vmin;
+  }
+
+  .services_content_body_two {
+    padding: 7.5vmin 10vmin 7.5vmin 7.5vmin;
+  }
+
+  .service_header_body_two {
+    width: 80%;
+    padding: 4.5vmin;
+  }
+
+  .service_header_text_two {
+    font-size: 4.2vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .service_content_body_two {
+    width: 80%;
+    padding: 4.5vmin 4.5vmin 4.5vmin 9vmin;
+  }
+
+  .service_content_text_two {
+    font-size: 2.7vmin;
+    letter-spacing: 0.075vmin;
+  }
+
+  .services_button_body_one {
+    width: 80%;
+    padding: 4.5vmin 9vmin 4.5vmin 4.5vmin;
+  }
+
+  .services_button_body_two {
+    width: 80%;
+    padding: 4.5vmin 4.5vmin 4.5vmin 9vmin;
+  }
+
+  .services_button {
+    height: 7.5vmin;
+    width: 30vmin;
+    border-radius: 0.75vmin;
+    padding: 1.5vmin;
+    box-shadow: 0 0.375vmin 0.75vmin 0 rgb(180, 180, 180);
+  }
+
+  .services_button_text {
+    font-size: 2.7vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .service_steps_body_one {
+    width: 80%;
+    padding: 2.25vmin 9vmin 2.25vmin 4.5vmin;
+  }
+
+  .service_step_body_one {
+    padding: 1.5vmin 0;
+  }
+
+  .service_step_number_text_one {
+    font-size: 2.7vmin;
+  }
+
+  .service_step_content_text_one {
+    font-size: 2.7vmin;
+  }
+
+  .services_steps_button_body {
+    padding: 3vmin 0;
+  }
+
+  .services_steps_button {
+    padding: 1.5vmin 3vmin;
+    border-radius: 0.75vmin;
+    box-shadow: 0 0.375vmin 0.75vmin 0 rgb(180, 180, 180);
+  }
+
+  .services_steps_button_text {
+    font-size: 2.25vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .service_sub_content_body_one {
+    width: 80%;
+    padding: 3vmin;
+  }
+
+  .service_sub_header_body_one {
+    padding: 3vmin 6vmin 3vmin 3vmin;
+  }
+
+  .service_sub_header_text_one {
+    font-size: 3vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .service_sub_description_body_one {
+    padding: 3vmin 6vmin;
+  }
+
+  .service_sub_description_text_one {
+    font-size: 2.4vmin;
+    letter-spacing: 0.075vmin;
+  }
+
+  .services_sub_button_body_one {
+    padding: 3vmin 6vmin 3vmin 3vmin;
+  }
+
+  .services_sub_button {
+    height: 7.5vmin;
+    width: 30vmin;
+    border-radius: 0.75vmin;
+    padding: 1.5vmin;
+    box-shadow: 0 0.375vmin 0.75vmin 0 rgb(180, 180, 180);
+  }
+
+  .services_sub_button_text {
+    font-size: 2.7vmin;
+    letter-spacing: 0.15vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   #services_body {
     top: 5vmin;
   }
@@ -557,3 +750,5 @@
     letter-spacing: 0.1vmin;
   }
 }
+
+/* ============================================================================================== */

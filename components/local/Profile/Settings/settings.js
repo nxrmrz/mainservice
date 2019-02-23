@@ -1,27 +1,32 @@
+/* ======================================= INITIALISATION ======================================= */
+
 const profileSettingsInit = () => {
   document.querySelector("#profile_contents_body").innerHTML = "";
-  selectedProfileSettingsTabName = undefined;
-  constructProfileSettingsStructure();
-  constructProfileSettingsComponentObjectArray();
-  constructProfileSettingsTabs(profileSettingsComponentObjectArray);
+  selectedProfileSettingsTabId = undefined;
+  profileSettingsStructure();
+  profileSettingsTabs();
+  profileSettingsProfileInit();
+  selectProfileSettingsTab("profile");
 };
 
-// Create the structure for profile settings
-const constructProfileSettingsStructure = () => {
-  // HTML
-  const profileSettingsStructureHTML =
+/* ========================================= STRUCTURE ========================================== */
+
+const profileSettingsStructure = () => {
+  /* --------------------------------------- CREATE HTML ---------------------------------------- */
+  const html =
     "<div id='profile_settings_body'>" +
-    "<div id='profile_settings_tabs_body'></div>" +
-    "<div id='profile_settings_components_body'></div>" +
+    "<div id='profile_settings_tabs_body' class='profile_tabs'></div>" +
+    "<div id='profile_settings_contents'></div>" +
     "</div>";
-  // Insert HTML
-  document.querySelector(
-    "#profile_contents_body"
-  ).innerHTML = profileSettingsStructureHTML;
+  /* --------------------------------------- INSERT HTML ---------------------------------------- */
+  document.querySelector("#profile_contents_body").innerHTML = html;
 };
 
-// Class object for profile settings components
-class profilSettingsComponentObject {
+/* ============================================ TABS ============================================ */
+
+/* ------------------------------------- OBJECT CONSTRUCTOR ------------------------------------- */
+
+class TabObject {
   constructor(id, name, method) {
     this.id = id;
     this.name = name;
@@ -29,73 +34,108 @@ class profilSettingsComponentObject {
   }
 }
 
-// Construct the profile: settings array of component objects
-let profileSettingsComponentObjectArray;
-
-const constructProfileSettingsComponentObjectArray = () => {
-  constructProfileSettingsProfileObject();
-
-  profileSettingsComponentObjectArray = [profileSettingsProfileObject];
-};
-
-// Construct the profile: settings tabs
-const constructProfileSettingsTabs = objArr => {
-  objArr.forEach(obj => {
-    const profileSettingsTabHTML =
-      "<div id='" +
-      obj.id +
-      "_tab_body' class='profile_settings_tab_body'>" +
-      "<div id='" +
-      obj.id +
-      "_tab_text' class='profile_settings_tab_text'>" +
-      obj.name +
+const profileSettingsTabs = () => {
+  /* ----------------------------- CREATE THE OBJECT ARRAY FOR TABS ----------------------------- */
+  // PROFILE
+  const profileTab = new TabObject(
+    "profile",
+    "Profile",
+    profileSettingsProfileInit
+  );
+  // TABS ARRAY
+  const TabsArray = [profileTab];
+  /* ---------------------------------------- TAB WIDTH ----------------------------------------- */
+  // MOBILE
+  let mobileWidth;
+  if (TabsArray.length < 3) {
+    mobileWidth = 100 / TabsArray.length;
+  } else {
+    mobileWidth = 100 / 3;
+  }
+  // DESKTOP
+  let desktopWidth;
+  if (TabsArray.length < 6) {
+    desktopWidth = 100 / TabsArray.length;
+  } else {
+    desktopWidth = 100 / 6;
+  }
+  /* ----------------------------------- CREATE THE HTML TABS ----------------------------------- */
+  for (let i = 0; i < TabsArray.length; i++) {
+    // CREATE HTML
+    const html =
+      "<div id='profile_settings_" +
+      TabsArray[i].id +
+      "_tab_body' class='profile_tab_body'>" +
+      "<div id='profile_settings_" +
+      TabsArray[i].id +
+      "_tab' class='profile_tab'>" +
+      TabsArray[i].name +
       "</div>" +
       "</div>";
-
+    // INSERT HTML
     document
       .querySelector("#profile_settings_tabs_body")
-      .insertAdjacentHTML("beforeend", profileSettingsTabHTML);
-
+      .insertAdjacentHTML("beforeend", html);
+    // ADD EVENT LISTENER
     document
-      .querySelector("#" + obj.id + "_tab_body")
+      .querySelector("#profile_settings_" + TabsArray[i].id + "_tab_body")
       .addEventListener("click", () => {
-        selectProfileSettingsTab(obj);
+        document.querySelector("#profile_settings_components_body").innerHTML =
+          "";
+        TabsArray[i].method();
+        selectProfileSettingsTab(TabsArray[i].id);
       });
-  });
-};
+    /* --------------------------------------- WIDTH CSS ---------------------------------------- */
+    screensize = window.matchMedia("(min-width: 600px)");
 
-// Select tab
-let selectedProfileSettingsTabName;
+    const resize = screensize => {
+      if (screensize.matches) {
+        document.querySelector(
+          "#profile_settings_" + TabsArray[i].id + "_tab_body"
+        ).style.width = desktopWidth + "%";
+      } else {
+        document.querySelector(
+          "#profile_settings_" + TabsArray[i].id + "_tab_body"
+        ).style.width = mobileWidth + "%";
+      }
+    };
 
-const selectProfileSettingsTab = obj => {
-  // Initial Checks
-  if (selectedProfileSettingsTabName) {
-    if (selectedProfileSettingsTabName == obj.name) {
-      return;
-    }
-    // Deselect if theres any selected tabs
-    deselectProfileSettingsTab();
+    resize(screensize);
+    screensize.addListener(resize);
   }
-  // Change CSS
-  document
-    .querySelector("#" + obj.id + "_tab_body")
-    .classList.add("profile_settings_tab_body_selected");
-  document
-    .querySelector("#" + obj.id + "_tab_text")
-    .classList.add("profile_settings_tab_text_selected");
-  // Execute method
-  obj.method();
-  // Update selected tab
-  selectedProfileSettingsTabName = obj.name;
 };
 
-// Deselect Tab
-const deselectProfileSettingsTab = () => {
-  // Change CSS
+/* ================================ SELECT PROFILE SETTINGS TAB ================================= */
+
+/* ------------------------------- SELECTED PROFILE SETTINGS TAB -------------------------------- */
+let selectedProfileSettingsTabId;
+
+const selectProfileSettingsTab = id => {
+  /* -------------------------------------- PRE-VALIDATION -------------------------------------- */
+  if (selectedProfileSettingsTabId) {
+    deselectProfileSettingsTab(selectedProfileSettingsTabId);
+  }
+  /* -------------------------------------- UPDATE CLASSES -------------------------------------- */
   document
-    .querySelector("#" + obj.id + "_tab_body")
-    .classList.remove("profile_settings_tab_body_selected");
+    .querySelector("#profile_settings_" + id + "_tab_body")
+    .classList.toggle("profile_tab_body_selected");
   document
-    .querySelector("#" + obj.id + "_tab_text")
-    .classList.remove("profile_settings_tab_text_selected");
+    .querySelector("#profile_settings_" + id + "_tab")
+    .classList.toggle("profile_tab_selected");
+  /* ----------------------------------- UPDATE SELECTED TAB ------------------------------------ */
+  selectedProfileSettingsTabId = id;
 };
+
+/* =============================== DESELECT PROFILE SETTINGS TAB ================================ */
+
+const deselectProfileSettingsTab = id => {
+  /* -------------------------------------- UPDATE CLASSES -------------------------------------- */
+  document
+    .querySelector("#profile_settings_" + id + "_tab_body")
+    .classList.toggle("profile_tab_body_selected");
+  document
+    .querySelector("#profile_settings_" + id + "_tab")
+    .classList.toggle("profile_tab_selected");
+};
+
+/* ============================================================================================== */
