@@ -22,6 +22,16 @@
   color: rgb(120, 120, 120);
 }
 
+/* ===================================== SAMPLE CALCULATION ===================================== */
+
+.become_a_partner_sample_calculation_body {
+  padding: 4vmin;
+}
+
+.become_a_partner_sample_calculation_heading {
+  font-family: "Russo One", sans-serif;
+}
+
 /* ======================================= TEMPORARY CSS ======================================== */
 
 #temporary_partnership_button_handler_modal_body {
