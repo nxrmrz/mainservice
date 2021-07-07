@@ -4,18 +4,7 @@ const populateDateMonthYearSelectFields = (dateId, monthId, yearId) => {
   const date = document.getElementById(dateId);
   const month = document.getElementById(monthId);
   const year = document.getElementById(yearId);
-  date.insertAdjacentHTML(
-    "beforeend",
-    '<option id="day_empty" value="empty"></option>'
-  );
-  month.insertAdjacentHTML(
-    "beforeend",
-    '<option id="month_empty" value="empty"></option>'
-  );
-  year.insertAdjacentHTML(
-    "beforeend",
-    '<option id="year_empty" value="empty"></option>'
-  );
+
   for (let i = 1; i <= 31; i++) {
     dayOptionHTML =
       '<option id="day_' + i + '" value="' + i + '">' + i + "</option>";
@@ -247,29 +236,28 @@ const dayDateMonthYearFormat = defaultDate => {
 
 const isDateWithinRange = (date, startDate, endDate) => {
   const dateObject = dateFormatter(date);
-  const momentDate = moment([
-    Number(dateObject.year),
-    Number(dateObject.month[1]),
-    Number(dateObject.date)
-  ]);
+  const momentDate = moment(
+    String(dateObject.year) +
+      String(dateObject.month[1]) +
+      String(dateObject.date)
+  );
   const startDateObject = dateFormatter(startDate);
-  const momentStartDate = moment([
-    Number(startDateObject.year),
-    Number(startDateObject.month[1]),
-    Number(startDateObject.date)
-  ]);
+  const momentStartDate = moment(
+    String(startDateObject.year) +
+      String(startDateObject.month[1]) +
+      String(startDateObject.date)
+  );
   const endDateObject = dateFormatter(endDate);
-  const momentEndDate = moment([
-    Number(endDateObject.year),
-    Number(endDateObject.month[1]),
-    Number(endDateObject.date)
-  ]);
+  const momentEndDate = moment(
+    String(endDateObject.year) +
+      String(endDateObject.month[1]) +
+      String(endDateObject.date)
+  );
 
   // Positive means date is over the start date
   const startDateDifference = momentDate.diff(momentStartDate, "days");
   // Positive means date is under the end date
   const endDateDifference = momentEndDate.diff(momentDate, "days");
-
   if (startDateDifference >= 0 && endDateDifference >= 0) {
     return true;
   } else {
@@ -311,6 +299,134 @@ const getLastMonthStartAndEndDates = promise => {
       endDate: endDateOfPreviousMonth
     };
   }
+};
+
+/* =================================== DATE DIFFERENCE OBJECT =================================== */
+
+const momentDateDifference = (dateOne, dateTwo) => {
+  const totalRemainingSeconds = dateTwo.diff(dateOne, "seconds");
+  const remainingDays = Math.floor(totalRemainingSeconds / (24 * 60 * 60));
+  const remainingHours = Math.floor(
+    (totalRemainingSeconds % (24 * 60 * 60)) / (60 * 60)
+  );
+  const remainingMinutes = Math.floor(
+    ((totalRemainingSeconds % (24 * 60 * 60)) % (60 * 60)) / 60
+  );
+  const remainingSeconds =
+    ((totalRemainingSeconds % (24 * 60 * 60)) % (60 * 60)) % 60;
+
+  return {
+    days: remainingDays,
+    hours: remainingHours,
+    minutes: remainingMinutes,
+    seconds: remainingSeconds
+  };
+};
+
+/* ================================ POPULATE DATE SELECT INPUTS ================================= */
+
+const populateDateSelectInputs = (
+  dateId,
+  monthId,
+  yearId,
+  minusYear,
+  plusYear
+) => {
+  const currentDate = dateFormatter(new Date());
+
+  const dateElement = document.getElementById(dateId);
+  const monthElement = document.getElementById(monthId);
+  const yearElement = document.getElementById(yearId);
+
+  let dateArray = [];
+  const monthArray = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  let yearArray = [];
+
+  for (i = 0; i < 31; i++) {
+    dateArray[i] = i + 1;
+  }
+
+  for (
+    i = Number(currentDate.year) - minusYear;
+    i <= Number(currentDate.year) + plusYear;
+    i++
+  ) {
+    yearArray[i] = i;
+  }
+
+  dateArray.forEach(element => {
+    const optionHTML = "<option value=" + element + ">" + element + "</option>";
+
+    dateElement.insertAdjacentHTML("beforeend", optionHTML);
+  });
+
+  monthArray.forEach(element => {
+    const optionHTML = "<option value=" + element + ">" + element + "</option>";
+
+    monthElement.insertAdjacentHTML("beforeend", optionHTML);
+  });
+
+  yearArray.forEach(element => {
+    const optionHTML = "<option value=" + element + ">" + element + "</option>";
+
+    yearElement.insertAdjacentHTML("beforeend", optionHTML);
+  });
+};
+
+/* ================================ POPULATE TIME SELECT INPUTS ================================= */
+
+const populateTimeSelectInputs = (
+  hourId,
+  minuteId,
+  periodId,
+  minuteIncrement
+) => {
+  const hourElement = document.getElementById(hourId);
+  const minuteElement = document.getElementById(minuteId);
+  const periodElement = document.getElementById(periodId);
+
+  let hourArray = [];
+  let minuteArray = [];
+  const periodArray = ["AM", "PM"];
+
+  for (i = 0; i < 12; i++) {
+    hourArray[i] = i + 1;
+  }
+
+  for (i = 0; i < 60 / minuteIncrement; i++) {
+    minuteArray[i] = i * minuteIncrement;
+  }
+
+  hourArray.forEach(element => {
+    const optionHTML = "<option value=" + element + ">" + element + "</option>";
+
+    hourElement.insertAdjacentHTML("beforeend", optionHTML);
+  });
+
+  minuteArray.forEach(element => {
+    const optionHTML = "<option value=" + element + ">" + element + "</option>";
+
+    minuteElement.insertAdjacentHTML("beforeend", optionHTML);
+  });
+
+  periodArray.forEach(element => {
+    const optionHTML = "<option value=" + element + ">" + element + "</option>";
+
+    periodElement.insertAdjacentHTML("beforeend", optionHTML);
+  });
 };
 
 /* ============================================================================================== */

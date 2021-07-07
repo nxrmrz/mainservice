@@ -1,0 +1,46 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+#profile_dashboard_heading_body {
+  display: flex;
+  align-items: center;
+  padding: 8vmin 4vmin;
+}
+
+#profile_dashboard_heading_text {
+  min-height: 24vmin;
+  width: 100%;
+  font-family: "Russo One", sans-serif;
+  font-size: 8vmin;
+  letter-spacing: 0.2vmin;
+  color: rgb(60, 60, 60);
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #profile_dashboard_heading_body {
+    padding: 8vmin;
+  }
+
+  #profile_dashboard_heading_text {
+    min-height: 18vmin;
+    font-size: 7.5vmin;
+    letter-spacing: 0.15vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  #profile_dashboard_heading_body {
+    padding: 8vmin;
+  }
+
+  #profile_dashboard_heading_text {
+    min-height: 12vmin;
+    font-size: 5vmin;
+    letter-spacing: 0.1vmin;
+  }
+}
+
+/* ============================================================================================== */

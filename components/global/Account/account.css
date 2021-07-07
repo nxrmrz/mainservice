@@ -1,17 +1,25 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+/* ========================================= MAIN BODY ========================================== */
+
 .modal_account_form_body {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
+
+/* ============================================ FORM ============================================ */
 
 .modal_account_form {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 4vmin;
+  padding: 2vmin;
 }
+
+/* ---------------------------------------- INPUT FIELD ----------------------------------------- */
 
 .modal_account_input_field {
   width: 100%;
@@ -19,64 +27,93 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  padding: 4vmin;
 }
+
+/* ------------------------------------------ HEADING ------------------------------------------- */
 
 .modal_account_input_field_header {
   width: 30%;
   display: flex;
+  justify-content: flex-end;
   font-family: "Chivo", sans-serif;
-  margin: 1vmin 0 1vmin 0;
-  font-weight: 700;
-  color: rgb(240, 240, 240);
   font-size: 3.5vmin;
+  font-weight: bold;
+  letter-spacing: 0.3vmin;
+  color: rgb(100, 10, 10);
 }
+
+/* ------------------------------------------- INPUTS ------------------------------------------- */
 
 .modal_account_input_body {
   width: 65%;
   display: flex;
   justify-content: space-between;
+  border-radius: 1vmin;
+  box-shadow: 0 0.2vmin 0.2vmin 0 rgb(200, 200, 200);
 }
+
+/* INPUT */
 
 .modal_account_input {
-  height: 7vmin;
   width: 100%;
-  display: flex;
-  align-items: center;
-  margin: 2.5vmin 0 2.5vmin 0;
-  padding: 1vmin 3vmin 1vmin 3vmin;
-  border-radius: 2vmin;
-  outline: none;
+  padding: 1vmin;
+  border-style: solid;
+  border-radius: 1vmin;
+  border-width: 0.2vmin;
+  border-color: rgb(200, 200, 200);
+  box-sizing: border-box;
+  box-shadow: 0 0 0 1000px rgb(255, 250, 250) inset;
+  outline: 0;
+  -webkit-transition: 300ms all ease;
   font-family: "Open Sans", sans-serif;
-  font-size: 3.5vmin;
-  font-weight: 700;
-  color: rgb(50, 50, 50);
-  background-color: rgb(240, 240, 240);
+  font-size: 3vmin;
+  letter-spacing: 0.2vmin;
+  color: rgb(60, 60, 60);
 }
 
+.modal_account_input:focus {
+  box-shadow: 0 0 0 1000px rgb(255, 240, 240) inset;
+  border-color: rgb(255, 160, 160);
+}
+
+/* ------------------------------------------ BUTTONS ------------------------------------------- */
+
 .form_submit_button_body {
-  height: 10vmin;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 4vmin;
 }
 
 .form_submit_button {
   height: 8vmin;
-  border-radius: 1vmin;
-  border-color: rgb(255, 75, 90);
-  padding: 0 8vmin 0 8vmin;
-  margin: 4vmin 0 0 0;
-  font-size: 4vmin;
-  font-family: "Chivo", sans-serif;
-  font-weight: 700;
-  letter-spacing: 1vmin;
-  color: rgb(240, 240, 240);
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding: 0 8vmin;
+  border-width: 0;
+  border-radius: 4vmin;
+  outline: 0;
   background-color: rgb(255, 75, 90);
+  box-shadow: 0 0.5vmin 1vmin 0 rgb(180, 180, 180);
+  font-family: "Chivo", sans-serif;
+  font-size: 3.6vmin;
+  font-weight: bold;
+  letter-spacing: 0.6vmin;
+  color: rgb(240, 240, 240);
 }
+
+.form_submit_button:hover {
+  background-color: rgb(255, 100, 115);
+}
+
+.form_submit_button:active {
+  background-color: rgb(230, 50, 65);
+  box-shadow: 0 0 0 rgb(180, 180, 180);
+}
+
+/* ------------------------------------------- FOOTER ------------------------------------------- */
 
 .modal_account_statement_body {
   display: flex;
@@ -98,41 +135,130 @@
   color: rgb(50, 50, 50);
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  /* ============================================ FORM ============================================ */
+
   .modal_account_form {
+    padding: 1.5vmin;
+  }
+
+  /* ---------------------------------------- INPUT FIELD ----------------------------------------- */
+
+  .modal_account_input_field {
+    padding: 3vmin;
+  }
+
+  /* ------------------------------------------ HEADING ------------------------------------------- */
+
+  .modal_account_input_field_header {
+    width: 25%;
+    font-size: 2.625vmin;
+    letter-spacing: 0.225vmin;
+  }
+
+  /* ------------------------------------------- INPUTS ------------------------------------------- */
+
+  .modal_account_input_body {
+    width: 70%;
+    border-radius: 0.75vmin;
+    box-shadow: 0 0.15vmin 0.15vmin 0 rgb(200, 200, 200);
+  }
+
+  /* INPUT */
+
+  .modal_account_input {
+    padding: 0.75vmin;
+    border-radius: 0.75vmin;
+    border-width: 0.15vmin;
+    font-size: 2.25vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  /* ------------------------------------------ BUTTONS ------------------------------------------- */
+
+  .form_submit_button_body {
+    padding: 3vmin;
+  }
+
+  .form_submit_button {
+    height: 6vmin;
+    padding: 0 6vmin;
+    border-radius: 3vmin;
+    box-shadow: 0 0.375vmin 0.75vmin 0 rgb(180, 180, 180);
+    font-size: 2.7vmin;
+    letter-spacing: 0.45vmin;
+  }
+
+  /* ------------------------------------------- FOOTER ------------------------------------------- */
+
+  .modal_account_statement_text {
+    font-size: 2.625vmin;
+  }
+
+  .modal_account_statement_text_link {
+    margin: 0 0.75vmin 0 0;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  /* =========================================== FORM =========================================== */
+
+  .modal_account_form {
+    padding: 1vmin;
+  }
+
+  /* --------------------------------------- INPUT FIELD ---------------------------------------- */
+
+  .modal_account_input_field {
     padding: 2vmin;
   }
 
+  /* ----------------------------------------- HEADING ------------------------------------------ */
+
   .modal_account_input_field_header {
     width: 20%;
-    margin: 0.5vmin 0 0.5vmin 0;
     font-size: 1.75vmin;
+    letter-spacing: 0.15vmin;
   }
+
+  /* ------------------------------------------ INPUTS ------------------------------------------ */
 
   .modal_account_input_body {
     width: 75%;
+    border-radius: 0.5vmin;
+    box-shadow: 0 0.1vmin 0.1vmin 0 rgb(200, 200, 200);
   }
+
+  /* INPUT */
 
   .modal_account_input {
-    height: 3.5vmin;
-    margin: 1.25vmin 0 1.25vmin 0;
-    padding: 0.5vmin 1.5vmin 0.5vmin 1.5vmin;
-    border-radius: 1vmin;
-    font-size: 1.75vmin;
+    padding: 0.5vmin;
+    border-radius: 0.5vmin;
+    border-width: 0.1vmin;
+    font-size: 1.5vmin;
+    letter-spacing: 0.1vmin;
   }
 
+  /* ----------------------------------------- BUTTONS ------------------------------------------ */
+
   .form_submit_button_body {
-    height: 5vmin;
+    padding: 2vmin;
   }
 
   .form_submit_button {
     height: 4vmin;
-    border-radius: 0.5vmin;
-    padding: 0 4vmin 0 4vmin;
-    margin: 2vmin 0 0 0;
-    font-size: 2vmin;
-    letter-spacing: 0.5vmin;
+    padding: 0 4vmin;
+    border-radius: 2vmin;
+    box-shadow: 0 0.25vmin 0.5vmin 0 rgb(180, 180, 180);
+    font-size: 1.8vmin;
+    letter-spacing: 0.3vmin;
   }
+
+  /* ------------------------------------------ FOOTER ------------------------------------------ */
 
   .modal_account_statement_text {
     font-size: 1.75vmin;
@@ -142,3 +268,5 @@
     margin: 0 0.5vmin 0 0;
   }
 }
+
+/* ============================================================================================== */

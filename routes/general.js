@@ -29,6 +29,13 @@ module.exports = (app, passport) => {
     res.sendFile(path.join(__dirname, "../views/aboutPartners.html"));
   });
 
+  // @route   GET /contact-us
+  // @desc    Route User to the About: Partners Page
+  // @access  Public
+  app.get("/contact-us", (req, res) => {
+    res.sendFile(path.join(__dirname, "../views/contactUs.html"));
+  });
+
   // @route   GET /partnership
   // @desc    Route User to the Partnership Page
   // @access  Public

@@ -1,0 +1,26 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+.order_detail_body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 2vmin;
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  .order_detail_body {
+    margin: 0 1.5vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  .order_detail_body {
+    margin: 0 1vmin;
+  }
+}
+
+/* ============================================================================================== */

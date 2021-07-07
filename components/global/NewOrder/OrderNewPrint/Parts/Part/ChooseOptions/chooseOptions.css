@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 .order_new_print_option_input_number {
   height: 7vmin;
   width: 100%;
@@ -14,12 +16,30 @@
   font-weight: 700;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  .order_new_print_option_input_number {
+    height: 5.25vmin;
+    padding: 0.375vmin;
+    border-radius: 0.525vmin;
+    border-width: 0.2625vmin;
+    box-shadow: 0 0 0.75vmin 0.0375vmin rgb(200, 200, 200);
+    font-size: 2.625vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   .order_new_print_option_input_number {
     height: 3.5vmin;
     padding: 0.25vmin;
     border-radius: 0.35vmin;
     border-width: 0.175vmin;
+    box-shadow: 0 0 0.5vmin 0.025vmin rgb(200, 200, 200);
     font-size: 1.75vmin;
   }
 }
+
+/* ============================================================================================== */

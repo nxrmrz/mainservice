@@ -1,4 +1,4 @@
-/* ========================================= MOBILE CSS ========================================= */
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
 
 /* ----------------------------------------- MAIN BODY ------------------------------------------ */
 
@@ -421,9 +421,200 @@
   width: 25%;
 }
 
-/* ======================================== DESKTOP CSS ========================================= */
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  /* ---------------------------------------- MAIN BODY ----------------------------------------- */
+
+  #pricing_body {
+    top: 7.5vmin;
+  }
+
+  .pricing_contents_body {
+    padding: 7.5vmin 0 0 0;
+  }
+
+  /* -------------------------------------- NAVIGATION BAR -------------------------------------- */
+
+  #pricing_navigation_tabs {
+    height: 7.5vmin;
+  }
+
+  .pricing_navigation_tab {
+    width: 20%;
+  }
+
+  .pricing_navigation_tab_text {
+    font-size: 2.25vmin;
+  }
+
+  .pricing_navigation_tab_text_selected {
+    font-size: 2.4vmin;
+  }
+
+  /* ----------------------------------- HEADER AND SUBTITLE ------------------------------------ */
+
+  .pricing_header_body {
+    padding: 9vmin 6vmin;
+  }
+
+  .pricing_header_text {
+    font-size: 5.25vmin;
+    letter-spacing: 0.225vmin;
+  }
+
+  .pricing_subtitle_body {
+    padding: 6vmin;
+  }
+
+  .pricing_subtitle_text {
+    font-size: 3vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  /* ---------------------------------------- CONTENT ONE ----------------------------------------- */
+
+  .pricing_content_body_one {
+    padding: 7.5vmin 7.5vmin 7.5vmin 10vmin;
+  }
+
+  .pricing_description_body_one {
+    width: 80%;
+    padding: 4.5vmin 9vmin 4.5vmin 4.5vmin;
+  }
+
+  .pricing_description_text_one {
+    font-size: 2.7vmin;
+    letter-spacing: 0.075vmin;
+  }
+
+  .pricing_table_body_one {
+    width: 80%;
+    padding: 3vmin 7.5vmin 3vmin 3vmin;
+  }
+
+  .pricing_table_header_one {
+    height: 9vmin;
+    border-width: 0.15vmin;
+    font-size: 3.75vmin;
+  }
+
+  .pricing_table_column_header_one {
+    height: 7.5vmin;
+    padding: 0 2.25vmin;
+    border-width: 0.15vmin;
+    font-size: 2.7vmin;
+  }
+
+  .pricing_table_column_one {
+    height: 7.5vmin;
+    border-width: 0.15vmin;
+    font-size: 2.7vmin;
+  }
+
+  /* ---------------------------------------- CONTENT TWO ----------------------------------------- */
+
+  .pricing_content_body_two {
+    padding: 7.5vmin 10vmin 7.5vmin 7.5vmin;
+  }
+
+  .service_description_body_two {
+    width: 80%;
+    padding: 4.5vmin 4.5vmin 4.5vmin 9vmin;
+  }
+
+  .service_description_text_two {
+    font-size: 2.7vmin;
+    letter-spacing: 0.075vmin;
+  }
+
+  .pricing_table_body_two {
+    width: 80%;
+    padding: 3vmin 3vmin 3vmin 7.5vmin;
+  }
+
+  .pricing_table_header_two {
+    height: 9vmin;
+    border-width: 0.15vmin;
+    font-size: 3.75vmin;
+  }
+
+  .pricing_table_column_header_two {
+    height: 7.5vmin;
+    padding: 0 2.25vmin;
+    border-width: 0.15vmin;
+    font-size: 2.7vmin;
+  }
+
+  .pricing_table_column_two {
+    height: 7.5vmin;
+    border-width: 0.15vmin;
+    font-size: 2.7vmin;
+  }
+
+  /* -------------------------------------- MATERIAL PRICES --------------------------------------- */
+
+  .pricing_material_content_body {
+    padding: 7.5vmin;
+  }
+
+  #pricing_table_body {
+    width: 65vw;
+  }
+
+  .pricing_selection_row_body {
+    width: 65vw;
+  }
+
+  #pricing_material_type_row_body {
+    height: 6vmin;
+  }
+
+  .pricing_plastic_process_row_body {
+    height: 6vmin;
+  }
+
+  .pricing_fdm_material_row_body {
+    height: 6vmin;
+  }
+
+  .pricing_selection_column {
+    height: 6vmin;
+    border-width: 0.15vmin;
+    font-size: 3vmin;
+    letter-spacing: 0.15vmin;
+  }
+
+  .pricing_tables {
+    width: 65vw;
+  }
+
+  .pricing_tables_fdm {
+    height: 94.5vmin;
+  }
+
+  .pricing_table_row {
+    height: 13.5vmin;
+  }
+
+  .pricing_table_suitable_for_row {
+    height: 54vmin;
+  }
+
+  .pricing_table_column {
+    padding: 0.75vmin;
+    border-width: 0.15vmin;
+    font-size: 2.7vmin;
+  }
+
+  .pricing_table_column_header {
+    font-size: 2.7vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   /* ---------------------------------------- MAIN BODY ----------------------------------------- */
 
   #pricing_body {

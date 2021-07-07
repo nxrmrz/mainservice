@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 #order_details_request_refund_form_body {
   height: 66vmin;
   width: 100%;
@@ -124,11 +126,71 @@
   justify-content: center;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #order_details_request_refund_form_body {
+    height: 49.5vmin;
+  }
+
+  .order_details_request_refund_input_field {
+    padding: 1.5vmin;
+  }
+
+  .order_details_request_refund_input_header_body {
+    padding: 1.5vmin;
+  }
+
+  .order_details_request_refund_input_header {
+    font-size: 2.7vmin;
+  }
+
+  .order_details_request_refund_input_body {
+    padding: 1.5vmin;
+  }
+
+  .order_details_request_refund_input_textarea {
+    height: 18vmin;
+    padding: 0.375vmin;
+    border-radius: 0.525vmin;
+    border-width: 0.2625vmin;
+    box-shadow: 0 0 0.75vmin 0.0375vmin rgb(200, 200, 200);
+    font-size: 2.625vmin;
+  }
+
+  .order_details_request_refund_error_body {
+    padding: 0 1.5vmin;
+  }
+
+  .order_details_request_refund_error {
+    font-size: 1.8vmin;
+  }
+
+  .request_refund_footer_buttons_body_open {
+    height: 60vmin;
+  }
+
+  /* ======================================== BANK NUMBER ========================================= */
+
+  .order_details_request_refund_input_text {
+    height: 4.5vmin;
+    border-radius: 0.525vmin;
+    border-width: 0.2625vmin;
+    box-shadow: 0 0 0.75vmin 0.0375vmin rgb(200, 200, 200);
+    font-size: 2.625vmin;
+    letter-spacing: 0.525vmin;
+  }
+
+  .order_details_request_refund_bank_number_separator_input {
+    height: 4.5vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   .request_refund_footer_buttons_body_open {
     height: 40vmin;
-    opacity: 1;
-    z-index: 1;
   }
 
   .order_details_request_refund_input_field {
@@ -183,3 +245,5 @@
     height: 3vmin;
   }
 }
+
+/* ============================================================================================== */

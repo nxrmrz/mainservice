@@ -1,7 +1,31 @@
-#profile_orders_prints_orders_summary_body {
-  display: flex;
-  flex-direction: column;
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+#profile_orders_prints_orders_summary_contents {
   align-items: center;
   justify-content: center;
-  width: 100%;
+  flex-wrap: wrap;
 }
+
+.profile_orders_prints_orders_summary_content {
+  width: 100%;
+  display: flex;
+  padding: 2vmin;
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  .profile_orders_prints_orders_summary_content {
+    padding: 1.5vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  .profile_orders_prints_orders_summary_content {
+    padding: 1vmin;
+  }
+}
+
+/* ============================================================================================== */

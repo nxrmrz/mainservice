@@ -4,10 +4,10 @@ const loginStatus = () => {
     $.ajax({
       url: "/users/login-status",
       success: data => {
-        if (data) {
-          resolve();
+        if (data.status == "success") {
+          resolve(data.content);
         } else {
-          reject();
+          reject(data.content);
         }
       }
     });

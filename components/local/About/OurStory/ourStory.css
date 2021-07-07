@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 .about_our_story_content_body {
   width: 100%;
   display: flex;
@@ -38,9 +40,33 @@
   margin-top: 6vmin;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
   .about_our_story_content_body {
-    padding: 4vmin 3vmin 4vmin 3vmin;
+    padding: 6vmin 4.5vmin;
+  }
+
+  .about_our_story_content_header_text {
+    font-size: 4.875vmin;
+  }
+
+  .about_our_story_content_text {
+    font-size: 2.7vmin;
+    margin: 2.25vmin 0;
+  }
+
+  #about_our_story_our_mission_content_text {
+    font-size: 3.375vmin;
+    margin-top: 4.5vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  .about_our_story_content_body {
+    padding: 4vmin 3vmin;
   }
 
   .about_our_story_content_header_text {
@@ -57,3 +83,5 @@
     margin-top: 3vmin;
   }
 }
+
+/* ============================================================================================== */

@@ -1,3 +1,5 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
 /* ============================================ MODAL ============================================ */
 
 #order_new_print_modal_footer_contents {
@@ -120,7 +122,72 @@
   font-weight: 700;
 }
 
-@media only screen and (min-width: 600px) {
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  /* ========================================== MODAL ========================================== */
+
+  .order_new_print_footer_button {
+    height: 7.5vmin;
+    width: 15vmin;
+    border-radius: 1.5vmin;
+    box-shadow: 0 0.75vmin 1.125vmin 0 rgb(180, 180, 180);
+  }
+
+  .order_new_print_footer_button_text {
+    font-size: 3vmin;
+  }
+
+  /* ==================================== ORDER NEW PRINT MAIN ===================================== */
+
+  #order_new_print_form_body {
+    padding: 1.5vmin;
+  }
+
+  /* ======================================== INPUT FIELDS ========================================= */
+
+  .order_new_print_option_input_field {
+    margin: 3vmin 0;
+  }
+
+  .order_new_print_option_input_field_header_body {
+    margin: 0 3vmin 0 0;
+  }
+
+  .order_new_print_option_input_field_header_text {
+    font-size: 3vmin;
+  }
+
+  .order_new_print_option_input_select {
+    height: 5.25vmin;
+    padding: 0.375vmin;
+    border-radius: 0.525vmin;
+    border-width: 0.2625vmin;
+    box-shadow: 0 0 0.75vmin 0.0375vmin rgb(200, 200, 200);
+    font-size: 2.625vmin;
+  }
+
+  .order_new_print_form_header_body {
+    margin: 1.5vmin 0;
+  }
+
+  .order_new_print_form_header_text {
+    font-size: 3.75vmin;
+  }
+
+  .order_new_print_option_input_textarea {
+    min-height: 18vmin;
+    padding: 0.375vmin;
+    border-radius: 0.525vmin;
+    border-width: 0.2625vmin;
+    box-shadow: 0 0 0.75vmin 0.0375vmin rgb(200, 200, 200);
+    font-size: 2.625vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
   /* ============================================ MODAL ============================================ */
 
   .order_new_print_footer_button {
@@ -180,3 +247,5 @@
     font-size: 1.75vmin;
   }
 }
+
+/* ============================================================================================== */

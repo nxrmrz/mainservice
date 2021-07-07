@@ -1,0 +1,24 @@
+/* ================================= SMALL (MOBILE) SCREEN SIZE ================================= */
+
+#order_description_content_autocomplete_timer {
+  font-weight: bold;
+  font-size: 5vmin;
+}
+
+/* ================================ MEDIUM (TABLET) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 800px) and (max-width: 1399px) {
+  #order_description_content_autocomplete_timer {
+    font-size: 3.75vmin;
+  }
+}
+
+/* ================================ LARGE (DESKTOP) SCREEN SIZE ================================= */
+
+@media only screen and (min-width: 1400px) {
+  #order_description_content_autocomplete_timer {
+    font-size: 2.5vmin;
+  }
+}
+
+/* ============================================================================================== */
